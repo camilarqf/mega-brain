@@ -1,0 +1,111 @@
+---
+type: analysis-log
+system: PARTICIPA-DF
+repository: participa-df-backend
+status: pendente
+analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+created: 2026-10-18
+updated: 2026-10-18
+tags:
+  - participa-df
+  - pendencias
+  - duvidas
+---
+
+# Pendências e pontos a confirmar
+
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]
+
+## Perguntas de negócio (confirmar com o time)
+- [ ] Qual é o nome oficial do sistema? 🔶 Hipótese com evidência no código (lote 7): **Participa DF** é o nome do produto ao usuário (e-mails, agente HTTP, produtor de eventos) e **OuvDF** o nome histórico do código. Confirmar e, se aprovado, fechar este item.
+- [ ] Qual é o repositório do frontend consumidor?
+
+## Perguntas técnicas
+- [ ] `OuvDF.BCadastro.Client` e `OuvDF.GovBr.Client` (só `bin/obj`) foram removidos ou são trabalho futuro?
+- [ ] `OuvDF.IntegrationServices` (1 arquivo `.cs`) tem uso real?
+
+## Perguntas surgidas no lote 1
+- [ ] Expansão oficial de SO, SIC, SEI, COACI, CQ e OGDF; finalidade de Iza e PeoplesCheck (ver [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Glossario|Glossário]]).
+- [ ] Qual agendador dispara `GET /jobs/v2/{nome}`, com que periodicidade e com que credencial? `/jobs/*` exige autenticação? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]])
+- [ ] Os endpoints `GET /jobs/{nome}` (v1) ainda são usados? O dicionário de comandos está vazio.
+- [ ] Os valores sensíveis em `appsettings*.json` e a licença do New Relic no `Dockerfile` são reais? Já foram rotacionados? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]])
+- [ ] A política de CORS deveria restringir às origens de `CorsOrigins`? Hoje aplica `AllowAnyOrigin`.
+- [ ] Correspondência entre ambientes da aplicação (Development, Homolog, Prod) e do deploy (sandbox, staging, prod); origem da string de conexão do banco.
+- [ ] `ExportarPedidosCaixaEntradaWorkFlow` (PDF) está desativado de propósito? Falta `AddWorkFlow` em `Startup`.
+- [ ] `ValidateTokenFilter`, `ExceptionHandlingFilter` e `ExceptionHandlingMiddleware` estão em uso? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Arquitetura|Arquitetura]])
+- [ ] Os jobs de pedidos devem comparar prazos com `IApplicationDateTime` (hoje usam `DateTime.Now` nas consultas)?
+- [ ] Quem publica `denuncia-aceita` e `denuncia-recusada`? `DenunciaId` equivale ao id da manifestação?
+
+## Perguntas surgidas no lote 2
+- [ ] O SDK (`UseCgdfSecurity`/`AddJwtSecurity`) verifica `TokenCancelado` ou impõe autenticação global? Sem isso, logout não invalida o token e `/jobs/*` e o hub SignalR ficam abertos ([[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]).
+- [ ] `POST /operador-so/operador-ws` precisa ser anônimo? A comparação `loginExistente != null` faz o comando sempre falhar?
+- [ ] Como a senha é guardada (classe `Senha` do SDK)? Por que `GravarOperadorWS` devolve `DecryptValue`?
+- [ ] O link de recuperação de senha deveria ser de uso único? O login inexistente deveria ter a mesma resposta que o existente?
+- [ ] Existe bloqueio por tentativas de login? Para que serve `count-try` do PeoplesCheck?
+- [ ] O login assistido por sessão (`notify`/`token-retrieve`) é usado por qual cliente? O hub `/notification-auth` precisa de autorização?
+- [ ] Por que `AtualizarHistoricoDeSenha` está comentado (`TODO: Revisar`)? A regra das 3 últimas senhas está ativa?
+- [ ] Regra "falecido não pode ser desbloqueado": está inativa por erro? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]])
+- [ ] `BloquearUsuarioHandler` engole exceções: o operador de sistema tem a funcionalidade 36 (Bloquear/Desbloquear)?
+- [ ] Os endpoints de `OperadorSICController` e `PerfilSICController` só com `[Authorize]` são protegidos por funcionalidade nos handlers?
+- [ ] O token de login deve falhar para usuários sem PF/PJ (ex.: `OperadorWS`) por causa de `claims.First(Name)`?
+
+## Perguntas surgidas no lote 3
+- [ ] Qual a relação entre os nomes "Participa DF" e "OuvDF"? `TipoEntradaEnum` trata `OUVDF` e `PARTICIPADF` como canais distintos, e há tabela `TB_LISTA_OBITO_PARTICIPA_DF` ([[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]).
+- [ ] Onde está o DDL do banco (chaves, índices, constraints) e quem gerencia o esquema? Não há migrations no repositório ([[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Banco-e-Mapeamentos|Banco-e-Mapeamentos]]).
+- [ ] Como e com que frequência `TB_LISTA_OBITO_PARTICIPA_DF` é alimentada, e a partir de qual fonte?
+- [ ] O valor 25 de `SituacaoPedidoEnum` foi removido de propósito?
+- [ ] `RecursoOld` ainda é usada ou é legado a remover?
+- [ ] Por que `PessoaFisica` cria `Senha(senha, 3)` e `PessoaJuridica` `Senha(senha)`?
+- [ ] `Usuario.IsBloqueado()` deveria considerar só bloqueios sem `DataDesbloqueio`?
+- [ ] Qual a relação entre `Cidadao`, `Estrangeiro` e `PessoaFisica`?
+
+## Perguntas surgidas no lote 4
+- [ ] Qual é o valor de `PrazoManifestacaoPadrao` e a regra de negócio dos prazos (dias corridos com ajuste ao dia útil)? A janela de ±5 dias para solicitar prorrogação é regra oficial? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]])
+- [ ] Na reclassificação seccional, `assuntoEhDiferenteDoOriginal` compara igualdade: erro? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]])
+- [ ] `InvalidarManifestacao` deveria repetir as regras da ação `NVL_MNF` (operador corrente, unidade, estado)?
+- [ ] O que devolve `POST manifestacao/resumo` (anônimo)? Há dados pessoais?
+- [ ] `POST prorrogacao-prazo/indeferir` deve exigir o papel `OperadorSO` e a funcionalidade `GerenciarProrrogacoes`?
+- [ ] Quem pode avaliar o atendimento (`avaliar`) e o que ocorre se o cidadão não avalia?
+- [ ] O relato do cidadão pode ser registrado em log de aviso (`ValidarIdentificacao`)?
+- [ ] Quem dispara `AplicarBloqueioExterno` e como funciona o fluxo com o sistema correcional/COACI?
+- [ ] Quem chama `MoverManifestacoesParaContaLGPD`, e a conta LGPD (pessoa jurídica `EntidadeEspecial`) existe em todos os ambientes?
+- [ ] Os handlers (Resposta, Prorrogação etc.) são transientes? Eles guardam estado em campo de instância.
+
+## Perguntas surgidas no lote 5
+- [ ] Qual o valor de cada prazo do SIC (`QtdDiadPrazoPedido`, `…Prorrogacao`, `…ParaResponder`, `…ParaRecorrer`, `…NotificacaoOrgao`, `…RecursoTerceiraInstancia`, `…NotificacaoCGDF`) e a base legal? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]])
+- [ ] Os endpoints de `NotificacaoController` (omissão de resposta) precisam ser autenticados? Quem os usa manualmente? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Omissao-de-Resposta|Fluxo-Omissao-de-Resposta]])
+- [ ] `ReencaminharPedido` deveria verificar a permissão `RRE_PDD` e o operador atual? `PermiteRemoverOperadorAtual` deve ser sempre `true`?
+- [ ] O processo SEI de recurso de 3ª instância é criado com acesso **público** e com o PDF do pedido; isso é intencional? Como tratar pedidos com sigilo restrito ou dados pessoais? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]])
+- [ ] A prorrogação manual atualiza o prazo vigente antes de verificar se já houve prorrogação: a transação desfaz? 
+- [ ] Um pedido registrado para N unidades é gravado em N transações; o que ocorre com falha parcial?
+- [ ] O que o evento `PedidoRegistrado` dispara (quem consome)?
+- [ ] Quais regras do recurso de 2ª/3ª (comentários `todo`) estão pendentes?
+- [ ] Os trechos comentados e valores de `SituacaoPedidoEnum` ausentes (25; Deferido/Indeferido em `GravarFeriado`) são legado a remover?
+
+## Perguntas surgidas no lote 6
+- [ ] Há autenticação global? Se não, os 25 endpoints sem atributo (`Unidade`, `Notificacao`, `Job`, `Configuration`, SIC `arquivo/download` etc.) estão abertos ([[01-Sistemas/PARTICIPA-DF/Backend/05-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]]).
+- [ ] `pessoa-fisica/por-operador` deveria ser anônimo? 
+- [ ] A rota `GET v1/manifestacao` duplicada na integração da Ouvidoria funciona? Quem consome a API `v1` (`OperadorWS`)?
+- [ ] `EfetuarDownload` (SIC e Ouvidoria) confere o dono do anexo antes de devolver o arquivo?
+- [ ] Os endpoints comentados de `Dashboard` foram migrados para outro serviço?
+- [ ] `configuration/cors-origins` e `front-end-urls` precisam ser públicos?
+
+## Perguntas surgidas no lote 7
+- [ ] O Iza é um serviço institucional ou de terceiro? O cidadão consente o envio do relato? ([[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integracoes-Externas]])
+- [ ] O fallback do Iza (denúncia = false, unidade `01005`) é desejado? Alguém monitora as falhas?
+- [ ] Por que o TLS está desligado no PeoplesCheck? Há certificado interno não confiável?
+- [ ] `servicos/siturb` e `servicos/ra` precisam aceitar uma URL completa do chamador? Quem usa `servicos/*` e `metro/*`?
+- [ ] Qual é o sistema correcional/COACI que publica `denuncia-aceita/recusada` e consome `denuncia-registrada`?
+- [ ] O processo SEI de 3ª instância precisa ser público com o PDF do pedido?
+- [ ] Os e-mails perdidos (circuito aberto, 400) são reenviados? Há fila de reenvio?
+- [ ] Os serviços `Servico-HtmlToPdf` (PARTICIPA-DF) e `Servico-de-PDF` (SICI) são o mesmo serviço?
+- [ ] Os códigos de unidade fixos (`01005`, `01007`) estão documentados no banco?
+
+## Perguntas surgidas no lote 8
+- [ ] Os testes de integração rodam contra qual banco/ambiente? Há limpeza dos dados? Quem os executa e quando? ([[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Testes-e-Cobertura|Testes-e-Cobertura]])
+- [ ] Os segredos versionados (A1) já foram rotacionados? Quem é o dono do ambiente? ([[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
+- [ ] Existe plano de migração do .NET 5?
+- [ ] Qual é a ferramenta de CI/CD e ela executa testes e análise de dependências?
+
+## Próximo passo
+Análise inicial concluída (ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]).

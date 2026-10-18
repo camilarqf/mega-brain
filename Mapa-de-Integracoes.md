@@ -19,8 +19,20 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 | `SICI` (`sici-backend`) | `Servico-de-PDF` | HTTP POST JSON | saída | ✅ cliente no código; ❓ provedor não identificado | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
 | `SICI` (`sici-backend`) | `Keycloak` | OIDC / JWKS (validação de JWT) | entrada (tokens) | ✅ | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
 | `SICI` (`sici-backend`) | `Keycloak` | HTTP (token endpoint e userinfo) | saída | ✅ | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `Iza` | HTTP POST JSON (4 operações `predict-*`) | saída | ✅ (natureza do provedor ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `MailService` | HTTP POST JSON e multipart | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `PeoplesCheck` | HTTP GET/POST, chave de API | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `SEI` | web service (SDK `CGDF.SEI.DotNet.SDK`) | saída | ✅ uso; 🔶 protocolo | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `Servico-HtmlToPdf` | HTTP POST JSON | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `RabbitMQ` | mensageria: publica `denuncia-registrada`; consome `denuncia-aceita` e `denuncia-recusada` | saída e entrada | ✅ (contraparte do evento ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `Servico-Geocodificacao` | HTTP GET (proxy) | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `Grafana-Loki` | sink do Serilog | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `NewRelic` | agente .NET | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 
 ## Relações não confirmadas (hipóteses)
+- 🔶 `Servico-HtmlToPdf` (PARTICIPA-DF) e `Servico-de-PDF` (SICI) usam o mesmo contrato (`POST` com `{"HtmlString": ...}`); podem ser o mesmo serviço. Não confirmado: manter os IDs separados até haver evidência de dono e endereço.
+- 🔶 Os eventos `denuncia-registrada`, `denuncia-aceita` e `denuncia-recusada` indicam um sistema correcional/de denúncias (a mensagem cita a COACI) como contraparte do PARTICIPA-DF. Esse sistema não foi identificado e não está no catálogo.
+- 🔶 O PARTICIPA-DF expõe `v1/*` (papel `OperadorWS`) e `metro/*` a consumidores externos ainda não identificados.
 - 🔶 O backend do SICI grava no QR Code um link de validação (`assinatura.url.validacao`) que aponta para um frontend de validação. Não está confirmado se é o `sici-frontend`, que ainda não foi analisado.
 
 ## Como manter

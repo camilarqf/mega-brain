@@ -5,7 +5,7 @@
 | ID | Sistema | Repositórios | Estado | Índice |
 |---|---|---|---|---|
 | `SICI` | SICI (validar permissão antes de publicar) | `sici-backend`, `sici-frontend` | Backend analisado (commit `1871e32`; cobertura parcial em 2 notas); frontend não analisado | [[01-Sistemas/SICI/SICI-Index\|SICI-Index]] |
-| `PARTICIPA-DF` | Participa DF (nome do app no pipeline; namespace `OuvDF`; nome oficial a validar; validar permissão antes de publicar) | `participa-df-backend`; frontend não identificado | Backend analisado (commit `4901ad5`; lotes 0 a 8 concluídos, cobertura parcial); frontend não analisado | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index\|PARTICIPA-DF-Index]] |
+| `PARTICIPA-DF` | Participa DF (nome do app no pipeline; namespace `OuvDF`; nome oficial a validar; validar permissão antes de publicar) | `participa-df-backend`, `participa-df-frontend` (1 de 3 front-ends; os outros 2 não identificados) | Backend analisado (commit `4901ad5`; lotes 0 a 8 concluídos, cobertura parcial); frontend `participa-df-frontend` analisado (commit `d250804`; lotes 0 a 5, cobertura parcial); outros 2 front-ends não analisados | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index\|PARTICIPA-DF-Index]] |
 
 ## Serviços externos (provedores)
 
@@ -22,6 +22,9 @@ Serviços consumidos pelos sistemas acima, sem repositório próprio neste cofre
 | `Servico-HtmlToPdf` | Serviço de geração de PDF a partir de HTML usado pelo PARTICIPA-DF; contrato igual ao de `Servico-de-PDF` (relação não confirmada). | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `RabbitMQ` | Broker de mensagens usado pelo PARTICIPA-DF para os eventos de denúncia. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `Servico-Geocodificacao` | Serviços de geocodificação e endereço consultados pelo PARTICIPA-DF por proxy. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `Servico-Localizacao-CGDF` | Serviço de localização (busca de endereço, endereço por coordenada e região administrativa) chamado direto pelo navegador no frontend do PARTICIPA-DF; dono não identificado; relação com `Servico-Geocodificacao` não confirmada. | [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/03-API-e-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Integracoes-Externas\|Integrações do Frontend Cidadão]] |
+| `Google-Analytics` | Google Tag (`gtag.js`) usado pelo frontend do PARTICIPA-DF para métricas de navegação. | [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/03-API-e-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Integracoes-Externas\|Integrações do Frontend Cidadão]] |
+| `Perto-Digital` | Plugin de acessibilidade carregado por CDN no frontend do PARTICIPA-DF. | [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/03-API-e-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Integracoes-Externas\|Integrações do Frontend Cidadão]] |
 | `Grafana-Loki` | Destino de logs (Serilog) do PARTICIPA-DF. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `NewRelic` | Monitoramento de desempenho (agente .NET) do PARTICIPA-DF. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 

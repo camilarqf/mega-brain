@@ -21,11 +21,16 @@ Ponto de entrada do sistema de negócio **Participa DF**. Cada repositório tem 
 | Componente | Estado | Entrada |
 |---|---|---|
 | `participa-df-backend` | analisado (lotes 0 a 8; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] |
-| frontend | **não analisado** (repositório não identificado) | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Repositorios|Repositórios]] |
+| `participa-df-frontend` (Frontend Cidadão, rótulo provisório) | analisado (lotes 0 a 5; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidadao-Index|Índice do Frontend Cidadão]] |
+| outros 2 front-ends | **não analisados** (repositórios não identificados) | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Repositorios|Repositórios]] |
 
 Notas do sistema:
 - [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Contexto-do-Sistema|Contexto do sistema]]: visão de negócio derivada do backend.
 - [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Repositorios|Repositórios]]: repositórios, commit analisado e estado.
+
+Atalhos do frontend:
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/01-Visao-Geral/PARTICIPA-DF-Frontend-Cidadao-Rotas-e-Telas|Rotas e telas]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/03-API-e-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Chamadas-de-API|Chamadas de API]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/05-Qualidade/PARTICIPA-DF-Frontend-Cidadao-Debitos-Tecnicos|Débitos técnicos]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/99-Controle/PARTICIPA-DF-Frontend-Cidadao-Pendencias|Pendências]]
 
 Atalhos do backend:
 - [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
@@ -35,11 +40,11 @@ Atalhos do backend:
 
 ## Inferências e limitações
 - 🔶 A visão de negócio vem só do backend; a finalidade legal e o dono do sistema não constam no código.
-- A visão integrada de telas e fluxos depende da análise do frontend (repositório a identificar).
+- A visão integrada de telas e fluxos cobre só um dos 3 front-ends; os outros dois (repositórios a identificar) ainda não foram analisados.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Home|Home]]
 
 ## Pendências e próximo passo
 - Responder as perguntas de [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendências]] com o time e tratar os débitos 🔴.
-- Analisar o frontend quando for identificado; para atualizar o backend após novos commits, usar `atualizar-documentacao`.
+- Analisar os outros dois front-ends quando forem identificados; para atualizar o backend após novos commits, usar `atualizar-documentacao`.

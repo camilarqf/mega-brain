@@ -18,7 +18,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 
 ## Perguntas de negócio (confirmar com o time)
 - [ ] Qual é o nome oficial do sistema? 🔶 Hipótese com evidência no código (lote 7): **Participa DF** é o nome do produto ao usuário (e-mails, agente HTTP, produtor de eventos) e **OuvDF** o nome histórico do código. Confirmar e, se aprovado, fechar este item.
-- [ ] Qual é o repositório do frontend consumidor?
+- [x] Qual é o repositório do frontend consumidor? Resolvido em 2026-10-18: `participa-df-frontend` ([[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidadao-Index|Frontend Cidadão]]). Restam os repositórios dos outros 2 front-ends (ver [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/99-Controle/PARTICIPA-DF-Frontend-Cidadao-Pendencias|Pendências do Frontend]]).
 
 ## Perguntas técnicas
 - [ ] `OuvDF.BCadastro.Client` e `OuvDF.GovBr.Client` (só `bin/obj`) foram removidos ou são trabalho futuro?

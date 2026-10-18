@@ -23,7 +23,7 @@ Ponto de entrada do sistema de negócio **Participa DF**. Cada repositório tem 
 | `participa-df-backend` | analisado (lotes 0 a 8; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] |
 | `participa-df-frontend` (Frontend Cidadão, rótulo provisório) | analisado (lotes 0 a 5; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidadao-Index|Índice do Frontend Cidadão]] |
 | `participa-df-ouv-frontend` (Frontend Ouvidoria, rótulo provisório) | analisado (lotes 0 a 5; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/PARTICIPA-DF-Frontend-Ouvidoria-Index|Índice do Frontend Ouvidoria]] |
-| front-end SIC | **não analisado** (repositório não identificado) | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Repositorios|Repositórios]] |
+| `participa-df-sic-frontend` (Frontend SIC, rótulo provisório) | analisado (lotes 0 a 5; cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] |
 
 Notas do sistema:
 - [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Contexto-do-Sistema|Contexto do sistema]]: visão de negócio derivada do backend.
@@ -36,6 +36,9 @@ Atalhos do frontend:
 Atalhos do frontend de Ouvidoria:
 - [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]]
 
+Atalhos do frontend SIC:
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]]
+
 Atalhos do backend:
 - [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
 - [[01-Sistemas/PARTICIPA-DF/Backend/05-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]
@@ -44,7 +47,7 @@ Atalhos do backend:
 
 ## Inferências e limitações
 - 🔶 A visão de negócio vem só do backend; a finalidade legal e o dono do sistema não constam no código.
-- A visão integrada de telas e fluxos cobre 2 dos 3 front-ends (Cidadão e Ouvidoria, analisados separadamente); o front-end SIC (repositório a identificar) não foi analisado.
+- A visão integrada de telas e fluxos cobre os 3 front-ends (Cidadão, Ouvidoria e SIC), analisados separadamente.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Home|Home]]

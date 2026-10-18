@@ -1,0 +1,17 @@
+
+# Configurações específicas do dispositivo
+.obsidian/workspace.json
+.obsidian/workspaces.json
+
+# Lixeira e temporários
+.trash/
+*.tmp
+
+# Credenciais e segredos
+.env
+.env.*
+*.pem
+*.key
+
+# Dados locais de plugins
+.obsidian/plugins/*/data.json

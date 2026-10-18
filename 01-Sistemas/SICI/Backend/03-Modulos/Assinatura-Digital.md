@@ -3,14 +3,17 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - assinatura
+  - pdf
+  - qrcode
+  - hmac
+sources:
   - api/assinatura/AssinaturaController.java
   - application/service/assinatura/AssinaturaServiceImpl.java
   - application/service/assinatura/AssinaturaDocumentoServiceImpl.java
@@ -29,7 +32,6 @@ fontes:
   - domain/model/DocumentoAssinado.java
   - infrastructure/persistence/adapter/NumeracaoRepositoryAdapter.java
   - src/main/resources/templates/*.html
-tags: [sici, modulo, assinatura, pdf, qrcode, hmac]
 ---
 
 # Assinatura eletrônica de OS

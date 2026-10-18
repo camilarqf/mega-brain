@@ -1,10 +1,9 @@
 ---
 type: system
-system: ""
-repository: ""
+system:
 status: pendente
-analyzed_commit: ""
-updated: ""
+updated:
+tags: []
 ---
 # Sistema
 

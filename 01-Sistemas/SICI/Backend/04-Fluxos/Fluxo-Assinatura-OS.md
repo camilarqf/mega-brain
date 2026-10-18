@@ -3,18 +3,17 @@ type: flow
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: fluxo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - fluxo
+  - assinatura
+sources:
   - application/usecase/assinatura/AssinarOrdemServico.java
   - application/service/assinatura/AssinaturaServiceImpl.java
   - application/service/assinatura/AssinaturaDocumentoServiceImpl.java
-tags: [sici, fluxo, assinatura]
 ---
 
 # Fluxo — assinatura de uma OS

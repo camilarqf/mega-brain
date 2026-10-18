@@ -1,11 +1,14 @@
 ---
 type: repository
 system: SICI
-repository: "sici-backend, sici-frontend"
+repository:
+  - sici-backend
+  - sici-frontend
 status: pendente
-analyzed_commit: ""
 updated: 2026-10-18
-tags: [sici, repositorios]
+tags:
+  - sici
+  - repositorios
 ---
 # SICI — repositórios
 

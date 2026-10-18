@@ -5,7 +5,10 @@ repository: sici-backend
 status: pendente
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags: [sici, contexto, negocio]
+tags:
+  - sici
+  - contexto
+  - negocio
 ---
 # SICI — contexto do sistema
 

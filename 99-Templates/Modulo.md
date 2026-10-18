@@ -1,10 +1,14 @@
 ---
 type: module
-system: ""
-repository: ""
+system:
+component:
+repository:
 status: pendente
-analyzed_commit: ""
-updated: ""
+coverage: nao-analisado
+analyzed_commit:
+updated:
+tags: []
+sources: []
 ---
 # Modulo
 

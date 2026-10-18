@@ -11,7 +11,7 @@ description: Analisa um repositório e documenta o sistema de negócio correspon
 4. Fazer inventário: stack, módulos, controllers, rotas, serviços, entidades, persistência, integrações, autenticação, validações, testes e fluxos. Nunca reproduzir segredos, credenciais ou dados reais.
 5. Apresentar **plano de lotes** e destino de cada nota. Obter aprovação antes de escrever.
 6. Documentar por lotes pequenos, com evidências (repositório + commit + arquivo + símbolos), distinguindo confirmado, inferido e não identificado. Não confundir regra de negócio com hipótese baseada em nomes.
-7. Gerar Markdown para Obsidian com frontmatter e links. Preservar material existente e não alterar o código.
-8. Após cada lote aprovado: atualizar índice, `Registro-de-Analise.md`, `Pendencias.md`, cobertura e próximo passo exato.
+7. Gerar Markdown para Obsidian com frontmatter no schema de `BRAIN-RULES.md` (`type`, `system`, `component`, `repository`, `status`, `coverage`, `analyzed_commit`, `created`, `updated`, `tags`, `sources`; só os campos aplicáveis, sem duplicatas em português e sem valores vazios) e links. Manter `status` (confirmação) separado de `coverage` (abrangência). Preservar material existente e não alterar o código.
+8. Após cada lote aprovado: atualizar índice, `Registro-de-Analise.md`, `Pendencias.md`, `coverage` e próximo passo exato.
 9. Se backend/frontend compõem o mesmo sistema, documentar cada repositório em pasta própria; integrar fluxos somente após verificar ambos.
 10. Nunca fazer Git push/commit automático. Se conteúdo institucional não estiver autorizado a sair, interromper qualquer escrita/sync no vault pessoal e propor ambiente institucional.

@@ -1,10 +1,13 @@
 ---
 type: decision
-system: ""
-repository: ""
+system:
+component:
+repository:
 status: pendente
-analyzed_commit: ""
-updated: ""
+analyzed_commit:
+updated:
+tags: []
+sources: []
 ---
 # Decisao
 

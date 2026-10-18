@@ -3,15 +3,14 @@ type: index
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
+created: 2026-10-16
 updated: 2026-10-18
-tipo: indice
-sistema: SICI
-componente: sici-backend
-commit: 1871e32
-atualizado: 2026-10-16
-cobertura: completa
-tags: [sici, moc, backend]
+tags:
+  - sici
+  - moc
+  - backend
 ---
 
 # SICI — Backend (índice)

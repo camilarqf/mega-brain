@@ -3,14 +3,14 @@ type: reference
 system: SICI
 repository: sici-backend
 status: pendente
+coverage: parcial
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
+created: 2026-10-16
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-16
-cobertura: parcial
-tags: [sici, glossario, dominio]
+tags:
+  - sici
+  - glossario
+  - dominio
 ---
 
 # Glossário

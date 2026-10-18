@@ -1,11 +1,12 @@
 ---
 type: system
 system: SICI
-repository: ""
 status: pendente
-analyzed_commit: ""
 updated: 2026-10-18
-tags: [sici, moc, sistema]
+tags:
+  - sici
+  - moc
+  - sistema
 ---
 # SICI — índice do sistema
 

@@ -3,19 +3,19 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - poac
+  - planejamento
+sources:
   - api/poac/PoacController.java
   - application/usecase/poac/CriarPoac.java
   - application/service/poac/PoacServiceImpl.java
   - domain/model/Poac.java
-tags: [sici, modulo, poac, planejamento]
 ---
 
 # POAC

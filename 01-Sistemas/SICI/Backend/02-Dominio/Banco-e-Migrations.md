@@ -3,15 +3,19 @@ type: reference
 system: SICI
 repository: sici-backend
 status: pendente
+coverage: parcial
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: parcial
-fontes: [src/main/resources/db/migrations, infrastructure/persistence/entity, infrastructure/persistence/repository]
-tags: [sici, banco, sqlserver, flyway, migrations]
+tags:
+  - sici
+  - banco
+  - sqlserver
+  - flyway
+  - migrations
+sources:
+  - src/main/resources/db/migrations
+  - infrastructure/persistence/entity
+  - infrastructure/persistence/repository
 ---
 
 # Banco de dados e migrations

@@ -1,22 +1,22 @@
 ---
-type: reference
+type: security
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - seguranca
+  - autorizacao
+  - owasp
+sources:
   - api/config/SecurityConfig.java
   - api/security/*
   - application/exception/GlobalExceptionHandler.java
   - todos os controllers em api/
   - src/main/resources/application*.properties (somente chaves)
-tags: [sici, seguranca, autorizacao, owasp]
 ---
 
 # Segurança e autorização

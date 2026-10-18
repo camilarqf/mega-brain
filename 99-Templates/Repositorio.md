@@ -1,10 +1,12 @@
 ---
 type: repository
-system: ""
-repository: ""
+system:
+repository:
 status: pendente
-analyzed_commit: ""
-updated: ""
+coverage: nao-analisado
+analyzed_commit:
+updated:
+tags: []
 ---
 # Repositorio
 

@@ -3,14 +3,16 @@ type: flow
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: fluxo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - fluxo
+  - autenticacao
+  - keycloak
+  - jwt
+sources:
   - api/config/SecurityConfig.java
   - api/security/AuthController.java
   - api/security/JwtAuthenticationConverterCustom.java
@@ -21,7 +23,6 @@ fontes:
   - application/usecase/security/BuscarContaNoKeycloak.java
   - infrastructure/external/adapter/KeycloakAuthAdapter.java
   - infrastructure/external/health/KeycloakHealthIndicator.java
-tags: [sici, fluxo, autenticacao, keycloak, jwt]
 ---
 
 # Fluxo — autenticação e autorização

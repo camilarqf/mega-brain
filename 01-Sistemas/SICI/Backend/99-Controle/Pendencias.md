@@ -1,15 +1,15 @@
 ---
-type: pending-list
+type: analysis-log
 system: SICI
 repository: sici-backend
 status: pendente
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
+created: 2026-10-16
 updated: 2026-10-18
-tipo: controle
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-16
-tags: [sici, pendencias, duvidas]
+tags:
+  - sici
+  - pendencias
+  - duvidas
 ---
 
 # Pendências e pontos a confirmar

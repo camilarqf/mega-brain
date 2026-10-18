@@ -3,21 +3,22 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - subci
+  - assinatura
+  - seguranca
+sources:
   - api/subci/SubciController.java
   - application/usecase/subci/CriarSubci.java
   - application/service/subci/SubciSubstitutoServiceImpl.java
   - application/usecase/ordemServico/ObterSubciVigenteParaDocumento.java
   - application/usecase/assinatura/AssinarOrdemServico.java
   - db/migrations/V11, V17, V18, V19
-tags: [sici, modulo, subci, assinatura, seguranca]
 ---
 
 # SUBCI e substitutos

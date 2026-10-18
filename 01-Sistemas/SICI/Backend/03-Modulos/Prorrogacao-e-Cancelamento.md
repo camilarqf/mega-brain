@@ -3,14 +3,16 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - ordem-servico
+  - prorrogacao
+  - cancelamento
+sources:
   - application/usecase/ordemServico/CriarProrrogacaoOrdemServico.java
   - application/usecase/ordemServico/AtualizarProrrogacaoOrdemServico.java
   - application/usecase/ordemServico/CancelarOrdemServico.java
@@ -20,7 +22,6 @@ fontes:
   - application/mapper/OrdemServicoMapper.java
   - domain/model/ProrrogacaoOrdemServico.java
   - domain/model/OrdemServicoCancelamento.java
-tags: [sici, modulo, ordem-servico, prorrogacao, cancelamento]
 ---
 
 # Prorrogação e cancelamento de OS

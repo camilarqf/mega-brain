@@ -3,15 +3,15 @@ type: reference
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes: [src/main/java/br/gov/df/cg/sici/domain/model]
-tags: [sici, dominio, modelo]
+tags:
+  - sici
+  - dominio
+  - modelo
+sources:
+  - src/main/java/br/gov/df/cg/sici/domain/model
 ---
 
 # Modelo de domínio

@@ -3,15 +3,18 @@ type: reference
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
+created: 2026-10-16
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-16
-cobertura: completa
-fontes: [pom.xml, .docker/Dockerfile, settings.xml]
-tags: [sici, stack, dependencias]
+tags:
+  - sici
+  - stack
+  - dependencias
+sources:
+  - pom.xml
+  - .docker/Dockerfile
+  - settings.xml
 ---
 
 # Stack e dependências

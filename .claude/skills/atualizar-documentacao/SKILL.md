@@ -10,5 +10,5 @@ description: Atualiza a documentação técnica do Mega Brain a partir de mudan�
 3. Identificar notas impactadas usando evidências e referências; apresentar plano e solicitar aprovação.
 4. Atualizar somente notas afetadas; manter versões históricas de decisões e registrar mudanças de comportamento separadamente.
 5. Corrigir links internos e conferir consistência dos índices.
-6. Atualizar commit, cobertura, data, pendências e próximo passo. Relatar notas verificadas e não verificadas.
+6. Atualizar no frontmatter das notas afetadas `analyzed_commit`, `coverage`, `status` e `updated` (schema de `BRAIN-RULES.md`; manter `created` e não reintroduzir campos em português), além de pendências e próximo passo. Relatar notas verificadas e não verificadas.
 7. Não modificar código-fonte, não executar push/commit automaticamente, não copiar material confidencial a ambiente não autorizado.

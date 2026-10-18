@@ -3,14 +3,15 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - cadastros
+  - referencia
+sources:
   - api/acaoControle/AreaExecutoraController.java
   - api/acaoControle/ObjetivoPPAController.java
   - api/acaoControle/ProgramaGovernoController.java
@@ -19,7 +20,6 @@ fontes:
   - api/ordemServico/fase/FaseController.java
   - api/ordemServico/fase/DescricaoFaseAcaoController.java
   - application/usecase/{areaExecutora,objetivoPPA,programaGoverno,unidadeAuditada,unidadeAuditoriaInterna,ordemServico/fase}/*
-tags: [sici, modulo, cadastros, referencia]
 ---
 
 # Cadastros auxiliares (somente leitura)

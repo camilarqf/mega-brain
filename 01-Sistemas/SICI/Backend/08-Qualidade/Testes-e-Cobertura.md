@@ -3,19 +3,18 @@ type: reference
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - qualidade
+  - testes
+sources:
   - src/test/java/br/gov/df/cg/sici/**
   - target/surefire-reports/*.txt (execução local de 2026-10-09)
   - pom.xml
   - .docker/Dockerfile
-tags: [sici, qualidade, testes]
 ---
 
 # Testes e cobertura

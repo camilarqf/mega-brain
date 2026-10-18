@@ -1,10 +1,13 @@
 ---
 type: analysis-log
-system: ""
-repository: ""
+system:
+repository:
 status: pendente
-analyzed_commit: ""
-updated: ""
+analyzed_commit:
+updated:
+commit_data:
+branch:
+tags: []
 ---
 # Registro-de-Analise
 

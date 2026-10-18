@@ -1,17 +1,19 @@
 ---
-type: reference
+type: architecture
 system: SICI
 repository: sici-backend
 status: pendente
+coverage: parcial
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
+created: 2026-10-16
 updated: 2026-10-18
-tipo: referencia
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-16
-cobertura: parcial
-fontes: [src/main/java/br/gov/df/cg/sici]
-tags: [sici, arquitetura, hexagonal, ports-and-adapters]
+tags:
+  - sici
+  - arquitetura
+  - hexagonal
+  - ports-and-adapters
+sources:
+  - src/main/java/br/gov/df/cg/sici
 ---
 
 # Arquitetura (hexagonal / ports & adapters)

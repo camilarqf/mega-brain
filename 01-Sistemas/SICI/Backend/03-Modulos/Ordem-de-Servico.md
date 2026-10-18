@@ -3,14 +3,14 @@ type: module
 system: SICI
 repository: sici-backend
 status: confirmado
+coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tipo: modulo
-sistema: SICI
-commit: 1871e32
-atualizado: 2026-10-18
-cobertura: completa
-fontes:
+tags:
+  - sici
+  - modulo
+  - ordem-servico
+sources:
   - api/ordemServico/OrdemServicoController.java
   - application/service/ordemServico/OrdemServicoServiceImpl.java
   - application/usecase/ordemServico/*
@@ -18,7 +18,6 @@ fontes:
   - domain/model/OrdemServico.java
   - infrastructure/persistence/repository/AuditorOrdemServicoRepository.java
   - infrastructure/persistence/repository/CoordenadorRepository.java
-tags: [sici, modulo, ordem-servico]
 ---
 
 # Ordem de Serviço (OS de Ação de Controle)

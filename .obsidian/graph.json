@@ -83,6 +83,13 @@
         "a": 1,
         "rgb": 16738740
       }
+    },
+    {
+      "query": "[type:requirement]",
+      "color": {
+        "a": 1,
+        "rgb": 16737095
+      }
     }
   ],
   "collapse-display": true,
@@ -95,6 +102,6 @@
   "repelStrength": 11.9505047215891,
   "linkStrength": 1,
   "linkDistance": 219,
-  "scale": 0.2588386562181467,
+  "scale": 0.3628873693011864,
   "close": false
 }

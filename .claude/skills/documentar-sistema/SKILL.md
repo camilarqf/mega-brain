@@ -1,18 +1,20 @@
 ---
 name: documentar-sistema
-description: Analisa um repositório e documenta o sistema de negócio correspondente no Mega Brain, por lotes rastreáveis.
+description: Analisa o código de um repositório e documenta o sistema no Mega Brain por lotes pequenos e rastreáveis, com plano aprovado antes de escrever. Use para documentar um repositório novo ou retomar uma análise interrompida.
 ---
 
 # Documentar sistema
 
-1. Identificar o repositório e confirmar o caminho absoluto do vault Mega Brain. Se não houver acesso, pedir que o usuário use `/add-dir` ou `claude --add-dir`.
-2. Ler `Catalogo-de-Sistemas.md`, `BRAIN-RULES.md` e o índice pertinente. Confirmar se o repositório pertence a sistema existente ou novo; não inferir associação apenas pelo nome.
-3. Ler notas existentes, `<Sistema>-<Componente>-Registro-de-Analise.md` e `<Sistema>-<Componente>-Pendencias.md` antes de analisar. Conferir `git rev-parse HEAD` do projeto e registrar se mudou desde a análise anterior.
-4. Fazer inventário: stack, módulos, controllers, rotas, serviços, entidades, persistência, integrações, autenticação, validações, testes e fluxos. Nunca reproduzir segredos, credenciais ou dados reais.
-5. Apresentar **plano de lotes** e destino de cada nota. Obter aprovação antes de escrever.
-6. Documentar por lotes pequenos, com evidências (repositório + commit + arquivo + símbolos), distinguindo confirmado, inferido e não identificado. Não confundir regra de negócio com hipótese baseada em nomes.
-7. Gerar Markdown para Obsidian com frontmatter no schema de `BRAIN-RULES.md` (`type`, `system`, `component`, `repository`, `status`, `coverage`, `analyzed_commit`, `created`, `updated`, `tags`, `sources`; só os campos aplicáveis, sem duplicatas em português e sem valores vazios) e links. Manter `status` (confirmação) separado de `coverage` (abrangência). Escolher o `type` pelo conteúdo, conforme a tabela de `BRAIN-RULES.md`, e verificar se já existe nota sobre o assunto (atualizá-la em vez de duplicar) e se o nome do arquivo é único no vault, conforme a convenção de nomenclatura de `BRAIN-RULES.md`. Preservar material existente e não alterar o código.
-8. Antes de encerrar o lote, validar o frontmatter de cada nota gerada conforme `BRAIN-RULES.md`: `type` da tabela oficial, apenas campos aplicáveis, datas `YYYY-MM-DD`, sem valores `""` e sem campos em português.
-9. Após cada lote aprovado: atualizar índice, `<Sistema>-<Componente>-Registro-de-Analise.md`, `<Sistema>-<Componente>-Pendencias.md`, `coverage` e próximo passo exato.
-10. Se backend/frontend compõem o mesmo sistema, documentar cada repositório em pasta própria; integrar fluxos somente após verificar ambos.
-11. Nunca fazer Git push/commit automático. Se conteúdo institucional não estiver autorizado a sair, interromper qualquer escrita/sync no vault pessoal e propor ambiente institucional.
+Regras e definições estão em `BRAIN-RULES.md` (seções citadas abaixo); não repeti-las aqui.
+
+1. **Acesso e identificação.** Confirmar o caminho absoluto do vault e o repositório analisado (acesso ao vault: seção 11). Sem acesso, informar a limitação e pedir acesso; não presumir o conteúdo. Identificar sistema, componente e repositório no `Catalogo-de-Sistemas.md` e no índice pertinente (seção 6, N0–N1). Se o sistema não estiver cadastrado, propor o cadastro (ID) no plano; não deduzir associação pelo nome.
+2. **Retomar.** Ler o registro de análise e as pendências do componente, se existirem, e o "próximo passo exato". Comparar `analyzed_commit` com `git rev-parse HEAD`; se mudou, verificar os arquivos de `sources` alterados (seção 5) e tratar as notas afetadas como desatualizadas, encaminhando-as à Skill `atualizar-documentacao`. Não refazer lotes concluídos.
+3. **Inventário.** Stack, módulos, controllers e rotas, serviços, entidades, persistência, integrações e dependências, autenticação, validações, testes e fluxos. Nunca reproduzir segredos, credenciais ou dados reais (seção 10).
+4. **Integrações.** Procurar clientes, adaptadores e configuração de chamadas a outros sistemas ou serviços; registrar consumidor, provedor, tecnologia, contrato e direção quando verificáveis (seção 7). Sem evidência, é hipótese.
+5. **Plano.** Apresentar o plano de lotes pequenos: para cada nota, o `type` (seção 2), o nome (seção 3), as notas existentes que serão atualizadas em vez de duplicadas (seção 8) e os links previstos. **Obter aprovação antes de escrever.**
+6. **Documentar um lote por vez**, com evidências (repositório, commit, arquivo, símbolos) e a distinção ✅/🔶/❓ (seção 5). Regra de negócio só com evidência no código.
+7. **Gerar as notas** com frontmatter da seção 4, nomes da seção 3 e links da seção 8. Atualizar o `Mapa-de-Integracoes` quando houver integração (seção 7). Preservar o material existente e não alterar o código.
+8. **Validar** com `python <vault>/scripts/validar-brain.py`; sem Python, conferir à mão tipo, campos, datas, links e nomes únicos. Corrigir antes de encerrar o lote.
+9. **Fechar o lote:** atualizar índice, registro de análise, pendências e `coverage`, com o próximo passo exato (seção 8), e relatar o que não foi coberto.
+10. Backend e frontend do mesmo sistema ficam em pastas próprias; integrar fluxos somente após verificar ambos.
+11. Não executar `git add`, commit nem push; ao final, sugerir `sincronizar-brain` (seções 9 e 10).

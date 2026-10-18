@@ -15,3 +15,7 @@
 
 # Dados locais de plugins
 .obsidian/plugins/*/data.json
+
+# Python
+__pycache__/
+*.pyc

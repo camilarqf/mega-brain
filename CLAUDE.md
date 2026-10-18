@@ -1,16 +1,8 @@
-# Mega Brain — regras gerais
+# Mega Brain — instruções para Claude Code
 
-Este vault é uma base de conhecimento persistente em Markdown (Obsidian).
+Este vault é uma base de conhecimento persistente em Markdown (Obsidian). **Todas as regras estão em `BRAIN-RULES.md`** (fonte única): ler apenas a seção necessária e não copiar definições para cá.
 
-## Regras de operação
-- Antes de criar ou atualizar notas, consultar `Catalogo-de-Sistemas.md` e os índices pertinentes.
-- **Sistema de negócio** não é sinônimo de **repositório**: vários repositórios podem compor um sistema.
-- Diferenciar afirmações **confirmadas por evidência**, **inferências** e **não identificadas**.
-- Preservar rastreabilidade: registrar repositório, commit, caminho de arquivo, classe/método quando possível.
-- Não inventar funcionalidades, decisões ou integrações não verificadas.
-- Não sobrescrever, mover ou excluir notas preexistentes sem apresentar plano e obter aprovação.
-- Não alterar código-fonte como consequência de atividades de documentação.
-- Nunca copiar credenciais, segredos, dados pessoais ou material institucional para destinos externos não autorizados.
-- Não executar `git add`, `commit`, `push`, `reset` ou rebase automaticamente; solicitar confirmação e mostrar o diff.
-- Ao concluir cada lote, atualizar `<Sistema>-<Componente>-Registro-de-Analise.md`, `<Sistema>-<Componente>-Pendencias.md` e o índice, indicando o próximo passo exato.
-- Consultar `BRAIN-RULES.md` para convenções adicionais.
+- Ponto de entrada: `Catalogo-de-Sistemas.md` e o índice do sistema pertinente (recuperação progressiva: `BRAIN-RULES.md`, seção 6).
+- Skills em `.claude/skills/`: `documentar-sistema`, `consultar-conhecimento`, `atualizar-documentacao`, `sincronizar-brain`, `analisar-us`, `implementar-us`.
+- Fora do vault, dar acesso com `/add-dir <caminho>` ou `claude --add-dir <caminho>`; sem acesso, informar a limitação em vez de presumir o conteúdo.
+- Nunca executar `git add`, `commit`, `push`, `reset` ou rebase automaticamente, nem escrever em notas sem plano aprovado (seções 9 e 10).

@@ -19,7 +19,7 @@ sources:
 
 # OS Genérica
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 > OS **sem ação de controle**: documento livre composto de **artigos**, **descrições de fase** com datas, **anexos**, equipe (coordenador e auditores), área executora e um texto de "OS vinculada". Usa o mesmo ciclo de status e a mesma assinatura das OS de ação de controle (modelo `GENERICA`, id 7).
 
@@ -34,14 +34,14 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 | PUT | `/atualizar/{id}` | `AtualizarOrdemServicoGenerica.atualizar` |
 | PUT | `/alterarStatusOs/{id}` | `AlterarStatusOrdemServicoGenerica` |
 | DELETE | `/excluir/{id}` | `ExcluirOrdemServicoGenerica.excluir` |
-| GET | `/gerar-pdf` | `GerarPdfOrdemServicoGenerica` (minuta via [[01-Sistemas/SICI/Backend/07-Integracoes/Integracoes-Externas|serviço de PDF]]) |
+| GET | `/gerar-pdf` | `GerarPdfOrdemServicoGenerica` (minuta via [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|serviço de PDF]]) |
 
 Assinatura e download: `POST /assinaturas/assinar-os-generica/{id}` e `GET /assinaturas/{id}/download-generica` — ver [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]].
 
 ## Regras ✅
 - **Criação**: artigos obrigatórios (lista não vazia) e área executora obrigatória; trata coordenador e auditores (ramos para ausentes); grava artigos, descrições e anexos (tabelas V29, V30, V51).
 - **Atualização** (`@Transactional`): artigos obrigatórios; bloqueia se já houver assinatura com data ou status ASSINADA (`OsAssinadaNaoPodeSerAtualizadaException`).
-- **Status**: `OrdemServicoGenerica.alterarStatusOs`, a mesma máquina de [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], com motivo obrigatório na devolução. `AlterarStatusOrdemServicoGenerica` tem o mesmo `if` vazio da OS comum.
+- **Status**: `OrdemServicoGenerica.alterarStatusOs`, a mesma máquina de [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], com motivo obrigatório na devolução. `AlterarStatusOrdemServicoGenerica` tem o mesmo `if` vazio da OS comum.
 - **Assinatura**: SUBCI titular ou substituto vigente; código `HMAC("OSG:"+id)`; numeração no **mesmo sequencial anual** das OS de ação.
 
 ## Lacunas ✅

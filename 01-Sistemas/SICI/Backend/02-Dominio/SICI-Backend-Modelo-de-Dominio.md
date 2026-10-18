@@ -1,5 +1,5 @@
 ---
-type: reference
+type: domain
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -16,9 +16,9 @@ sources:
 
 # Modelo de domínio
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Arquitetura-Hexagonal|Arquitetura-Hexagonal]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Glossario|Glossario]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Arquitetura-Hexagonal|Arquitetura-Hexagonal]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]]
 
-> 29 classes em `domain/model` + 3 records em `domain/model/valueObjects`. O domínio é "puro" (sem anotações JPA); a persistência usa entidades espelho em `infrastructure/persistence/entity` — ver [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]].
+> 29 classes em `domain/model` + 3 records em `domain/model/valueObjects`. O domínio é "puro" (sem anotações JPA); a persistência usa entidades espelho em `infrastructure/persistence/entity` — ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]].
 
 ## Visão geral ✅
 
@@ -126,7 +126,7 @@ Detalhes do fluxo: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assi
 | DESIGNAÇÃO/EXCLUSÃO: não pode informar coordenador **e** membros ao mesmo tempo | `OrdemServico.validarDesignacao` |
 | Qualquer OS que não seja ABERTURA exige uma ABERTURA existente, não cancelada e **assinada** | `OrdemServico.validarCriacaoComBaseNasOrdens` |
 | Transição de status segue a máquina de estados; DEVOLVIDA exige motivo; CANCELADA é final | `OrdemServico.alterarStatusOs`, `OrdemServicoGenerica.alterarStatusOs`, `EStatusOrdemServico.statusPermitidos` |
-| Tipo de ação restringe naturezas | `AcaoControle.validarNaturezaAcaoControle` — ver [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]] |
+| Tipo de ação restringe naturezas | `AcaoControle.validarNaturezaAcaoControle` — ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]] |
 | Prorrogação: fim ≥ início e duração > 0 | `ProrrogacaoOrdemServico.criar` |
 | Assinatura exige documento, auditor, perfil e nomes | `Assinatura.criar` |
 | Hash da assinatura = SHA-256 de `idAuditor|idPerfil|dataAssinatura` | `Assinatura.calcularHashAssinatura` |

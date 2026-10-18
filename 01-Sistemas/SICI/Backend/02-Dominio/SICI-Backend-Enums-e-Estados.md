@@ -1,5 +1,5 @@
 ---
-type: reference
+type: domain
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -18,7 +18,7 @@ sources:
 
 # Enums e estados
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]], [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]], [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]]
 
 ## Status da OS — `EStatusOrdemServico` ✅
 Usado por `OrdemServico` e `OrdemServicoGenerica`. Transições em `EStatusOrdemServico.statusPermitidos()`.
@@ -74,7 +74,7 @@ Regra em `AcaoControle.validarNaturezaAcaoControle`:
 | CONSULTORIA (2) | GESTAO_RISCOS **ou** PROGRAMA_INTEGRIDADE | exatamente 1 |
 | INSPECAO (3) | CONFORMIDADE | exatamente 1 |
 
-⚠️ A mensagem de erro da Auditoria diz "Conformidade, Desempenho ou **Riscos**", mas o conjunto aceito contém **Governança**. Ver [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]].
+⚠️ A mensagem de erro da Auditoria diz "Conformidade, Desempenho ou **Riscos**", mas o conjunto aceito contém **Governança**. Ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
 
 `ENaturezaAcao`: CONFORMIDADE (1), DESEMPENHO (2), GOVERNANCA (3), GESTAO_RISCOS (4), PROGRAMA_INTEGRIDADE (5), cada uma com descrição legível.
 

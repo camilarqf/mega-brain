@@ -1,5 +1,5 @@
 ---
-type: reference
+type: api
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -17,7 +17,7 @@ sources:
 
 # Catálogo de endpoints
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Autenticacao|Fluxo-Autenticacao]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/04-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 > Fonte: anotações `@*Mapping` e `@PreAuthorize` dos 19 controllers em `api/`.
 > **Roles**: S = SUBCI · C = COORDENADOR · D = DIRETOR · A = AUDITOR · `—` = só autenticado · `público` = sem token.

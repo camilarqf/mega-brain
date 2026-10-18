@@ -1,5 +1,5 @@
 ---
-type: reference
+type: persistence
 system: SICI
 repository: sici-backend
 status: pendente
@@ -20,7 +20,7 @@ sources:
 
 # Banco de dados e migrations
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 > Banco: **SQL Server** (schema `dbo`). Migrations Flyway em `src/main/resources/db/migrations` (V1–V57).
 > Cobertura parcial: os seeders `V2__seeders.sql` e `V55__seeders_unidade_auditada.sql` **não foram lidos** (podem conter dados reais).
@@ -130,6 +130,6 @@ erDiagram
 - 🔶 **Risco de número duplicado**: o próximo número é `max + 1` (`NumeracaoRepositoryPort.obterProximoSequencialPorUaiEAno`), sem lock e sem unique no banco. Duas assinaturas simultâneas podem receber o mesmo número oficial.
 - ✅ `NumeracaoRepositoryAdapter.buscarPorOrdemServico` sempre retorna `Optional.empty()`. É usado como fallback em `NumeracaoServiceImpl` e `OrdemServicoServiceImpl`.
 - ✅ V14 e V15 adicionam a mesma coluna `TX_HASH_VERIFICADOR` (protegidas por `IF COL_LENGTH ... IS NULL`); depois a coluna é removida na V38.
-- ✅ Flyway desligado em hom/prod e `ddl-auto=validate` — ver [[01-Sistemas/SICI/Backend/01-Visao-Geral/Perfis-e-Ambientes|Perfis-e-Ambientes]].
-- ✅ Enums persistidos por ordinal — ver [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]].
+- ✅ Flyway desligado em hom/prod e `ddl-auto=validate` — ver [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]].
+- ✅ Enums persistidos por ordinal — ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]].
 - ✅ Nomes de FK gerados automaticamente pelo Hibernate na V1 (ex.: `FKel0cjj6...`), indicando que o script inicial foi exportado de um schema criado pelo ORM.

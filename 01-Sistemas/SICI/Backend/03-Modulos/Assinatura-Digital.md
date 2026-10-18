@@ -36,7 +36,7 @@ sources:
 
 # Assinatura eletrônica de OS
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/07-Integracoes/Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
 
 > ✅ É uma **assinatura eletrônica simples** controlada pela aplicação: o login do usuário autenticado é comparado com o SUBCI titular ou o substituto vigente. Não há certificado digital, ICP-Brasil nem assinatura criptográfica do PDF.
 
@@ -89,7 +89,7 @@ Segredo do HMAC: propriedade `integra.verify.secret`, injetada por `VerifyCodePr
 - recalcula o HMAC;
 - informa se a OS foi **cancelada** depois de assinada.
 
-🔶 O comentário em `AssinaturaProperties` indica que a URL de validação aponta para uma página do frontend. O endpoint de backend `/assinaturas/validacao` **exige autenticação** (não está no `permitAll`). Se o QR Code é lido por terceiros, a validação pública não funciona só com este backend. Ver [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]].
+🔶 O comentário em `AssinaturaProperties` indica que a URL de validação aponta para uma página do frontend. O endpoint de backend `/assinaturas/validacao` **exige autenticação** (não está no `permitAll`). Se o QR Code é lido por terceiros, a validação pública não funciona só com este backend. Ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
 
 ## Pontos de atenção
 | # | Achado | Evidência | Status |

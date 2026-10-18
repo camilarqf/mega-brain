@@ -12,5 +12,5 @@ Este vault é uma base de conhecimento persistente em Markdown (Obsidian).
 - Não alterar código-fonte como consequência de atividades de documentação.
 - Nunca copiar credenciais, segredos, dados pessoais ou material institucional para destinos externos não autorizados.
 - Não executar `git add`, `commit`, `push`, `reset` ou rebase automaticamente; solicitar confirmação e mostrar o diff.
-- Ao concluir cada lote, atualizar `Registro-de-Analise.md`, `Pendencias.md` e o índice, indicando o próximo passo exato.
+- Ao concluir cada lote, atualizar `<Sistema>-<Componente>-Registro-de-Analise.md`, `<Sistema>-<Componente>-Pendencias.md` e o índice, indicando o próximo passo exato.
 - Consultar `BRAIN-RULES.md` para convenções adicionais.

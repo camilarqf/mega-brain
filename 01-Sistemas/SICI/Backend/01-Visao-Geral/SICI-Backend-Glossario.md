@@ -15,7 +15,7 @@ tags:
 
 # Glossário
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 > ✅ = termo e uso confirmados no código · 🔶 = expansão da sigla inferida (o código não define) · ❓ = significado não identificado.
 
@@ -34,7 +34,7 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 | **Fase / Descrição de fase** | Etapas da ação (planejamento, execução etc.) com datas e duração na OS | ✅ | `Fase`, `FaseOrdemServico`, `DescricaoFaseAcao` |
 | **Prorrogação** | OS que estende prazo de uma fase de uma OS de abertura assinada | ✅ | `ProrrogacaoOrdemServico`, `CriarProrrogacaoOrdemServico` |
 | **SUBCI** | Papel/perfil do titular que assina as OS; tem substitutos com vigência | ✅ uso / 🔶 expansão "Subcontrolador(ia) de Controle Interno" | `Subci`, `SubciSubstituto`, role `ROLE_SUBCI` |
-| **UAI** | Unidade de Auditoria Interna; sua sigla compõe o número oficial da OS. ⚠️ Apesar do nome do método, o sequencial é calculado só **por ano** (ver [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]]) | ✅ | `UnidadeAuditoriaInterna`, `NumeracaoRepositoryPort.obterProximoSequencialPorUaiEAno`, `NumeracaoRepository.findMaxSequencialByAno` |
+| **UAI** | Unidade de Auditoria Interna; sua sigla compõe o número oficial da OS. ⚠️ Apesar do nome do método, o sequencial é calculado só **por ano** (ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]) | ✅ | `UnidadeAuditoriaInterna`, `NumeracaoRepositoryPort.obterProximoSequencialPorUaiEAno`, `NumeracaoRepository.findMaxSequencialByAno` |
 | **Unidade auditada** | Órgão/unidade objeto da ação | ✅ | `UnidadeAuditada` |
 | **Área executora** | Área da UAI que executa a ação | ✅ | `AreaExecutora`, `ListarAreaExecPorAuditInterna` |
 | **PPA** | Programa de governo e objetivos associados à ação | ✅ uso / 🔶 expansão "Plano Plurianual" | `ProgramaGoverno`, `ObjetivosPPA` |
@@ -42,4 +42,4 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 | **Código verificador** | HMAC-SHA256 que permite validar um documento assinado | ✅ | `application/utils/VerifyCode`, `/assinaturas/validacao` |
 | **RP, RPM, RM** | Marcos da situação da ação (`RP_EMITIDO`, `RPM_EMITIDO`, `FINALIZADO_COM_RM`) | ✅ uso / ❓ expansão (relatório preliminar / de monitoramento?) | `ESituacao` |
 
-Siglas a confirmar com o time estão listadas em [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]].
+Siglas a confirmar com o time estão listadas em [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].

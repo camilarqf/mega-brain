@@ -25,7 +25,7 @@ sources:
 
 # Auditores, coordenadores e perfis
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]]
 
 > O **auditor** é o usuário do sistema: o login no Keycloak (`preferred_username`) precisa bater com `TB_AUDITOR.DS_LOGIN` de um auditor **ativo**. Os **perfis** do auditor (`TB_AUDITOR_PERFIL`) viram as roles da aplicação.
 
@@ -43,7 +43,7 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 | GET | `/coordenador/listar-nao-relacionados/{acaoControleId}` | — | candidatos |
 
 ## Perfis → roles ✅
-`JwtAuthenticationConverterCustom`: o nome de cada perfil vai para maiúsculas, espaços viram `_`, e recebe o prefixo `ROLE_`. Roles usadas em `@PreAuthorize`: **SUBCI**, **COORDENADOR**, **DIRETOR**, **AUDITOR**. Detalhes em [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
+`JwtAuthenticationConverterCustom`: o nome de cada perfil vai para maiúsculas, espaços viram `_`, e recebe o prefixo `ROLE_`. Roles usadas em `@PreAuthorize`: **SUBCI**, **COORDENADOR**, **DIRETOR**, **AUDITOR**. Detalhes em [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
 
 ## Vincular perfis — `AtualizarPerfisAuditorUseCase` ✅
 - Substitui **toda** a lista de perfis do auditor pelos ids informados (`perfilRepository.findAllById`).

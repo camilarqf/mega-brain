@@ -24,7 +24,7 @@ sources:
 
 # Cadastros auxiliares (somente leitura)
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/02-Dominio/Banco-e-Migrations|Banco-e-Migrations]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
 
 > Tabelas de referência populadas por **seeders** (V2, V55 — não lidos) e migrations. A API só **consulta** esses dados: não há endpoints de escrita. Nenhum endpoint tem `@PreAuthorize`.
 

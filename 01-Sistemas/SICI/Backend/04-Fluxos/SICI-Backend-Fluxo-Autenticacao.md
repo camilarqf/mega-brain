@@ -27,7 +27,7 @@ sources:
 
 # Fluxo — autenticação e autorização
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/07-Integracoes/Integracoes-Externas|Integracoes-Externas]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]]
 
 ## 1. Login (proxy para o Keycloak) ✅
 
@@ -74,7 +74,7 @@ flowchart TD
 ```
 
 - ✅ As roles vêm **do banco a cada requisição**, não do token. Mudar perfis tem efeito imediato.
-- ✅ `ROLE_SUPER_USUARIO` não aparece em **nenhum** `@PreAuthorize`. O super-usuário passa na autenticação mesmo sem cadastro em `TB_AUDITOR`, mas leva 403 em todos os endpoints com role. Na prática, acessa só os endpoints sem anotação, que são a maioria (ver [[01-Sistemas/SICI/Backend/05-API/Catalogo-de-Endpoints|Catalogo-de-Endpoints]]).
+- ✅ `ROLE_SUPER_USUARIO` não aparece em **nenhum** `@PreAuthorize`. O super-usuário passa na autenticação mesmo sem cadastro em `TB_AUDITOR`, mas leva 403 em todos os endpoints com role. Na prática, acessa só os endpoints sem anotação, que são a maioria (ver [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]]).
 - ✅ Assinar OS **não depende de role**: depende de o login ser o do SUBCI titular ou do substituto vigente ([[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]]).
 
 ## 3. Conta e sessão ✅

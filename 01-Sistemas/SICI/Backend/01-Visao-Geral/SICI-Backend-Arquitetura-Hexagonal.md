@@ -18,7 +18,7 @@ sources:
 
 # Arquitetura (hexagonal / ports & adapters)
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 ## Camadas ✅
 Pacote raiz: `br.gov.df.cg.sici`
@@ -65,7 +65,7 @@ Evidências: `api/acaoControle/AcaoControleController.java` (depende de `AcaoCon
 | Classes vazias de esqueleto | `infrastructure/external/ExternalClass`, `infrastructure/exception/advice/AdviceClass`, `infrastructure/exception/error/ErrorClass` |
 | Camada de serviço + use case redundantes | `XxxService`/`XxxServiceImpl` muitas vezes só delega para use cases |
 
-Detalhamento e priorização em [[01-Sistemas/SICI/Backend/08-Qualidade/Debitos-Tecnicos|Debitos-Tecnicos]].
+Detalhamento e priorização em [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 
 ## Módulos funcionais
 🔶 Agrupamento derivado dos subpacotes de `api`, `application/usecase` e `domain/port/in`:

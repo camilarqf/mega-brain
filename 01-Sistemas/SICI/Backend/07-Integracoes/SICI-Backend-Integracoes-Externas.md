@@ -19,7 +19,7 @@ sources:
 
 # Integrações externas
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 > Endereços dos serviços **omitidos** de propósito; só os nomes das propriedades são registrados.
 
@@ -43,7 +43,7 @@ Não foram encontrados mensageria, e-mail, jobs agendados nem outras APIs.
 Pontos de atenção:
 - ⚠️ **JSON montado à mão**: barras invertidas (`\`), tabulações e outros caracteres de controle no HTML (vindos de campos livres como observação, justificativa ou artigos) não são escapados. 🔶 Podem gerar JSON inválido e falha na geração do PDF.
 - 🔶 Sem timeout explícito nem circuit breaker: a lentidão do serviço externo prende a transação de assinatura (ver [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]).
-- ❓ O serviço de PDF (tecnologia, dono, SLA) não aparece no repositório — ver [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]].
+- ❓ O serviço de PDF (tecnologia, dono, SLA) não aparece no repositório — ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
 
 ## Keycloak ✅
 | Uso | Classe | Detalhe |
@@ -54,4 +54,4 @@ Pontos de atenção:
 | Health | `KeycloakHealthIndicator` | GET `/.well-known/openid-configuration` derivado do token-uri |
 
 Timeouts: connect 5 s, read 10 s (`keycloak.auth.connect-timeout-ms`, `read-timeout-ms`). Testado por `KeycloakAuthAdapterTest` (5 testes).
-Fluxo completo e riscos: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Autenticacao|Fluxo-Autenticacao]], [[01-Sistemas/SICI/Backend/06-Seguranca/Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
+Fluxo completo e riscos: [[01-Sistemas/SICI/Backend/04-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].

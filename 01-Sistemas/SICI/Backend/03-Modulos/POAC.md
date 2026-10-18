@@ -20,7 +20,7 @@ sources:
 
 # POAC
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Glossario|Glossario]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]]
 
 > Plano anual que agrupa as ações de controle (🔶 provável "Plano Operacional Anual de Controle"). Ligação: `TB_ACAO_CONTROLE.ID_POAC` (V24).
 
@@ -39,4 +39,4 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 - `CriarPoac` só monta e salva: **não valida** datas (início ≤ fim), unicidade por ano, nem coerência entre ano e datas.
 - Não há endpoints de atualização ou exclusão de POAC.
 - ⚠️ Qualquer usuário autenticado pode cadastrar um POAC.
-- 🔶 `PoacServiceImpl` importa `infrastructure` (desvio de camada listado em [[01-Sistemas/SICI/Backend/01-Visao-Geral/Arquitetura-Hexagonal|Arquitetura-Hexagonal]]).
+- 🔶 `PoacServiceImpl` importa `infrastructure` (desvio de camada listado em [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Arquitetura-Hexagonal|Arquitetura-Hexagonal]]).

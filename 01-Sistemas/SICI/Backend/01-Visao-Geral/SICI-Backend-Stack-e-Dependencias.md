@@ -19,7 +19,7 @@ sources:
 
 # Stack e dependências
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/Arquitetura-Hexagonal|Arquitetura-Hexagonal]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Arquitetura-Hexagonal|Arquitetura-Hexagonal]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 ## Núcleo ✅
 | Item | Versão / valor | Evidência |
@@ -47,7 +47,7 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 
 ## Observações
 - 🔶 `spring-boot-starter-cache` e `-aop` estão declarados, mas não foram encontrados `@Cacheable`, `@EnableCaching` nem aspectos próprios na varredura inicial — possivelmente não utilizados. Confirmar no lote 6.
-- 🔶 `hibernate-core` fixado em 6.2.3 enquanto o Boot 3.3 gerencia uma versão mais nova (6.5.x) → risco de incompatibilidade. Ver [[01-Sistemas/SICI/Backend/08-Qualidade/Debitos-Tecnicos|Debitos-Tecnicos]].
+- 🔶 `hibernate-core` fixado em 6.2.3 enquanto o Boot 3.3 gerencia uma versão mais nova (6.5.x) → risco de incompatibilidade. Ver [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - ✅ Testcontainers usa **PostgreSQL**, mas o banco da aplicação é **SQL Server** (`application-*.properties` → `SQLServerDriver`).
 - ✅ Dialeto configurado: `SQLServer2012Dialect` (obsoleto no Hibernate 6).
 
@@ -57,5 +57,5 @@ Fonte: `.docker/Dockerfile`
 - Build: `mvn -Dmaven.test.skip=true -P SPRING_PROFILES_ACTIVE package` — **testes são pulados** no build da imagem.
 - Timezone do container: `America/Sao_Paulo`.
 - `HEALTHCHECK` via `curl` em `/healthcheck` na porta 8080.
-- 🔶 O argumento `-P SPRING_PROFILES_ACTIVE` é passado como **texto literal** (sem `${}`), portanto não ativa nenhum profile Maven existente; o profile efetivo dependerá do `activeByDefault` (`desenvolvimento`) e/ou da variável de ambiente em runtime. Ver [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]].
+- 🔶 O argumento `-P SPRING_PROFILES_ACTIVE` é passado como **texto literal** (sem `${}`), portanto não ativa nenhum profile Maven existente; o profile efetivo dependerá do `activeByDefault` (`desenvolvimento`) e/ou da variável de ambiente em runtime. Ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
 - CI/CD: pipelines Jenkins em `.jenkins-pipelines/` (sandbox, staging, prod) com arquivo de parâmetros de deployment (cluster, réplicas, memória, healthcheck). Conteúdo de variáveis não registrado.

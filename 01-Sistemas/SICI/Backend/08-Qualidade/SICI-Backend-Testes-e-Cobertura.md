@@ -1,5 +1,5 @@
 ---
-type: reference
+type: quality
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -19,7 +19,7 @@ sources:
 
 # Testes e cobertura
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/08-Qualidade/Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Stack-e-Dependencias|Stack-e-Dependencias]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]]
 
 ## Inventário ✅
 - **31 classes** em `src/test` (incluindo `TestSiciApplication`, um runner com Testcontainers) e **64 `@Test`**.

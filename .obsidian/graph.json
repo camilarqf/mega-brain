@@ -1,22 +1,100 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "[type:system] OR [type:index]",
+      "color": {
+        "a": 1,
+        "rgb": 12863231
+      }
+    },
+    {
+      "query": "[type:architecture] OR [type:decision]",
+      "color": {
+        "a": 1,
+        "rgb": 43775
+      }
+    },
+    {
+      "query": "[type:module]",
+      "color": {
+        "a": 1,
+        "rgb": 16746496
+      }
+    },
+    {
+      "query": "[type:flow]",
+      "color": {
+        "a": 1,
+        "rgb": 3800852
+      }
+    },
+    {
+      "query": "[type:business-rule]",
+      "color": {
+        "a": 1,
+        "rgb": 16768256
+      }
+    },
+    {
+      "query": "[type:integration] OR [type:api]",
+      "color": {
+        "a": 1,
+        "rgb": 62975
+      }
+    },
+    {
+      "query": "[type:security] OR [type:technical-debt]",
+      "color": {
+        "a": 1,
+        "rgb": 16728244
+      }
+    },
+    {
+      "query": "[type:reference] OR [type:analysis-log] OR [type:repository]",
+      "color": {
+        "a": 1,
+        "rgb": 13161215
+      }
+    },
+    {
+      "query": "[type:domain]",
+      "color": {
+        "a": 1,
+        "rgb": 4286975
+      }
+    },
+    {
+      "query": "[type:persistence]",
+      "color": {
+        "a": 1,
+        "rgb": 1656540
+      }
+    },
+    {
+      "query": "[type:quality]",
+      "color": {
+        "a": 1,
+        "rgb": 16738740
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
+  "nodeSizeMultiplier": 1.30706944876985,
+  "lineSizeMultiplier": 0.72108377452507,
+  "collapse-forces": false,
   "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "repelStrength": 11.9505047215891,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.7132754626224417,
-  "close": true
+  "linkDistance": 219,
+  "scale": 0.2588386562181467,
+  "close": false
 }

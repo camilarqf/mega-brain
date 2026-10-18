@@ -22,7 +22,7 @@ sources:
 
 # Ordem de Serviço (OS de Ação de Controle)
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]]
 
 > Uma OS formaliza um ato sobre uma [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]]: abertura, designação ou exclusão de membros, prorrogação de fases, substituição de coordenador ou cancelamento. A OS só produz efeito sobre equipe e situação da ação **quando é assinada** (ver "Efeitos na assinatura").
 
@@ -53,7 +53,7 @@ Fluxo (método anotado com `@Transactional`):
 2. Carrega a ação de controle e o `TipoOrdemServico` (`ResourceNotFoundException` se não existirem) e as OS já existentes da ação.
 3. `validarPermissaoSalvarOrdemServico`: CANCELAMENTO exige SUBCI, COORDENADOR ou DIRETOR; os demais modelos também aceitam AUDITOR.
 4. Resolve o coordenador: em SUBSTITUICAO é o `coordSubstituto`; nos demais, o `coordenador` do request.
-5. `OrdemServico.validarCriacao` → abertura única, designação/exclusão sem coordenador e membros juntos, coordenador obrigatório na abertura (ver [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]]).
+5. `OrdemServico.validarCriacao` → abertura única, designação/exclusão sem coordenador e membros juntos, coordenador obrigatório na abertura (ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]).
 6. SUBSTITUICAO: `SubstituirCoordenador.verificarSubstituicao` exige um coordenador ativo na ação e que o coordenador atual informado esteja vinculado a uma OS da ação.
 7. Cria a OS com status **CRIADA** e `dtCriacao = now()`.
 8. Vínculos (todos **pendentes** até a assinatura):
@@ -87,7 +87,7 @@ Em todos os casos: status → ASSINADA, numeração oficial, PDF com QR Code e c
 - Ao final, `AtualizarDatasAuditorOrdemServico` regrava as datas de designação/exclusão do request.
 
 ## Mudança de status — `AlterarStatusOrdemServico` ✅
-- Delegação direta para `OrdemServico.alterarStatusOs` (máquina de estados de [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]]).
+- Delegação direta para `OrdemServico.alterarStatusOs` (máquina de estados de [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]]).
 - Contém um `if` vazio (tipo 1 + status 4) sem efeito.
 - ⚠️ Não há regra de quem pode aplicar cada transição: qualquer um dos 4 perfis pode enviar `status = ASSINADA` para uma OS ENVIADA. A OS fica **ASSINADA sem documento, assinatura nem numeração**, e isso satisfaz as checagens baseadas em `isAssinada()`, como a pré-condição de prorrogação.
 
@@ -118,4 +118,4 @@ Em todos os casos: status → ASSINADA, numeração oficial, PDF com QR Code e c
 | 7 | `validar-data-prorrogacao` → `NullPointerException` se a fase não tiver data vigente | `novaDataFim.isAfter(dataVigente)` | 🔶 |
 | 8 | `SUPER_USUARIO` não aparece em nenhum `hasAnyRole`, então o bypass só acessa endpoints sem `@PreAuthorize` | `JwtAuthenticationConverterCustom`; grep de `SUPER_USUARIO` | ✅ (detalhar no lote 6) |
 
-Registradas também em [[01-Sistemas/SICI/Backend/99-Controle/Pendencias|Pendencias]] e, depois, em [[01-Sistemas/SICI/Backend/08-Qualidade/Debitos-Tecnicos|Debitos-Tecnicos]].
+Registradas também em [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]] e, depois, em [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].

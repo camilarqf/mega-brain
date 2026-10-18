@@ -21,7 +21,7 @@ sources:
 
 # Ação de Controle
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]], [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 > Unidade de planejamento do controle interno: um trabalho de auditoria, consultoria ou inspeção de um ano, ligado a um POAC, a uma UAI e área executora, às unidades auditadas e ao programa/objetivos do PPA. Todas as [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|OS]] nascem a partir dela.
 
@@ -40,7 +40,7 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Rela
 ### Criação — `CriarAcaoControle.salvar`
 - **Acumula erros** e lança `MultiplasValidacoesException` com a lista: UAI, área executora, programa de governo, objetivos PPA e unidades auditadas inexistentes.
 - Objetivos PPA: não aceita ids duplicados e exige que **todos pertençam ao programa de governo** informado.
-- Tipo × natureza validado no construtor do domínio (`AcaoControle` → `validarNaturezaAcaoControle`) — ver [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]].
+- Tipo × natureza validado no construtor do domínio (`AcaoControle` → `validarNaturezaAcaoControle`) — ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]].
 - **Código da ação**: formato `SSSSAAAA` (sequencial com 4 dígitos + ano com 4 dígitos).
   - `AcaoControleRepository.countByAnoCadastro(ano)` → apesar do nome, retorna `MAX(codigo)` onde `codigo % 10000 = ano`;
   - `AcaoControle.gerarCodigo`: `seq = max / 10000 + 1`; `codigo = parseInt("%04d%04d")`.
@@ -69,4 +69,4 @@ Só muda automaticamente na assinatura da ABERTURA → `OSI_EMITIDA` ([[01-Siste
 ## Observações
 - ✅ `AcaoControleRepositoryAdapter.buscarPorId` lança `ResourceNotFoundException`, mas vários chamadores testam `== null`: esses testes nunca são verdadeiros.
 - ✅ A join column de unidades auditadas chama-se `ID_ACAO_CONTROLE_UNIDADE_AUDITADA`, mas guarda o id da **ação**, e a de naturezas `ID_ACAO_CONTROLE_NATUREZA`. Os nomes confundem.
-- ✅ A entidade usa `@Enumerated(ORDINAL)` para tipo, naturezas, situação e classificação — ver [[01-Sistemas/SICI/Backend/02-Dominio/Enums-e-Estados|Enums-e-Estados]].
+- ✅ A entidade usa `@Enumerated(ORDINAL)` para tipo, naturezas, situação e classificação — ver [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]].

@@ -21,7 +21,7 @@ sources:
 
 # Segurança e autorização
 
-Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Autenticacao|Fluxo-Autenticacao]] · Relacionado: [[01-Sistemas/SICI/Backend/05-API/Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/08-Qualidade/Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]] · Relacionado: [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 > Análise **estática** do código. Não houve teste de intrusão nem execução da aplicação. Nenhum segredo foi lido ou registrado.
 
@@ -37,7 +37,7 @@ Voltar: [[01-Sistemas/SICI/Backend/00-Backend-Index|Índice do Backend]] · Flux
 | Handlers | `CustomAuthenticationEntryPoint` (401 JSON, distingue token expirado), `CustomAccessDeniedHandler` (403 JSON) |
 
 ## Matriz de autorização ✅
-Totais: **61 endpoints** (`@*Mapping`). **14** têm restrição de role: 12 por `@PreAuthorize` no método e 2 por `@PreAuthorize` na classe (`AuditorPerfilController`, `AuditorPerfilConsultaController`). **1** é público (`/auth/login`). Os **46** restantes exigem só um token válido de auditor ativo (ou super-usuário). Lista completa em [[01-Sistemas/SICI/Backend/05-API/Catalogo-de-Endpoints|Catalogo-de-Endpoints]].
+Totais: **61 endpoints** (`@*Mapping`). **14** têm restrição de role: 12 por `@PreAuthorize` no método e 2 por `@PreAuthorize` na classe (`AuditorPerfilController`, `AuditorPerfilConsultaController`). **1** é público (`/auth/login`). Os **46** restantes exigem só um token válido de auditor ativo (ou super-usuário). Lista completa em [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]].
 
 | Role | Pode (exclusivo ou compartilhado) |
 |---|---|
@@ -56,7 +56,7 @@ Totais: **61 endpoints** (`@*Mapping`). **14** têm restrição de role: 12 por 
 | S1 | 🔴 Crítica | **Escalada para assinante**: qualquer auditor autenticado se cadastra como SUBCI titular ou substituto e passa a assinar OS oficiais | `SubciController` sem `@PreAuthorize`; `AssinarOrdemServico.resolverAssinanteAutorizado` — [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]] | ✅ |
 | S2 | 🔴 Crítica | **Segredos versionados**: senha de banco, segredo do HMAC (`integra.verify.secret`) e lista de super-usuários em `application-*.properties` no Git, em todos os ambientes | `git ls-files`; classificação literal/placeholder feita sem exibir valores | ✅ |
 | S3 | 🟠 Alta | Status **ASSINADA sem assinatura** via `PUT /alterarStatusOs` (OS e OS genérica) | `AlterarStatusOrdemServico`, `EStatusOrdemServico` — [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]] | ✅ |
-| S4 | 🟠 Alta | 46 endpoints sem controle de perfil, incluindo escrita e exclusão (ex.: excluir OS genérica assinada) | [[01-Sistemas/SICI/Backend/05-API/Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] | ✅ |
+| S4 | 🟠 Alta | 46 endpoints sem controle de perfil, incluindo escrita e exclusão (ex.: excluir OS genérica assinada) | [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] | ✅ |
 | S5 | 🟠 Alta | Validação do QR Code sempre "válido"; não verifica integridade nem cancelamento | `AssinaturaServiceImpl.validarPorCodigo` — [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]] | ✅ |
 | S6 | 🟡 Média | **IDOR** em downloads de PDF (`/assinaturas/{id}/download*`) e consultas por id: sem checagem de vínculo com a ação | `AssinaturaController` | ✅ |
 | S7 | 🟡 Média | CORS `*` | `SecurityConfig.corsConfigurationSource` | ✅ (mitigado por Bearer, sem cookies) |

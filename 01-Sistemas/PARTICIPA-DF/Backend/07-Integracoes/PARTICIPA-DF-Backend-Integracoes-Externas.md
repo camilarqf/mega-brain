@@ -91,7 +91,7 @@ Projetos de cliente e arquivos em `sources`; configuração apenas por nome. Com
 
 ### 5. Serviço de PDF
 - ✅ `ConvertHtmlToPDFHandler`: `POST html-to-pdf/generate` com `{"HtmlString": "..."}`; falha de status → notificação "Ocorreu um erro ao tentar gerar o arquivo PDF". Usado nos PDFs de manifestação e pedido.
-- 🔶 O contrato (`HtmlString`) é o mesmo do `Servico-de-PDF` do SICI: pode ser o mesmo serviço, não confirmado (ver hipóteses no [[Mapa-de-Integracoes|Mapa]]).
+- ✅ O contrato (`HtmlString`) é o mesmo do SICI e do SCI; o usuário informou em 2026-10-19 que é o mesmo serviço (ID único `Servico-HtmlToPdf`; ver [[Mapa-de-Integracoes|Mapa]]).
 
 ### 6. Mensageria (RabbitMQ)
 | Canal | Papel do Participa-DF | Evento | Tratamento |

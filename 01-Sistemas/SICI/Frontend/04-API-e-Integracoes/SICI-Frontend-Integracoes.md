@@ -47,7 +47,7 @@ Arquivos em `sources`; lista completa de chamadas em [[01-Sistemas/SICI/Frontend
 - **Outros serviços externos**: nenhum cliente de analytics, mapas, e-mail ou outro serviço de terceiros foi encontrado no código.
 
 ## Inferências e limitações
-- 🔶 `Servico-de-PDF` e `Keycloak` são consumidos **pelo backend**; o frontend não os conhece.
+- 🔶 `Servico-HtmlToPdf` e `Keycloak` são consumidos **pelo backend**; o frontend não os conhece.
 - Falhas: não há *retry* nem fila; erros HTTP viram toasts. Em `401` o usuário é levado ao login.
 
 ## Relacionamentos

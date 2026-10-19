@@ -54,7 +54,7 @@ Arquivos em `sources`; contrato do backend em [[01-Sistemas/SICI/Backend/05-API/
 - 🔶 **Este frontend é o destino provável do QR Code** (`assinatura.url.validacao` do backend, parâmetro `?c=<código>`), mas a página lê `?codigo=`, não `?c=`: se o QR Code envia `c`, o código **não** será preenchido automaticamente. O valor real da propriedade não foi lido (configuração omitida). Fecha parcialmente a hipótese do [[Mapa-de-Integracoes|Mapa de integrações]]; confirmar.
 - 🔶 `PdfHashService.validarAssinatura` usa `window.location.origin + '/validacao'` e **ignora o *base href***; em ambientes com prefixo (`/integra/`, `/integra-dev/`) a aba aberta não resolveria para a aplicação. Não executado.
 - 🔶 Como o backend sempre responde "válido" (S5), a tela não distingue documento adulterado.
-- O código extraído do PDF depende do texto do PDF gerado pelo `Servico-de-PDF`; mudança no rótulo quebra a extração.
+- O código extraído do PDF depende do texto do PDF gerado pelo `Servico-HtmlToPdf`; mudança no rótulo quebra a extração.
 
 ## Relacionamentos
 - [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]] · [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]] · [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Integracoes|Integracoes]]

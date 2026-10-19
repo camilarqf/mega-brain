@@ -98,7 +98,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] Qual é o sistema correcional/COACI que publica `denuncia-aceita/recusada` e consome `denuncia-registrada`?
 - [ ] O processo SEI de 3ª instância precisa ser público com o PDF do pedido?
 - [ ] Os e-mails perdidos (circuito aberto, 400) são reenviados? Há fila de reenvio?
-- [ ] Os serviços `Servico-HtmlToPdf` (PARTICIPA-DF) e `Servico-de-PDF` (SICI) são o mesmo serviço?
+- [x] Os serviços de PDF do PARTICIPA-DF e do SICI são o mesmo serviço? Sim, informado pelo usuário em 2026-10-19 (ID único `Servico-HtmlToPdf`). Falta identificar o dono.
 - [ ] Os códigos de unidade fixos (`01005`, `01007`) estão documentados no banco?
 
 ## Perguntas surgidas no lote 8

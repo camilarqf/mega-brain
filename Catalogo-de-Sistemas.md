@@ -6,6 +6,7 @@
 |---|---|---|---|---|
 | `SICI` | SICI (validar permissão antes de publicar) | `sici-backend`, `sici-frontend` | Backend analisado (commit `1871e32`; cobertura parcial em 2 notas); frontend analisado por leitura estática (commit `418642f`; lotes 0 a 5, cobertura parcial) | [[01-Sistemas/SICI/SICI-Index\|SICI-Index]] · [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index\|Frontend SICI]] |
 | `PARTICIPA-DF` | Participa DF (nome do app no pipeline; namespace `OuvDF`; nome oficial a validar; validar permissão antes de publicar) | `participa-df-backend`, `participa-df-frontend` (Cidadão), `participa-df-ouv-frontend` (Ouvidoria), `participa-df-sic-frontend` (SIC); 3 de 3 front-ends identificados | Backend analisado (commit `4901ad5`; lotes 0 a 8 concluídos, cobertura parcial); frontend `participa-df-frontend` analisado (commit `d250804`; lotes 0 a 5, cobertura parcial); frontend `participa-df-ouv-frontend` (AngularJS, Ouvidoria) analisado (commit `9d8ecdb`; lotes 0 a 5, cobertura parcial); frontend `participa-df-sic-frontend` (AngularJS, SIC) em análise (commit `5518a81`; lotes 0 a 5, cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index\|PARTICIPA-DF-Index]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/PARTICIPA-DF-Frontend-Ouvidoria-Index\|Frontend Ouvidoria]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index\|Frontend SIC]] |
+| `KEYCLOAK-CGDF` | Keycloak da CGDF (imagem, extensão Java de autenticação via IBS e tema de login; ID escolhido pelo usuário) | `keycloak` | Analisado (commit `1755591`; lotes 0 a 3 concluídos, cobertura parcial: tema só por inventário) | [[01-Sistemas/KEYCLOAK-CGDF/KEYCLOAK-CGDF-Index\|KEYCLOAK-CGDF-Index]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/KEYCLOAK-CGDF-Servico-Index\|Serviço Keycloak]] |
 
 ## Serviços externos (provedores)
 
@@ -13,7 +14,8 @@ Serviços consumidos pelos sistemas acima, sem repositório próprio neste cofre
 
 | ID | Descrição | Documentação |
 |---|---|---|
-| `Keycloak` | Provedor de identidade (OIDC) usado pelo backend do SICI. | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
+| `Keycloak` | Provedor de identidade (OIDC) usado pelo backend do SICI. Informado pelo usuário (sem evidência no código) que a instância é a do sistema `KEYCLOAK-CGDF`, integrada ao AD. | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
+| `IBS` | Serviço de autenticação corporativa chamado pelo SPI do `KEYCLOAK-CGDF` (`POST /auth`); dono e ambientes não identificados. | [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS\|Integração Keycloak → IBS]] |
 | `Servico-de-PDF` | Serviço de geração de PDF chamado pelo backend do SICI; tecnologia, dono e SLA não identificados. | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
 | `Iza` | Serviço de IA que sugere assunto, classificação, unidade e se o relato é denúncia; chamado pelo backend do PARTICIPA-DF; natureza e dono não identificados. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `MailService` | Serviço de envio de e-mail (API HTTP) usado pelo backend do PARTICIPA-DF. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |

@@ -20,6 +20,7 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 | `SICI` (`sici-backend`) | `Keycloak` | OIDC / JWKS (validação de JWT) | entrada (tokens) | ✅ | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
 | `SICI` (`sici-backend`) | `Keycloak` | HTTP (token endpoint e userinfo) | saída | ✅ | [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas\|Integrações externas do SICI Backend]] |
 | `SICI` (`sici-frontend`) | `SICI` (`sici-backend`) | HTTP JSON (REST), `Bearer` JWT; 52 caminhos | saída | ✅ (sem comparação campo a campo dos DTOs) | [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Integracoes\|Integrações do Frontend SICI]] · [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API\|Chamadas de API]] |
+| `KEYCLOAK-CGDF` (`keycloak`) | `IBS` | HTTP POST JSON (`/auth`, Direct Grant) | saída | ✅ cliente no código; ❓ dono do provedor e consumidores do fluxo | [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS\|Integração Keycloak → IBS]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `Iza` | HTTP POST JSON (4 operações `predict-*`) | saída | ✅ (natureza do provedor ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `MailService` | HTTP POST JSON e multipart | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `PeoplesCheck` | HTTP GET/POST, chave de API | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
@@ -46,6 +47,8 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 - 🔶 Os eventos `denuncia-registrada`, `denuncia-aceita` e `denuncia-recusada` indicam um sistema correcional/de denúncias (a mensagem cita a COACI) como contraparte do PARTICIPA-DF. Esse sistema não foi identificado e não está no catálogo.
 - 🔶 O PARTICIPA-DF expõe `v1/*` (papel `OperadorWS`) e `metro/*` a consumidores externos ainda não identificados.
 - 🔶 O backend do SICI grava no QR Code um link de validação (`assinatura.url.validacao`, parâmetro `c`). O `sici-frontend` tem a página pública `/validacao` (lê o parâmetro `codigo`, não `c`) e é o destino provável, mas o valor real da propriedade e a correspondência dos parâmetros não foram confirmados; além disso a chamada que a página faz (`GET /assinaturas/validacao`) exige token. Ver [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]].
+
+- 🔶 `KEYCLOAK-CGDF` (`keycloak`) é a instância referida pelo ID de serviço externo `Keycloak` consumido pelo SICI. Informado pelo usuário em 2026-10-18; a autenticação do SICI usa o AD, sem o componente IBS. Federação com AD e realms/clients não estão no repositório.
 
 ## Como manter
 - Toda integração nova ou alterada atualiza uma linha deste mapa e a nota canônica correspondente.

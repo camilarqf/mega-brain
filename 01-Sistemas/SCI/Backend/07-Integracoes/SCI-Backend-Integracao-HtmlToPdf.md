@@ -22,6 +22,9 @@ sources:
 
 Voltar: [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integrações externas do SCI Backend]]
 
+
+Provedor: [[01-Sistemas/Servico-HtmlToPdf/Servico/07-Integracoes/Servico-HtmlToPdf-Servico-Integracoes|Servico-HtmlToPdf]] (✅ confirmado pelo usuário).
+
 ## Visão geral
 | Consumidor | Provedor | Tecnologia | Contrato | Direção |
 |---|---|---|---|---|

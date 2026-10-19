@@ -40,6 +40,9 @@ sources:
 
 Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[Mapa-de-Integracoes|Mapa de integrações]], [[Catalogo-de-Sistemas|Catálogo (serviços externos)]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
+
+Provedor: [[01-Sistemas/Servico-HtmlToPdf/Servico/07-Integracoes/Servico-HtmlToPdf-Servico-Integracoes|Servico-HtmlToPdf]] (✅ confirmado pelo usuário).
+
 > Endereços, chaves e nomes de cabeçalho de segredo **omitidos** de propósito; só os nomes das seções de configuração são registrados.
 
 ## Visão geral

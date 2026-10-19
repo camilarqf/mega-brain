@@ -21,7 +21,7 @@ Ponto de entrada do sistema de negócio **SICI**. O sistema é composto por mais
 | Componente | Estado | Entrada |
 |---|---|---|
 | `sici-backend` | analisado (6 lotes; cobertura parcial em 2 notas) | [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] |
-| `sici-frontend` | **não analisado** | [[01-Sistemas/SICI/SICI-Repositorios|Repositórios]] |
+| `sici-frontend` | em análise (lotes 0 a 5; cobertura parcial; commit `418642f`) | [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] |
 
 Notas do sistema:
 - [[01-Sistemas/SICI/SICI-Contexto-do-Sistema|Contexto do sistema]]: visão de negócio derivada do backend.
@@ -33,11 +33,11 @@ Atalhos do backend:
 - [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendências]]
 
 ## Inferências e limitações
-- A visão integrada (fluxos de tela → API) só será consolidada depois da análise do frontend.
+- A visão integrada (fluxos de tela → API) ainda não foi consolidada em [[01-Sistemas/SICI/SICI-Contexto-do-Sistema|Contexto do sistema]]; as notas do frontend cobrem apenas o lado cliente.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Home|Home]]
 
 ## Pendências e próximo passo
-- Analisar `sici-frontend` quando autorizado (skill `documentar-sistema`) e criar `01-Sistemas/SICI/Frontend/`.
+- Ver o próximo passo exato em [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Registro-de-Analise|Registro de análise do Frontend]].
 - Responder as perguntas de [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendências]].

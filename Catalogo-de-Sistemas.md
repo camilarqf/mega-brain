@@ -4,7 +4,7 @@
 
 | ID | Sistema | Repositórios | Estado | Índice |
 |---|---|---|---|---|
-| `SICI` | SICI (validar permissão antes de publicar) | `sici-backend`, `sici-frontend` | Backend analisado (commit `1871e32`; cobertura parcial em 2 notas); frontend não analisado | [[01-Sistemas/SICI/SICI-Index\|SICI-Index]] |
+| `SICI` | SICI (validar permissão antes de publicar) | `sici-backend`, `sici-frontend` | Backend analisado (commit `1871e32`; cobertura parcial em 2 notas); frontend analisado por leitura estática (commit `418642f`; lotes 0 a 5, cobertura parcial) | [[01-Sistemas/SICI/SICI-Index\|SICI-Index]] · [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index\|Frontend SICI]] |
 | `PARTICIPA-DF` | Participa DF (nome do app no pipeline; namespace `OuvDF`; nome oficial a validar; validar permissão antes de publicar) | `participa-df-backend`, `participa-df-frontend` (Cidadão), `participa-df-ouv-frontend` (Ouvidoria), `participa-df-sic-frontend` (SIC); 3 de 3 front-ends identificados | Backend analisado (commit `4901ad5`; lotes 0 a 8 concluídos, cobertura parcial); frontend `participa-df-frontend` analisado (commit `d250804`; lotes 0 a 5, cobertura parcial); frontend `participa-df-ouv-frontend` (AngularJS, Ouvidoria) analisado (commit `9d8ecdb`; lotes 0 a 5, cobertura parcial); frontend `participa-df-sic-frontend` (AngularJS, SIC) em análise (commit `5518a81`; lotes 0 a 5, cobertura parcial) | [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index\|PARTICIPA-DF-Index]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/PARTICIPA-DF-Frontend-Ouvidoria-Index\|Frontend Ouvidoria]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index\|Frontend SIC]] |
 
 ## Serviços externos (provedores)

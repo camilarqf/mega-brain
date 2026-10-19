@@ -20,7 +20,7 @@ Voltar: [[01-Sistemas/SCI/Backend/SCI-Backend-Index|Índice do Backend]] · [[01
 ## Perguntas ao time
 | # | Pergunta | Origem |
 |---|---|---|
-| 1 | Qual é o repositório do frontend do SCI e a expansão da sigla SCI? | Lote 0 |
+| 1 | ~~Qual é o repositório do frontend do SCI~~ Respondida em 2026-10-19: `sci-frontend` (ver [[01-Sistemas/SCI/Frontend/SCI-Frontend-Index|Índice do Frontend]]). Falta a expansão da sigla SCI. | Lote 0 |
 | 2 | `src/SCI.HtmlToPdfClient` (fora da solução) duplica `SCI.HtmlToPdf.Client`; pode ser removido? Qual o papel de `Legacy/`? | Lote 0 |
 | 3 | Denúncia aceita → demanda: não há vínculo no backend. Usuário não sabe se a funcionalidade terminou (2026-10-19). Confirmar se está prevista. | Lote 4 |
 | 4 | Expansão de JAD, DODF, SIGRH, SIGGO e das siglas de recomendação (ROO, SPA, IPF, PAD, REF, DMC, TAC, PCT, RCG). | Lote 1 |

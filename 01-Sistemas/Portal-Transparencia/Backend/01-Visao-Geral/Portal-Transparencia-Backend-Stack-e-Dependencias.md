@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: completa
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - backend
@@ -41,6 +41,7 @@ Leitura de `pom.xml` (groupId `br.gov.df.transparencia`, artifactId `transparenc
 | Cache | Guava 18.0 via `GuavaCacheManager` | `cache/CacheConfig.java` |
 | Mensageria | `starter-amqp` (RabbitMQ); `json-simple 1.1.1` | `pom.xml`, `servico/mascaramento/MascaramentoAMQService.java` |
 | HTTP cliente | OkHttp 4.9.1 | `servico/comum/SendMailService.java` |
+| Storage de objetos (MinIO) | `io.minio:minio 8.5.7` declarada no `pom.xml` (adicionada na `feat/servico-minio`), mas **sem uso no código** (nenhum `import io.minio`); o acesso ao MinIO é por `RestTemplate` | `pom.xml`, `servico/comum/storage/*` |
 | Google | `google-api-client` 1.22.0 e `google-api-services-analytics v3` | `pom.xml`, `api/comum/PortalAnalyticsService.java` |
 | Observabilidade | `starter-actuator 3.0.4` (versão declarada, **incompatível com o Boot 1.3** 🔶), Prometheus `simpleclient 0.16.0`, agente New Relic (`newrelic.jar` versionado) | `pom.xml`, `config/prometheus/`, `resources/newrelic/` |
 | Plugin de build | `spring-jdbc-maven-plugin 1.2.0-SNAPSHOT` (`br.com.basis.maven`) gera `br.gov.df.transparencia.jdbc.Sql` a partir de `resources/sql` em `generate-sources` | `pom.xml` |
@@ -51,6 +52,7 @@ Leitura de `pom.xml` (groupId `br.gov.df.transparencia`, artifactId `transparenc
 ## Inferências e limitações
 - 🔶 O `starter-actuator` na versão `3.0.4` junto de Boot `1.3.0` parece erro de versão (a numeração 3.0.x é de outra linha); não foi verificado qual versão o Maven resolve.
 - 🔶 `spring-jdbc-maven-plugin` está como dependência e como plugin; sendo `SNAPSHOT` de repositório privado (`settings.xml`), o build depende desse repositório. Conteúdo de `settings.xml` não lido.
+- ✅ A dependência `io.minio:minio` está no `pom.xml` e não é importada em nenhum arquivo de `src`; é peso morto até que o storage use o cliente oficial (ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]]).
 - ❓ Não há dependência do Liquibase no `pom.xml` (ver [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Banco-e-Migrations|Banco-e-Migrations]]).
 
 ## Relacionamentos

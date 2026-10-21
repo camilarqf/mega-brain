@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - backend
@@ -14,6 +14,7 @@ tags:
   - endpoints
 sources:
   - src/main/java/br/gov/df/transparencia/api
+  - src/main/java/br/gov/df/transparencia/api/comum/StorageController.java
 ---
 # Catálogo de endpoints
 
@@ -23,10 +24,10 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-
 Listar as rotas HTTP expostas pelo `portal-transparencia-backend`, por área e controller.
 
 ## Evidências
-Extração automática (script de leitura estática) das anotações `@RequestMapping`/`@GetMapping`/`@PostMapping` em `src/main/java/br/gov/df/transparencia/api` no commit `9434e58f`, ignorando código comentado. Caminho = mapeamento de classe + de método. Conferência por contagem: 628 linhas de anotação de mapeamento no diretório, das quais 71 são de classe (70 controllers e a classe `Healthcheck`, que é `@Component`); 628 − 71 = 557, igual ao total extraído.
+Extração automática (script de leitura estática) das anotações `@RequestMapping`/`@GetMapping`/`@PostMapping` em `src/main/java/br/gov/df/transparencia/api` no commit `9434e58f`, ignorando código comentado; atualizada para `e98fcc38` com o `StorageController` (+2 rotas, +3 linhas de anotação: 631 linhas, 72 de classe, 631 − 72 = 559). Caminho = mapeamento de classe + de método. Conferência por contagem: 628 linhas de anotação de mapeamento no diretório, das quais 71 são de classe (70 controllers e a classe `Healthcheck`, que é `@Component`); 628 − 71 = 557, igual ao total extraído no commit `9434e58f`.
 
 ## Informações confirmadas
-- ✅ **557 rotas em 69 controllers com rota ativa** (`FormularioContatoController` não tem rota: o código está comentado). Verbos: `GET` 543, `POST` 9 e 5 mapeamentos **sem verbo** (`@RequestMapping` sem `method`, aceitam qualquer verbo, marcados `ANY`).
+- ✅ **559 rotas em 70 controllers com rota ativa** (`FormularioContatoController` não tem rota: o código está comentado). Verbos: `GET` 545, `POST` 9 e 5 mapeamentos **sem verbo** (`@RequestMapping` sem `method`, aceitam qualquer verbo, marcados `ANY`).
 - ✅ Todas as requisições (exceto `OPTIONS`, `/healthcheck` e `/prometheus`) exigem o cabeçalho `x-client-id` (ver segurança). Não há autenticação.
 - ✅ Filtros chegam como parâmetros de query (bean de modelo + `Pageable`: `page`, `size`, `sort`). Respostas JSON (`application/json;charset=UTF-8`), `Page`/`CustomPage` na maioria das listagens; os `*RelatorioController` devolvem **arquivo** (PDF ou CSV; ver [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Relatorios-e-Exportacao|Relatorios-e-Exportacao]]).
 - ✅ Rotas operacionais não contadas acima: `GET /prometheus` (`config/prometheus/PrometheusMetricsController`) e `/healthcheck`, que é o endpoint `health` do Actuator com id `healthcheck` (`endpoints.health.id`); a classe `api/comum/Healthcheck` é um `HealthIndicator` que **sempre retorna UP** (não consulta banco nem dependências), e o `@RequestMapping` dela não tem efeito por ser `@Component`.
@@ -37,7 +38,7 @@ Extração automática (script de leitura estática) das anotações `@RequestMa
 ### Resumo por área
 | Área | Rotas | Controllers |
 |---|---|---|
-| Comum (arquivos, cache, contato, e-mail, analytics, integração, pesquisa, textos) | 28 | 10 |
+| Comum (arquivos, cache, contato, e-mail, analytics, integração, pesquisa, storage, textos) | 30 | 11 |
 | Convênios | 22 | 2 |
 | Data de atualização | 62 | 1 |
 | Despesa | 141 | 10 |
@@ -51,7 +52,7 @@ Extração automática (script de leitura estática) das anotações `@RequestMa
 
 ## Rotas por área
 
-### Comum (arquivos, cache, contato, e-mail, analytics, integração, pesquisa, textos)
+### Comum (arquivos, cache, contato, e-mail, analytics, integração, pesquisa, storage, textos)
 
 **ArquivoController** — base `/arquivos` (3)
 
@@ -130,6 +131,13 @@ Extração automática (script de leitura estática) das anotações `@RequestMa
 | Verbo | Caminho | Método Java |
 |---|---|---|
 | GET | `/textos-consultas` | `recuperarTextosConsultas` |
+
+**StorageController** — base `/storage` (2) — adicionado em `feat/servico-minio`; incluído à mão a partir da leitura do arquivo, sem reexecutar o script de extração
+
+| Verbo | Caminho | Método Java |
+|---|---|---|
+| GET | `/storage/health` | `teste` |
+| GET | `/storage/url` | `gerarUrl` |
 
 ### Convênios
 

@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - backend
@@ -21,6 +21,8 @@ sources:
   - src/main/java/br/gov/df/transparencia/handler/ResourceExceptionHandler.java
   - src/main/java/br/gov/df/transparencia/filtro/CorsFilter.java
   - src/main/java/br/gov/df/transparencia/servico/mascaramento/MascaramentoAMQService.java
+  - src/main/java/br/gov/df/transparencia/api/comum/StorageController.java
+  - src/main/java/br/gov/df/transparencia/servico/comum/storage
 ---
 # Débitos técnicos e riscos
 
@@ -58,6 +60,7 @@ Leitura estática dos arquivos de `sources` e das demais notas deste componente.
 | 17 | 🟢 | Binários e logs no diretório do projeto: `newrelic.jar` e `.p12` versionados; `portal2016.log*`, `runtime-8081*.log` e `hs_err_pid*.log` existem na raiz (não versionados). | `git ls-files`, raiz do repositório |
 | 18 | 🟡 | O `HealthIndicator` `Healthcheck` sempre responde UP (não testa banco, RabbitMQ nem dependências); o `HEALTHCHECK` do `Dockerfile` chama `/healthcheck` e só prova que o processo responde. | `api/comum/Healthcheck.java`, `Dockerfile` |
 | 19 | 🟢 | Changelogs Liquibase presentes sem dependência/plugin Liquibase no `pom.xml` (ver [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Banco-e-Migrations|Banco-e-Migrations]]). | `resources/changelog*`, `pom.xml` |
+| 20 | 🟡 | Módulo de storage: dependência `io.minio:minio 8.5.7` sem uso; `storage.endpoint` (`hom`) sem leitura; `printStackTrace` em `StorageService`; `RestTemplate` instanciado na classe, sem timeout; `@Value` de `storage.url`/`storage.bucket` sem valor padrão (ausentes em `dev`/`test`, 🔶 risco de falha de subida); `/storage/url` devolve o host interno e não valida o nome do arquivo. | `pom.xml`, `servico/comum/storage/*`, `api/comum/StorageController.java`, `application-*.properties` |
 
 ## Inferências e limitações
 - ✅ Risco de **injeção de SQL** pela interpolação Velocity: fluxo confirmado por análise estática (item 3b); a exploração real e o privilégio do usuário de banco continuam não verificados.

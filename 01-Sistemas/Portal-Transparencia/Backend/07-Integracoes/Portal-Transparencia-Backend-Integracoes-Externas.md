@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 consumer: Portal-Transparencia
 tags:
   - portal-transparencia
@@ -23,6 +23,9 @@ sources:
   - src/main/java/br/gov/df/transparencia/api/comum/IntegracaoSistemasController.java
   - src/main/resources/application-prod.properties
   - pom.xml
+  - src/main/java/br/gov/df/transparencia/api/comum/StorageController.java
+  - src/main/java/br/gov/df/transparencia/servico/comum/storage
+  - src/main/resources/application-hom.properties
 ---
 # Integrações externas do backend
 
@@ -34,7 +37,7 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-
 Registrar as comunicações do `portal-transparencia-backend` com outros sistemas e serviços (nota canônica; consumidor = `Portal-Transparencia`).
 
 ## Evidências
-Leitura de `SendMailService`/`SendMailController`/`externalServices`, `PortalAnalyticsController`/`PortalAnalyticsService`/`GoogleAnalyticsConstantes`, `MascaramentoAMQService`, `IntegracaoSistemasController`, dos `application-*.properties` e do `pom.xml`.
+Leitura de `StorageController`, `StorageService` e `StorageUrlService` (atualização para `e98fcc38`), `SendMailService`/`SendMailController`/`externalServices`, `PortalAnalyticsController`/`PortalAnalyticsService`/`GoogleAnalyticsConstantes`, `MascaramentoAMQService`, `IntegracaoSistemasController`, dos `application-*.properties` e do `pom.xml`.
 
 ## Visão geral
 | Consumidor | Provedor | Tecnologia | Contrato | Direção |
@@ -43,6 +46,8 @@ Leitura de `SendMailService`/`SendMailController`/`externalServices`, `PortalAna
 | `Portal-Transparencia` | `Google-Analytics-API` | HTTPS, Google Analytics Core Reporting API v3, conta de serviço (`.p12`) | métricas `ga:*` dos últimos 7 dias | saída |
 | `Portal-Transparencia` | `RabbitMQ` | AMQP; exchange fanout `medida-protetiva-topic` | JSON com `expirePortal` | entrada (consumo) |
 | consumidores não identificados | `Portal-Transparencia` | HTTP GET JSON, `/integracao/*` | 8 rotas | entrada (o backend é provedor) |
+| `Portal-Transparencia` | `MinIO` | HTTP GET (`RestTemplate`), sem autenticação no código | `{storage.url}/minio/health/live` | saída |
+| `gerenciador` (🔶 informado pelo usuário; sistema não identificado) | `Portal-Transparencia` | HTTP GET, `/storage/health` e `/storage/url` | 2 rotas | entrada (o backend é provedor) |
 
 ## Informações confirmadas
 ### 1. Envio de e-mail → serviço de e-mail
@@ -64,6 +69,15 @@ Leitura de `SendMailService`/`SendMailController`/`externalServices`, `PortalAna
 - ✅ `/integracao/*` (8 rotas GET): `funcao-servidor`, `verificar-sutcs`, `consultar-servidor`, `nome-servidor`, `consultar-servidor-ativo`, `pesquisar-servidor` (por CPF, matrícula, órgão ou nome), `nota-empenho/{gestão}/{unidade}/{número}` e `listar-nl-ob/{ug}/{gestão}/{empenho}`. Sem autenticação além do cabeçalho `x-client-id`.
 - ✅ Os modelos `ServidorSciIntegracao`, `NotaEmpenhoIntegracao` e `OrdemBancariaIntegracao` e o método `recuperarServidorAtivoSci` indicam o uso por sistemas externos.
 
+### 4b. Storage de objetos (MinIO), adicionado na `feat/servico-minio` (commits até `e98fcc38`)
+- ✅ `GET /storage/health` (`StorageController` → `StorageService.health`): faz `GET` em `{storage.url}/minio/health/live` com `RestTemplate` e devolve `true` se o status for 2xx; qualquer exceção vira `false` e é impressa com `printStackTrace`. Sem timeout configurado.
+- ✅ `GET /storage/url?arquivo=` (`StorageUrlService.gerarUrlPublica`): devolve a **string** `{storage.url}/{storage.bucket}/{arquivo}`. Não consulta o MinIO, não confere se o arquivo existe e não valida nem normaliza o nome.
+- ✅ Configuração: `storage.url` e `storage.bucket` em `hom` e `prod`; `storage.endpoint` (só em `hom`) não é lida. A biblioteca `io.minio:minio 8.5.7` está no `pom.xml` e não é usada. Ver [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]].
+- ✅ Em `prod`, `storage.url` aponta para um host interno do cluster, e `/storage/url` o devolve ao chamador (⚠️ host omitido aqui).
+- 🔶 **Consumidor:** o usuário informou, em 2026-10-21, que quem consome essas rotas é o **gerenciador**. Não há evidência no código deste repositório, e o sistema não está identificado no catálogo (pendência 18).
+- 🔶 Fluxo provável (inferência): o gerenciador pede ao backend a URL pública de um arquivo e usa `health` para saber se o storage está no ar. O backend **não grava** arquivos no MinIO neste código; quem envia os objetos é ❓.
+- ❓ Se o bucket é de leitura pública (a rota se chama "url pública") e se o `x-client-id` obrigatório é suficiente para o gerenciador (pendência 19).
+
 ### 5. Banco e observabilidade (não são integrações com outro sistema)
 - ✅ SQL Server do próprio portal (ver [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Banco-e-Migrations|Banco-e-Migrations]]); métricas Prometheus em `GET /prometheus` (modelo *pull*).
 - ✅ O arquivo `newrelic/newrelic.yml` e o agente `newrelic.jar` estão no repositório, mas o `CMD` do `Dockerfile` (`java -jar`) **não** passa `-javaagent`: não há evidência de ativação na imagem (⚠️ `newrelic.yml` não foi lido por poder conter chave).
@@ -83,4 +97,5 @@ Leitura de `SendMailService`/`SendMailController`/`externalServices`, `PortalAna
 - [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integrações do PARTICIPA-DF (MailService)]]
 
 ## Pendências e próximo passo
+- Storage: identificar o `gerenciador`, confirmar a visibilidade do bucket e como os arquivos chegam ao MinIO (pendências 18 e 19).
 - Confirmar o provedor de e-mail, a vigência dos endpoints de Analytics e os consumidores de `/integracao/*`.

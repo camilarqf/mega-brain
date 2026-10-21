@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - backend
@@ -22,6 +22,8 @@ sources:
   - src/main/java/br/gov/df/transparencia/api/comum/IntegracaoSistemasController.java
   - src/main/resources/application-prod.properties
   - pom.xml
+  - src/main/java/br/gov/df/transparencia/api/comum/StorageController.java
+  - src/main/java/br/gov/df/transparencia/servico/comum/storage
 ---
 # Segurança e autorização
 
@@ -45,6 +47,7 @@ Leitura de `filtro/*`, `aop/MascaramentoAspect.java`, controllers listados em `s
 - ✅ `GET /send-email` (apesar do verbo, lê `@RequestBody` `SendMailRequest`): aciona o envio de e-mail pelo serviço externo, usando `emailDestinatario` como remetente (`from`) e `emailCidadao` como destinatário; ambos têm valor padrão institucional em `SendMailRequest`, mas a requisição pode sobrescrevê-los. Há validação (`@Valid`): e-mail bem formado, nome, assunto e conteúdo obrigatórios, conteúdo de 10 a 500 caracteres. Sem autenticação. Ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]].
 - ✅ `GET /download/arquivos/{nome_arquivo:.+}` lê `/home/PortalFiles/Arquivos/<nome>` e devolve o conteúdo; imprime o caminho em `System.out`.
 - ✅ `/integracao/*` (8 rotas GET) expõe dados de servidores (CPF → função, nome, servidor ativo, busca por nome) e de notas de empenho/ordens bancárias a outros sistemas, **sem autenticação**.
+- ✅ `GET /storage/health` e `GET /storage/url?arquivo=` (novos, `feat/servico-minio`): sem autenticação além do `x-client-id`. `/storage/url` devolve `{storage.url}/{bucket}/{arquivo}` sem validar o nome do arquivo e, em `prod`, revela o **host interno** do MinIO ao chamador. Não lê nem grava arquivo; o risco de travessia de diretório não se aplica a esta rota, que só concatena texto. `/storage/health` faz uma chamada HTTP de saída ao MinIO a cada requisição, sem cache nem timeout.
 - ✅ Credenciais e material sensível **versionados no repositório**: `META-INF/persistence.xml` (URL, usuário e senha do banco em texto), `api/comum/GoogleAnalyticsConstantes.java` (conta de serviço, perfil e senha do certificado), `resources/PortalGDF-*.p12` (certificado da conta de serviço do Google, copiado para a imagem pelo `Dockerfile`) e as chaves do `UserInterceptorFilter` comentado. Também há credenciais do RabbitMQ nos `application-<perfil>.properties` de `dev`, `hom` e `prod`.
 - ✅ Segredos de ambiente (URL do datasource e chave de API do e-mail) entram por Docker Secrets (`inject-docker-secrets-entrypoint.sh`), prática adotada recentemente (commits `chore: configura Docker Swarm Secrets`).
 - ✅ `hibernate.show_sql=true` no perfil `prod`.
@@ -55,6 +58,7 @@ Leitura de `filtro/*`, `aop/MascaramentoAspect.java`, controllers listados em `s
 - 🔶 `GET /download/arquivos/{nome:.+}` concatena o nome ao diretório; se o nome puder conter `..` depois da decodificação do Spring, haveria leitura fora do diretório. Não verificado.
 - 🔶 `GET /send-email` sem autenticação pode servir de relé de e-mail com remetente e destinatário controlados pelo chamador (limitado pelas validações de formato e de tamanho do conteúdo), a depender do serviço de e-mail (não analisado).
 - 🔶 Credenciais do banco e do RabbitMQ em repositório sugerem necessidade de rotação; o valor atual em uso não foi verificado.
+- 🔶 A decisão de expor o host interno do storage em `/storage/url` pode ser intencional (o gerenciador precisa da URL); depende de o bucket ser público e de o host ser alcançável pelo cliente (pendência 19).
 - ❓ Não se sabe se há WAF, API gateway ou rate limit na frente da aplicação (poderia mitigar CORS aberto e endpoints operacionais).
 
 ## Relacionamentos

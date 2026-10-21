@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - backend
@@ -43,7 +43,7 @@ Listagem de `src/test/java` (somente arquivos versionados), contagem de `@Test` 
 
 ## Inferências e limitações
 - 🔶 Os testes de controller verificam principalmente status e `jsonPath` contra dados reais; ficam frágeis (dependem do conteúdo do banco) e **não rodam sem acesso** ao SQL Server do perfil `test`.
-- 🔶 Cobertura estimada baixa e concentrada: **nenhum teste** para `MascaramentoAspect`/`MascaramentoService`, `SendMailService`, `PortalAnalytics*`, `CacheControl*`, `MascaramentoAMQService` nem para a maior parte dos 70 controllers (6 controllers de 70 têm teste). Sem medição (JaCoCo não configurado).
+- 🔶 Cobertura estimada baixa e concentrada: **nenhum teste** para `MascaramentoAspect`/`MascaramentoService`, `SendMailService`, `PortalAnalytics*`, `CacheControl*`, `MascaramentoAMQService` nem para o módulo de storage (`StorageController`, `StorageService`, `StorageUrlService`, novos) nem para a maior parte dos 71 controllers (6 controllers de 71 têm teste). Sem medição (JaCoCo não configurado).
 - ❓ Resultado atual da suíte (verde/vermelho) não verificado.
 
 ## Relacionamentos

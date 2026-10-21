@@ -5,8 +5,8 @@ component: Backend
 repository: portal-transparencia-backend
 status: pendente
 coverage: parcial
-analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-19
+analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
+updated: 2026-10-21
 tags:
   - portal-transparencia
   - pendencias
@@ -36,6 +36,9 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-
 | 15 | `/integracao/*` precisa devolver CPF e dados de servidores sem autenticação? Quem usa? | Lote 8 |
 | 16 | Qual o privilégio do usuário de banco da aplicação (somente leitura?) e há WAF na frente, para dimensionar o impacto da injeção de SQL? | Lote 8 |
 | 17 | Qual a semântica de `NR_NE_ORIGINAL = ''`, do evento contábil `400091` e das colunas de restos a pagar (processados × não processados)? | Lote 8 |
+| 18 | Qual é o sistema `gerenciador` que consome `/storage/health` e `/storage/url` (informado pelo usuário em 2026-10-21, sem evidência no código)? Qual o ID e o repositório dele? | Atualização `e98fcc38` |
+| 19 | O bucket do MinIO é de leitura pública? É intencional `/storage/url` devolver o host interno em `prod`? Quem grava os arquivos no bucket? | Atualização `e98fcc38` |
+| 20 | Os perfis `dev` e `test` recebem `storage.url` e `storage.bucket` por variável de ambiente? Sem elas o contexto pode falhar ao subir. A dependência `io.minio` e `storage.endpoint` serão usadas ou removidas? | Atualização `e98fcc38` |
 
 ## Lacunas de cobertura (a documentar)
 - Leitura dirigida dos `.vm` e dos corpos de serviço de cada módulo (cálculos, filtros fixos e campos expostos); módulos documentados no Lote 7 em nível de estrutura e regras lidas.

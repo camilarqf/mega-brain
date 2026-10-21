@@ -11,7 +11,7 @@ tags:
 # Portal da Transparência — índice do sistema
 
 ## Objetivo
-Ponto de entrada do sistema de negócio **Portal-Transparencia** (Portal da Transparência; o pacote Java é `br.gov.df.transparencia` e o PDF gerado se identifica como "Portal da Transparência"). Só o backend foi analisado (ver [[01-Sistemas/Portal-Transparencia/Portal-Transparencia-Repositorios|Repositórios]]).
+Ponto de entrada do sistema de negócio **Portal-Transparencia** (Portal da Transparência; o pacote Java é `br.gov.df.transparencia` e o PDF gerado se identifica como "Portal da Transparência"). Backend e frontend foram analisados (ver [[01-Sistemas/Portal-Transparencia/Portal-Transparencia-Repositorios|Repositórios]]).
 
 ## Evidências
 - Cadastro: [[Catalogo-de-Sistemas|Catálogo de sistemas]] (ID `Portal-Transparencia`, cadastrado em 2026-10-19 conforme o nome informado pelo usuário).
@@ -21,7 +21,7 @@ Ponto de entrada do sistema de negócio **Portal-Transparencia** (Portal da Tran
 | Componente | Estado | Entrada |
 |---|---|---|
 | `portal-transparencia-backend` (pasta local `PT2016_BackEnd`) | analisado (lotes 0 a 8 e atualização para `e98fcc38`; leitura estática; cobertura parcial) | [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] |
-| frontend | não analisado; repositório não identificado | — |
+| `portal-transparencia-frontend` (pasta local `PT2016_FrontEnd`) | analisado (lotes 0 a 5; leitura estática; cobertura parcial) | [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Frontend-Index|Índice do Frontend]] |
 
 Atalhos do backend:
 - [[01-Sistemas/Portal-Transparencia/Backend/08-Qualidade/Portal-Transparencia-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
@@ -31,8 +31,8 @@ Atalhos do backend:
 - [[01-Sistemas/Portal-Transparencia/Backend/99-Controle/Portal-Transparencia-Backend-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/Portal-Transparencia/Backend/99-Controle/Portal-Transparencia-Backend-Pendencias|Pendências]]
 
 ## Inferências e limitações
-- 🔶 O backend serve consultas públicas (despesa, receita, servidores e remuneração, licitações e contratos, convênios, patrimônio, prestação de contas) a um frontend não identificado; os cabeçalhos CORS e o `x-client-id` obrigatório indicam consumo por navegador.
-- ❓ Frontend e demais componentes do sistema não foram identificados; o contexto de negócio (atores, objetivo oficial) não foi consolidado por falta de evidência no código.
+- ✅ O backend serve consultas públicas (despesa, receita, servidores e remuneração, licitações e contratos, convênios, patrimônio, prestação de contas) ao `portal-transparencia-frontend` (SPA AngularJS, sem login), que envia o `x-client-id` em cada chamada. Ver [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração Frontend → API]].
+- ❓ Demais componentes do sistema (ETL, serviço de busca, "gerenciador") não foram identificados; o contexto de negócio (atores, objetivo oficial) não foi consolidado por falta de evidência no código.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Mapa-de-Integracoes|Mapa de integrações]] · [[Home|Home]]

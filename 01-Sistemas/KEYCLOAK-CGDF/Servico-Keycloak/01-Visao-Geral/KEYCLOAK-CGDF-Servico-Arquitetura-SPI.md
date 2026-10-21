@@ -42,13 +42,13 @@ Duas extensões são registradas no Keycloak:
 
 Classes de apoio (sem registro próprio):
 
-| Pacote | Classe | Papel |
-|---|---|---|
-| `client` | `IbsApiClient` | Cliente HTTP (`java.net.http.HttpClient`) do `POST {base}/auth` |
-| `client` | `IbsRestClient` | Fachada sobre `IbsApiClient` que recebe `IbsConfig`; `autenticar(...)` |
+| Pacote   | Classe                                 | Papel                                                                                   |
+| -------- | -------------------------------------- | --------------------------------------------------------------------------------------- |
+| `client` | `IbsApiClient`                         | Cliente HTTP (`java.net.http.HttpClient`) do `POST {base}/auth`                         |
+| `client` | `IbsRestClient`                        | Fachada sobre `IbsApiClient` que recebe `IbsConfig`; `autenticar(...)`                  |
 | `client` | `IbsLoginRequest` / `IbsLoginResponse` | Records do contrato JSON (`login`, `senha`, `idOrgao`) e da resposta (claims, unidades) |
-| `config` | `IbsConfig` | Resolve URL, timeout e segredo (mapa → propriedade de sistema → variável de ambiente) |
-| `config` | `IbsConfigResolver` | Lê a configuração da execução (`AuthenticatorConfigModel`) no contexto do fluxo |
+| `config` | `IbsConfig`                            | Resolve URL, timeout e segredo (mapa → propriedade de sistema → variável de ambiente)   |
+| `config` | `IbsConfigResolver`                    | Lê a configuração da execução (`AuthenticatorConfigModel`) no contexto do fluxo         |
 
 Dependências entre classes: `IbsAuthenticator` → `IbsConfigResolver` → `IbsConfig`; `IbsAuthenticator` → `IbsApiClient` (via `Function<IbsClientSettings, IbsApiClient>` injetável para teste) → records `IbsLoginRequest`/`IbsLoginResponse`. `IbsClaimsProtocolMapper` não depende do cliente: lê atributos do usuário e notas da sessão.
 

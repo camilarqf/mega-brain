@@ -6,7 +6,7 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-19
 consumer: PARTICIPA-DF
 tags:
   - participa-df
@@ -81,6 +81,7 @@ Projetos de cliente e arquivos em `sources`; configuração apenas por nome. Com
 - ✅ Uso: notificações de manifestações, pedidos, recursos, prorrogações, omissões, cadastro e recuperação de senha, exclusão de conta.
 
 ### 3. PeoplesCheck
+Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalogo-de-Endpoints|PeoplesCheck]] (✅ confirmado pelo usuário em 2026-10-19; contrato e regras do lado servidor em [[01-Sistemas/PeoplesCheck/PeoplesCheck-Index|PeoplesCheck-Index]]).
 - ✅ Operações: `Check` (GET, parâmetro `data`), `CountTry` (GET), `Challenge` (POST JSON), `CheckPJ` (GET `…/{cnpj}?data=cpf`, exige o aceite de responsabilidade). Cabeçalho `X-API-KEY` (valor omitido). Os endpoints expostos em `SecurityController` (`check`, `count-try`, `challenge`, `check-cpf-vinculado-pj`) são **anônimos** e repassam os dados do chamador.
 - ✅ Se `Challenge` retorna 200, a resposta é gravada em cache (`GravarDesafioEmCache`).
 - ✅ Resiliência igual à do MailService (retry, breaker, fallback 400, timeout de 5 s).

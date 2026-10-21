@@ -29,19 +29,19 @@ Mapear cada dado devolvido pelo IBS até o atributo do usuário, a nota de sess�
 - `IbsLoginResponse` (records `Claims`, `Unidade`), `IbsAuthenticator.updateUser/setUserSessionNotes`, `IbsClaimsProtocolMapper.addClaims`, `IbsClaimsMapperTest`.
 
 ## Informações confirmadas
-| Campo do IBS | Atributo do usuário | Nota de sessão | Claim no token | Observação |
-|---|---|---|---|---|
-| `idUsuario` | `idUsuario` (e **username** do usuário) | `idUsuario`, `username` | `preferred_username` (= username) | Obrigatório; não vai como claim própria |
-| `login` | `login` (ou o `username` informado) | `login` | `login` | |
-| `autenticado` | `autenticado` | `autenticado` | `autenticado` (booleano) | |
-| `idOrgao` (inteiro) | `idOrgao` | `idOrgao` | `idOrgao` (inteiro; texto se não numérico) | Sem valor no IBS, usa o `idOrgao` do formulário |
-| `siglaOrgao` | `siglaOrgao` | `siglaOrgao` | `siglaOrgao` | |
-| `nomeOrgao` | `nomeOrgao` | `nomeOrgao` | `nomeOrgao` | |
-| `nomePessoa` | `nomePessoa`; também `firstName` | `nomePessoa` | `nomePessoa` | `firstName` cai para o `username` informado; `lastName` fixo `-` |
-| `nomeSocial` | `nomeSocial` | `nomeSocial` | `nomeSocial` | |
-| `matricula` | `matricula` | `matricula` | `matricula` | Valor aparado (`trim`) |
-| `unidades[]` (`idUnidade`, `siglaUnidade`, `descricaoUnidade`) | `unidades` (string JSON) | `unidades` | `unidades` (array JSON real) | Só se não vazio |
-| `correlationKey` | `correlationKey` | `correlationKey` | **não** vai ao token | |
+| Campo do IBS                                                   | Atributo do usuário                     | Nota de sessão          | Claim no token                             | Observação                                                       |
+| -------------------------------------------------------------- | --------------------------------------- | ----------------------- | ------------------------------------------ | ---------------------------------------------------------------- |
+| `idUsuario`                                                    | `idUsuario` (e **username** do usuário) | `idUsuario`, `username` | `preferred_username` (= username)          | Obrigatório; não vai como claim própria                          |
+| `login`                                                        | `login` (ou o `username` informado)     | `login`                 | `login`                                    |                                                                  |
+| `autenticado`                                                  | `autenticado`                           | `autenticado`           | `autenticado` (booleano)                   |                                                                  |
+| `idOrgao` (inteiro)                                            | `idOrgao`                               | `idOrgao`               | `idOrgao` (inteiro; texto se não numérico) | Sem valor no IBS, usa o `idOrgao` do formulário                  |
+| `siglaOrgao`                                                   | `siglaOrgao`                            | `siglaOrgao`            | `siglaOrgao`                               |                                                                  |
+| `nomeOrgao`                                                    | `nomeOrgao`                             | `nomeOrgao`             | `nomeOrgao`                                |                                                                  |
+| `nomePessoa`                                                   | `nomePessoa`; também `firstName`        | `nomePessoa`            | `nomePessoa`                               | `firstName` cai para o `username` informado; `lastName` fixo `-` |
+| `nomeSocial`                                                   | `nomeSocial`                            | `nomeSocial`            | `nomeSocial`                               |                                                                  |
+| `matricula`                                                    | `matricula`                             | `matricula`             | `matricula`                                | Valor aparado (`trim`)                                           |
+| `unidades[]` (`idUnidade`, `siglaUnidade`, `descricaoUnidade`) | `unidades` (string JSON)                | `unidades`              | `unidades` (array JSON real)               | Só se não vazio                                                  |
+| `correlationKey`                                               | `correlationKey`                        | `correlationKey`        | **não** vai ao token                       |                                                                  |
 
 Regras do mapper (`IbsClaimsProtocolMapper`):
 - Para cada nome, lê primeiro o atributo do usuário e, se vazio, a nota de sessão.

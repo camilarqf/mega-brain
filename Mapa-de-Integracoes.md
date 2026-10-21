@@ -1,7 +1,7 @@
 ---
 type: index
 status: pendente
-updated: 2026-10-18
+updated: 2026-10-19
 tags:
   - integracoes
   - moc
@@ -25,7 +25,9 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 | `IBS` (`identity-broker-service`) | `SIP-SQLServer` | JDBC (SQL Server `DB_SIP`), somente leitura | saída | ✅ | [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-SIP-SQLServer\|Integração IBS → SIP]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `Iza` | HTTP POST JSON (4 operações `predict-*`) | saída | ✅ (natureza do provedor ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `MailService` | HTTP POST JSON e multipart | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
-| `PARTICIPA-DF` (`participa-df-backend`) | `PeoplesCheck` | HTTP GET/POST, chave de API | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `PeoplesCheck` | HTTP GET/POST, chave de API | saída | ✅ cliente no código; ✅ provedor: `cgdf-peoples-check-api` (confirmado pelo usuário em 2026-10-19); dono: CGDF | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] · provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalogo-de-Endpoints\|Endpoints do PeoplesCheck]] |
+| `PeoplesCheck` (`cgdf-peoples-check-api`) | `CouchDB` | HTTP(S) JSON (`_find`), Basic Auth, somente leitura | saída | ✅ cliente no código; ❓ dono do provedor | [[01-Sistemas/PeoplesCheck/Servico/07-Integracoes/PeoplesCheck-Servico-Integracao-CouchDB\|Integração PeoplesCheck → CouchDB]] |
+| `PeoplesCheck` (`cgdf-peoples-check-api`) | `MongoDB` | driver Java, coleção `challenges` | saída (leitura e escrita) | ✅ cliente no código; ❓ dono do provedor | [[01-Sistemas/PeoplesCheck/Servico/07-Integracoes/PeoplesCheck-Servico-Integracao-MongoDB\|Integração PeoplesCheck → MongoDB]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `SEI` | web service (SDK `CGDF.SEI.DotNet.SDK`) | saída | ✅ uso; 🔶 protocolo | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `Servico-HtmlToPdf` | HTTP POST JSON | saída | ✅ cliente no código; ✅ provedor: `cgdf-html-to-pdf` (confirmado pelo usuário em 2026-10-19) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `RabbitMQ` | mensageria: publica `denuncia-registrada`; consome `denuncia-aceita` e `denuncia-recusada` | saída e entrada | ✅ (contraparte do evento ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
@@ -48,6 +50,10 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 | `SCI` (`sci-backend`) | `BCadastro` | HTTP POST JSON, Basic Auth (consulta por CPF/CNPJ) | saída | ✅ cliente no código; ❓ dono do provedor | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-BCadastro\|Integração SCI → BCadastro]] |
 | `SCI` (`sci-backend`) | `Servico-HtmlToPdf` | HTTP POST JSON (`HtmlString`) | saída | ✅ cliente no código; ✅ mesmo serviço do PARTICIPA-DF e do SICI (informado pelo usuário); ✅ provedor: `cgdf-html-to-pdf` (confirmado pelo usuário); dono: CGDF | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-HtmlToPdf\|Integração SCI → HtmlToPdf]] |
 
+| `Portal-Transparencia` (`portal-transparencia-backend`) | `MailService` | HTTP POST JSON (OkHttp), chave de API em cabeçalho | saída | ✅ cliente no código; 🔶 provedor igual ao `MailService` do PARTICIPA-DF (não confirmado) | [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas\|Integrações externas do Portal-Transparencia Backend]] |
+| `Portal-Transparencia` (`portal-transparencia-backend`) | `Google-Analytics-API` | HTTPS, Core Reporting API v3, conta de serviço | saída | ✅ cliente no código; 🔶 API possivelmente descontinuada (não testado) | [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas\|Integrações externas do Portal-Transparencia Backend]] |
+| `Portal-Transparencia` (`portal-transparencia-backend`) | `RabbitMQ` | AMQP: consome a exchange fanout `medida-protetiva-topic` (mensagem `expirePortal`) | entrada | ✅ consumidor no código; ❓ publicador e instância do broker | [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas\|Integrações externas do Portal-Transparencia Backend]] · [[01-Sistemas/Portal-Transparencia/Backend/04-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados\|Fluxo]] |
+
 ## Relações não confirmadas (hipóteses)
 - 🔶 O frontend `participa-df-frontend` redireciona o navegador, após `security/notify`, para os front-ends `SistemaOuvDF` e `SistemaSicDF` (login assistido por `sessionId`). O frontend `participa-df-ouv-frontend` (Ouvidoria) e o `participa-df-sic-frontend` (SIC) também entram por `#/auth/<sessionId>` e saem por `Login`/`Principal` de `configuration/front-end-urls`; o repositório que emite o `sessionId` (front de login) não foi identificado. A correspondência do `participa-df-sic-frontend` com `SistemaSicDF` não está confirmada.
 - 🔶 `Servico-Localizacao-CGDF` (chamado pelo frontend) pode ser o mesmo serviço que o backend consome por proxy como `Servico-Geocodificacao`; os caminhos chamados são diferentes. Manter IDs separados até haver evidência.
@@ -61,6 +67,10 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 - 🔶 O frontend do `SCI` (`sci-frontend`) tem links de navegação ("Esqueci minha senha" e "Novo cadastro") para páginas sob `participaUrl`, provavelmente o frontend do `PARTICIPA-DF` (valor da chave não registrado). Não é chamada de API. Ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Integracoes|Integrações do Frontend SCI]].
 - 🔶 8 chamadas do `sci-frontend` não existem no `sci-backend` analisado (denúncia por id e download de anexo, `pessoa/processos` e outras); ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]].
 
+- 🔶 `MinIO-CGDF` (`minio-infra`) expõe API S3 (9000) e console (9001) na rede `nginx-ingress-network`, mas o conteúdo versionado não identifica consumidores. O usuário informou (2026-10-21) que o backend "gerenciador" é outro sistema, ainda fora do catálogo. Ver [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências do MinIO-CGDF]].
+
 ## Como manter
 - Toda integração nova ou alterada atualiza uma linha deste mapa e a nota canônica correspondente.
 - Relação sem evidência entra apenas na seção de hipóteses.
+- 🔶 O backend do `Portal-Transparencia` expõe `/integracao/*` (8 rotas GET sobre servidores, notas de empenho e ordens bancárias) a consumidores não identificados; o nome `ServidorSciIntegracao` sugere o `SCI`, mas o backend do SCI documentado no cofre não registra essa chamada. Ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integrações do Portal-Transparencia]].
+- 🔶 A mensagem `expirePortal` consumida pelo `Portal-Transparencia` (exchange `medida-protetiva-topic`) é publicada por sistema não identificado; não se sabe se o broker é o mesmo do `PARTICIPA-DF`/`SCI`.

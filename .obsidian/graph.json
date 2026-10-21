@@ -53,7 +53,7 @@
       "query": "[type:security] OR [type:technical-debt]",
       "color": {
         "a": 1,
-        "rgb": 16728244
+        "rgb": 16728699
       }
     },
     {
@@ -102,6 +102,6 @@
   "repelStrength": 11.9505047215891,
   "linkStrength": 1,
   "linkDistance": 219,
-  "scale": 0.3628873693011864,
-  "close": false
+  "scale": 0.13168724279833335,
+  "close": true
 }

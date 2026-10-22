@@ -6,7 +6,7 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
 created: 2026-10-18
-updated: 2026-10-19
+updated: 2026-10-22
 consumer: PARTICIPA-DF
 tags:
   - participa-df
@@ -141,6 +141,7 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - ❓ Quem consome a API `v1` e o serviço "metro".
 
 ## Relacionamentos
+- Provedor Iza (sistema documentado em 2026-10-22): [[01-Sistemas/Iza/Api/07-Integracoes/Iza-Api-Integracoes|Iza → lado provedor]]
 - [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]] · [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro-de-Manifestacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo

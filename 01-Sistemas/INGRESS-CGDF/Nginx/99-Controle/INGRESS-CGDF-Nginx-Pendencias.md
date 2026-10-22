@@ -28,7 +28,7 @@ Listar o que a análise não conseguiu confirmar.
 | 2 | Domínios/URLs por ambiente, terminação TLS e o que está à frente do Nginx | ❓ |
 | 3 | Pipeline Jenkins e se valida a configuração (`nginx -t`) antes do deploy | ❓ fora do repositório |
 | 4 | Correspondência das rotas com os sistemas do cofre (Keycloak, IBS, PARTICIPA-DF, SCI, etc.) | 🔶 só por nome; confrontar com as stacks dos serviços |
-| 5 | Serviços sem sistema no cofre (`api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `cgdf-iza`, `painel-ouvidoria`, `gerenciador-portal-transparencia`, `app-transparencia`) | ❓ não catalogados; ao cadastrar, trocar o texto por link em [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Integracoes-com-Upstreams|Integrações com upstreams]] e atualizar o `Mapa-de-Integracoes` |
+| 5 | Serviços sem sistema no cofre (`api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `painel-ouvidoria`, `gerenciador-portal-transparencia`, `app-transparencia`) | ❓ não catalogados; ao cadastrar, trocar o texto por link em [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Integracoes-com-Upstreams|Integrações com upstreams]] e atualizar o `Mapa-de-Integracoes` |
 | 6 | Clientes do proxy TCP RabbitMQ e se a porta 5672 é publicada | ❓ |
 | 7 | Staging e Sandbox com o mesmo nome de contêiner: como as instâncias se distinguem | 🔶 label do nó |
 | 8 | Exposição pública do health do Keycloak e do MinIO pelo ingress | ❓ |

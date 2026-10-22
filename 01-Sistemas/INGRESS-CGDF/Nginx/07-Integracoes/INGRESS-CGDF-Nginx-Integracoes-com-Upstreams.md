@@ -6,7 +6,7 @@ repository: ingress-controller
 status: inferido
 coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
-updated: 2026-10-21
+updated: 2026-10-22
 consumer: INGRESS-CGDF
 tags:
   - ingress
@@ -42,9 +42,10 @@ Voltar: [[01-Sistemas/INGRESS-CGDF/Nginx/INGRESS-CGDF-Nginx-Index|Índice do Ngi
 | `peoples-check-api` | `PeoplesCheck` — [[01-Sistemas/PeoplesCheck/PeoplesCheck-Index|índice]] |
 | `portal-transparencia`, `app-transparencia`, `gerenciador-portal-transparencia` | `Portal-Transparencia` — [[01-Sistemas/Portal-Transparencia/Portal-Transparencia-Index|índice]] (🔶 só `portal-transparencia` é direto; o catálogo cita um backend "gerenciador" fora do cofre) |
 | `minio` | `MinIO-CGDF` — [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Index|índice]] (✅ a rede `nginx-ingress-network` consta nas stacks do MinIO; ver [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Deploy-e-Ambientes|Deploy do MinIO-CGDF]]) |
-| `api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `cgdf-iza` | sem sistema no cofre; `cgdf-iza` pode ser o serviço externo `Iza` e `mail-service` o `MailService` (ambos 🔶 só pelo nome; ver [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|integrações externas do PARTICIPA-DF]]). Os demais, ainda não documentados, estão listados na seção abaixo, sem link por enquanto |
+| `cgdf-iza` | `Iza` — [[01-Sistemas/Iza/Iza-Index|índice]] (🔶 o upstream `iza-api:8000` coincide com o nome do serviço e a porta interna do pipeline do repositório; ver [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Deploy-e-Ambientes|Deploy do Iza]]) |
+| `api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service` | sem sistema no cofre; `mail-service` pode ser o `MailService` (🔶 só pelo nome; ver [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|integrações externas do PARTICIPA-DF]]). Os demais, ainda não documentados, estão listados na seção abaixo, sem link por enquanto |
 
-**Sistemas ainda não documentados no cofre** (sem link por enquanto; viram link quando forem cadastrados no catálogo): `api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `cgdf-iza`, `painel-ouvidoria`, `gerenciador-portal-transparencia`.
+**Sistemas ainda não documentados no cofre** (sem link por enquanto; viram link quando forem cadastrados no catálogo): `api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `painel-ouvidoria`, `gerenciador-portal-transparencia`.
 
 ## Falhas e dependências
 - ✅ Sem timeouts, tentativas nem upstream de reserva: cada rota tem um único destino.

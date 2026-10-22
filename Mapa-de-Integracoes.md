@@ -1,7 +1,7 @@
 ---
 type: index
 status: pendente
-updated: 2026-10-19
+updated: 2026-10-22
 tags:
   - integracoes
   - moc
@@ -23,7 +23,7 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 | `KEYCLOAK-CGDF` (`keycloak`) | `IBS` | HTTP POST JSON (`/auth`, Direct Grant) | saída | ✅ cliente no código; ❓ dono do provedor e consumidores do fluxo | [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS\|Integração Keycloak → IBS]] |
 | `IBS` (`identity-broker-service`) | `AD-LDAP` | LDAP (JNDI), bind simples `ldap://` | saída | ✅ cliente no código; ❓ dono e hosts dos ADs | [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-AD-LDAP\|Integração IBS → AD (LDAP)]] |
 | `IBS` (`identity-broker-service`) | `SIP-SQLServer` | JDBC (SQL Server `DB_SIP`), somente leitura | saída | ✅ | [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-SIP-SQLServer\|Integração IBS → SIP]] |
-| `PARTICIPA-DF` (`participa-df-backend`) | `Iza` | HTTP POST JSON (4 operações `predict-*`) | saída | ✅ (natureza do provedor ❓) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
+| `PARTICIPA-DF` (`participa-df-backend`) | `Iza` | HTTP POST JSON (4 operações `predict-*`) | saída | ✅ cliente no código; 🔶 provedor: `cgdf-iza` (FastAPI; correspondência por nomes de operações e roteamento do ingress, aceita pelo usuário em 2026-10-22; dono ❓; ver [[01-Sistemas/Iza/Api/07-Integracoes/Iza-Api-Integracoes\|lado provedor]]) | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `MailService` | HTTP POST JSON e multipart | saída | ✅ | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] |
 | `PARTICIPA-DF` (`participa-df-backend`) | `PeoplesCheck` | HTTP GET/POST, chave de API | saída | ✅ cliente no código; ✅ provedor: `cgdf-peoples-check-api` (confirmado pelo usuário em 2026-10-19); dono: CGDF | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas\|Integrações externas do PARTICIPA-DF Backend]] · provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalogo-de-Endpoints\|Endpoints do PeoplesCheck]] |
 | `PeoplesCheck` (`cgdf-peoples-check-api`) | `CouchDB` | HTTP(S) JSON (`_find`), Basic Auth, somente leitura | saída | ✅ cliente no código; ❓ dono do provedor | [[01-Sistemas/PeoplesCheck/Servico/07-Integracoes/PeoplesCheck-Servico-Integracao-CouchDB\|Integração PeoplesCheck → CouchDB]] |
@@ -76,7 +76,8 @@ Voltar: [[Catalogo-de-Sistemas|Catálogo de sistemas]] · Regras: `BRAIN-RULES.m
 
 - 🔶 `MinIO-CGDF` (`minio-infra`) expõe API S3 (9000) e console (9001) na rede `nginx-ingress-network`, mas o conteúdo versionado não identifica consumidores. O usuário informou (2026-10-21) que o backend "gerenciador" é outro sistema, ainda fora do catálogo. Ver [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências do MinIO-CGDF]]. O backend do Portal-Transparencia chama o health do MinIO e monta URLs de objetos; o `gerenciador` consumiria as rotas `/storage/*` desse backend (🔶, sem evidência no código). Ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integrações do Portal-Transparencia Backend]].
 
-- 🔶 O `INGRESS-CGDF` roteia, só pelo nome do serviço, para `KEYCLOAK-CGDF`, `IBS`, `PARTICIPA-DF`, `SCI`, `Servico-HtmlToPdf`, `PeoplesCheck`, `Portal-Transparencia` e `MinIO-CGDF`, e para serviços sem sistema no cofre (`api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`, `cgdf-iza`). Ver [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Integracoes-com-Upstreams|Integrações com upstreams]].
+- 🔶 `Iza` (2026-10-22): o repositório `cgdf-iza` (sistema `Iza`) expõe as 4 operações `predict-*` chamadas pelo `PARTICIPA-DF` e o ingress roteia `cgdf-iza` para `iza-api:8000`, igual ao nome do serviço no pipeline do repositório. Divergência a verificar no cliente: o vault cita o campo `classificao_id`, a API aceita `classificacao_id` (ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|pendências do Iza]]).
+- 🔶 O `INGRESS-CGDF` roteia, só pelo nome do serviço, para `KEYCLOAK-CGDF`, `IBS`, `PARTICIPA-DF`, `SCI`, `Servico-HtmlToPdf`, `PeoplesCheck`, `Portal-Transparencia`, `MinIO-CGDF` e `Iza` (`cgdf-iza`), e para serviços sem sistema no cofre (`api-super-busca`, `integra`, `sedoc`, `sisconep-client`, `cgdf-localization`, `cgdf-email-legacy`, `mail-service`). Ver [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Integracoes-com-Upstreams|Integrações com upstreams]].
 
 ## Como manter
 - Toda integração nova ou alterada atualiza uma linha deste mapa e a nota canônica correspondente.

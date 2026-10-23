@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -20,6 +20,7 @@ sources:
   - src/SCI.Application/UseCases/AutenticarUsuario/AutenticarUsuarioHandler.cs
   - src/SCI.Infrastructure.Services/Auth
   - src/SCI.Api/Extensions/CorsPolicyExtensions.cs
+  - src/SCI.Api/Controllers/DenunciaController.cs
 ---
 # SCI Backend — segurança e autorização
 
@@ -40,13 +41,14 @@ Registrar autenticação, perfis, políticas e controles de segurança. Sem segr
 - ✅ `CurrentUserIdentity` relê o usuário no banco a cada chamada (`GetOrThrowAsync`) e usa o perfil/unidade da permissão atual; o CPF é mascarado ao compor o `UserIdentity`.
 
 ### Autorização
+- ✅ Política nova `enc.ConsultarEncaminhamentoRecebidoPorProcesso` (10 perfis). `GET /denuncia/{id}` e `GET /denuncia/{denunciaId}/download` exigem só autenticação.
 - ✅ Todos os controllers usam `[Authorize]`, exceto `SecurityController` e `SupportController` (`[AllowAnonymous]`) e `RevisaoAdmissibilidadeController`/`RevisaoPipController`/`PerfilController`, que não têm `[Authorize]` na classe mas protegem cada rota com política.
 - ✅ Políticas por papel (`RequireRole(nameof(PerfilEnum.X))`) em 11 classes de `AuthorizationPolicies`. Resumo:
   - **Administrador**: quase todas as políticas de gestão, e as exclusivas de unidade, usuário, perfil, permissão, assunto e suporte.
-  - **AutoridadeCorrecional**: aceitar/recusar denúncia, tratar demanda, distribuir/redistribuir, invalidar nota técnica, concluir ato de instauração do PIP, aceitar/devolver encaminhamento.
+  - **AutoridadeCorrecional**: tratar demanda, distribuir/redistribuir, invalidar nota técnica, concluir ato de instauração do PIP, aceitar/devolver encaminhamento.
   - **AnalistaAdmissibilidade**: cadastro, análise, conclusão e encaminhamento do processo de admissibilidade.
   - **GestorAdmissibilidade**, **RevisorJad**: revisões e assinatura da nota técnica; **GestorPip**, **RevisorPip**, **InvestigadorPip**: o mesmo para o PIP.
-  - **ApoioCorrecional**: criar/atualizar demanda, atualizar minuta e SEI, enviar encaminhamento, finalizar PIP.
+  - **ApoioCorrecional**: aceitar/recusar denúncia (desde `29989114`; antes AutoridadeCorrecional), criar/atualizar demanda, atualizar minuta e SEI, enviar encaminhamento, finalizar PIP.
   - **AssessorAutoridade**: criar/atualizar/concluir notas de admissibilidade e do PIP.
 - ✅ Perfis: [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|11 valores de `PerfilEnum`]]. O usuário pode ter várias `Permissoes` (perfil + unidade) e alterna a atual por `POST /usuario/alternar-permissao` (regra: a permissão escolhida deve pertencer ao usuário).
 - ✅ A assinatura de documentos valida o perfil no domínio: `NotaTecnicaAptaParaAssinatura` e `OrquestrarAssinatura` ("Usuário não é o próximo revisor a assinar"); `RelatorioAptoParaAssinatura`.

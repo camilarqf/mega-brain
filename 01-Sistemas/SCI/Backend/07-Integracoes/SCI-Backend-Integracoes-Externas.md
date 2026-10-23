@@ -5,14 +5,15 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - integracoes
   - moc
 sources:
   - src/SCI.Api/Program.cs
+  - SCI.S3.Client
 ---
 # SCI Backend — integrações externas (índice)
 
@@ -28,7 +29,8 @@ Voltar: [[01-Sistemas/SCI/Backend/SCI-Backend-Index|Índice do Backend]] · [[Ma
 | Consumidor → Provedor | Tecnologia | Nota canônica |
 |---|---|---|
 | `SCI` → `PARTICIPA-DF` | HTTP POST JSON (autenticação) | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-Participa-DF-Autenticacao|Autenticação]] |
-| `SCI` ⇄ `RabbitMQ` (eventos de denúncia com o `PARTICIPA-DF`) | mensageria | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-Participa-DF-Eventos|Eventos]] |
+| `SCI` ⇄ `RabbitMQ` (eventos de denúncia com o `PARTICIPA-DF` e evento interno de demanda) | mensageria | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-Participa-DF-Eventos|Eventos]] |
+| `SCI` → `MinIO-CGDF` 🔶 (S3, anexos de denúncia) | pacote `Minio` (somente leitura) | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-S3-Anexos-de-Denuncia|S3 anexos de denúncia]] |
 | `SCI` → `BCadastro` | HTTP POST JSON, Basic | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-BCadastro|BCadastro]] |
 | `SCI` → `Servico-HtmlToPdf` | HTTP POST JSON | [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-HtmlToPdf|HtmlToPdf]] |
 

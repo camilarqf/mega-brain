@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -18,6 +18,8 @@ sources:
   - src/SCI.Api/Controllers/SupportController.cs
   - src/SCI.Api/Controllers/UnidadeController.cs
   - src/SCI.Api/Controllers/ArquivoController.cs
+  - src/SCI.Api/Controllers/DenunciaController.cs
+  - src/SCI.Application/UseCases/GestaoIntegracao/RecusarDenuncia/RecusarDenunciaHandler.cs
   - src/SCI.Api/appsettings.json
   - src/SCI.Api/Program.cs
   - src/SCI.Api/Extensions/CorsPolicyExtensions.cs
@@ -48,16 +50,18 @@ Separar **fatos verificados no código** de **riscos e recomendações**. Valore
 | 11 | `RequestResponseLoggingMiddleware` e `ValidationExceptionMiddleware` existem e não vêm registrados | `src/SCI.Api/Middlewares` |
 | 12 | Projeto de cliente HTML→PDF duplicado e fora da solução (`SCI.HtmlToPdfClient`); `Legacy/` com outra solução | `src/`, `Legacy/` |
 | 13 | Sem migrations EF; o esquema é gerado e populado por scripts | [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco]] |
-| 14 | Só 7 métodos de teste; 7 pastas de teste sem projeto; `SCI.Application.Tests` sem `.csproj` | [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]] |
+| 14 | Só 11 métodos de teste (7 em `8e3c8648`); pastas de teste sem projeto, incluindo `SCI.Application.Tests` e `SCI.Api.Tests` (que têm testes) | [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]] |
 | 15 | `LEVANTAMENTO_TECNICO.md` (não versionado) diverge do código (.NET 8 × .NET 10) | [[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Stack-e-Dependencias|Stack]] |
 | 16 | `GET /processo-admissibilidade/por-relator` está `[Obsolete]` | `ProcessoAdmissibilidadeController` |
+| 17 | `GET /denuncia/{denunciaId}/download` chama o S3 direto, só com o `[Authorize]` de classe; não confere a unidade da denúncia (a listagem filtra por unidade) | `DenunciaController`, [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-S3-Anexos-de-Denuncia|S3]] |
+| 18 | `RecusarDenunciaHandler` não aplica a regra "já analisada" do aceite (`DenunciaAptaParaAceite`) | `RecusarDenunciaHandler` |
 
 ## Inferências e riscos (🔶)
 - 🔴 **Alto**: fatos 1 e 4. Quem conhecer a lista/senha fixa autentica-se como esses CPFs; segredos versionados permitem forjar tokens JWT (a chave é simétrica) e usar as credenciais do BCadastro.
 - 🟡 **Baixo/médio**: fato 2. Segundo o usuário só funciona em dev e local, o que reduz o risco; permanece anônimo e destrutivo onde a flag estiver ligada.
-- 🟠 **Médio**: fatos 3, 7 e 8 (autorização insuficiente; impacto da rota de download não testado).
+- 🟠 **Médio**: fatos 3, 7, 8 e 17 (autorização insuficiente; impacto da rota de download não testado).
 - 🟡 **Baixo/médio**: fatos 5, 6, 9, 10 e 11.
-- 🟡 Organização/qualidade: fatos 12 a 16.
+- 🟡 Organização/qualidade: fatos 12 a 16 e 18 (🔶 no fato 18, o efeito prático — recusar denúncia já aceita — não foi testado).
 
 ## Recomendações (não implementadas)
 1. Remover o bypass de autenticação; se for necessário para testes, restringi-lo a ambiente de desenvolvimento por configuração.

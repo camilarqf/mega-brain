@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -18,6 +18,8 @@ sources:
   - src/SCI.Api/SCI.Api.csproj
   - src/SCI.Api/Program.cs
   - .docker/Dockerfile
+  - SCI.S3.Client
+  - src/SCI.Api/appsettings.json
 ---
 # SCI Backend — stack e dependências
 
@@ -32,13 +34,13 @@ Registrar linguagem, framework, bibliotecas e projetos da solução.
 
 ## Informações confirmadas
 - ✅ **Plataforma**: C#, ASP.NET Core, .NET 10 (EF Core SQL Server `10.0.5`).
-- ✅ **Padrões e bibliotecas** (versões de `Directory.Packages.props`): MediatR `12.5.0`, FluentValidation `11.11.0`, Dapper `2.1.72` (leitura), Swashbuckle `10.2.3`, Serilog (`Serilog.AspNetCore 10.0.0`, sink Grafana Loki), OpenTelemetry com exportador Prometheus, Polly (políticas de HTTP nos clientes), `Microsoft.FeatureManagement`, `QRCoder` (QR Code nos documentos), `CGDF.DotNet.SDK.PubSub 5.2.246` (RabbitMQ).
+- ✅ **Padrões e bibliotecas** (versões de `Directory.Packages.props`): MediatR `12.5.0`, FluentValidation `11.11.0`, Dapper `2.1.72` (leitura), Swashbuckle `10.2.3`, Serilog (`Serilog.AspNetCore 10.0.0`, sink Grafana Loki), OpenTelemetry com exportador Prometheus, Polly (políticas de HTTP nos clientes), `Microsoft.FeatureManagement`, `QRCoder` (QR Code nos documentos), `CGDF.DotNet.SDK.PubSub 5.2.246` (RabbitMQ), `Minio 4.0.7` (cliente S3).
 - ✅ **Persistência**: SQL Server; dois `DbContext` (`DefaultDbContext`, `EventStoreDbContext`) mais leitura via Dapper — [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco e migrations]].
-- ✅ **Solução** (`SCI.sln`): `SCI.Api`, `SCI.Application`, `SCI.Domain`, `SCI.Infrastructure.{CQRS,Data,Projections,Services}`, `SCI.IntegrationServices`, `SCI.GED`, `SCI.Templates`, `SCI.DefaultHttpClient`, clientes `SCI.ParticipaDF.Client`, `SCI.BCadastro.Client`, `SCI.HtmlToPdf.Client`; testes `SCI.Integration.Tests` e `SCI.Tests.Helpers`. Detalhe de camadas: [[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Arquitetura-CQRS-e-Event-Sourcing|Arquitetura]].
+- ✅ **Solução** (`SCI.sln`): `SCI.Api`, `SCI.Application`, `SCI.Domain`, `SCI.Infrastructure.{CQRS,Data,Projections,Services}`, `SCI.IntegrationServices`, `SCI.GED`, `SCI.Templates`, `SCI.DefaultHttpClient`, clientes `SCI.ParticipaDF.Client`, `SCI.BCadastro.Client`, `SCI.HtmlToPdf.Client`, `SCI.S3.Client` (novo; pasta na raiz do repositório, copiada no `Dockerfile`); testes `SCI.Integration.Tests` e `SCI.Tests.Helpers`. Detalhe de camadas: [[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Arquitetura-CQRS-e-Event-Sourcing|Arquitetura]].
 - ✅ **Health e métricas**: `GET /health` (SQL Server, RabbitMQ, armazenamento compartilhado, logger) e endpoint de scraping Prometheus.
 - ✅ **Contêiner e deploy**: `.docker/Dockerfile`, `.docker/inject-docker-secrets-entrypoint.sh`, `.jenkins-pipelines/{deployment.params,prod.env,sandbox.env,staging.env}.yml` (conteúdo dos `.env.yml` **não lido**).
 - ✅ **Feature flags** (`FeatureManagement`): `Support.GenerateDatabase` e `Pip.Criar`, ambas `false` em `appsettings.json`.
-- ✅ **Seções de configuração** (somente nomes de chaves): `ConnectionStrings`, `DefaultDatabaseSettings`, `ReadModelDatabaseSettings`, `JwtSettings`, `HtmlToPdfClientSettings`, `ParticipaDFClientSettings`, `BCadastroClientSettings`, `GEDSettings`, `FeatureManagement`, `RabbitMqPubSubSettings`, `DataSecuritySettings`, `LoggerSettings`.
+- ✅ **Seções de configuração** (somente nomes de chaves): `ConnectionStrings`, `DefaultDatabaseSettings`, `ReadModelDatabaseSettings`, `JwtSettings`, `HtmlToPdfClientSettings`, `ParticipaDFClientSettings`, `BCadastroClientSettings`, `S3ClientSettings`, `GEDSettings`, `FeatureManagement`, `RabbitMqPubSubSettings`, `DataSecuritySettings`, `LoggerSettings`.
 
 ## Inferências e limitações
 - ⚠️ **Conflito de documentação**: o `LEVANTAMENTO_TECNICO.md` (não versionado) cita .NET 8 e EF Core 8.0.8; o código atual usa .NET 10 e EF Core 10.0.5. Prevalece o código.

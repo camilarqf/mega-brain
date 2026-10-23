@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -38,9 +38,11 @@ Listar os 33 controllers REST, rotas, verbos e a exigência de autorização (po
 ### Entrada: denúncia e demanda
 | Rota | Acesso |
 |---|---|
-| `GET /denuncia/get-all` | A |
-| `POST /denuncia/aceitar`, `POST /denuncia/recusar` | P:denuncia.* (AutoridadeCorrecional) |
-| `GET /demanda/{id}`, `GET /demanda/get-all` | A |
+| `GET /denuncia/get-all` (filtros: identificador, protocolo, `StatusIds`, período; limitado à unidade) | A |
+| `GET /denuncia/{id}` (detalhe, status, anexos) | A |
+| `GET /denuncia/{denunciaId}/download?nomeArquivo=` (anexo no S3) | A |
+| `POST /denuncia/aceitar`, `POST /denuncia/recusar` | P:denuncia.* (**ApoioCorrecional**; era AutoridadeCorrecional até `8e3c8648`) |
+| `GET /demanda/{id}`, `GET /demanda/get-all` (filtro `StatusIds` com vários status) | A |
 | `GET /demanda/por-admissibilidade` | P:demanda.Listar |
 | `POST /demanda`, `PUT /demanda` | P:demanda.Criar / Atualizar |
 | `POST /demanda/tratar` | P:demanda.Tratar |
@@ -66,6 +68,7 @@ Listar os 33 controllers REST, rotas, verbos e a exigência de autorização (po
 | Rota | Acesso |
 |---|---|
 | `GET /encaminhamento/{devolvidos,recebidos,enviados-pela-unidade,por-processo-admissibilidade}` | P:enc.Consultar* |
+| `GET /encaminhamento/recebido?processoAdmissibilidadeId=` (encaminhamento recebido por processo) | P:enc.ConsultarEncaminhamentoRecebidoPorProcesso (10 perfis, incl. Administrador) |
 | `POST /encaminhamento` (encaminhar), `/enviar`, `/reprovar`, `/aceitar`, `/devolver`, `/rejeitar-devolucao` | P:enc.* |
 
 ### PIP

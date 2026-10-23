@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -22,6 +22,7 @@ sources:
   - src/SCI.Application/EventHandlers/ProcessoAdmissibilidadeConcluidoEventHandler.cs
   - src/SCI.Api/Controllers/ProcessoAdmissibilidadeController.cs
   - src/SCI.Api/Controllers/AnaliseAdmissibilidadeController.cs
+  - src/SCI.Domain/GestaoProcessual/Entities
 ---
 # SCI Backend — módulo Processo de Admissibilidade
 
@@ -63,6 +64,10 @@ Documentar o processo de admissibilidade, sua análise, revisões, nota técnica
 
 ### Consultas
 - ✅ Visões por perfil (gestor, autoridade, assessor, analista, apoio, revisor), por unidade e nota técnica — [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]].
+
+### Atualizações de 2026-10-23 (`29989114`)
+- ✅ O clone do processo (correção "clonar JAD", `4e004181`) passou a manter as evidências ligadas aos envolvidos e os anexos de evidência (`Fato.Clonar`, `Evidencia.Clonar`).
+- ✅ A demanda que origina o processo pode ter vindo de denúncia ([[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Denuncia-e-Demanda|Denúncia e Demanda]]); a consulta de demanda por processo foi ajustada (`QueryByProcessoAdmissibilidade`).
 
 ## Inferências e limitações
 - 🔶 As regras de `ConfiguracaoProcesso` (revisões ativas) foram lidas pelo uso, não integralmente.

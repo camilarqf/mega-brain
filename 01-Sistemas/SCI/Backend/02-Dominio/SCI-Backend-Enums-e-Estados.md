@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: completa
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -30,11 +30,13 @@ Listar os enums do domínio e os estados (siglas) de cada processo. Os valores t
 - Arquivos listados em `sources`. Todos os enums de `SCI.Domain` foram lidos.
 
 ## Informações confirmadas
-### Denúncia (`StatusDenunciaEnum`)
-`AA` Aguardando análise → `AC` Aceita | `RE` Recusada. Origem: `OrigemDenunciaEnum` = `ParticipaDf`.
+### Denúncia (`StatusAnaliseDenunciaEnum`)
+A denúncia **não tem mais status próprio**: o estado vem da `AnaliseDenuncia` — sem análise = pendente; `Aceita` (2) ou `Recusada` (3); `Unknown` (1). Origem: `OrigemDenunciaEnum` = `ParticipaDf`. Nas consultas, o filtro de status usa o id `0` como "pendente" (sem análise).
+
+**Histórico**: até `8e3c8648`, `StatusDenunciaEnum` com `AA` Aguardando análise → `AC` Aceita | `RE` Recusada, coluna `ID_STATUS_DENUNCIA` (seed com ids 0–3); renomeado e substituído em `29989114`.
 
 ### Demanda (`StatusDemandaEnum`)
-`AA` Aguardando análise · `EA` Em análise · `CPA` Concluída – Processo Admissibilidade · `CM` Concluída – MPTCE · `CPAM` Concluída – ambos. Tratamento (`TipoTratamentoDemanda`): EncaminharProcessoAdmissibilidade, EncaminharMPTCE, EncaminharAmbos, e as variantes "…E Distribuir". `TipoDemandante`: Anonimo, Identificado.
+`AA` Aguardando análise · `EA` Em análise · `CPA` Concluída – Processo Admissibilidade · `CM` Concluída – MPTCE · `CPAM` Concluída – ambos · `CR` Criada (demanda gerada por denúncia, ainda incompleta; passa a `AA` quando os dados obrigatórios são preenchidos). Tratamento (`TipoTratamentoDemanda`): EncaminharProcessoAdmissibilidade, EncaminharMPTCE, EncaminharAmbos, e as variantes "…E Distribuir". `TipoDemandante`: Anonimo, Identificado.
 
 ### Processo de Admissibilidade (`StatusProcessoAdmissibilidadeEnum`)
 | Sigla | Estado |

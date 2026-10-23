@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -18,6 +18,7 @@ sources:
   - src/SCI.Application/UseCases/GestaoEncaminhamento
   - src/SCI.Application/EventHandlers/EncaminhamentoAceitoEventHandler.cs
   - src/SCI.Api/Controllers/EncaminhamentoController.cs
+  - src/SCI.Infrastructure.Projections/Queries/ProcessoAdmissibilidade
 ---
 # SCI Backend — módulo Encaminhamento
 
@@ -37,7 +38,7 @@ Documentar o envio do processo de admissibilidade a outras unidades e as respost
 - ✅ **Aceitar** (`/aceitar`, AutoridadeCorrecional): só se `EO` ("deve estar 'Enviado' para ser confirmado") → `AP`; evento `EncaminhamentoAceito` → `EncaminhamentoAceitoEventHandler` cria um **novo processo de admissibilidade na unidade destino** (`CriarProcessoAdmissibilidadeOrgaoDestino`) a partir da mesma demanda e o vincula ao encaminhamento (`ProcessoDestino`).
 - ✅ **Devolver** (`/devolver`, AutoridadeCorrecional): só se `EO` → `AD` com justificativa.
 - ✅ **Rejeitar devolução** (`/rejeitar-devolucao`): encaminhamento → `RE` e novo encaminhamento pendente é criado com a justificativa.
-- ✅ Consultas: devolvidos, recebidos, enviados pela unidade, por processo.
+- ✅ Consultas: devolvidos, recebidos, enviados pela unidade, por processo e, desde `29989114`, `GET /encaminhamento/recebido` (encaminhamento recebido por processo de admissibilidade; `QueryEncaminhamentoRecebidoByProcesso`, SQL não lido).
 - ✅ Anexos de encaminhamento (`AnexoEncaminhamento`, `TB_ANEXOS_ENCAMINHAMENTO`).
 
 ## Inferências e limitações

@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -37,8 +37,8 @@ Mapear os agregados, entidades e relações do `SCI.Domain`.
 - Numeração: `Numerar(sequencial, NumeroVinculo)` monta o identificador a partir do vínculo da unidade (`TB_UNIDADE_VINCULADA`) e do ano, com prefixos de `DomainConstants`.
 
 ### Entrada
-- `Denuncia`: `IdentificadorExterno` (id da denúncia no `PARTICIPA-DF`), `ProtocoloRelacionado`, `Unidade`, `Identificada`, `OrigemDenuncia`, `Status`, `MotivoRecusa`.
-- `Demanda`: origem (Unidade), documento de origem (`DocumentoOrigemDemanda`), `Assunto`, `Descricao`, tipo de demandante, período da ocorrência, `TipoAgenteEnvolvido`, `Anexos`, `DocumentosVinculados`, `Status`.
+- `Denuncia`: `IdentificadorExterno` (id da denúncia no `PARTICIPA-DF`), `ProtocoloRelacionado`, `Unidade`, `Identificada`, `OrigemDenuncia`, `Anexos` (`AnexoDenuncia`: nome do arquivo no S3, exclusão lógica) e `Analise` (`AnaliseDenuncia`: `Status` aceita/recusada, `MotivoRecusa?`, `Usuario`; nula = pendente). Histórico: até `8e3c8648` a entidade tinha `Status` e `MotivoRecusa` próprios.
+- `Demanda`: origem (Unidade), `Denuncia?` (vínculo 1:1 opcional, quando nasce de denúncia aceita), documento de origem (`DocumentoOrigemDemanda?`), `Assunto?`, `Descricao?`, tipo de demandante, período da ocorrência, `TipoAgenteEnvolvido`, `Anexos`, `DocumentosVinculados`, `Status`. Os campos com `?` passaram a ser opcionais para comportar a demanda `CR`; `PossuiDadosObrigatorios` indica se está completa.
 
 ### Análise
 - `Fato` (do processo) → `Envolvido` (`AgentePublico`, `EntePrivado`, `EnvolvidoNaoIdentificado`; `Condutas`, `Evidencias`, `ValorVantagemIndevida`) → `Evidencia` (+ `AnexoEvidencia`).

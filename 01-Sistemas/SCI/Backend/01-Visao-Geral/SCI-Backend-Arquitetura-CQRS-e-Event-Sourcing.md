@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -67,6 +67,7 @@ Descrever camadas, o caminho de comandos e consultas e o ciclo de eventos de dom
 - ✅ `FluentValidation` em requests (ex.: `DownloadRequest`).
 
 ## Inferências e limitações
+- 🔶 Exemplo concreto: `DenunciaAceitaEventHandler` envia `CriarDemandaPorDenunciaCommand` pelo `ICommandBus` dentro do handler de evento (desde `29989114`); falha ali deixa a denúncia aceita sem demanda.
 - 🔶 Como os eventos são publicados após o `SaveChanges` e fora da mesma transação, falha em um handler pode deixar o estado gravado sem o efeito derivado (ex.: processo não criado). Não há teste nem compensação verificados.
 - `SecurityId` (cifra AES-GCM de identificadores) está registrado em `Program.cs`, mas não encontrei seu uso em requests ou responses de `SCI.Api`/`SCI.Application`.
 - `RequestResponseLoggingMiddleware` e `ValidationExceptionMiddleware` existem em `SCI.Api/Middlewares`, mas não encontrei registro deles no pipeline.

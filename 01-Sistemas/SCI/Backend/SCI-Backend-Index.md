@@ -5,9 +5,9 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-23
 tags:
   - sci
   - moc
@@ -21,7 +21,7 @@ Sistema: [[01-Sistemas/SCI/SCI-Index|SCI]] · [[01-Sistemas/SCI/SCI-Repositorios
 > MOC da base técnica do **sci-backend**. Legenda: ✅ confirmado no código · 🔶 inferência · ❓ não identificado.
 
 ## O que é
-✅ API REST em ASP.NET Core (.NET 10) para gestão de **denúncias, demandas, processos de admissibilidade e processos investigativos preliminares (PIP)**, com CQRS, eventos de domínio gravados em um event store, mensageria RabbitMQ com o `PARTICIPA-DF` e geração de documentos assinados (nota técnica, minuta, relatório).
+✅ API REST em ASP.NET Core (.NET 10) para gestão de **denúncias, demandas, processos de admissibilidade e processos investigativos preliminares (PIP)**, com CQRS, eventos de domínio gravados em um event store, mensageria RabbitMQ com o `PARTICIPA-DF`, anexos de denúncia lidos de um armazenamento S3 e geração de documentos assinados (nota técnica, minuta, relatório).
 Evidência: `src/SCI.Api/Program.cs`, `src/SCI.Domain/*`.
 
 ## Mapa
@@ -40,7 +40,7 @@ Evidência: `src/SCI.Api/Program.cs`, `src/SCI.Domain/*`.
 - [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo-Denuncia-ate-Admissibilidade]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Fluxo-Ciclo-do-PIP]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ### 05 a 08 — API, segurança, integrações, qualidade
-- [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integracoes-Externas]]
+- [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-S3-Anexos-de-Denuncia|Integracao-S3-Anexos-de-Denuncia]]
 - [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ### 99 — Controle
@@ -51,16 +51,16 @@ Evidência: `src/SCI.Api/Program.cs`, `src/SCI.Domain/*`.
 1. 🔴 Bypass de autenticação por lista fixa de CPFs e senha fixa no código.
 2. 🔴 Segredos (JWT, BCadastro) versionados em `appsettings*.json`.
 3. 🟡 `POST /support/generate-database` anônimo e destrutivo; segundo o usuário só funciona em dev e local (barrado por feature flag).
-4. 🟠 `DELETE /unidade/{id}` sem política; download de arquivo com validação mínima.
+4. 🟠 `DELETE /unidade/{id}` sem política; download de arquivo com validação mínima; `GET /denuncia/{id}/download` sem checagem da unidade.
 
-## Números rápidos (commit `8e3c8648`)
+## Números rápidos (commit `8e3c8648`; atualizados onde indicado para `29989114`)
 | Item | Quantidade |
 |---|---|
 | Controllers REST / atributos HTTP | 33 / 142 |
 | Arquivos `.cs` por projeto (principais) | Domain 332 · Projections 266 · Api 209 · Application 179 · Data 122 |
-| Tabelas mapeadas (EF) / scripts SQL | 58 mappings (Default) + `TB_EVENTO` / 28 |
-| Eventos de integração | 3 (`denuncia-registrada`, `denuncia-aceita`, `denuncia-recusada`) |
-| Métodos de teste | 7 |
+| Tabelas mapeadas (EF) / scripts SQL | 60 arquivos de mapping (Default, `29989114`) + `TB_EVENTO` / 28 |
+| Eventos de integração | 4 (`denuncia-registrada`, `denuncia-aceita`, `denuncia-recusada`, `demanda-criada-por-denuncia`; `29989114`) |
+| Métodos de teste | 11 (`29989114`; 7 em `8e3c8648`) |
 
 ## Política desta base
 - Não contém valores de configuração, segredos, CPFs, senhas, endereços de infraestrutura nem dados reais.

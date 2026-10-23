@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -23,6 +23,8 @@ sources:
   - src/SCI.Application/EventHandlers/ProcessoAdmissibilidadeConcluidoEventHandler.cs
   - src/SCI.Api/Controllers/PipController.cs
   - src/SCI.Api/Controllers/DiligenciaController.cs
+  - src/SCI.Domain/GestaoProcessual/Entities
+  - src/SCI.Infrastructure.Projections/Queries/Pip
 ---
 # SCI Backend — módulo PIP (Processo Investigativo Preliminar)
 
@@ -59,6 +61,11 @@ Documentar o PIP: criação, ato de instauração (minuta), diligências, análi
 - ✅ Fim da revisão: `FinalizarRevisaoPip` aprova a análise e o PIP vai a `AAI` (assinatura do investigador).
 - ✅ Assinatura em cadeia (`OrquestrarAssinatura`): `AAI` (investigador) → `AAR` (revisor) → `AAG` (gestor) → `AAA` (autoridade), conforme as revisões ativas da configuração; depois `AF`. Só o perfil do estado atual assina ("Usuário não é o próximo revisor a assinar"); para o investigador, valida que ele pertence à relatoria ativa e que todos os relatores assinem (`PossuiInvestigadorPendenteParaAssinar`).
 - ✅ Concluir (InvestigadorPip) → `PC`; finalizar (Apoio/Autoridade) → `FES` e evento `ProcessoInvestigativoPreliminarFinalizado`.
+
+### Atualizações de 2026-10-23 (`29989114`)
+- ✅ `POST /pip/assinar-relatorio` passou a enviar o `UserIdentity` completo no comando; `AssinarRelatorioHandler` o repassa a `GerarConteudoRelatorioPipQuery` ao gerar o relatório (commit `34c8799c`, "passar id da unidade ao assinar o relatório").
+- ✅ A consulta de PIP por id (`get_by_id.sql`) passou a retornar o número do processo SEI (`80f0a2da`).
+- ✅ A clonagem de `Fato` agora preserva o vínculo envolvido ↔ evidência e o anexo da evidência; `EnvolvidoNaoIdentificado` ganhou construtor de cópia (leitura do diff).
 
 ## Inferências e limitações
 - 🔶 O papel da "matriz" de diligências (vínculo) não está explicado no código; ver entidade `Diligencia.Vinculada`.

@@ -5,8 +5,8 @@ component: Backend
 repository: sci-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
+updated: 2026-10-23
 tags:
   - sci
   - backend
@@ -20,6 +20,7 @@ sources:
   - src/SCI.Infrastructure.Data/_SharedKernel
   - src/SCI.Api/Controllers/SupportController.cs
   - src/SCI.Infrastructure.Projections
+  - src/SCI.Infrastructure.Projections/Queries/Denuncia
 ---
 # SCI Backend — banco de dados e criação do esquema
 
@@ -32,11 +33,12 @@ Descrever os contextos EF, as tabelas, a leitura por Dapper e o mecanismo de cri
 - `src/SCI.Infrastructure.Data/Extensions/ServiceCollectionsExtensions.cs`, `Support/DatabaseOperation.cs`, `Support/SqlScripts/*.sql` (nomes lidos; conteúdo dos seeds **não lido**).
 
 ## Informações confirmadas
-- ✅ **SQL Server**, dois contextos EF: `DefaultDbContext` (58 mappings em `Contexts/Default/Mappings`) e `EventStoreDbContext` (tabela `TB_EVENTO`, mapping `EventMapping`). Ambos usam `EnableRetryOnFailure` e, se `PoolSize > 0`, `AddDbContextPool`.
-- ✅ **Tabelas mapeadas** (`ToTable`), por grupo: processos (`TB_PROCESSO`, `TB_PROCESSO_ADMISSIBILIDADE`, `TB_PROCESSO_INVESTIGATIVO_PRELIMINAR`), entrada (`TB_DENUNCIA`, `TB_DEMANDA`, `TB_ORIGEM_DENUNCIA`, anexos), análise (`TB_ANALISE_*`, `TB_ITEM_ANALISE_*` e tabelas de associação com tipificação, recomendação e elemento faltante, `TB_NOTA_*`, `TB_REVISAO_*`), fatos (`TB_FATO`, `TB_ENVOLVIDO*`, `TB_EVIDENCIA`, `TB_AGENTE_PUBLICO`, `TB_ENTE_PRIVADO`, `TB_CONTRATO_FIRMADO`), PIP (`TB_DILIGENCIA`, `TB_PARTICIPANTE`, `TB_VIGENCIA_PUNITIVA`, `TB_RELATORIA*`, `TB_DISTRIBUICAO`), documentos (`TB_DOCUMENTO_ASSINADO`, `TB_CONTEUDO_DOCUMENTO_ASSINADO`, `TB_ASSINATURA`, `TB_DOCUMENTO_INVALIDO`, `TB_DOCUMENTO_VINCULADO`), organizacional (`TB_UNIDADE`, `TB_UNIDADE_VINCULADA`, `TB_CONFIGURACAO_PROCESSO`, `TB_CONFIGURACAO_REVISAO_PROCESSO`, `TB_CARGO`, `TB_SERVIDOR`, `TB_SITUACAO_FUNCIONAL`, `TB_PESSOA*`, `TB_ENDERECO`), identidade (`TB_USUARIO`, `TB_PERFIL`, `TB_PERMISSAO`) e tabelas de status/tipo (`TB_STATUS_*`, `TB_TIPO_*`).
+- ✅ **SQL Server**, dois contextos EF: `DefaultDbContext` (60 arquivos em `Contexts/Default/Mappings` em `29989114`; eram 58 em `8e3c8648`) e `EventStoreDbContext` (tabela `TB_EVENTO`, mapping `EventMapping`). Ambos usam `EnableRetryOnFailure` e, se `PoolSize > 0`, `AddDbContextPool`.
+- ✅ **Tabelas mapeadas** (`ToTable`), por grupo: processos (`TB_PROCESSO`, `TB_PROCESSO_ADMISSIBILIDADE`, `TB_PROCESSO_INVESTIGATIVO_PRELIMINAR`), entrada (`TB_DENUNCIA`, `TB_ANALISE_DENUNCIA` com FK de usuário, `TB_ANEXO_DENUNCIA`, `TB_DEMANDA` com `ID_DENUNCIA` opcional, `TB_ORIGEM_DENUNCIA`, anexos), análise (`TB_ANALISE_*`, `TB_ITEM_ANALISE_*` e tabelas de associação com tipificação, recomendação e elemento faltante, `TB_NOTA_*`, `TB_REVISAO_*`), fatos (`TB_FATO`, `TB_ENVOLVIDO*`, `TB_EVIDENCIA`, `TB_AGENTE_PUBLICO`, `TB_ENTE_PRIVADO`, `TB_CONTRATO_FIRMADO`), PIP (`TB_DILIGENCIA`, `TB_PARTICIPANTE`, `TB_VIGENCIA_PUNITIVA`, `TB_RELATORIA*`, `TB_DISTRIBUICAO`), documentos (`TB_DOCUMENTO_ASSINADO`, `TB_CONTEUDO_DOCUMENTO_ASSINADO`, `TB_ASSINATURA`, `TB_DOCUMENTO_INVALIDO`, `TB_DOCUMENTO_VINCULADO`), organizacional (`TB_UNIDADE`, `TB_UNIDADE_VINCULADA`, `TB_CONFIGURACAO_PROCESSO`, `TB_CONFIGURACAO_REVISAO_PROCESSO`, `TB_CARGO`, `TB_SERVIDOR`, `TB_SITUACAO_FUNCIONAL`, `TB_PESSOA*`, `TB_ENDERECO`), identidade (`TB_USUARIO`, `TB_PERFIL`, `TB_PERMISSAO`) e tabelas de status/tipo (`TB_STATUS_*`, `TB_TIPO_*`).
+- ✅ **Mudança de esquema em `29989114`** (sem migration): `TB_DENUNCIA` perdeu `ID_STATUS_DENUNCIA` e `TX_MOTIVO_RECUSA` (este passou para `TB_ANALISE_DENUNCIA`); `TB_STATUS_DENUNCIA` virou `TB_STATUS_ANALISE_DENUNCIA` (ids 1–3: Desconhecido, Aceita, Recusada; antes 0–3 com "Aguardando análise"); colunas de `TB_DEMANDA` de assunto, origem de denúncia, documento de origem e tipo de documento passaram a aceitar nulo. Ambientes existentes dependem de script manual (não está no repositório).
 - ✅ **Conversores de valor**: `CPFConverter`, `CNPJConverter`, `EmailConverter`, `BlobConverter`. `EntityLifeCicleMapping` mapeia as datas de criação, atualização, conclusão e exclusão (exclusão lógica por `DataExclusao`).
 - ✅ **Sem migrations EF.** O esquema é gerado por `Database.GenerateCreateScript()` dos dois contextos.
-- ✅ **`DatabaseOperation.GenerateDatabase`** (chamada por `POST /support/generate-database`): se `CreateDatabase` (padrão `true`) executa `00-Remove-All-Tables.sql` (remove **todas** as FKs e tabelas do schema `dbo`), cria o esquema e depois roda em ordem alfabética os scripts `*.sql` (exceto o `00`, e os de `IgnoredFiles`). Scripts presentes: `01` a `25` (inserções de domínio: assuntos, tipos, condutas, unidades, usuários, recomendações, tipificações, status, fluxos de configuração) e `26` (tabela de identidade da POC; fora do escopo).
+- ✅ **`DatabaseOperation.GenerateDatabase`** (chamada por `POST /support/generate-database`): se `CreateDatabase` (padrão `true`) executa `00-Remove-All-Tables.sql` (remove **todas** as FKs e tabelas do schema `dbo`), cria o esquema e depois roda em ordem alfabética os scripts `*.sql` (exceto o `00`, e os de `IgnoredFiles`). Scripts presentes: `01` a `25` (o `25` agora é `25-Insert-TB_STATUS_ANALISE_DENUNCIA.sql`; o antigo `25-Insert-TB_STATUS_DENUNCIA.sql` foi removido e o `12` ganhou o status `Criada`; inserções de domínio: assuntos, tipos, condutas, unidades, usuários, recomendações, tipificações, status, fluxos de configuração) e `26` (tabela de identidade da POC; fora do escopo).
 - ✅ **Proteção do endpoint**: `[FeatureGate(SupportFeatures.GenerateDatabase)]`, flag `Support.GenerateDatabase` = `false` em `appsettings.json`; o controller é `[AllowAnonymous]`.
 - ✅ **Leitura (read model)**: `ReadModelConnection` com `ReadModelDatabaseSettings.ConnectionStringName`; consultas SQL em `Queries/<Área>/…` embutidas como recurso, executadas pelo `Processor`.
 - ✅ **Auditoria**: `TB_EVENTO` registra cada evento de domínio ([[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Arquitetura-CQRS-e-Event-Sourcing|Arquitetura]]).

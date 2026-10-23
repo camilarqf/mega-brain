@@ -4,10 +4,10 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
-commit_data: 2026-09-15
+updated: 2026-10-23
+commit_data: 2026-10-22
 branch: master
 tags:
   - participa-df
@@ -101,7 +101,16 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - **Itens abertos**: ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendências]] (cerca de 70 perguntas por lote).
 - **Para atualizar após novos commits**: `git diff 4901ad5..HEAD --stat` e a skill `atualizar-documentacao`; o campo `sources` de cada nota indica os arquivos cobertos.
 
+## Atualização de 2026-10-23 (`4901ad5..820666c`)
+- Base: HEAD `820666cb28ee23b239e5ad033034c3e8413a10ed` (branch `master`, 2026-10-22); 13 commits sem merges, 31 arquivos; classificação: mudança funcional e de contrato/integração, mais configuração e segurança. Working tree: `Directory.Build.props` e dois `.md` de caso (`case-participa-df-*`) não versionados (não analisados).
+- Notas atualizadas: Integracoes-Externas (mensageria reescrita, nova seção S3, histórico), Workflows-e-Consumidores, Atribuicao-e-Bloqueio-Externo, Perfis-e-Ambientes, Stack-e-Dependencias, Arquitetura, Glossario, Debitos-Tecnicos (A1.1 e F1–F5), Testes-e-Cobertura, Index e Pendencias; fora do backend: `Mapa-de-Integracoes` e `PARTICIPA-DF-Repositorios`. Nenhuma nota nova.
+- Lido: `S3Client`, `S3ClientSettings`, `AddS3Client`, `ExportarDadosDenuncia` e o handler, contratos de denúncia, os 3 consumidores, o diff do `ManifestacaoTramitadaEventHandler`, `Startup`, csproj, `Dockerfile`, `deployment.params.yml` e os diffs dos `appsettings` (só nomes de chaves).
+- Não lido: SDK `CGDF.DotNet.SDK.PubSub` (retry e DLQ), `ExportarManifestacaoOperadorPDF` e o template do relatório, `UploadObjectRequest`, `IS3Client`, o conteúdo do bucket, `appsettings` de teste, o SCI atual contra o payload.
+- Corrigido: a inferência anterior de que a recusa mantém o bloqueio (agora ✅ remove). Notas fora do escopo e não reverificadas: Seguranca-e-Autorizacao, Catálogo de endpoints, módulos de Ouvidoria/SIC (o diff não toca controllers).
+- Contagens do Index ("Números rápidos") e dos testes não foram refeitas.
+
 ## Próximo passo exato
+0. (2026-10-23) Responder as perguntas da seção "atualização de 2026-10-23" em [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendencias]], conferir o payload com a documentação do `SCI` e rotacionar os segredos que estiveram versionados.
 1. Revisar com o time as pendências e os débitos 🔴 (A1 a A7, D1) e confirmar o contexto do sistema.
 2. Ler o SDK `CGDF.DotNet.SDK.*` (se acessível) para fechar A2, A5, A9 e A10, e subir a cobertura das notas de segurança.
 3. Identificar e analisar o frontend (nova pasta `Frontend/`) e consolidar os fluxos ponta a ponta.

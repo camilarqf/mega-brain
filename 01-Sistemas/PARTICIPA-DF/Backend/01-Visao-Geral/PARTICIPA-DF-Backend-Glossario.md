@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: inferido
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -14,7 +14,7 @@ tags:
 sources:
   - src/OuvDF.Api/Startup.cs
   - src/OuvDF.Api/appsettings.json
-  - src/OuvDF.ServicoOuvidoria/Domain/EventHandlers/DenunciaAceitaConsumer.cs
+  - src/OuvDF.IntegrationServices/Consumers
   - src/OuvDF.ServicoInformacaoCidadao/Jobs
   - src/OuvDF.Shared/Jobs
 ---
@@ -49,7 +49,7 @@ Nomes de classes, comandos, chaves de configuração e comentários de logs, no 
 | **CGDF** | Controladoria-Geral do Distrito Federal | 🔶 prefixo do SDK `CGDF.*` e tipos `…CGDF`; usado nos jobs `…-omissao-resposta-cgdf` |
 | **COACI / CQ / OGDF** | Unidades configuradas em `ServicoOuvidoriaSettings.UnidadeServicoOuvidoriaSettings`; COACI aparece na mensagem de denúncia aceita | ✅ nomes de chaves e texto do consumer; siglas ❓ sem expansão |
 | **Zeladoria** | Tipo de solicitação de zeladoria urbana; há política `IsSolicitacaoZeladoria`, tema `IdTemaZeladoria` e passo `BloquearSolicitacaoZeladoria` | ✅ nomes; regra ❓ lote 4 |
-| **Denúncia** | Evento externo aceito/recusado que libera ou mantém bloqueio de manifestação | ✅ consumidores `DenunciaAceita` e `DenunciaRecusada` (lote 7) |
+| **Denúncia** | Manifestação classificada como denúncia, tramitada da COACI à ouvidoria; gera os eventos `denuncia-criada` e `denuncia-registrada` (com arquivos no S3), e os eventos externos aceita/recusada **liberam** o bloqueio externo (os dois) e limpam os arquivos | ✅ consumidores `DenunciaCriada`, `DenunciaAceita` e `DenunciaRecusada` (atualizado em 2026-10-23, `820666c`; antes: "evento externo aceito/recusado que libera ou mantém bloqueio", a parte "mantém" estava incorreta) |
 | **Iza** | Serviço externo usado para classificação, assunto e denúncia | 🔶 `OuvDF.Iza.Client` (`ClassificationRequest`, `SubjectRequest`, `AccusationRequest`); tipo exato ❓ |
 | **PeoplesCheck** | Serviço externo de validação de pessoas (CPF/PJ, desafio) | 🔶 chaves `CheckEndpoint`, `CheckPJEndpoint`, `ChallengeEndpoint`; ❓ finalidade |
 | **MailService** | Serviço de envio de e-mail (por fila e API) | ✅ `MailServiceClientSettings`, `MailServiceApiSettings`, health check |

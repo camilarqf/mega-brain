@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -64,6 +64,8 @@ Comparei as pastas de `Domain/Commands` com os nomes dos arquivos de teste (um c
 ### Execução e integração contínua
 - ✅ O `Dockerfile` restaura e publica (`dotnet restore`, `dotnet publish`); **não executa `dotnet test`**. O `.jenkins-pipelines/` contém só parâmetros de implantação.
 - ✅ Há `coverlet.collector` nos projetos de teste, mas nenhum relatório ou limite de cobertura no repositório.
+
+- ✅ (2026-10-23, `820666c`) O diff `4901ad5..820666c` **não toca `tests/`** e uma busca por `S3Client`, `ExportarDadosDenuncia`, `DenunciaCriada`, `DenunciaAceita`, `DenunciaRecusada` e `ManifestacaoTramitadaEventHandler` em `tests` não retorna nada: o código novo (cliente S3, exportação da denúncia, consumidores e a regra da COACI) está **sem teste**. Contagens de `[Fact]`/`[Theory]` acima não foram refeitas.
 
 ## Inferências e limitações
 - 🔶 Sem banco isolado: os testes de integração gravam no banco apontado por `DefaultConnection` (não há *rollback* ou uso de `TransactionScope` nos testes que busquei); a limpeza dos dados é ❓.

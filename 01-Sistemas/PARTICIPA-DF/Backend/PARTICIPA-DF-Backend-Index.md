@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: pendente
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - moc
@@ -50,7 +50,7 @@ Lotes 0 a 8 concluídos (análise inicial completa; cobertura parcial). Contexto
 - [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ### 07 — Integrações
-- [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integracoes-Externas]]: Iza, MailService, PeoplesCheck, SEI, serviço de PDF, RabbitMQ, geocodificação, Loki, New Relic e API `v1`. Mapa: [[Mapa-de-Integracoes|Mapa de integrações]].
+- [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integracoes-Externas]]: Iza, MailService, PeoplesCheck, SEI, serviço de PDF, RabbitMQ (eventos de denúncia), armazenamento S3, geocodificação, Loki, New Relic e API `v1`. Mapa: [[Mapa-de-Integracoes|Mapa de integrações]].
 
 ### 08 — Qualidade
 - [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
@@ -60,14 +60,15 @@ Lotes 0 a 8 concluídos (análise inicial completa; cobertura parcial). Contexto
 - [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendencias]]: dúvidas a confirmar com o time
 
 ## Principais riscos (resumo de [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
-1. 🔴 Segredos preenchidos em arquivos versionados (`appsettings*.json`, `Dockerfile`, testes).
+1. 🔴 Segredos preenchidos em arquivos versionados (`appsettings*.json`, testes). 🔶 Atualização 2026-10-23: segredos de aplicação e a licença do New Relic saíram dos arquivos versionados e passaram a Swarm Secrets (`820666c`), mas continuam no histórico do git e os `appsettings` de teste não mudaram (A1/A1.1).
 2. 🔴 25 endpoints sem autorização declarada e vários anônimos que gravam (`operador-ws`, unidades, notificações, `jobs`).
 3. 🔴 Possível SSRF em `servicos/siturb` e `servicos/ra`; TLS desligado no PeoplesCheck.
 4. 🔴 Logout sem efeito comprovado (verificação de token cancelado não ligada).
 5. 🔴 Relato do cidadão em logs e enviado ao Iza (LGPD).
 6. 🔴 .NET 5 sem suporte.
+7. 🟠 Integração de denúncias com o S3 sem testes e com limpeza do bucket sem tratamento de falha (F1 a F5, 2026-10-23).
 
-## Números rápidos (commit `4901ad5`, arquivos `.cs` fora de `bin/obj`)
+## Números rápidos (commit `4901ad5`, arquivos `.cs` fora de `bin/obj`; não refeitos na atualização de 2026-10-23)
 | Item | Quantidade |
 |---|---|
 | `ServicoOuvidoria` / `ServicoInformacaoCidadao` / `Shared` / `Api` | 452 / 399 / 357 / 68 |

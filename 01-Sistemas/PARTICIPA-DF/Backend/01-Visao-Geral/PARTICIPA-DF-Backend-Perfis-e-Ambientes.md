@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -36,7 +36,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 Registrar como a configuração é composta por ambiente e como a imagem é construída e implantada. **Somente nomes de chaves**; valores (endereços, segredos, chaves de API) são omitidos de propósito (`BRAIN-RULES.md`, seção 10).
 
 ## Evidências
-Arquivos em `sources`. Foram lidos os **nomes** das chaves dos `appsettings*.json` e dos YAML de pipeline; os valores não foram reproduzidos. Commit `4901ad5`.
+Arquivos em `sources`. Foram lidos os **nomes** das chaves dos `appsettings*.json` e dos YAML de pipeline; os valores não foram reproduzidos. Commit `4901ad5`; atualizado em 2026-10-23 pelo diff até `820666c` (S3 e secrets).
 
 ## Informações confirmadas
 
@@ -50,10 +50,11 @@ Arquivos em `sources`. Foram lidos os **nomes** das chaves dos `appsettings*.jso
 | Grupo | Chaves (resumo) |
 |---|---|
 | Geral | `AllowedHosts`, `CorsOrigins`, `ApplicationDateTime`, `UrlFrontEnd`, `FrontEndURLs.{Principal, RedefinirSenha, SistemaOuvDF, SistemaSicDF, Login}` |
-| Segurança | `SecuritySecret`, `Jwt.{Secret, ExpirationDays}` (valores omitidos) |
+| Segurança | `SecuritySecret`, `Jwt.{Secret, ExpirationDays}` (valores omitidos; desde `820666c` `Jwt.Secret` e `SecuritySecret` não estão mais nos `appsettings` versionados e vêm de secret) |
 | Arquivos | `DiretorioArquivos{Raiz, Manifestacao, Pedido, Exportacao, Template}`, `LimiteVolumeArquivo{Manifestacao, PedidoInformacao}` |
 | Logs | `Logging.LogLevel.*`, `LoggerSettings.{Uri, AppName, Environment, HealthCheckEndpoint}` |
-| Mensageria | `RabbitMqPubSubSettings.{ConnectionStringName, ClientProvidedName, ExchangeName, ConsumerSettings.{MaxProcessingAttempts, PrefetchCount}}`, `ConnectionStrings.RabbitMqConnection` (Development), `RabbitMQSettings.*` (Prod) |
+| Mensageria | `RabbitMqPubSubSettings.{ConnectionStringName, ClientProvidedName, ExchangeName, ConsumerSettings.{MaxProcessingAttempts, PrefetchCount}}`, `ConnectionStrings.RabbitMqConnection` (vem de secret nas três regiões; o bloco `RabbitMQSettings.*` foi removido do `appsettings.Prod.json` e a chave de conexão do Development, em `820666c`) |
+| Armazenamento S3 | `S3ClientSettings.{Uri, AccessKey, SecretKey, BucketName, ObjectPrefix, Timeout, UserAgent, RetryCount, RetryIntervalInSeconds, HandledEventsAllowedBeforeBreaking, DurationOfBreakInSeconds, FallbackMessage}` em `appsettings.json`; `Uri` e `BucketName` também em Homolog e Prod; chaves de acesso por secret |
 | E-mail | `MailServiceClientSettings.*` (URI, chave de API, timeout, retry, circuit breaker, fallback), `MailServiceApiSettings.{Exchange, RouteKey, VirtualHost, TemplatePath, SubjectEnvironmentDescription}` |
 | Clientes HTTP | `IzaClientSettings.{Uri, Timeout, HealthCheckEndpoint}`, `PeoplesCheckClientSettings.*` (URI, chave de API, endpoints de check/challenge, retry, circuit breaker) |
 | SEI | `SeiConnectionSettings.{WsURL, WsSiglaSistema, WsIdentificacaoServico}`, `IntegracaoSicSeiSettings.*`, `TipoProcedimentoRecursoTerceiraInstanciaSEI` |
@@ -69,11 +70,13 @@ Arquivos em `sources`. Foram lidos os **nomes** das chaves dos `appsettings*.jso
 - ✅ `.docker/inject-docker-secrets-entrypoint.sh`: percorre `/run/secrets/*` e exporta cada secret do Docker Swarm como variável de ambiente antes de iniciar a aplicação (imprime apenas os nomes).
 - ✅ Chaves em `.jenkins-pipelines/deployment.params.yml`: `app`, `image_definition`, `integration_definition` (`health_check_endpoint: healthcheck`), `constraints_definition`, `regions` (com `cluster`, `credential_id`, `env_file`, `replicas`, `memory`, `network`, `volume`, `secrets`, `labels`, `log_max_*`, `internal_port`). Há uma região de **Staging** e arquivos de variáveis para `sandbox`, `staging` e `prod`.
 - ✅ O endpoint de saúde usado pelo deploy é `/healthcheck`.
+- ✅ (2026-10-23, `820666c`) `deployment.params.yml` passou a montar **Swarm Secrets** em Sandbox, Staging e Produção para: string de conexão do banco, `Jwt__Secret`, `SecuritySecret`, `PeoplesCheckClientSettings__ApiKey`, `MailServiceClientSettings__ApiKeyValue`, `SeiConnectionSettings__WsIdentificacaoServico`, `NEW_RELIC_LICENSE_KEY`, `ConnectionStrings__RabbitMqConnection`, `S3ClientSettings__AccessKey` e `S3ClientSettings__SecretKey` (nomes de secret por região omitidos). O secret do banco já existia (commit `7400dac`, anterior à análise).
+- ✅ O `Dockerfile` não define mais `NEW_RELIC_LICENSE_KEY` (comentário aponta o entrypoint de secrets); `launchSettings.json` também perdeu a chave; `.dockerignore` exclui `appsettings.Local.json` e `.git/`; o csproj marca `appsettings.Local.json` como `CopyToPublishDirectory=Never`.
 
 ## Inferências e limitações
-- 🔴 O `Dockerfile` contém uma variável de ambiente de licença do New Relic **literal** (valor omitido aqui). Os `appsettings*.json` versionados também têm chaves de nomes sensíveis (`Jwt.Secret`, `SecuritySecret`, `RabbitMQSettings.Password`, chaves de API); se os valores são reais não foi verificado. Tratar no lote 8 ([[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendências]]).
+- 🔶 Atualização 2026-10-23: a licença do New Relic **saiu** do `Dockerfile` (commit `302f804`), mas continua no histórico do git; rotação não verificável. Texto original (commit `4901ad5`): 🔴 "O `Dockerfile` contém uma variável de ambiente de licença do New Relic literal (valor omitido aqui)." Os `appsettings*.json` versionados também têm chaves de nomes sensíveis (`Jwt.Secret`, `SecuritySecret`, `RabbitMQSettings.Password`, chaves de API); se os valores são reais não foi verificado. Tratar no lote 8 ([[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Pendencias|Pendências]]).
 - 🔶 O nome dos ambientes de aplicação é `Development`, `Homolog`, `Prod` (arquivos); os de deploy são sandbox, staging e prod (pipelines). A correspondência exata entre eles (ex.: staging ↔ Homolog) não foi confirmada.
-- ❓ Conteúdo (valores) dos `*.env.yml` não foi lido; também a lista de secrets montados por região.
+- ❓ Conteúdo (valores) dos `*.env.yml` não foi lido. ✅ Resolvido em 2026-10-23 (`820666c`): a lista de nomes de secrets por região está em `deployment.params.yml` (acima).
 - ❓ Origem da `database-connection-string` por ambiente.
 
 ## Relacionamentos

@@ -50,4 +50,4 @@ Relacionar os repositórios do sistema Participa DF, o estado da análise e o co
 - Para atualizar o frontend SIC: `git diff 5518a81..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o frontend de Ouvidoria: `git diff 9d8ecdb..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o frontend: `git diff d250804..HEAD --stat` (skill `atualizar-documentacao`).
-- Para atualizar o backend: `git diff 4901ad5..HEAD --stat` (skill `atualizar-documentacao`).
+- Para atualizar o backend: `git diff 820666c..HEAD --stat` (skill `atualizar-documentacao`). Última atualização: 2026-10-23 (`4901ad5..820666c`, ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]).

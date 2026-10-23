@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -17,7 +17,9 @@ sources:
   - src/OuvDF.ServicoOuvidoria/Domain/Commands/RegistrarManifestacao/RegistrarManifestacaoWorkflow.cs
   - src/OuvDF.ServicoOuvidoria/Domain/Commands/ReclassificarManifestacao/ReclassificarManifestacaoWorkflow.cs
   - src/OuvDF.ServicoInformacaoCidadao/Domain/Commands/VincularPedidoSei/VincularPedidoSeiWorkflow.cs
-  - src/OuvDF.ServicoOuvidoria/Domain/EventHandlers/DenunciaAceitaConsumer.cs
+  - src/OuvDF.IntegrationServices/Consumers
+  - src/OuvDF.ServicoOuvidoria/Domain/EventHandlers/ManifestacaoTramitadaEventHandler.cs
+  - src/OuvDF.ServicoOuvidoria/Domain/Commands/ExportarDadosDenuncia
 ---
 
 # Workflows e consumidores de eventos
@@ -28,7 +30,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 Servir de índice dos casos de uso orquestrados por passos (workflows) e dos eventos de mensageria consumidos. O detalhe de cada fluxo de negócio fica nos lotes 4 e 5.
 
 ## Evidências
-Registros `AddWorkFlow<…>` e `ConfigurePubSub(...).AddConsumer<…>` em `Startup.ConfigureServices`; classes dos workflows e do consumidor em `sources`. Commit `4901ad5`.
+Registros `AddWorkFlow<…>` e `ConfigurePubSub(...).AddConsumer<…>` em `Startup.ConfigureServices`; classes dos workflows e dos consumidores em `sources`. Commit `4901ad5`; seção de consumidores atualizada até `820666c` (2026-10-23).
 
 ## Informações confirmadas
 
@@ -52,23 +54,37 @@ Registros `AddWorkFlow<…>` e `ConfigurePubSub(...).AddConsumer<…>` em `Start
 - ✅ `VincularPedidoSeiRequest` tem um `IRequestExceptionHandler` registrado (`ExceptionHandler`).
 
 ### Consumidores de eventos (RabbitMQ via `CGDF.DotNet.SDK.PubSub`)
-| Fila / tópico | Consumidor | Efeito |
+*Atualizado em 2026-10-23 (`820666c`); a versão do commit `4901ad5` está em "Histórico".*
+
+| Fila / tópico | Consumidor (`OuvDF.IntegrationServices/Consumers`) | Efeito |
 |---|---|---|
-| `denuncia-aceita` | `DenunciaAceitaConsumer` | ✅ envia `RemoverBloqueioExterno` para a manifestação (`DenunciaId`), justificativa "Denúncia aceita pela COACI (identificador processual)" |
-| `denuncia-recusada` | `DenunciaRecusadaConsumer` | ❓ não lido |
+| `denuncia-criada` | `DenunciaCriadaConsumer` | ✅ envia `ExportarDadosDenuncia` (PDF do relatório e anexos no bucket S3) e, se houver resultado, publica `denuncia-registrada` |
+| `denuncia-aceita` | `DenunciaAceitaConsumer` | ✅ envia `RemoverBloqueioExterno` (justificativa "Denúncia aceita pela COACI (identificador processual)") e remove os objetos do prefixo `{DenunciaId}/` |
+| `denuncia-recusada` | `DenunciaRecusadaConsumer` | ✅ envia `RemoverBloqueioExterno` com o `MotivoRecusa` e remove os objetos do prefixo `{DenunciaId}/` |
 
 - ✅ Configuração de consumo: `RabbitMqPubSubSettings.ConsumerSettings` (`MaxProcessingAttempts`, `PrefetchCount`); health check `RabbitMQ`.
 - 🔶 `Id` da denúncia é tratado como `Id` de manifestação (`Manifestacao = new CommandID<long>(DenunciaId)`).
+- ✅ O produtor de `denuncia-criada` é o `ManifestacaoTramitadaEventHandler` (evento de domínio `ManifestacaoTramitadaEvent`).
 
 ```mermaid
 flowchart LR
-    X[Sistema externo<br/>denúncia] -- denuncia-aceita --> C[DenunciaAceitaConsumer]
-    C --> R[RemoverBloqueioExterno]
+    T[ManifestacaoTramitadaEventHandler<br/>denúncia sai da COACI] -- denuncia-criada --> K[DenunciaCriadaConsumer]
+    K --> E[ExportarDadosDenuncia]
+    E --> S[(Bucket S3)]
+    K -- denuncia-registrada --> X[SCI 🔶]
+    X -- denuncia-aceita --> A[DenunciaAceitaConsumer]
+    X -- denuncia-recusada --> Z[DenunciaRecusadaConsumer]
+    A --> R[RemoverBloqueioExterno]
+    Z --> R
+    A -- apaga prefixo --> S
+    Z -- apaga prefixo --> S
     R --> M[(Manifestação)]
 ```
+Detalhes do S3 e do contrato: [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integrações externas]].
 
 ## Inferências e limitações
-- 🔶 Quem publica `denuncia-aceita` e `denuncia-recusada` não está no código; provável sistema de denúncias (o consumidor cita COACI): ❓. Entra no lote 7 (Mapa de Integrações).
+- 🔶 Quem publica `denuncia-aceita` e `denuncia-recusada` não está no código; provavelmente o `SCI` (ver [[Mapa-de-Integracoes|Mapa]]).
+- 🔶 Desbloqueio antes da limpeza do bucket e sem tratamento de erro nos consumidores (débito novo).
 - 🔶 Pelo nome, `BloquearSolicitacaoZeladoria` impede o registro de certas solicitações; regra não lida.
 
 ## Relacionamentos
@@ -76,4 +92,8 @@ flowchart LR
 
 ## Pendências e próximo passo
 - Lotes 4 e 5: ler os passos dos workflows marcados ❓ e criar notas de fluxo.
-- Lote 7: ler `DenunciaRecusadaConsumer` e registrar a integração de eventos.
+- ✅ Resolvido em 2026-10-23 (`820666c`): `DenunciaRecusadaConsumer` lido e integração registrada.
+
+## Histórico
+### 2026-10-23: consumidores do commit `4901ad5`
+- `DenunciaAceitaConsumer` ficava em `OuvDF.ServicoOuvidoria/Domain/EventHandlers` e só enviava `RemoverBloqueioExterno`; `DenunciaRecusadaConsumer` constava como "não lido"; não havia `DenunciaCriadaConsumer` nem armazenamento de objetos.

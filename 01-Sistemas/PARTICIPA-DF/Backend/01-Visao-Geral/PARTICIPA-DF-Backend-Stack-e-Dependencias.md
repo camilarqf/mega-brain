@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -19,6 +19,8 @@ sources:
   - src/OuvDF.Shared/OuvDF.Shared.csproj
   - src/OuvDF.ServicoOuvidoria/OuvDF.ServicoOuvidoria.csproj
   - src/OuvDF.ServicoInformacaoCidadao/OuvDF.ServicoInformacaoCidadao.csproj
+  - src/OuvDF.IntegrationServices/OuvDF.IntegrationServices.csproj
+  - src/OuvDF.S3.Client/OuvDF.S3.Client.csproj
   - src/Dockerfile
 ---
 
@@ -30,7 +32,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 Registrar a tecnologia, os projetos da solução e os pacotes relevantes do backend.
 
 ## Evidências
-Repositório `participa-df-backend`, commit `4901ad5`. Arquivos em `sources`. Versões conforme `src/Directory.Packages.props` (gerenciamento central de pacotes).
+Repositório `participa-df-backend`, commit `4901ad5`; tabelas de projetos e pacotes atualizadas até `820666c` (2026-10-23). Arquivos em `sources`. Versões conforme `src/Directory.Packages.props` (gerenciamento central de pacotes).
 
 ## Informações confirmadas
 
@@ -42,14 +44,15 @@ Repositório `participa-df-backend`, commit `4901ad5`. Arquivos em `sources`. Ve
 ### Projetos da solução e dependências entre eles
 | Projeto | Depende de (ProjectReference) | Papel |
 |---|---|---|
-| `OuvDF.Api` | MailService.Client, PeoplesCheck.Client, ServicoInformacaoCidadao, ServicoOuvidoria, Shared | host HTTP |
-| `OuvDF.ServicoOuvidoria` | Iza.Client, Shared, Templates, IntegrationServices | domínio e consultas da Ouvidoria |
+| `OuvDF.Api` | IntegrationServices, MailService.Client, PeoplesCheck.Client, S3.Client, ServicoInformacaoCidadao, ServicoOuvidoria, Shared | host HTTP |
+| `OuvDF.ServicoOuvidoria` | Iza.Client, S3.Client, Shared, Templates | domínio e consultas da Ouvidoria (já não referencia `IntegrationServices`) |
 | `OuvDF.ServicoInformacaoCidadao` | Shared, Templates | domínio e consultas do SIC |
 | `OuvDF.Shared` | MailService.Client | usuários, operadores, segurança, jobs, infra comum |
 | `OuvDF.Templates` | — | templates Razor |
 | `OuvDF.Iza.Client`, `MailService.Client`, `PeoplesCheck.Client` | DefaultHttpClient | clientes HTTP de serviços externos |
+| `OuvDF.S3.Client` (novo) | DefaultHttpClient (pacotes `Minio`, `Http.Polly`) | cliente de armazenamento de objetos S3/MinIO |
 | `OuvDF.DefaultHttpClient` | — | configuração HTTP comum (Polly) |
-| `OuvDF.IntegrationServices` | — (pacote `CGDF.DotNet.SDK.PubSub`) | 1 arquivo `.cs` |
+| `OuvDF.IntegrationServices` | S3.Client, ServicoOuvidoria (pacotes `CGDF.DotNet.SDK`, `.PubSub`, `MediatR`) | consumidores de eventos de denúncia (3 arquivos em `Consumers/`); antes tinha só o contrato `DenunciaRegistrada` |
 
 ### Pacotes principais (versões)
 | Área | Pacote | Versão |
@@ -62,6 +65,7 @@ Repositório `participa-df-backend`, commit `4901ad5`. Arquivos em `sources`. Ve
 | Mapeamento | `AutoMapper` | 10.1.1 |
 | Validação | `Flunt` | 2.0.3 |
 | Resiliência HTTP | `Microsoft.Extensions.Http.Polly` | 7.0.10 |
+| Armazenamento S3 | `Minio` | 4.0.7 |
 | HTTP | `RestSharp` | 108.0.1 |
 | Serialização | `Newtonsoft.Json` / `Mvc.NewtonsoftJson` | 13.0.1 / 5.0.6 |
 | Logs | `Serilog.AspNetCore` 4.1.0; sinks File 5.0.0, NewRelic.Logs 1.2.0, Discord 1.2.0, Grafana.Loki 7.0.0 | — |

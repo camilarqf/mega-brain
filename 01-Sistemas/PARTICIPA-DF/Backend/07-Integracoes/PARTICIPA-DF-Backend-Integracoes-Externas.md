@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-22
+updated: 2026-10-23
 consumer: PARTICIPA-DF
 tags:
   - participa-df
@@ -16,12 +16,17 @@ tags:
   - sei
   - rabbitmq
   - email
+  - s3
+  - minio
 sources:
   - src/OuvDF.DefaultHttpClient
   - src/OuvDF.Iza.Client
   - src/OuvDF.MailService.Client
   - src/OuvDF.PeoplesCheck.Client
   - src/OuvDF.IntegrationServices
+  - src/OuvDF.S3.Client
+  - src/OuvDF.ServicoOuvidoria/Domain/Contracts
+  - src/OuvDF.ServicoOuvidoria/Domain/Commands/ExportarDadosDenuncia
   - src/OuvDF.Api/Startup.cs
   - src/OuvDF.Api/Program.cs
   - src/OuvDF.Api/Controllers/ServicoOuvidoria/ServicosExternosController.cs
@@ -34,6 +39,7 @@ sources:
   - src/OuvDF.Shared/Infra/Services/ConvertHtmlToPDF
   - src/OuvDF.Shared/Api/HealthChecks
   - src/Dockerfile
+  - .jenkins-pipelines/deployment.params.yml
 ---
 
 # Integrações externas
@@ -54,14 +60,15 @@ Provedor: [[01-Sistemas/Servico-HtmlToPdf/Servico/07-Integracoes/Servico-HtmlToP
 | `PeoplesCheck` | saída | HTTP GET/POST | `OuvDF.PeoplesCheck.Client` | `PeoplesCheckClientSettings` | ✅ |
 | `SEI` | saída | web service via SDK `CGDF.SEI.DotNet.SDK` | passos de `VincularPedidoSei` | `SeiConnectionSettings`, `IntegracaoSicSeiSettings` | ✅ uso; 🔶 protocolo (SOAP) |
 | `Servico-HtmlToPdf` | saída | HTTP POST JSON | `ConvertHtmlToPDFHandler` (RestSharp) | `HtmlToPdfConfiguration`, `url-service-html-to-pdf` | ✅ |
-| `RabbitMQ` | saída e entrada | mensageria (SDK `CGDF.DotNet.SDK.PubSub`) | `ManifestacaoTramitadaEventHandler`, consumidores | `RabbitMqPubSubSettings`, `ConnectionStrings` | ✅ |
+| `RabbitMQ` | saída e entrada | mensageria (SDK `CGDF.DotNet.SDK.PubSub`) | `ManifestacaoTramitadaEventHandler`, `DenunciaCriadaConsumer` e demais consumidores | `RabbitMqPubSubSettings`, `ConnectionStrings` | ✅ |
+| Armazenamento de objetos S3 (🔶 `MinIO-CGDF`) | saída | API S3 via pacote `Minio` 4.0.7 | `OuvDF.S3.Client` (`S3Client`) | `S3ClientSettings` | ✅ uso; 🔶 provedor |
 | `Servico-Geocodificacao` | saída (proxy) | HTTP GET (`WebClient`) | `ServicosExternosController` | host fixo no código (omitido) | ✅ |
 | `Grafana-Loki` | saída | sink do Serilog | `Program.cs` | `LoggerSettings` | ✅ |
 | `NewRelic` | saída | agente .NET no container | `Dockerfile` | variáveis do profiler | ✅ |
 | Sistemas integrados (`OperadorWS`) | entrada | REST `v1/*` | `IntegracaoController` (Ouvidoria e Shared) | operador WS cadastrado | ✅ endpoints; ❓ consumidores |
 
 ## Evidências
-Projetos de cliente e arquivos em `sources`; configuração apenas por nome. Commit `4901ad5`.
+Projetos de cliente e arquivos em `sources`; configuração apenas por nome. Commit `4901ad5`; seções 6 e 10 atualizadas até o commit `820666c` (2026-10-23).
 
 ## Informações confirmadas
 
@@ -98,13 +105,18 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - ✅ O contrato (`HtmlString`) é o mesmo do SICI e do SCI; o usuário informou em 2026-10-19 que é o mesmo serviço (ID único `Servico-HtmlToPdf`; ver [[Mapa-de-Integracoes|Mapa]]).
 
 ### 6. Mensageria (RabbitMQ)
+*Atualizado em 2026-10-23 (commit `820666c`). A versão anterior está em "Histórico" abaixo.*
+
 | Canal | Papel do Participa-DF | Evento | Tratamento |
 |---|---|---|---|
-| `denuncia-registrada` | **publica** | `DenunciaRegistrada` (`DenunciaId` = id da manifestação, unidade de origem e destino, protocolo, identificada) | disparado em `ManifestacaoTramitadaEventHandler` quando uma **denúncia** sai da COACI para uma unidade de ouvidoria, apenas na primeira vez (`produtor: participa-df`) |
-| `denuncia-aceita` | **consome** | `DenunciaAceita` | `RemoverBloqueioExterno` com justificativa "Denúncia aceita pela COACI (…)" |
-| `denuncia-recusada` | **consome** | `DenunciaRecusada` | `RemoverBloqueioExterno` com o motivo da recusa |
+| `denuncia-criada` | **publica e consome** | `DenunciaCriada` (só `DenunciaId`) | publicado por `ManifestacaoTramitadaEventHandler` quando uma **denúncia** sai da COACI para uma unidade de ouvidoria; consumido por `DenunciaCriadaConsumer` na própria API, que envia `ExportarDadosDenuncia` |
+| `denuncia-registrada` | **publica** | `DenunciaRegistrada` (`DenunciaId`, unidades de origem e destino, protocolo, `Identificada`, `ArquivoReferencia`, `Anexos[]`) | publicado por `DenunciaCriadaConsumer` depois de os arquivos estarem no bucket (`produtor: participa-df`); se a manifestação não existe, o consumidor registra erro e não publica |
+| `denuncia-aceita` | **consome** | `DenunciaAceita` | `RemoverBloqueioExterno` com justificativa "Denúncia aceita pela COACI (…)" e remoção dos objetos do prefixo `{DenunciaId}/` |
+| `denuncia-recusada` | **consome** | `DenunciaRecusada` | `RemoverBloqueioExterno` com o `MotivoRecusa` e remoção dos objetos do prefixo `{DenunciaId}/` |
+- ✅ Regra de disparo: `JaTramitouDaCoaciParaOuvidoria` conta os trâmites da manifestação com **o mesmo destino** e origem do tipo COACI; mais de 1 impede novo evento (o filtro por destino foi acrescentado no commit `7cd80da`).
 - ✅ Configuração do consumo: `RabbitMqPubSubSettings.ConsumerSettings` (`MaxProcessingAttempts`, `PrefetchCount`); health check `RabbitMQ` (estado *Degraded*).
-- ✅ O contrato de publicação fica em `OuvDF.IntegrationServices` (`DenunciaRegistrada`).
+- ✅ Os contratos (`DenunciaCriada`, `DenunciaRegistrada`, `DenunciaAceita`, `DenunciaRecusada`) ficam em `OuvDF.ServicoOuvidoria/Domain/Contracts`; os três consumidores, em `OuvDF.IntegrationServices/Consumers`, registrados em `Startup.ConfigurePubSub`.
+- 🔶 Contraparte (SCI): ver [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-Participa-DF-Eventos|SCI → eventos do Participa-DF]]; o payload esperado pelo SCI não foi conferido contra o contrato atual (o histórico do git tem um revert do ajuste de payload de arquivos, `2be9deb`).
 - ✅ Também há publicação interna de `ExclusaoContaUsuarioSolicitada` (`IPublisher`) ao solicitar exclusão de conta; 🔶 é notificação em processo (MediatR), não mensageria externa.
 
 ### 7. Serviços de localização (proxy)
@@ -118,6 +130,13 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - ✅ Logs: Serilog com Console e `Grafana-Loki` (rótulos `appName` e `environment`).
 - ✅ New Relic: agente .NET instalado e ativado por variáveis do profiler no `Dockerfile`; pacotes de sinks New Relic, Discord e File referenciados em `OuvDF.Api.csproj` (🔶 uso por configuração não verificado).
 
+### 10. Armazenamento de objetos (S3 / MinIO)
+- ✅ `OuvDF.S3.Client` (`IS3Client`/`S3Client`, `AddS3Client` em `Startup`): cliente `Minio` sobre `HttpClient` nomeado com resiliência (retry e circuit breaker de `ResilienceSettings`) e `HttpLoggingHandler`. Operações: `UploadAsync`, `ExistsAsync` (considera existente só se o tamanho for > 0), `DeleteAsync`, `DeleteByPrefixAsync` (lista recursivamente e remove um a um), `GetObjectKey` e `GetReference` (`bucket/chave`).
+- ✅ Configuração `S3ClientSettings`: `Uri`, `AccessKey`, `SecretKey`, `BucketName`, `ObjectPrefix`, `Timeout`, `UserAgent`, retry e circuit breaker, `FallbackMessage`. As chaves de acesso vêm de Swarm Secrets (`S3ClientSettings__AccessKey` e `__SecretKey`) nas três regiões. Valores omitidos.
+- ✅ Ciclo de vida do objeto (chave `{prefixo}/{DenunciaId}/…`): `ExportarDadosDenunciaHandler` gera o PDF do relatório (comando `ExportarManifestacaoOperadorPDF`, visão `ManifestacaoDetalhadaOperador`, nome `{protocolo}.pdf`) e envia os anexos **ativos** (`{anexoId}-{nome}`, lidos do diretório de arquivos da manifestação); se o objeto já existe, reutiliza a referência (idempotência). Os consumidores de `denuncia-aceita` e `denuncia-recusada` apagam tudo do prefixo.
+- ✅ Anexo ausente no disco gera `InvalidOperationException` e interrompe a preparação (nada é publicado).
+- 🔶 Provedor provável: o `MinIO-CGDF` (só por mensagens de commit; o endereço não foi lido). Entra no Mapa como hipótese.
+
 ## Falhas e dependências
 | Integração | Se falhar | Efeito observado |
 |---|---|---|
@@ -127,6 +146,7 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 | SEI | exceção do SDK | vínculo não criado (tratamento de erro no workflow não lido) |
 | Serviço de PDF | notificação de erro | geração de PDF falha |
 | RabbitMQ | health *Degraded* | eventos de denúncia não trafegam |
+| S3 / MinIO | retry e circuito (mensagem de fallback configurada); exceção no consumidor | `denuncia-registrada` não é publicado; ou aceite/recusa já aplicou o desbloqueio e a limpeza falha depois |
 | Geocodificação | `200` vazio | mapa sem resultados |
 
 ## Inferências e limitações
@@ -137,7 +157,8 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - 🔶 `Iza` usa `HttpClient.Send` (síncrono) dentro de métodos `async`.
 - 🔶 `PeoplesCheck`/`MailService` repetem a configuração de resiliência (código duplicado entre os dois).
 - 🔶 `unidade 01005` e `01007` são códigos de unidade fixos no código; dependem de dados do banco.
-- ❓ Contratos de resposta do PeoplesCheck, do MailService (`/mail/send`) e do SEI; quem é o provedor "COACI/sistema correcional" que publica `denuncia-aceita/recusada` e consome `denuncia-registrada`.
+- ❓ Contratos de resposta do PeoplesCheck, do MailService (`/mail/send`) e do SEI. 🔶 O provedor dos eventos `denuncia-aceita/recusada` é provavelmente o `SCI` (ver Mapa); semântica de retry/DLQ do SDK de PubSub não lida.
+- 🔶 (2026-10-23) Em `DenunciaAceitaConsumer`/`DenunciaRecusadaConsumer` o desbloqueio ocorre **antes** da limpeza do bucket e sem tratamento de erro: falha no S3 deixa os arquivos (com dados do cidadão) no armazenamento temporário. Ver [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Débitos técnicos]].
 - ❓ Quem consome a API `v1` e o serviço "metro".
 
 ## Relacionamentos
@@ -146,4 +167,10 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 
 ## Pendências e próximo passo
 - Confirmar com o time: natureza do Iza, consentimento do cidadão, quem é o sistema correcional e os consumidores da API `v1` e "metro".
-- Lote 8: registrar como débitos o TLS desligado, o SSRF potencial, o fallback silencioso e o duplicado de resiliência.
+- Lote 8: registrar como débitos o TLS desligado, o SSRF potencial, o fallback silencioso e o duplicado de resiliência. (✅ feito no lote 8)
+- Atualização 2026-10-23: confirmar o provedor do S3, a política de expiração do bucket e o payload que o SCI espera; ler o SDK de PubSub.
+
+## Histórico
+### 2026-10-23: substituído o quadro de mensageria do commit `4901ad5`
+- Regra anterior (commit `4901ad5`): `denuncia-registrada` era publicado **direto** por `ManifestacaoTramitadaEventHandler` (sem arquivos; campos `DenunciaId`, unidades, protocolo, `Identificada`), só na primeira tramitação COACI→ouvidoria; `denuncia-aceita`/`denuncia-recusada` apenas executavam `RemoverBloqueioExterno`; o contrato ficava em `OuvDF.IntegrationServices`. Não havia armazenamento de objetos.
+- Pendência resolvida em 2026-10-23 (`820666c`): `DenunciaRecusadaConsumer` foi lido (faz `RemoverBloqueioExterno` com o motivo e limpa o bucket).

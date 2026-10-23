@@ -3,9 +3,9 @@ type: analysis-log
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: pendente
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - pendencias
@@ -22,19 +22,19 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 
 ## Perguntas técnicas
 - [ ] `OuvDF.BCadastro.Client` e `OuvDF.GovBr.Client` (só `bin/obj`) foram removidos ou são trabalho futuro?
-- [ ] `OuvDF.IntegrationServices` (1 arquivo `.cs`) tem uso real?
+- [x] `OuvDF.IntegrationServices` (1 arquivo `.cs`) tem uso real? Resolvido em 2026-10-23 (`820666c`): o projeto agora contém os 3 consumidores de denúncia e é referenciado pela `OuvDF.Api`.
 
 ## Perguntas surgidas no lote 1
 - [ ] Expansão oficial de SO, SIC, SEI, COACI, CQ e OGDF; finalidade de Iza e PeoplesCheck (ver [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Glossario|Glossário]]).
 - [ ] Qual agendador dispara `GET /jobs/v2/{nome}`, com que periodicidade e com que credencial? `/jobs/*` exige autenticação? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]])
 - [ ] Os endpoints `GET /jobs/{nome}` (v1) ainda são usados? O dicionário de comandos está vazio.
-- [ ] Os valores sensíveis em `appsettings*.json` e a licença do New Relic no `Dockerfile` são reais? Já foram rotacionados? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]])
+- [ ] (2026-10-23: a licença do New Relic e os segredos de aplicação saíram dos arquivos versionados, `820666c`; a pergunta sobre rotação e histórico do git continua aberta) Os valores sensíveis em `appsettings*.json` e a licença do New Relic no `Dockerfile` são reais? Já foram rotacionados? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]])
 - [ ] A política de CORS deveria restringir às origens de `CorsOrigins`? Hoje aplica `AllowAnyOrigin`.
 - [ ] Correspondência entre ambientes da aplicação (Development, Homolog, Prod) e do deploy (sandbox, staging, prod); origem da string de conexão do banco.
 - [ ] `ExportarPedidosCaixaEntradaWorkFlow` (PDF) está desativado de propósito? Falta `AddWorkFlow` em `Startup`.
 - [ ] `ValidateTokenFilter`, `ExceptionHandlingFilter` e `ExceptionHandlingMiddleware` estão em uso? ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Arquitetura|Arquitetura]])
 - [ ] Os jobs de pedidos devem comparar prazos com `IApplicationDateTime` (hoje usam `DateTime.Now` nas consultas)?
-- [ ] Quem publica `denuncia-aceita` e `denuncia-recusada`? `DenunciaId` equivale ao id da manifestação?
+- [ ] Quem publica `denuncia-aceita` e `denuncia-recusada`? 🔶 Provavelmente o `SCI`. `DenunciaId` equivale ao id da manifestação? ✅ Sim no código (`CommandID<long>(DenunciaId)`; confirmado em 2026-10-23, `820666c`), falta confirmar no lado do SCI.
 
 ## Perguntas surgidas no lote 2
 - [ ] O SDK (`UseCgdfSecurity`/`AddJwtSecurity`) verifica `TokenCancelado` ou impõe autenticação global? Sem isso, logout não invalida o token e `/jobs/*` e o hub SignalR ficam abertos ([[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]).
@@ -106,6 +106,13 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] Os segredos versionados (A1) já foram rotacionados? Quem é o dono do ambiente? ([[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
 - [ ] Existe plano de migração do .NET 5?
 - [ ] Qual é a ferramenta de CI/CD e ela executa testes e análise de dependências?
+
+## Perguntas surgidas na atualização de 2026-10-23 (`820666c`)
+- [ ] O bucket S3 de `integracao-sci-participa-df` é o `MinIO-CGDF`? Quem é o dono, qual a política de acesso, criptografia e expiração dos objetos?
+- [ ] O `SCI` espera o payload atual de `denuncia-registrada` (`ArquivoReferencia` e `Anexos`) e o novo canal `denuncia-criada`? Por que o merge de `integracao-sci-ajustar-payload-arquivos` foi revertido (`2be9deb`)?
+- [ ] Falha do S3 em `DenunciaAceitaConsumer`/`DenunciaRecusadaConsumer`: o SDK de PubSub reprocessa a mensagem (e a remoção do bloqueio roda de novo)? (débito F1)
+- [ ] Os segredos que estiveram nos arquivos versionados foram rotacionados e o histórico do git foi limpo? (A1.1)
+- [ ] Quem aplica `AplicarBloqueioExterno` (sem resposta desde o lote 4)?
 
 ## Próximo passo
 Análise inicial concluída (ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]).

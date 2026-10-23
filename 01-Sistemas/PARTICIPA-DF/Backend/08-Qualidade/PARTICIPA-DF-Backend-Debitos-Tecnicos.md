@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -19,6 +19,9 @@ sources:
   - src/OuvDF.Shared
   - src/OuvDF.ServicoOuvidoria
   - src/OuvDF.ServicoInformacaoCidadao
+  - src/OuvDF.IntegrationServices
+  - src/OuvDF.S3.Client
+  - .jenkins-pipelines/deployment.params.yml
   - tests
 ---
 
@@ -40,6 +43,7 @@ Legenda de severidade: 🔴 alta · 🟠 média · 🟡 baixa.
 | # | Fato (✅ ou 🔶) | Origem | Sev. | Recomendação |
 |---|---|---|---|---|
 | A1 | ✅ `appsettings*.json` versionados (4 em `src/OuvDF.Api` e 4 em `tests`) têm valores preenchidos em chaves sensíveis: chave de assinatura JWT, `SecuritySecret`, senha do RabbitMQ, chaves de API do MailService e PeoplesCheck, e a conexão do banco no teste. O `Dockerfile` define a licença do New Relic em texto. Só verifiquei o preenchimento e o tamanho, sem expor valores. | [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]] | 🔴 | Tratar como comprometidos: rotacionar, mover para *secrets* (o entrypoint já lê `/run/secrets`), remover do histórico e usar valores fictícios nos testes. |
+| A1.1 | ✅ **Atualização 2026-10-23 (`820666c`, parcialmente resolvido A1)**: `Jwt.Secret`, `SecuritySecret`, a chave de API do MailService e PeoplesCheck, `WsIdentificacaoServico` do SEI, o bloco `RabbitMQSettings` de Prod e a licença do New Relic (`Dockerfile` e `launchSettings`) foram **removidos** dos arquivos versionados e passaram a vir de Swarm Secrets (`deployment.params.yml`, 3 regiões). 🔶 Continuam abertos: os valores seguem no **histórico do git** e a rotação não é verificável; os `appsettings` de `tests` não mudaram; `appsettings.Development/Homolog` ainda podem ter outras chaves sensíveis (não reverificado). | [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]] | 🟠 (era 🔴) | Rotacionar os valores que estiveram versionados e limpar o histórico. |
 | A2 | ✅ 25 endpoints sem `[Authorize]` nem `[AllowAnonymous]` (inclui gravar/ativar/desativar unidade, `notificacao/*` do SIC, `jobs/*`, `arquivo/download` do SIC, `configuration/*`); 56 anônimos, vários que gravam. 🔶 O SDK pode impor autenticação global (não lido). | [[01-Sistemas/PARTICIPA-DF/Backend/05-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] | 🔴 | Verificar o SDK; adotar *fallback policy* de autorização e listar explicitamente os públicos. |
 | A3 | ✅ `POST operador-so/operador-ws` é anônimo e cria operador de serviço; 🔶 o handler tende a sempre rejeitar (comparação com consulta nunca nula). | [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] | 🔴 | Exigir papel; corrigir a verificação de login existente. |
 | A4 | ✅ `servicos/siturb?url=` e `servicos/ra?url=` anônimos fazem GET na URL informada pelo chamador (`WebClient`); `localidade/posicao?url=` concatena ao host fixo. 🔶 SSRF. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integracoes-Externas]] | 🔴 | Permitir lista de hosts, validar o destino e exigir autenticação ou *rate limit*. |
@@ -91,6 +95,15 @@ Legenda de severidade: 🔴 alta · 🟠 média · 🟡 baixa.
 | E1 | ✅ Testes de integração usam banco, Redis, RabbitMQ e serviços reais; só um *mock* (token); os clientes testam serviços reais. | [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] | 🟠 | Isolar com contêineres e doubles; não usar dados reais. |
 | E2 | ✅ Sem teste por nome para jobs do SIC, cadastro de PF/PJ, recuperação de senha, vínculo SEI e cálculo de prazo; só 5 `[Fact]` unitários. | idem | 🟠 | Começar por cálculo de prazo, autenticação e jobs. |
 | E3 | ✅ Pipeline do `Dockerfile` não executa `dotnet test`; sem relatório de cobertura. | idem | 🟠 | Rodar os testes no CI com limite mínimo. |
+
+### F. Integração de denúncias com o S3 (novo em 2026-10-23, `820666c`)
+| # | Fato (✅ ou 🔶) | Origem | Sev. | Recomendação |
+|---|---|---|---|---|
+| F1 | ✅ `DenunciaAceitaConsumer` e `DenunciaRecusadaConsumer` enviam `RemoverBloqueioExterno` **antes** de `DeleteByPrefixAsync`, sem `try/catch`; se o S3 falhar, o bloqueio já foi removido e o consumidor lança exceção (reprocessamento 🔶 depende do SDK, não lido), e os arquivos (relatório e anexos do cidadão) podem permanecer no bucket. | [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integracoes-Externas]] | 🟠 | Tornar a limpeza idempotente e tolerante a falha; definir política de expiração do bucket. |
+| F2 | ✅ `ExportarDadosDenunciaHandler` envia o PDF do relatório (dados da manifestação) e os anexos a um armazenamento temporário externo à API; 🔶 classificação de dados (LGPD), controle de acesso e criptografia do bucket não verificados. | idem | 🟠 | Confirmar com o time as regras do bucket (acesso, retenção, criptografia). |
+| F3 | ✅ `ExistsAsync` considera inexistente um objeto de tamanho 0 e `UploadAsync` o sobrescreve; um upload interrompido que deixa objeto parcial não é detectado (só o tamanho > 0). 🔶 sem validação de integridade. | idem | 🟡 | Comparar tamanho/ETag ao reutilizar. |
+| F4 | ✅ Anexo ausente em disco lança `InvalidOperationException` e a denúncia não é publicada ao SCI; sem *retry* explícito nem alerta no código lido. | idem | 🟠 | Tratar e registrar o caso, com reprocessamento. |
+| F5 | ✅ Sem teste (unitário ou de integração) para `S3Client`, `ExportarDadosDenunciaHandler`, os três consumidores ou o filtro por destino em `JaTramitouDaCoaciParaOuvidoria` (busca em `tests` sem ocorrências). | [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] | 🟠 | Cobrir com testes (S3 simulado). |
 
 ## Inferências e limitações
 - 🔶 A severidade é do analista. Os itens A2, A5, A9 e A10 dependem do SDK interno `CGDF.DotNet.SDK` (autenticação global, validação de token, hash de senha), que não foi lido.

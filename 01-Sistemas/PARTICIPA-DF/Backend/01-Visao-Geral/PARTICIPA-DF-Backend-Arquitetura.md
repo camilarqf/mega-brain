@@ -4,9 +4,9 @@ system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
 coverage: parcial
-analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
+analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-23
 tags:
   - participa-df
   - backend
@@ -19,6 +19,8 @@ sources:
   - src/OuvDF.Api/Filters
   - src/OuvDF.Api/Middlewares
   - src/OuvDF.Shared/JobManager
+  - src/OuvDF.IntegrationServices/Consumers
+  - src/OuvDF.S3.Client
 ---
 
 # Arquitetura do backend
@@ -46,14 +48,20 @@ flowchart TD
     O --> I[OuvDF.Iza.Client]
     H --> M[OuvDF.MailService.Client]
     A --> P[OuvDF.PeoplesCheck.Client]
+    A --> N[OuvDF.IntegrationServices<br/>consumidores de eventos]
+    N --> O
+    N --> B[OuvDF.S3.Client]
+    O --> B
+    A --> B
 ```
+*Atualizado em 2026-10-23 (`820666c`): `IntegrationServices` passou a depender de `ServicoOuvidoria` (antes era o contrário) e a existir como projeto de consumidores; `S3.Client` é novo. Versão anterior do diagrama (commit `4901ad5`): `ServicoOuvidoria` → `IntegrationServices`, sem `S3.Client`.*
 - ✅ Cada serviço (`ServicoOuvidoria`, `ServicoInformacaoCidadao`) e o `Shared` repetem as pastas `Domain/` (Commands, Entities, Enums, Events), `Infra/` (Queries, Config/Maps; `Repositories` e `Services` quando existem), `Config/Settings` e `Jobs/`.
 - ✅ A `OuvDF.Api` contém só o host: controllers por área (`Controllers/ServicoOuvidoria`, `ServicoInformacaoCidadao`, `Shared`), filtros, middlewares, health checks e templates HTML de e-mail.
 
 ### Mediação por comandos (estilo CQRS)
 - ✅ Controllers enviam objetos de comando/consulta pelo MediatR; `OuvDFBaseController.ProcessCommand` devolve `400` com `Notifications` (Flunt) se `!command.IsValid`, senão `200` com `command.Response`.
 - ✅ Consultas também são comandos: ex.: `ConsultarManifestacoesVencidas` com `ConsultarManifestacoesVencidasHandler : CommandHandler<…>` em `Infra/Queries`.
-- ✅ MediatR registra handlers dos 4 assemblies: Api, `OuvDF.Shared`, `OuvDF.ServicoOuvidoria`, `OuvDF.ServicoInformacaoCidadao`.
+- ✅ MediatR registra handlers dos 4 assemblies: Api, `OuvDF.Shared`, `OuvDF.ServicoOuvidoria`, `OuvDF.ServicoInformacaoCidadao`. Os consumidores de `OuvDF.IntegrationServices` não são handlers MediatR: são `IIntegrationEventHandler<T>` do SDK PubSub e enviam comandos pelo `IMediator`.
 - ✅ Casos de uso longos são **workflows** de passos (`PipelineBehaviorWorkflow`, `AddStep<...>`): ver [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]].
 - ✅ Políticas via `AddPolicyManagement` (hoje uma: `IsSolicitacaoZeladoria`).
 

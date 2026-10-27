@@ -23,14 +23,14 @@ Servir, por HTTP, modelos de aprendizado de máquina treinados para apoiar a tri
 
 ## Evidências
 - `src/internal/description.py`: "API Robô Iza 🤖 endpoints para o projeto OUV-IA".
-- `src/main.py`: 8 endpoints `POST` de predição/probabilidade e 6 `GET` de metadados; ver [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]].
+- `src/main.py`: 8 endpoints `POST` de predição/probabilidade e 6 `GET` de metadados; ver [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]].
 - `CHANGELOG.md`: histórico de versões desde 2.4.0 (2023), com demandas SIGEDEM citadas nas atualizações de modelo.
 - `.jenkins-pipelines/deployment.params.yml`: nome da aplicação `Iza Api`, serviço `iza-api`.
 
 ## Informações confirmadas
 - ✅ Serviço **sem estado e sem banco**: cada chamada executa um modelo carregado em memória na inicialização. Ver [[01-Sistemas/Iza/Api/03-Modulos/Iza-Api-Predicao-de-Triagem|Predição de triagem]] e [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]].
 - ✅ Quatro modelos serializados (`.joblib`) lidos de um diretório configurado por variável de ambiente; os arquivos **não** estão no repositório.
-- ✅ Não há autenticação, autorização, banco, fila nem chamadas de saída no código. Ver [[01-Sistemas/Iza/Api/06-Seguranca/Iza-Api-Seguranca|Segurança]].
+- ✅ Não há autenticação, autorização, banco, fila nem chamadas de saída no código. Ver [[01-Sistemas/Iza/Api/08-Seguranca/Iza-Api-Seguranca|Segurança]].
 - ✅ Implantação por Jenkins em Docker/Swarm; ver [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Deploy-e-Ambientes|Deploy e ambientes]].
 
 ## Inferências e limitações

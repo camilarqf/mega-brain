@@ -49,7 +49,7 @@ Commit `dca3e933`. `index.route.js`; `components/{pagina-inicial,acessibilidade,
 
 - ✅ **Acessibilidade**: módulo `portal.acessibilidade` e diretivas `highContrast` e `fontResize` (com specs); troca de tema persistida em `localStorage`.
 - ✅ **Navegação**: `topbar`, `rodape`, *breadcrumb* (`angular-crumble` + `Breadcrumb` service, rotas `noLink`), `menu-*`, `searchbar`, `scrolltop-button`, `share` (compartilhamento social).
-- ✅ **Fale conosco** (`fale-conosco.controller.js`) envia `POST /contato/registro`; ver divergência em [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]]. **Pesquisa de satisfação** envia `POST /v2/pesquisa-satisfacao/`.
+- ✅ **Fale conosco** (`fale-conosco.controller.js`) envia `POST /contato/registro`; ver divergência em [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]]. **Pesquisa de satisfação** envia `POST /v2/pesquisa-satisfacao/`.
 - ✅ **Aviso de versão mobile**: `MainController` abre o modal `#modalMobile` quando `screen.width < 1023` e não há `redirect`/`modal` em `sessionStorage`; redirecionamento automático ao app está comentado.
 - ✅ Testes: 9 specs (módulos `acessibilidade`, `breadcrumb` e `pagina-inicial`; serviço do *breadcrumb*; módulo, serviço e diretiva do carrossel de vídeo; diretivas de contraste e de fonte).
 
@@ -59,7 +59,7 @@ Commit `dca3e933`. `index.route.js`; `components/{pagina-inicial,acessibilidade,
 - Cobertura parcial: diretivas visuais e SCSS lidos por amostragem.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]] · Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Apoio-e-Atualizacao-de-Dados|Apoio e atualização de dados]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]] · Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Apoio-e-Atualizacao-de-Dados|Apoio e atualização de dados]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]].

@@ -51,7 +51,7 @@ Descrever como o código está organizado e como os modelos chegam aos endpoints
 - ✅ `main.py` usa `from … import *` para todas as consultas.
 
 ## Relacionamentos
-- [[01-Sistemas/Iza/Api/03-Modulos/Iza-Api-Predicao-de-Triagem|Predição de triagem]] · [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/Iza/Api/03-Modulos/Iza-Api-Predicao-de-Triagem|Predição de triagem]] · [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
-- Confirmar se o código morto pode ser removido (débito); ver [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]].
+- Confirmar se o código morto pode ser removido (débito); ver [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]].

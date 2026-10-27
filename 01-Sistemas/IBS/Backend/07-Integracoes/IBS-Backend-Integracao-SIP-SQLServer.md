@@ -44,7 +44,7 @@ Voltar: [[01-Sistemas/IBS/Backend/IBS-Backend-Index|Índice]]
 - ❓ Se dev, hom e prod usam bases ou servidores distintos não é verificável pelo repositório (só há variável por ambiente).
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/IBS/Backend/04-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/01-Visao-Geral/IBS-Backend-Perfis-e-Ambientes|Perfis e ambientes]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/IBS/Backend/05-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/01-Visao-Geral/IBS-Backend-Perfis-e-Ambientes|Perfis e ambientes]]
 
 ## Pendências e próximo passo
 - Identificar o dono do SIP e o usuário de banco usado em cada ambiente.

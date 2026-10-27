@@ -46,7 +46,7 @@ Telas `/palavras-chave` (lista e inclusão) e `/editar-palavra` (edição), amba
 - ❓ Validações do formulário (HTML não lido).
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Nenhum específico.

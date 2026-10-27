@@ -54,7 +54,7 @@ Registrar como a imagem é construída e implantada e quais ambientes existem. V
 - 🔶 O `Dockerfile` passa `-P SPRING_PROFILES_ACTIVE` ao Maven, que é um **nome literal** de perfil (a variável não é expandida) e não existe no `pom.xml`; o perfil Spring efetivo em execução vem da variável de ambiente `SPRING_PROFILES_ACTIVE` do `*.env.yml`. Como `application.properties` usa `spring.profiles.active=@activatedProperties@` (filtro do Maven), o valor efetivo no JAR não foi verificado.
 - 🔶 O agente New Relic não é anexado pelo `ENTRYPOINT`; só há `newrelic.jar` e `newrelic.yml` em `src/main/resources/newrelic`. Se há `-javaagent` por outro meio é ❓.
 - ❓ URLs, DNS e exposição por ambiente; agendamento do job de limpeza e quem o dispara.
-- 🔴 Arquivos de propriedades por perfil e `*.env.yml` versionados trazem valores de URI de banco, chave de API e licença (não literais aqui). Ver [[01-Sistemas/PeoplesCheck/Servico/08-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
+- 🔴 Arquivos de propriedades por perfil e `*.env.yml` versionados trazem valores de URI de banco, chave de API e licença (não literais aqui). Ver [[01-Sistemas/PeoplesCheck/Servico/09-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
 - [[01-Sistemas/PeoplesCheck/Servico/01-Visao-Geral/PeoplesCheck-Servico-Observabilidade-e-Logs|Observabilidade]] · [[01-Sistemas/PeoplesCheck/Servico/01-Visao-Geral/PeoplesCheck-Servico-Stack-e-Dependencias|Stack]]

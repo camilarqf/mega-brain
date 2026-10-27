@@ -35,14 +35,14 @@ Tela `/textos-portal` (`TextosPortalController`, `textosPortalAPI`): editar o te
 - ✅ Não envia o usuário logado.
 
 ## Falhas e dependências
-- A tela editável **sem login** e sem auditoria do usuário, já que não há guarda de rota ([[01-Sistemas/Gerenciador-Portal/Frontend/06-Seguranca/Gerenciador-Portal-Frontend-Seguranca-e-Sessao|Segurança]]); no backend o `PUT` também não valida token.
+- A tela editável **sem login** e sem auditoria do usuário, já que não há guarda de rota ([[01-Sistemas/Gerenciador-Portal/Frontend/08-Seguranca/Gerenciador-Portal-Frontend-Seguranca-e-Sessao|Segurança]]); no backend o `PUT` também não valida token.
 - Se o texto aceita HTML, `textAngular` e `ngSanitize` estão no projeto, mas o HTML não foi lido (❓).
 
 ## Inferências e limitações
 - 🔶 A funcionalidade foi desativada do menu de propósito; o motivo não aparece no código (histórico do Git não foi lido).
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Perguntar ao time se a tela está desativada em definitivo ([[01-Sistemas/Gerenciador-Portal/Frontend/99-Controle/Gerenciador-Portal-Frontend-Pendencias|controle]]).

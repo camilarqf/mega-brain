@@ -47,7 +47,7 @@ Comparar os três ambientes. Endereços de armazenamento e valores de segredos n
 - ❓ URLs expostas por ambiente, o NFS (endereço e volume omitidos) e o pipeline não estão no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]] · [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]] · [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Registrar URLs por ambiente se o usuário informar. Ver [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]].

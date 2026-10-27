@@ -23,7 +23,7 @@ sources:
 
 # Frontend Ouvidoria — conta do manifestante feita por operador
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/PARTICIPA-DF-Frontend-Ouvidoria-Index|Índice do Frontend Ouvidoria]] · Origem: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Registro-por-Operador|Registro-por-Operador]] · Equivalente do cidadão: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/02-Fluxos/PARTICIPA-DF-Frontend-Cidadao-Fluxo-Cadastro-de-Conta|Cadastro-de-Conta (Cidadão)]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/PARTICIPA-DF-Frontend-Ouvidoria-Index|Índice do Frontend Ouvidoria]] · Origem: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Registro-por-Operador|Registro-por-Operador]] · Equivalente do cidadão: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/05-Fluxos/PARTICIPA-DF-Frontend-Cidadao-Fluxo-Cadastro-de-Conta|Cadastro-de-Conta (Cidadão)]]
 
 ## Objetivo
 Documentar o cadastro e a atualização de contas de pessoa física (PF) e jurídica (PJ) feitos pelo operador durante o atendimento.
@@ -40,7 +40,7 @@ Arquivos em `sources`, commit `9d8ecdb`. Cobertura `parcial`: lidos os controlle
 | Cadastrar PJ | `/cadastrar-pessoa-juridica/:razaoSocial/:nomeFantasia?/:tipoEntidade/:cnpj/:cpfVinculado/:returnRoute?` | `cadastrarPessoaJuridicaCtrl` | `POST pessoa-juridica/por-operador` |
 | Atualizar PJ | `/atualizar-pessoa-juridica/:id/:returnRoute?` | `atualizarCadastroPessoaJuridicaCtrl` | `POST usuario/id`; `POST pessoa-juridica/atualizar/por-operador`; `POST pessoa-juridica/atualizar-responsavel`; `GET pessoa-juridica/tipo-entidade` |
 
-- ✅ **Dados que vêm do desafio** (nome, nome da mãe, data de nascimento, CPF; razão social, nome fantasia, tipo de entidade, CNPJ, CPF vinculado) chegam como **parâmetros de rota**, com `|` no lugar de `/` (data e CNPJ). O campo fica pré-preenchido; ver o risco de PII na URL em [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]].
+- ✅ **Dados que vêm do desafio** (nome, nome da mãe, data de nascimento, CPF; razão social, nome fantasia, tipo de entidade, CNPJ, CPF vinculado) chegam como **parâmetros de rota**, com `|` no lugar de `/` (data e CNPJ). O campo fica pré-preenchido; ver o risco de PII na URL em [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/08-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]].
 - ✅ Combo de necessidade especial: `GET necessidade-especial` (o primeiro item é o padrão).
 - ✅ **Tipo de telefone**: o controller deduz `comercial` quando o telefone tem 13 caracteres e `celular` caso contrário; trocar o tipo limpa o campo.
 - ✅ Após cadastrar PF, o operador pode seguir ao registro de manifestação com `/manifestacaoPorOperador/registrar/{Id}`.
@@ -53,7 +53,7 @@ Arquivos em `sources`, commit `9d8ecdb`. Cobertura `parcial`: lidos os controlle
 - 🔶 O frontend não valida CPF/CNPJ por algoritmo nos controllers lidos; a verificação acontece no backend (`security/check`).
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/04-API-e-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
 
 ## Pendências e próximo passo
 - Ler os templates de conta (campos e máscaras). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

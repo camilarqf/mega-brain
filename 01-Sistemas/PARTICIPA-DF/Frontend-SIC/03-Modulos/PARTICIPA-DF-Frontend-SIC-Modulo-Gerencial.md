@@ -58,7 +58,7 @@ Padrão comum: tela de listagem (`grid-*`) com filtros, paginação por `PageNum
 
 ### Feriados (`/feriado`, `/feriado/:id`)
 - ✅ Listagem: `POST acesso-informacao/feriado/`; edição: `POST .../get-feriado-por-id` e `POST .../gravar-feriado`. Um feriado sem `Ano` é **recorrente** (caixa "ano recorrente" limpa o ano). A data exibida usa `Dia`, `Mes` e `Ano` (o ano corrente quando recorrente).
-- 🔶 Os feriados alimentam o cálculo de prazos de pedidos (ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]), que é feito no backend.
+- 🔶 Os feriados alimentam o cálculo de prazos de pedidos (ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]), que é feito no backend.
 
 ## Inferências e limitações
 - ✅ `grid-perfil` transforma `Ativo == false` em `null` antes de filtrar, então não é possível filtrar apenas perfis inativos.
@@ -67,7 +67,7 @@ Padrão comum: tela de listagem (`grid-*`) com filtros, paginação por `PageNum
 - ❓ Perfis/funcionalidades concretas e as regras de autorização por perfil estão no backend.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Equivalente: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Gerencial|Gerencial do Frontend Ouvidoria]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/08-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Equivalente: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Gerencial|Gerencial do Frontend Ouvidoria]]
 
 ## Pendências e próximo passo
 - Conferir no backend o efeito de `IsUnidadeAtualSuperioSic` e as funcionalidades de cada perfil. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

@@ -61,7 +61,7 @@ Documentar as telas do processo de admissibilidade (a sigla JAD aparece nos nome
 - Corpo da maioria dos componentes de análise e revisão não foi lido linha a linha.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Encaminhamento-e-Gerenciador|Encaminhamento e gerenciador]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Assinatura-e-Validacao|Assinatura e validação]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Denuncia-e-Demanda|Denúncia e demanda]] · [[01-Sistemas/SCI/Frontend/02-Fluxos/SCI-Frontend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
+- [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Encaminhamento-e-Gerenciador|Encaminhamento e gerenciador]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Assinatura-e-Validacao|Assinatura e validação]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Denuncia-e-Demanda|Denúncia e demanda]] · [[01-Sistemas/SCI/Frontend/05-Fluxos/SCI-Frontend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendências]].

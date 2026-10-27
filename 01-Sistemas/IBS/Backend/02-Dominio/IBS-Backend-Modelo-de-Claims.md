@@ -47,7 +47,7 @@ Mostrar de onde vem cada claim devolvida por `POST /auth`.
 - 🔶 O row do repositório chama de `nomeOrgao` o valor de `ds_usuario`, mas o serviço o ignora e usa a descrição da unidade raiz.
 
 ## Relacionamentos
-- [[01-Sistemas/IBS/Backend/05-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Banco-SIP|Banco SIP]] · [[01-Sistemas/IBS/Backend/03-Regras-de-Negocio/IBS-Backend-Regra-Vinculo-Ativo-e-Matricula|Vínculo e matrícula]]
+- [[01-Sistemas/IBS/Backend/06-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Banco-SIP|Banco SIP]] · [[01-Sistemas/IBS/Backend/04-Regras-de-Negocio/IBS-Backend-Regra-Vinculo-Ativo-e-Matricula|Vínculo e matrícula]]
 
 ## Pendências e próximo passo
 - Nenhuma específica.

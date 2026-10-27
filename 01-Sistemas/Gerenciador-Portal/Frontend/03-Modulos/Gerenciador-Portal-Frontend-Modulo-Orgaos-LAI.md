@@ -42,7 +42,7 @@ Tela `/orgaos-lai` (`OrgaoController`, `orgaoAPI`): cadastro, edição e exclus�
 - ❓ Campos de `OrgaoLAI` e regras de validação (vêm do HTML e do backend; ver módulo do backend).
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Conteudo-do-Portal|Backend: Conteúdo do portal]] · [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Nenhum específico.

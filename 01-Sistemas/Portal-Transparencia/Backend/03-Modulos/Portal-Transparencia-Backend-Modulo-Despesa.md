@@ -21,7 +21,7 @@ sources:
 ---
 # Módulo Despesa
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Despesa e API v2)
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Despesa e API v2)
 
 ## Objetivo
 Documentar a maior área do portal: consulta pública da execução da despesa do GDF (empenho, liquidação, pagamento), com detalhamentos, emendas, diárias e passagens, restos a pagar, gráficos, painéis e relatórios.
@@ -62,12 +62,12 @@ Leitura de `servico/despesa/*` (11 classes, ~2,8 mil linhas; `DespesaService` co
 
 ## Inferências e limitações
 - 🔶 **Defeito provável**: se o período da consulta dinâmica for inválido, `consultaDinamica` faz `(Page) Collections.emptyList()`; uma `List` vazia não é `Page`, então deve lançar `ClassCastException` (→ resposta 500) em vez de página vazia. Não testado.
-- 🔶 O parâmetro `nomeCredor` e outros textos são interpolados nos `.vm`; ver risco de injeção de SQL em [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
+- 🔶 O parâmetro `nomeCredor` e outros textos são interpolados nos `.vm`; ver risco de injeção de SQL em [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
 - ❓ Significado de **OCA**, de "QDD" e das regras de cálculo dos totalizadores (`executarComTotalizador*`) não está no código lido; as siglas aparecem nos nomes (QDD = quadro de detalhamento de despesa é interpretação).
 - ❓ Cálculos dentro dos `.vm` (joins, filtros fixos, ressarcimento, covid) não foram lidos.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Despesa-Consultas-e-Calculos|Despesa: consultas e cálculos]] · [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Revisao-de-Injecao-de-SQL|Revisão de injeção de SQL]]
+- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Despesa-Consultas-e-Calculos|Despesa: consultas e cálculos]] · [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Revisao-de-Injecao-de-SQL|Revisão de injeção de SQL]]
 - [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Receita|Receita]] (gráficos receita × despesa) · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Convenios|Convênios]] (usa tabelas de despesa) · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Apoio-e-Atualizacao-de-Dados|Apoio-e-Atualizacao-de-Dados]] (datas de atualização) · [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 ## Pendências e próximo passo

@@ -27,7 +27,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Frontend/Gerenciador-Portal-Frontend-In
 Tela `/arquivo` (`ArquivoController`, `arquivoAPI`): enviar, completar, filtrar, ativar, inativar e excluir os arquivos/relatórios publicados no Portal. É a tela inicial após o login. Backend correspondente: [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Arquivos-e-Relatorios|Arquivos e relatórios]].
 
 ## Evidências
-`arquivoCtrl.js` (504 linhas, lido integralmente), `arquivoApi.js`, trecho de `arquivo.html` (link de download). Chamadas em [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]].
+`arquivoCtrl.js` (504 linhas, lido integralmente), `arquivoApi.js`, trecho de `arquivo.html` (link de download). Chamadas em [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]].
 
 ## Informações confirmadas
 - ✅ **Carga inicial** (`main`): anos de referência, contagem de arquivos incompletos e completos, categorias, tipos de referência e lista de arquivos. Ao abrir, a tela mostra o modal `#filtrarInicial` para escolher a categoria.
@@ -50,7 +50,7 @@ Tela `/arquivo` (`ArquivoController`, `arquivoAPI`): enviar, completar, filtrar,
 - ❓ HTML do formulário (campos obrigatórios, máscaras) não foi lido; não se sabe quais validações a tela aplica antes de salvar.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Arquivos-e-Relatorios|Backend: Arquivos e relatórios]] · [[01-Sistemas/Gerenciador-Portal/Backend/04-Fluxos/Gerenciador-Portal-Backend-Fluxo-Cadastro-de-Arquivo|Backend: fluxo de cadastro]] · [[01-Sistemas/Gerenciador-Portal/Frontend/04-Fluxos/Gerenciador-Portal-Frontend-Fluxo-Login-e-Sessao|Fluxo de login e sessão]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Arquivos-e-Relatorios|Backend: Arquivos e relatórios]] · [[01-Sistemas/Gerenciador-Portal/Backend/05-Fluxos/Gerenciador-Portal-Backend-Fluxo-Cadastro-de-Arquivo|Backend: fluxo de cadastro]] · [[01-Sistemas/Gerenciador-Portal/Frontend/05-Fluxos/Gerenciador-Portal-Frontend-Fluxo-Login-e-Sessao|Fluxo de login e sessão]]
 
 ## Pendências e próximo passo
 - Ler `arquivo.html` para as validações do formulário (pendência 6 do [[01-Sistemas/Gerenciador-Portal/Frontend/99-Controle/Gerenciador-Portal-Frontend-Pendencias|controle]]).

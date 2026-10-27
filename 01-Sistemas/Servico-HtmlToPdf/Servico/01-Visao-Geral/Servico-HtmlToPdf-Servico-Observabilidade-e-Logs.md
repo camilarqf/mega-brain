@@ -42,7 +42,7 @@ Documentar logs, correlação e métricas.
 - ❓ Painéis, alertas e destino dos logs (stdout do contêiner, rotação `5m` × 5 arquivos no Swarm) não estão neste repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Deploy-e-Ambientes|Deploy e ambientes]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/08-Qualidade/Servico-HtmlToPdf-Servico-Testes-e-Cobertura|Testes]]
+- [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Deploy-e-Ambientes|Deploy e ambientes]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/09-Qualidade/Servico-HtmlToPdf-Servico-Testes-e-Cobertura|Testes]]
 
 ## Pendências e próximo passo
 - Nenhuma. `LOG_LEVEL` efetivo: `WARNING`, informado pelo usuário em 2026-10-19 (igual ao padrão do código).

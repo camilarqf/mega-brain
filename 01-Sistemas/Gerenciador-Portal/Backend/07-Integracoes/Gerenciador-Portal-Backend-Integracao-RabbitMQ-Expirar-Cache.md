@@ -38,7 +38,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Port
 - ✅ Não usa AMQP: chama a **API HTTP de gestão** (`.../exchanges/<vhost>/medida-protetiva-topic` e `/publish`), com vhost por ambiente (`homolog`; o de produção está em `application-prod.properties`).
 - ✅ Corpo da publicação: `routing_key=""`, `payload_encoding=string`, `payload` = JSON `{expirePortal, expireSuperbusca}`, `properties` vazias. Exchange declarada com `type=fanout`, `durable=false`, `auto_delete=false`.
 - ✅ Credenciais Basic (usuário:senha) estão em texto nos `application-*.properties` (valores **não** registrados) — com usuários diferentes em `dev` e `homolog` (o de `prod` está em `application-prod.properties`, não comparado).
-- ✅ Gatilho: `GET /servidores-medida-protetiva/expirar-cache` ([[01-Sistemas/Gerenciador-Portal/Backend/04-Fluxos/Gerenciador-Portal-Backend-Fluxo-Expirar-Cache-Medida-Protetiva|Fluxo]]).
+- ✅ Gatilho: `GET /servidores-medida-protetiva/expirar-cache` ([[01-Sistemas/Gerenciador-Portal/Backend/05-Fluxos/Gerenciador-Portal-Backend-Fluxo-Expirar-Cache-Medida-Protetiva|Fluxo]]).
 
 ## Falhas e dependências
 - ✅ Resposta do gerenciador sempre `200` (inclusive em falha); `Throwable` é engolido. Status não 2xx do RabbitMQ vira `HttpRequestException`.
@@ -51,7 +51,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Port
 - ❓ Dono do broker e política de usuários.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Medida-Protetiva|Módulo de medida protetiva]] · [[01-Sistemas/Portal-Transparencia/Backend/04-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo de invalidação no Portal]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Medida-Protetiva|Módulo de medida protetiva]] · [[01-Sistemas/Portal-Transparencia/Backend/05-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo de invalidação no Portal]]
 
 ## Pendências e próximo passo
 - Confirmar o broker de destino e o consumidor `expireSuperbusca`.

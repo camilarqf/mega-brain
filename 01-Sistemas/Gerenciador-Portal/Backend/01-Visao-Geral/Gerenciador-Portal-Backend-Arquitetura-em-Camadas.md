@@ -50,7 +50,7 @@ Estrutura de `src/main/java/br/gov/df/cgdf/gerenciador` (102 arquivos de código
 - ❓ `@EnableScheduling` está ativo, mas não há tarefas agendadas no código principal.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/Gerenciador-Portal/Backend/05-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/Gerenciador-Portal/Backend/06-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Gerenciador-Portal/Backend/99-Controle/Gerenciador-Portal-Backend-Pendencias|Pendências]].

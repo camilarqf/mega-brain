@@ -57,7 +57,7 @@ Anotações `@Table`/`@Document` das entidades, repositórios Spring Data, SQL d
 - ✅ Dois drivers SQL Server no classpath (`mssql-jdbc` 6.2.2 e `jtds` 1.3.1); o código não escolhe explicitamente.
 - 🔶 `spring.datasource.hikari.maximum-pool-size=4` com até 100 threads do Tomcat (`server.tomcat.max-threads=100`) pode causar fila por conexão sob carga; não medido.
 - ✅ `Portal.TD_TEMPO` é mapeada por duas entidades (`AnoReferencia`, `Referencia`).
-- ✅ Concatenação de SQL em DAOs e serviços: [[01-Sistemas/Gerenciador-Portal/Backend/08-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]].
+- ✅ Concatenação de SQL em DAOs e serviços: [[01-Sistemas/Gerenciador-Portal/Backend/09-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]].
 
 ## Inferências e limitações
 - 🔶 O banco `DB_PRT_TRANSPARENCIA` é compartilhado com o backend do Portal-Transparencia (mesmo nome e esquemas `Servidor`/`Carga`); não há migração aqui, então o esquema pertence a outro processo (ver [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Banco-e-Migrations|Banco do Portal]]).

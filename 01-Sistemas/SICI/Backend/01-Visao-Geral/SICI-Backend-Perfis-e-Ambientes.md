@@ -21,7 +21,7 @@ sources:
 
 # Perfis e ambientes
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 > Esta nota registra **apenas nomes de chaves e valores não sensíveis**. URLs, usuários, senhas, segredos e listas de usuários foram omitidos de propósito.
 
@@ -63,7 +63,7 @@ O `application.properties` usa `spring.profiles.active=@spring.profiles.active@`
 | Spring | `spring.main.allow-bean-definition-overriding=true` | — |
 
 ## Pontos de atenção
-- ✅ Arquivos de properties de todos os ambientes estão **versionados** e contêm credenciais e segredos em texto puro. Ver [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- ✅ Arquivos de properties de todos os ambientes estão **versionados** e contêm credenciais e segredos em texto puro. Ver [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - ✅ O valor de `integra.verify.secret` no profile local é o SHA-256 de uma string vazia, um valor publicamente conhecido.
 - ✅ `grant-type=password` (Resource Owner Password Credentials) — fluxo desaconselhado pelo OAuth 2.1.
 - ✅ `show-details=always` com `/healthcheck` público expõe detalhes de saúde (banco, Keycloak) sem autenticação.

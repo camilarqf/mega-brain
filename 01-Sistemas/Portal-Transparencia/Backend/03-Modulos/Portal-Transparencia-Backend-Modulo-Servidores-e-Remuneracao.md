@@ -28,7 +28,7 @@ sources:
 ---
 # Módulo Servidores e Remuneração
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Servidor e remuneração)
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Servidor e remuneração)
 
 ## Objetivo
 Documentar as consultas de servidores (cadastro por órgão, cargos, quadros, perfil), a remuneração (consulta, extrato anual e rubricas), expulsões e militares cedidos, além da API de integração por CPF.
@@ -61,14 +61,14 @@ Leitura de `RemuneracaoService` (linhas 30 a 212), `JdbcUtil.executarComTotaliza
 - ✅ Dados de apoio: quadros de servidores, tabelas de remuneração, cargos comissionados e efetivos, carreiras, símbolos, arquivos e PDF de pendências (`getPendenciasPdfUrl` via `Sql.selectUrlPendencias`).
 
 ## Inferências e limitações
-- ✅ O CPF entra como filtro em Base64 (codificação, **não** proteção). A resposta traz nome, matrícula, cargo, órgão e o detalhamento completo da remuneração, e `cpfServidor` (🔶 provavelmente mascarado); o CPF cru (`cpfComparacao`) não é serializado. Ver [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]].
+- ✅ O CPF entra como filtro em Base64 (codificação, **não** proteção). A resposta traz nome, matrícula, cargo, órgão e o detalhamento completo da remuneração, e `cpfServidor` (🔶 provavelmente mascarado); o CPF cru (`cpfComparacao`) não é serializado. Ver [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]].
 - 🔶 `relatorioRemuneracao` é `synchronized` (uma exportação por vez).
 - ❓ "SUTCS" (`verificar-sutcs`) e "pendências" não têm explicação no código.
 - ❓ Cálculos e filtros fixos nos `.vm` (por exemplo, o que é "ativo", "aposentado", "pensão") não foram lidos.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]] (campos pessoais por rota)
-- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Apoio-e-Atualizacao-de-Dados|Apoio-e-Atualizacao-de-Dados]] · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Relatorios-e-Exportacao|Relatorios-e-Exportacao]] · [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]] (campos pessoais por rota)
+- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Apoio-e-Atualizacao-de-Dados|Apoio-e-Atualizacao-de-Dados]] · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Relatorios-e-Exportacao|Relatorios-e-Exportacao]] · [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
-- Campos pessoais por rota já levantados em [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]; falta ler `ServidorService` e os cálculos dos `.vm` de `servidor/` e `remuneracao/`.
+- Campos pessoais por rota já levantados em [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]; falta ler `ServidorService` e os cálculos dos `.vm` de `servidor/` e `remuneracao/`.

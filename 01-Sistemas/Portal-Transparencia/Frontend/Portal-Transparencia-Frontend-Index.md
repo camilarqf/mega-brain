@@ -34,10 +34,10 @@ Evidência: `package.json`, `bower.json`, `src/app/index.module.js`, `index.rout
 - [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Super-Busca|Super-Busca]] · [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Paginas-Institucionais-e-Navegacao|Páginas-Institucionais-e-Navegação]]
 
 ### 04 — API e integrações
-- [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API do Backend]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]] · [[Mapa-de-Integracoes|Mapa de integrações]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API do Backend]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]] · [[Mapa-de-Integracoes|Mapa de integrações]]
 
 ### 05/06 — Segurança e qualidade
-- [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança-e-Privacidade]] · [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos|Débitos-Técnicos]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança-e-Privacidade]] · [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos|Débitos-Técnicos]]
 
 ### 99 — Controle
 - [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Registro-de-Analise|Registro-de-Análise]] · [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]]
@@ -49,7 +49,7 @@ Repositório `portal-transparencia-frontend`, branch `master`, commit `dca3e933`
 - 103 rotas (`$routeProvider`), 11 rotas só-rótulo; 359 chamadas HTTP extraídas dos serviços (350 `GET`, 9 `POST`) mais 61 exportações PDF/CSV.
 - Sem autenticação; cabeçalho `x-client-id` aleatório nas chamadas à API.
 - 28 specs Karma e 1 e2e; não executados.
-- Chamadas do frontend sem rota correspondente no Backend: ver [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]].
+- Chamadas do frontend sem rota correspondente no Backend: ver [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]].
 
 ## Inferências e limitações
 - Cobertura `parcial`: leitura estática; templates, SCSS e lógica interna dos controllers por amostragem; DTOs não comparados campo a campo; build e testes não executados.

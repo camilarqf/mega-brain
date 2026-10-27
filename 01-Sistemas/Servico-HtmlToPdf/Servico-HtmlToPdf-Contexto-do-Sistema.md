@@ -25,7 +25,7 @@ Converter um trecho de HTML recebido por HTTP em um arquivo PDF (A4), sem estado
 - Nome da aplicação no pipeline: `HTML TO PDF` (`.jenkins-pipelines/deployment.params.yml`).
 
 ## Informações confirmadas
-- ✅ Um único caso de uso: `POST /html-to-pdf/generate` com `{"HtmlString": "..."}` devolve `application/pdf`. Ver [[01-Sistemas/Servico-HtmlToPdf/Servico/05-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Catálogo de endpoints]].
+- ✅ Um único caso de uso: `POST /html-to-pdf/generate` com `{"HtmlString": "..."}` devolve `application/pdf`. Ver [[01-Sistemas/Servico-HtmlToPdf/Servico/06-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Catálogo de endpoints]].
 - ✅ Não há banco, fila, autenticação nem chamadas a outros sistemas no código.
 - ✅ Consumidores (conforme o vault, não este repositório): backends de `PARTICIPA-DF`, `SCI` e `SICI`, via [[Mapa-de-Integracoes|Mapa de integrações]].
 

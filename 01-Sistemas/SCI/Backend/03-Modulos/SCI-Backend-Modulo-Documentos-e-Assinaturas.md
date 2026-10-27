@@ -48,10 +48,10 @@ Documentar a geração, assinatura, invalidação, validação e armazenamento d
 ## Inferências e limitações
 - 🔶 Como `POST /documento/validar` exige autenticação, uma validação pública por QR Code (sem login) não seria atendida por este endpoint; o destino de `UrlValidacao` não foi identificado.
 - 🔶 O algoritmo do hash não foi lido.
-- ⚠️ ✅ `ArquivoController.Download` concatena `nomeArquivo` ao diretório de armazenamento (`Path.Combine`) e o `DownloadRequestValidator` só exige valor não vazio (o helper `IsValidGuid` existe e não é usado). Impacto não testado — ver [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]].
+- ⚠️ ✅ `ArquivoController.Download` concatena `nomeArquivo` ao diretório de armazenamento (`Path.Combine`) e o `DownloadRequestValidator` só exige valor não vazio (o helper `IsValidGuid` existe e não é usado). Impacto não testado — ver [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Ciclo do PIP]]
+- [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Ciclo do PIP]]
 
 ## Pendências e próximo passo
 - Ler `DownloadRequest` e o algoritmo do hash.

@@ -25,7 +25,7 @@ sources:
 
 # Enums e estados
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
 
 ## Objetivo
 Catalogar os enums do domínio (com seus valores) e as transições de estado **visíveis nos jobs e consultas**. As demais transições (comandos de resposta, recurso, tramitação) serão acrescentadas nos lotes 4 e 5.
@@ -72,7 +72,7 @@ Arquivos de `Domain/Enums` dos três projetos e as entidades `SituacaoManifestac
 | `TipoBloqueioUsuarioEnum` | Parcial · Total |
 | `OrigemCadastroUsuarioEnum` | AutoCadastro · Operador |
 | `TipoEntidadeEnum` | 1 IniciativaPrivada · 2 OrgaoPublico · 3 EntidadeEspecial e códigos de natureza jurídica (1015 em diante) |
-| `FuncionalidadeEnum` | 64 valores: SO 1 a 50, SIC 201 a 220 (ver [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]) |
+| `FuncionalidadeEnum` | 64 valores: SO 1 a 50, SIC 201 a 220 (ver [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]) |
 | outros | `SexoCidadaoEnum`, `TipoPessoaEnum`, `TipoTelefoneEnum` |
 
 ### Grupos de situação (Ouvidoria)
@@ -122,7 +122,7 @@ stateDiagram-v2
     EmAnaliseCGDF --> ConcluidoAposRespostaTerceiraInstancia : demais decisões
     RespondidoTerceiraInstancia --> ConcluidoRespostaDefinitivaOrgao : resposta definitiva do órgão
 ```
-- ✅ Fontes: grep dos comandos de `ServicoInformacaoCidadao/Domain/Commands` e handlers lidos nos lotes 5. Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Pedido|Fluxo-Registro-de-Pedido]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Omissao-de-Resposta|Fluxo-Omissao-de-Resposta]].
+- ✅ Fontes: grep dos comandos de `ServicoInformacaoCidadao/Domain/Commands` e handlers lidos nos lotes 5. Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Pedido|Fluxo-Registro-de-Pedido]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]] e [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Omissao-de-Resposta|Fluxo-Omissao-de-Resposta]].
 - 🔶 As setas "recurso" a partir de `Respondido…` simplificam as condições de prazo (ver permissões).
 
 ### Máquina de estados da manifestação (completada no lote 4)
@@ -148,7 +148,7 @@ stateDiagram-v2
     Recebida --> Invalida : invalidar
     EmAnálise --> Invalida : invalidar
 ```
-- ✅ Origens e destinos conforme `Manifestacao.ValidarFluxoDeSituacao` (usada só na avaliação) e nos comandos de resposta, atribuição, prorrogação e invalidação. `Invalida` aceita 10 origens (todas menos ela mesma). Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]] e [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]].
+- ✅ Origens e destinos conforme `Manifestacao.ValidarFluxoDeSituacao` (usada só na avaliação) e nos comandos de resposta, atribuição, prorrogação e invalidação. `Invalida` aceita 10 origens (todas menos ela mesma). Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]].
 - 🔶 As setas "invalidar" a partir dos demais estados (Respondida, avaliadas, Vencida, Prorrogada…) foram omitidas do desenho por clareza; o código as permite.
 
 ## Inferências e limitações

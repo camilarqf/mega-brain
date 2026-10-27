@@ -36,18 +36,18 @@ Sistema: [[01-Sistemas/SICI/SICI-Index|SICI]] · [[01-Sistemas/SICI/SICI-Reposit
 - [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]]
 
 **Fluxos**
-- [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
-- [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]]
-- [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+- [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+- [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]]
+- [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 **API e integrações**
-- [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
-- [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Integracoes|Integracoes]] · [[Mapa-de-Integracoes|Mapa de integrações]]
+- [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
+- [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Integracoes|Integracoes]] · [[Mapa-de-Integracoes|Mapa de integrações]]
 
 **Segurança e qualidade**
-- [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
-- [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]]
-- [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
+- [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]]
+- [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 **Controle**
 - [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Registro-de-Analise|Registro-de-Analise]] · [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendencias]]
@@ -57,7 +57,7 @@ Repositório `sici-frontend`, branch `master`, commit `418642f` (2026-09-29). En
 
 ## Inferências e limitações
 - Cobertura `parcial`: templates HTML, SCSS, `ordem-servico-cadastrar`/`atualizar` (lidos por trechos), `acao-controle-visualizar`/`atualizar` e DTOs não foram lidos linha a linha. `ng build` passou; `ng test` não compila (código do Keycloak); a aplicação não foi executada.
-- Achados principais (a confirmar em execução): URLs sem barra, envio de OS em duplicidade, validação pública que chama endpoint autenticado e restrições de perfil só no cliente; ver [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- Achados principais (a confirmar em execução): URLs sem barra, envio de OS em duplicidade, validação pública que chama endpoint autenticado e restrições de perfil só no cliente; ver [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - A validade das notas depende do commit analisado; para atualizar, usar `atualizar-documentacao`.
 
 ## Relacionamentos

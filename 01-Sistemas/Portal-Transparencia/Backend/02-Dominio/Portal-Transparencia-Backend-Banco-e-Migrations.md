@@ -49,7 +49,7 @@ Contagem e leitura por amostragem de `resources/sql` (547 arquivos), `changelog-
 
 ## Inferências e limitações
 - 🔶 Os changelogs são mantidos como histórico e aplicados à mão ou por ferramenta externa (por exemplo, a linha de comando do Liquibase) — nenhuma evidência de quem os executa.
-- 🔶 Os arquivos H2 parecem herança de testes locais; os testes versionados, porém, usam o contexto completo com SQL Server (ver [[01-Sistemas/Portal-Transparencia/Backend/08-Qualidade/Portal-Transparencia-Backend-Testes-e-Cobertura|Testes-e-Cobertura]]). Uso atual dos arquivos H2 não confirmado.
+- 🔶 Os arquivos H2 parecem herança de testes locais; os testes versionados, porém, usam o contexto completo com SQL Server (ver [[01-Sistemas/Portal-Transparencia/Backend/09-Qualidade/Portal-Transparencia-Backend-Testes-e-Cobertura|Testes-e-Cobertura]]). Uso atual dos arquivos H2 não confirmado.
 - ❓ As tabelas/views de carga (`Carga`, `Despesa`, `Servidor`…) não são criadas por este repositório; DDL e processo de carga não identificados.
 - ❓ Existência de índices, volume e desempenho das consultas não analisados.
 

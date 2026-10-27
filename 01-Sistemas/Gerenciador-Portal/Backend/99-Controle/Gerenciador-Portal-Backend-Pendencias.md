@@ -27,7 +27,7 @@ Origem em cada linha (lote/nota).
 | # | Pergunta | Origem |
 |---|---|---|
 | 1 | Onde está o **frontend** do Gerenciador (repositório) e como ele usa `usuarioLogado`/`x-client-id`? O token do SSO chega ao backend? | Lote 1 |
-| | *Anotação (2026-10-27)*: respondida em parte — o frontend é o `gerenciador-portal-frontend`; envia `x-client-id` (UUID do navegador) e o login em `usuarioLogado`/`usuarioAutenticado`; **não** envia token (ver [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Integracao-API-Backend\|integração do frontend]]). | Frontend lote 1 |
+| | *Anotação (2026-10-27)*: respondida em parte — o frontend é o `gerenciador-portal-frontend`; envia `x-client-id` (UUID do navegador) e o login em `usuarioLogado`/`usuarioAutenticado`; **não** envia token (ver [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Integracao-API-Backend\|integração do frontend]]). | Frontend lote 1 |
 | 2 | Qual a relação exata com o Portal-Transparencia? O Gerenciador chama `/storage/health` e `/storage/url` do Portal (pendência 18 do Portal) ou é o cliente web que o faz? | Lote 3 |
 | 3 | A API está atrás de gateway/WAF/rede restrita? O ingress (`gerenciador-portal-transparencia`) exige algo além do `x-client-id`? | Lote 1 |
 | 4 | O **Spring Data REST** realmente expõe os repositórios em execução? | Lote 1 |

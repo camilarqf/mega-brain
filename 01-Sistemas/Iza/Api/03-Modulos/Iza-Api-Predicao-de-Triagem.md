@@ -45,7 +45,7 @@ Documentar a capacidade única do serviço: transformar `relato` (e, em cadeia, 
 - ✅ Anonimato: P(denúncia) ≥ 0,05 **ou** classificação prevista = 2 → `1` (permite). Limiar `0.05` fixo em `main.py`.
 - ✅ Valor `0` é devolvido quando o modelo retorna lista vazia/zero (testes de verdade `any(response)`).
 
-**Cadeia esperada pelo desenho (descrição da API):** assunto → classificação → (é denúncia) → unidade, em que cada passo usa a saída do anterior. ✅ O serviço não encadeia as chamadas: o cliente envia os valores de cada etapa. Ver [[01-Sistemas/Iza/Api/04-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Fluxo de triagem]].
+**Cadeia esperada pelo desenho (descrição da API):** assunto → classificação → (é denúncia) → unidade, em que cada passo usa a saída do anterior. ✅ O serviço não encadeia as chamadas: o cliente envia os valores de cada etapa. Ver [[01-Sistemas/Iza/Api/05-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Fluxo de triagem]].
 
 **Histórico de versões relevante (`CHANGELOG.md`)**: 2.7.0 adicionou os endpoints de hash; 2.9.0 a exceção de unidade; 2.10.0 atualizou os 4 modelos para scikit-learn 1.5 e "altera regra de probabilidade do modelo de denúncia para 0.15"; 2.10.2 reverteu o modelo de denúncia (NearMiss 2).
 
@@ -57,7 +57,7 @@ Documentar a capacidade única do serviço: transformar `relato` (e, em cadeia, 
 - ❓ Significado de negócio de `classificacao_id == 2`, dos assuntos 1694/1695 e dos códigos de unidade não consta no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Testes-e-Cobertura|Testes]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Testes-e-Cobertura|Testes]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Confirmar com o time o limiar de denúncia vigente e o significado dos códigos fixos; ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|Pendências]].

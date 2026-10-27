@@ -39,7 +39,7 @@ Descrever a estrutura da implantação do MinIO.
 - 🔶 A rede `nginx-ingress-network` sugere acesso por proxy reverso; a configuração do proxy não está no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]].

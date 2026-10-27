@@ -42,7 +42,7 @@ Documentar o tema de login versionado em `integra-login/login/` (194 arquivos ra
 - Páginas e componentes não foram lidos individualmente (cobertura parcial).
 
 ## Relacionamentos
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/09-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Pendências e próximo passo
 - Localizar o repositório-fonte do tema e como ele é implantado.

@@ -57,7 +57,7 @@ Controllers `/palavra`, `/textos-consultas`, `/orgao`; serviços e repositórios
 - ✅ A conversão do texto usa `indexOf`/`substring` sem validar o formato; um marcador `##` sem `(`…`)` pode lançar exceção ao salvar ou ler.
 
 ## Inferências e limitações
-- 🔶 A coleção `indices` do Mongo é lida pelo serviço de busca do Portal (`apisuperbusca`, citado no [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|frontend do Portal]]); o campo `dataset` e a coleção sugerem um índice compartilhado, não confirmado.
+- 🔶 A coleção `indices` do Mongo é lida pelo serviço de busca do Portal (`apisuperbusca`, citado no [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|frontend do Portal]]); o campo `dataset` e a coleção sugerem um índice compartilhado, não confirmado.
 - ❓ Quem consome a lista de órgãos da LAI e os textos no Portal.
 
 ## Relacionamentos

@@ -24,7 +24,7 @@ Ponto de entrada do sistema de negócio **Gerenciador-Portal** (nome no pipeline
 ## Informações confirmadas
 - ✅ API REST (Spring Boot 1.5, Java 8) que **administra o conteúdo e os dados de apoio do Portal da Transparência**: cadastro e ativação de relatórios/arquivos por categoria, imagens do portal (slideshow, setores e fundos de painel), textos explicativos das consultas, palavras-chave de busca, órgãos da LAI, lista de pessoas com medida protetiva (ocultas no portal) e consulta ao controle de cargas.
 - ✅ Grava arquivos e imagens em armazenamento S3-compatível (buckets `portal-arquivos` e `portal-imagens`) e registra tudo em SQL Server (`DB_PRT_TRANSPARENCIA`) e MongoDB.
-- ✅ Autenticação do operador por SSO (Keycloak, fluxo de senha) e autorização por órgão/unidades configurados; o resto da API não valida o token (ver [[01-Sistemas/Gerenciador-Portal/Backend/06-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]).
+- ✅ Autenticação do operador por SSO (Keycloak, fluxo de senha) e autorização por órgão/unidades configurados; o resto da API não valida o token (ver [[01-Sistemas/Gerenciador-Portal/Backend/08-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]).
 
 ## Relação com o Portal-Transparencia
 - 🔶 **Informado pelo usuário em 2026-10-27**: o Gerenciador tem ligação com o Portal da Transparência, mas é um **sistema à parte**. Não há chamada entre os dois no código deste repositório.

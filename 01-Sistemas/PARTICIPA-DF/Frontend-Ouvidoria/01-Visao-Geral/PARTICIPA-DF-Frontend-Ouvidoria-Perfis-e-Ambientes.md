@@ -67,7 +67,7 @@ O Gulp (`gulp-ng-config`) transforma o perfil escolhido na constante `configServ
 - Cobertura `parcial`: o conteúdo dos `.pubxml` e a sequência completa dos estágios Jenkins não foram lidos linha a linha.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/04-API-e-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Debitos-Tecnicos]] · Comparação: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/01-Visao-Geral/PARTICIPA-DF-Frontend-Cidadao-Perfis-e-Ambientes|Perfis do Frontend Cidadão]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Debitos-Tecnicos]] · Comparação: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/01-Visao-Geral/PARTICIPA-DF-Frontend-Cidadao-Perfis-e-Ambientes|Perfis do Frontend Cidadão]]
 
 ## Pendências e próximo passo
 - Confirmar onde ficam `Web.config` e `auth.html` e se o destino é IIS. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

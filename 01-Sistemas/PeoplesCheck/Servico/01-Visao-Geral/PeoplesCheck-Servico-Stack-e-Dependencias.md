@@ -43,7 +43,7 @@ Registrar linguagem, framework e bibliotecas do repositório.
 
 ## Inferências e limitações
 - 🔶 Misturar `javax.*` (`javaee-api` 8.0) e `jakarta.*` (3.0.1) no mesmo classpath é um risco de conflito; não há evidência de uso real.
-- 🔶 Spring Boot 2.7 saiu de suporte aberto; ver [[01-Sistemas/PeoplesCheck/Servico/08-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 Spring Boot 2.7 saiu de suporte aberto; ver [[01-Sistemas/PeoplesCheck/Servico/09-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
 - [[01-Sistemas/PeoplesCheck/Servico/01-Visao-Geral/PeoplesCheck-Servico-Arquitetura|Arquitetura]] · [[01-Sistemas/PeoplesCheck/Servico/01-Visao-Geral/PeoplesCheck-Servico-Deploy-e-Ambientes|Deploy e ambientes]]

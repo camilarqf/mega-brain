@@ -29,18 +29,18 @@ Notas do sistema:
 - [[01-Sistemas/SCI/SCI-Repositorios|Repositórios]]
 
 Atalhos do frontend:
-- [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos e riscos]] · [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]
+- [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos e riscos]] · [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]
 - [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendências]]
 
 Atalhos do backend:
-- [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
-- [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]
+- [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
+- [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]
 - [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Pendencias|Pendências]]
 
 ## Inferências e limitações
 - 🔶 O SCI é a contraparte dos eventos de denúncia do `PARTICIPA-DF` (mesmos nomes de canal nos dois lados; ver [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-Participa-DF-Eventos|Integração por eventos]]).
 - ❓ Não há relação verificada com o sistema `SICI` (stack e domínio diferentes).
-- 🔶 8 chamadas do frontend não têm rota no backend analisado; ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]].
+- 🔶 8 chamadas do frontend não têm rota no backend analisado; ver [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]].
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Mapa-de-Integracoes|Mapa de integrações]] · [[Home|Home]]

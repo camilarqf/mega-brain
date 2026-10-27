@@ -50,7 +50,7 @@ Outros fatos:
 - O `.bowerrc` define registro interno (endereço omitido) e `strict-ssl: false`.
 
 ## Inferências e limitações
-- 🔶 Versões de runtime (AngularJS 1.4, Node 6, PhantomJS 2, gulp 3) estão fora de suporte; riscos em [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 Versões de runtime (AngularJS 1.4, Node 6, PhantomJS 2, gulp 3) estão fora de suporte; riscos em [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos|Débitos técnicos]].
 - ❓ O processo de empacotamento/implantação (pipeline) não está versionado: `Jenkinsfile.prod` foi removido no commit `2e8298ac` (2026-10-14) e não há outro arquivo de pipeline na árvore.
 - Versões efetivamente instaladas (`bower_components/`, `node_modules/`) não foram comparadas com os manifestos.
 

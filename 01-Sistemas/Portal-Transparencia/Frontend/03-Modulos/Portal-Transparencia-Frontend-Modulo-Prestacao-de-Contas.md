@@ -45,13 +45,13 @@ Rotas `noLink` (apenas rótulo de navegação): `/prestando-contas`, `/prestando
 - ✅ Testes: 3 specs (empresa punida, órgão deliberativo, órgãos deliberativos "saiba mais").
 
 ## Inferências e limitações
-- ⚠️ 🔶 As telas de beneficiários de programas sociais e de conselheiros exibem **dados de pessoas físicas** vindos do Backend (campos exatos não conferidos); a proteção (mascaramento) está no Backend: [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]. O frontend não aplica máscara própria (não verificado em todos os templates).
+- ⚠️ 🔶 As telas de beneficiários de programas sociais e de conselheiros exibem **dados de pessoas físicas** vindos do Backend (campos exatos não conferidos); a proteção (mascaramento) está no Backend: [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]. O frontend não aplica máscara própria (não verificado em todos os templates).
 - ✅ Chamada sem rota no Backend: `GET /prestando-contas/detalhamento-conselheiro`.
 - 🔶 Várias telas sazonais (renda emergencial, prato cheio, auxílio emergencial) parecem ligadas a programas da pandemia; vigência ❓.
 - Cobertura parcial: dos 30 controllers só a estrutura e o serviço foram lidos.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Prestacao-de-Contas|Backend: Prestação de Contas]] · [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Prestacao-de-Contas|Backend: Prestação de Contas]] · [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]].

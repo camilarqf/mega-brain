@@ -36,7 +36,7 @@ Registrar linguagem, framework, bibliotecas e empacotamento do `sci-frontend`.
 | Editores e documentos | ✅ CKEditor 5 (build classic), Quill 2 (componente `text-editor`), `ng2-pdf-viewer` |
 | Sessão | ✅ `ngx-cookie-service`; `jwt-decode` declarado |
 | Utilitários | ✅ `uuid` |
-| Testes | ✅ Karma + Jasmine configurados; **nenhum** `*.spec.ts` (ver [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Testes-e-Cobertura|Testes]]) |
+| Testes | ✅ Karma + Jasmine configurados; **nenhum** `*.spec.ts` (ver [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Testes-e-Cobertura|Testes]]) |
 | Configurações de build | ✅ `development` (padrão), `homolog` e `production`, cada uma trocando `environment.ts` por `environment.dev/hom/prod.ts`; `production` com orçamento inicial de 2 MB (aviso) e 6 MB (erro) |
 | Empacotamento | ✅ `Dockerfile` em duas etapas (Node 22 Alpine, `npm install --force`, `ng build --configuration=<profile>`); pipelines Jenkins `development`, `homolog` e `prod` copiam o resultado para servidores de destino (endereços omitidos) |
 

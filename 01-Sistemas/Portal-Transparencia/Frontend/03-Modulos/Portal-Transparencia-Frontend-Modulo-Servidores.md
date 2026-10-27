@@ -47,13 +47,13 @@ Commit `dca3e933`. Rotas em `index.route.js`; `components/servidores/**` (20 JS,
 - ✅ Testes: 6 specs (cargo comissionado, cargo efetivo, remuneração, servidores, ressarcimento ×2).
 
 ## Inferências e limitações
-- 🔶 A tela de remuneração por servidor e o extrato por matrícula exibem **dados pessoais** vindos do Backend (nome, matrícula, valores). O mascaramento é feito no Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache e mascaramento]] e [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]. O frontend não aplica máscara própria (não verificado em todos os templates).
+- 🔶 A tela de remuneração por servidor e o extrato por matrícula exibem **dados pessoais** vindos do Backend (nome, matrícula, valores). O mascaramento é feito no Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache e mascaramento]] e [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]]. O frontend não aplica máscara própria (não verificado em todos os templates).
 - ✅ Chamadas sem rota no Backend: `GET /servidor/listarDataReferenciaPorOutrosOrcamento`.
 - 🔶 O `ServidoresService` lê `/analytics/paginas-populares` (misturado ao módulo de servidores no painel).
 - Cobertura parcial.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]] · [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]] · [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]]
 - Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Servidores-e-Remuneracao|Servidores e Remuneração]]
 
 ## Pendências e próximo passo

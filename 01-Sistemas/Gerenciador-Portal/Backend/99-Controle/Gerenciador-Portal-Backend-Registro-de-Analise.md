@@ -30,10 +30,10 @@ Controlar os lotes da análise (retomável por outra sessão).
 | Lote | Escopo | Notas | Estado |
 |---|---|---|---|
 | 0 | base: índice do sistema, repositório, stack, perfis, deploy | [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Index|Index]], [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Repositorios|Repositorios]], [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Stack-e-Dependencias|Stack]], [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Perfis-e-Ambientes|Perfis]], [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Deploy-e-Pipeline|Deploy]] | concluído |
-| 1 | arquitetura, API, segurança | [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Arquitetura-em-Camadas|Arquitetura]], [[01-Sistemas/Gerenciador-Portal/Backend/05-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]], [[01-Sistemas/Gerenciador-Portal/Backend/06-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]] | concluído |
+| 1 | arquitetura, API, segurança | [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Arquitetura-em-Camadas|Arquitetura]], [[01-Sistemas/Gerenciador-Portal/Backend/06-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]], [[01-Sistemas/Gerenciador-Portal/Backend/08-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]] | concluído |
 | 2 | módulos, domínio, persistência, fluxos | 5 módulos, [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Modelo-de-Dominio|Modelo de domínio]], [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Banco-e-Persistencia|Banco e persistência]], 3 fluxos | concluído |
 | 3 | integrações | índice + 5 notas canônicas; `Mapa-de-Integracoes` atualizado | concluído |
-| 4 | qualidade e débitos | [[01-Sistemas/Gerenciador-Portal/Backend/08-Qualidade/Gerenciador-Portal-Backend-Testes-e-Cobertura|Testes]], [[01-Sistemas/Gerenciador-Portal/Backend/08-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]] | concluído |
+| 4 | qualidade e débitos | [[01-Sistemas/Gerenciador-Portal/Backend/09-Qualidade/Gerenciador-Portal-Backend-Testes-e-Cobertura|Testes]], [[01-Sistemas/Gerenciador-Portal/Backend/09-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]] | concluído |
 
 **Alterações em notas existentes (2026-10-27)**: `Catalogo-de-Sistemas` (linha do sistema, 3 serviços externos novos: `SQL-Server-Portal`, `MongoDB-Portal` e a referência ao `Keycloak` existente), `Mapa-de-Integracoes` (5 linhas + hipóteses), `Portal-Transparencia-Index`, `Portal-Transparencia-Repositorios`, pendências 18 (Backend) e 3 (Frontend) do Portal com a anotação da relação informada.
 
@@ -47,3 +47,6 @@ Controlar os lotes da análise (retomável por outra sessão).
 
 ## Pendências e próximo passo
 - Próximo passo exato: (1) localizar e documentar o **frontend** do Gerenciador (novo componente `Frontend/`); (2) responder as pendências 1 a 6 do arquivo de [[01-Sistemas/Gerenciador-Portal/Backend/99-Controle/Gerenciador-Portal-Backend-Pendencias|pendências]]; (3) ler o diff do commit `14b185f` ("corrige usuário logado para admin") se a regra do usuário logado for relevante; (4) quando o código mudar: `git diff 14b185feeac4f5889a0ce8041a3b5baaead0334b..HEAD --stat` e usar `atualizar-documentacao`.
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

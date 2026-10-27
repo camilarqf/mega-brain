@@ -75,7 +75,7 @@ Análise do PIP (`StatusAnalisePipEnum`): AI, EA, ER, AP, RE. Revisão do PIP: `
 - Há tabelas de status em banco (`TB_STATUS_*`) populadas por scripts; os valores dos seeds não foram lidos.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Glossario|Glossário]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo denúncia → admissibilidade]]
+- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/01-Visao-Geral/SCI-Backend-Glossario|Glossário]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo denúncia → admissibilidade]]
 
 ## Pendências e próximo passo
 - Confirmar expansão de "JAD" e das siglas de recomendação com o time.

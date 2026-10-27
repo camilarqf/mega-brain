@@ -38,7 +38,7 @@ Arquivos em `sources`, commit `d250804`. O `package.json` declara o nome `eou-df
 | ✅ Mapa | OpenLayers `ol` 6.12, camada base OSM | `package.json`, `ol-map.component.ts` |
 | ✅ Hash | `ts-md5` (usado para o `sessionId` e para o hash do rascunho) | `app.component.ts`, `manifestacao-state-manager.service.ts` |
 | ✅ Paginação | `ngx-pagination` e `angular-paginator` | `package.json` |
-| ✅ Testes | Karma + Jasmine (`ng test`); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/05-Qualidade/PARTICIPA-DF-Frontend-Cidadao-Testes-e-Cobertura\|Testes-e-Cobertura]] | `karma.conf.js`, `package.json` |
+| ✅ Testes | Karma + Jasmine (`ng test`); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/09-Qualidade/PARTICIPA-DF-Frontend-Cidadao-Testes-e-Cobertura\|Testes-e-Cobertura]] | `karma.conf.js`, `package.json` |
 | ✅ Build | `ng build --configuration=<profile>`; perfis `production`, `homolog` e `development`; `fileReplacements` troca `environment.ts` pelo do perfil; orçamento inicial: aviso 1,5 MB, erro 6 MB | `angular.json` |
 | ✅ Imagem de build | `node:16.13.0`, `npm install --force`, `ng build` com `ARG profile`, sem `--source-map` | `Dockerfile` |
 | ✅ Hospedagem | `web.config` do IIS: reescreve `api/*` para um backend (endereço omitido) e faz fallback da SPA para `/` | `web.config` |
@@ -55,4 +55,4 @@ Arquivos em `sources`, commit `d250804`. O `package.json` declara o nome `eou-df
 - Backend: [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Stack-e-Dependencias|Stack do Backend]]
 
 ## Pendências e próximo passo
-- Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/99-Controle/PARTICIPA-DF-Frontend-Cidadao-Pendencias|Pendências]] e o débito sobre Angular 13 em [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/05-Qualidade/PARTICIPA-DF-Frontend-Cidadao-Debitos-Tecnicos|Débitos técnicos]].
+- Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/99-Controle/PARTICIPA-DF-Frontend-Cidadao-Pendencias|Pendências]] e o débito sobre Angular 13 em [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/09-Qualidade/PARTICIPA-DF-Frontend-Cidadao-Debitos-Tecnicos|Débitos técnicos]].

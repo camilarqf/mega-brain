@@ -33,7 +33,7 @@ Disponibilizar um servidor MinIO (API S3 e console web) empacotado em Docker e i
 - ❓ O pipeline que lê o bloco `x-platform-info` não está no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]] · [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]] · [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]].

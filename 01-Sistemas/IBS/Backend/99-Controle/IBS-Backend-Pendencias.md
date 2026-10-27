@@ -23,9 +23,9 @@ Listar lacunas, conflitos e riscos identificados, sem resolvê-los por suposiç�
 
 ## Informações confirmadas
 - ✅ Credenciais em texto claro no arquivo local `src/main/resources/application-local.properties` (ignorado pelo Git), incluindo linhas comentadas de outros ambientes. Valores não registrados. Recomendação: rotacionar e remover.
-- ✅ O cliente Keycloak envia `X-IBS-Secret` e `X-Correlation-ID`; o IBS não valida segredo, não há Spring Security e lê `X-Correlation-Key` ([[01-Sistemas/IBS/Backend/06-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]).
-- ✅ Cache de fonte recente sem limite; erros sem handler resultam em 500 ([[01-Sistemas/IBS/Backend/08-Qualidade/IBS-Backend-Debitos-Tecnicos|Débitos técnicos]]).
-- ✅ `UsuarioControllerTest` usa a rota `/usuarios/busca` (a real é `/usuarios/buscar`): 4 testes falham; `ResolverFontesPorOrgaoIntegrationTest` exige banco real ([[01-Sistemas/IBS/Backend/08-Qualidade/IBS-Backend-Testes-e-Cobertura|Testes]]).
+- ✅ O cliente Keycloak envia `X-IBS-Secret` e `X-Correlation-ID`; o IBS não valida segredo, não há Spring Security e lê `X-Correlation-Key` ([[01-Sistemas/IBS/Backend/08-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]).
+- ✅ Cache de fonte recente sem limite; erros sem handler resultam em 500 ([[01-Sistemas/IBS/Backend/09-Qualidade/IBS-Backend-Debitos-Tecnicos|Débitos técnicos]]).
+- ✅ `UsuarioControllerTest` usa a rota `/usuarios/busca` (a real é `/usuarios/buscar`): 4 testes falham; `ResolverFontesPorOrgaoIntegrationTest` exige banco real ([[01-Sistemas/IBS/Backend/09-Qualidade/IBS-Backend-Testes-e-Cobertura|Testes]]).
 
 ## Inferências e limitações
 - ❓ Dono do IBS, SLA e consumidores além do Keycloak (inclusive de `/usuarios/*`, `ResolverFontesPorOrgaoHandler` e `ObterFontesPorSufixoHandler`).

@@ -34,7 +34,7 @@ Voltar: [[01-Sistemas/SCI/Frontend/SCI-Frontend-Index|Índice do Frontend]] · [
 - Pergunta 1 do backend (repositório do frontend): é o `sci-frontend` (2026-10-19, confirmado pelo usuário).
 
 ## Riscos para tratar fora do cofre
-Itens 1 a 5 de [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos]] (contrato desalinhado, autorização só no cliente, sessão, painel BI, ausência de testes).
+Itens 1 a 5 de [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos]] (contrato desalinhado, autorização só no cliente, sessão, painel BI, ausência de testes).
 
 ## Próximo passo exato
 Lote 5 opcional (ver [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Registro-de-Analise|Registro de análise]]).

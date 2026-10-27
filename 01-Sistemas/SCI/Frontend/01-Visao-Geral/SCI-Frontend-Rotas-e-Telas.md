@@ -76,7 +76,7 @@ Investigador, Revisor e Gestor Pip → caixa de entrada PIP correspondente; Auto
 - A visibilidade de botões dentro das telas (por status e perfil) não foi percorrida tela a tela.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Frontend/01-Visao-Geral/SCI-Frontend-Perfis-e-Ambientes|Perfis e ambientes]] · [[01-Sistemas/SCI/Frontend/05-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]] · módulos em [[01-Sistemas/SCI/Frontend/SCI-Frontend-Index|Índice do Frontend]]
+- [[01-Sistemas/SCI/Frontend/01-Visao-Geral/SCI-Frontend-Perfis-e-Ambientes|Perfis e ambientes]] · [[01-Sistemas/SCI/Frontend/08-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]] · módulos em [[01-Sistemas/SCI/Frontend/SCI-Frontend-Index|Índice do Frontend]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendências]].

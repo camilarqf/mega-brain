@@ -37,14 +37,14 @@ Documentar usuários, perfis, permissões (perfil + unidade) e a troca da permis
 - ✅ **Alternar permissão** (`POST /usuario/alternar-permissao`, qualquer autenticado): o usuário vem do token (`ICurrentUserIdentity`), não do corpo. Regra: a permissão escolhida deve pertencer ao usuário ("A permissão selecionada não é permitida para este usuário."); devolve **novo token** com o perfil e a unidade escolhidos.
 - ✅ **Excluir permissão** (`DELETE /permissao/usuario/{usuarioId}/permissao/{permissaoId}`, Administrador); `PermissaoExcluida`, `PermissaoAlternada` são eventos.
 - ✅ Consultas: `GET /usuario/relatores-pip`, `/analistas-para-distribuicao`, `/permissoes`, `/{id}` e `/visao-administrador` (Administrador), `GET /perfil` (Administrador).
-- ✅ O login depende de o usuário existir por CPF e possuir permissão atual — [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo de autenticação]].
+- ✅ O login depende de o usuário existir por CPF e possuir permissão atual — [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo de autenticação]].
 
 ## Inferências e limitações
 - ❓ Não há tela/endpoint de autocadastro: usuários são criados por Administrador ou por seed (`05-Insert-TB_USUARIO.sql`, não lido).
 - A tabela `TB_USUARIO_IDENTIDADE` e o código de SSO são da POC e ficam fora do escopo.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança e autorização]] · [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
+- [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança e autorização]] · [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
 
 ## Pendências e próximo passo
 - Confirmar o processo de provisionamento de usuários em produção.

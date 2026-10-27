@@ -47,7 +47,7 @@ Voltar: [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externa
 
 ## Falhas e dependências
 - ✅ Falha do S3 no download manual propaga como erro da requisição; no consumidor, nenhum tratamento específico foi visto (interrompe a cópia dos anexos restantes; os já copiados não se repetem).
-- ✅ `GET /denuncia/{denunciaId}/download` só exige usuário autenticado e, pelo código lido, **não verifica** se a denúncia pertence à unidade do usuário (diferente de `get-all`). Ver [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]].
+- ✅ `GET /denuncia/{denunciaId}/download` só exige usuário autenticado e, pelo código lido, **não verifica** se a denúncia pertence à unidade do usuário (diferente de `get-all`). Ver [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Inferências e limitações
 - 🔶 Provedor `MinIO-CGDF`: inferido pelo pacote `Minio`, pelo nome do serviço de armazenamento na configuração de homologação e pelo cofre; endereço e bucket reais não registrados.

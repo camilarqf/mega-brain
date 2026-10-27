@@ -39,7 +39,7 @@ Documentar o processo de admissibilidade, sua análise, revisões, nota técnica
 | Passo | Efeito | Condição / regra |
 |---|---|---|
 | Criação | `AD` (sem relator) ou `AC` (com relator) | `ProcessoAdmissibilidade.Criar` |
-| Distribuir para analista | `AC` | perfil Gestor/Autoridade ([[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|políticas]]) |
+| Distribuir para analista | `AC` | perfil Gestor/Autoridade ([[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|políticas]]) |
 | Redistribuir | mantém o estado, evento com justificativa | `ProcessoAdmissibilidadeAptoParaRedistribuir`: recusa se já está com o analista informado |
 | Atualizar cadastro | `AC` → `EC` (em cadastro) | só muda o estado se o processo tem fatos e está em `AC`; analista |
 | Concluir cadastro | `AA` | só se `EC` ("Não foi possível concluir o cadastro") |
@@ -63,7 +63,7 @@ Documentar o processo de admissibilidade, sua análise, revisões, nota técnica
 - ✅ Ao concluir o processo, `ProcessoAdmissibilidadeConcluidoEventHandler`: se já existe PIP, só registra aviso; usa a análise aprovada; **se algum envolvido tem recomendação `PIP` ou `IPF`** e a unidade de origem tem configuração ativa para PIP, cria o PIP com os fatos desses envolvidos; sem configuração, não cria e registra aviso. Ver [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-PIP|PIP]].
 
 ### Consultas
-- ✅ Visões por perfil (gestor, autoridade, assessor, analista, apoio, revisor), por unidade e nota técnica — [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]].
+- ✅ Visões por perfil (gestor, autoridade, assessor, analista, apoio, revisor), por unidade e nota técnica — [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]].
 
 ### Atualizações de 2026-10-23 (`29989114`)
 - ✅ O clone do processo (correção "clonar JAD", `4e004181`) passou a manter as evidências ligadas aos envolvidos e os anexos de evidência (`Fato.Clonar`, `Evidencia.Clonar`).
@@ -74,7 +74,7 @@ Documentar o processo de admissibilidade, sua análise, revisões, nota técnica
 - 🔶 Fluxo de revisão detalhado por tipo (quem revisa em cada etapa) depende da configuração em banco (seeds `23-Insert-FLUXO_CONFIGURACAO` e `24-Insert-FLUXO_JAD`, não lidos).
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Encaminhamento|Encaminhamento]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Documentos-e-Assinaturas|Documentos e assinaturas]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Unidade-e-Configuracao|Unidade e configuração]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
+- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Encaminhamento|Encaminhamento]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Documentos-e-Assinaturas|Documentos e assinaturas]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Unidade-e-Configuracao|Unidade e configuração]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
 
 ## Pendências e próximo passo
 - Ler os seeds de configuração de fluxo (sem dados pessoais) para documentar a sequência de revisões por unidade.

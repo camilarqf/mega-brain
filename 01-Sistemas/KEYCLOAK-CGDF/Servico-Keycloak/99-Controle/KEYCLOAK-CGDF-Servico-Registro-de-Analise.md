@@ -6,7 +6,7 @@ repository: keycloak
 status: pendente
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
-updated: 2026-10-18
+updated: 2026-10-27
 commit_data: 2026-09-03
 branch: master
 tags:
@@ -47,3 +47,6 @@ Decisões do usuário (2026-10-18): ID do sistema `KEYCLOAK-CGDF`, componente `S
 
 ## Pendências e próximo passo
 - **Próximo passo exato:** (1) responder as perguntas de [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/99-Controle/KEYCLOAK-CGDF-Servico-Pendencias|Pendências]]; (2) ler os `.ftl` e o `dist` do tema, se o tema for relevante; (3) com a exportação do realm (sem segredos), documentar clients e fluxos. Antes, conferir `git rev-parse HEAD` = `1755591`; se mudou, usar `atualizar-documentacao`.
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

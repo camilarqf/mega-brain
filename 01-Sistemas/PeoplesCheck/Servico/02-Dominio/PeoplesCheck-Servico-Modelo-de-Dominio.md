@@ -74,10 +74,10 @@ Descrever entidades, enums, estados e contratos de resultado.
 ## Inferências e limitações
 - 🔶 `IValidationContract` declara constantes (`type`, `message`, `content` como campos de interface, sempre `null`) sem uso; os contratos concretos definem seus próprios campos.
 - 🔶 O nome `limitedExceeded` é gramaticalmente incorreto, mas faz parte do contrato HTTP consumido; alterar exige coordenação com os clientes.
-- Dados pessoais (nome, mãe, nascimento, CPF) transitam por estas entidades; ver [[01-Sistemas/PeoplesCheck/Servico/06-Seguranca/PeoplesCheck-Servico-Seguranca-e-Autorizacao|Segurança]].
+- Dados pessoais (nome, mãe, nascimento, CPF) transitam por estas entidades; ver [[01-Sistemas/PeoplesCheck/Servico/08-Seguranca/PeoplesCheck-Servico-Seguranca-e-Autorizacao|Segurança]].
 
 ## Relacionamentos
-- [[01-Sistemas/PeoplesCheck/Servico/03-Modulos/PeoplesCheck-Servico-Validacao-de-Pessoa|Validação de pessoa]] · [[01-Sistemas/PeoplesCheck/Servico/03-Modulos/PeoplesCheck-Servico-Desafio-de-Identidade|Desafio de identidade]] · [[01-Sistemas/PeoplesCheck/Servico/09-Regras-de-Negocio/PeoplesCheck-Servico-Regra-Elegibilidade-Cadastral|Elegibilidade cadastral]]
+- [[01-Sistemas/PeoplesCheck/Servico/03-Modulos/PeoplesCheck-Servico-Validacao-de-Pessoa|Validação de pessoa]] · [[01-Sistemas/PeoplesCheck/Servico/03-Modulos/PeoplesCheck-Servico-Desafio-de-Identidade|Desafio de identidade]] · [[01-Sistemas/PeoplesCheck/Servico/04-Regras-de-Negocio/PeoplesCheck-Servico-Regra-Elegibilidade-Cadastral|Elegibilidade cadastral]]
 
 ## Pendências e próximo passo
 - Confirmar a fonte oficial dos códigos de situação cadastral.

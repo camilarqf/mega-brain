@@ -52,7 +52,7 @@ Variáveis de ambiente/secrets: `SSO_CLIENT_SECRET`, `STORAGE_ACCESS_KEY`, `STOR
 - ✅ A chave `access.token` existe nos perfis `dev`, `homolog` e `prod` (e no `local`, não versionado), mas **nenhuma classe a lê** (busca em `src/main/java`): configuração morta.
 - ✅ `url.servidor.api.sigrh` e `url.portal.verificar.sutcs` existem em `prod` (e no `local`), mas **nenhuma classe as lê**: resquício de uma autenticação anterior (🔶 SIGRH/SUTCS), sem uso no commit.
 - ✅ O perfil `prod` usa o banco Mongo `superbuscaportal`; `dev`/`homolog` usam `superbuscaportal_hom`. A exchange do RabbitMQ usa o vhost `homolog` em `dev`/`homolog` e `prod` em produção.
-- ✅ `dev.usuario.cpf`/`dev.usuario.senha` existem em todos os perfis versionados, inclusive `prod` ([[01-Sistemas/Gerenciador-Portal/Backend/06-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]).
+- ✅ `dev.usuario.cpf`/`dev.usuario.senha` existem em todos os perfis versionados, inclusive `prod` ([[01-Sistemas/Gerenciador-Portal/Backend/08-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]).
 - 🔶 Os perfis `dev`, `homolog` e `local` apontam para o mesmo conjunto de bancos e brokers com credenciais próprias versionadas; `prod` também (valores não registrados).
 - ❓ Staging não monta os secrets `STORAGE_*` no pipeline (só o do SSO): sem eles `S3Config` lança `IllegalStateException` na inicialização. Se Staging funciona, a origem das credenciais não está no repositório.
 

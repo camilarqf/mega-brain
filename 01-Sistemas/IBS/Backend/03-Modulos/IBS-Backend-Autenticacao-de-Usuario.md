@@ -47,7 +47,7 @@ Reunir as peças que implementam `POST /auth`: validar credencial por LDAP e mon
 - 🔶 `MontarClaimsHandler` só é referenciado na configuração e nos testes.
 
 ## Relacionamentos
-- [[01-Sistemas/IBS/Backend/04-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/03-Regras-de-Negocio/IBS-Backend-Regra-Ordem-de-Tentativa-LDAP|Ordem de tentativa]] · [[01-Sistemas/IBS/Backend/03-Regras-de-Negocio/IBS-Backend-Regra-Vinculo-Ativo-e-Matricula|Vínculo e matrícula]] · [[01-Sistemas/IBS/Backend/03-Regras-de-Negocio/IBS-Backend-Regra-Mapeamento-de-Erros-HTTP|Erros HTTP]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Modelo-de-Claims|Claims]]
+- [[01-Sistemas/IBS/Backend/05-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/04-Regras-de-Negocio/IBS-Backend-Regra-Ordem-de-Tentativa-LDAP|Ordem de tentativa]] · [[01-Sistemas/IBS/Backend/04-Regras-de-Negocio/IBS-Backend-Regra-Vinculo-Ativo-e-Matricula|Vínculo e matrícula]] · [[01-Sistemas/IBS/Backend/04-Regras-de-Negocio/IBS-Backend-Regra-Mapeamento-de-Erros-HTTP|Erros HTTP]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Modelo-de-Claims|Claims]]
 
 ## Pendências e próximo passo
 - Nenhuma específica.

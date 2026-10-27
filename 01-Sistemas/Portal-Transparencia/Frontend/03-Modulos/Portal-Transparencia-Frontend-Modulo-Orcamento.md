@@ -35,7 +35,7 @@ Commit `dca3e933`. `index.route.js`; `components/orcamento/**` (3 JS, 4 HTML); `
 | `/orcamento/:tipo` | `OrcamentoController` | `{{tipo}}` (rota parametrizada: `ldo`, `loa`, `lrf`, `relatorios-gerenciais` … conforme anos/assuntos devolvidos) |
 
 - ✅ `OrcamentoService`: `GET /orcamento/{relatorios-gerenciais,ldo,loa,lrf}/anos`, `GET /orcamento/assuntosLRF`, `/assuntosRelatoriosGerenciais`, `/orcamento/{tipo}`, `/orcamento/listarDataReferenciaPorAssunto`; `POST /orcamento/categorias` e `/orcamento/data-referencias`.
-- ✅ `OrcamentoController` usa `ArquivoUrlService.ARQUIVOS` (`vm.urlArquivos`) para montar os links dos documentos (ver [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]).
+- ✅ `OrcamentoController` usa `ArquivoUrlService.ARQUIVOS` (`vm.urlArquivos`) para montar os links dos documentos (ver [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]).
 - ✅ Sem testes automatizados neste módulo.
 
 ## Inferências e limitações
@@ -43,7 +43,7 @@ Commit `dca3e933`. `index.route.js`; `components/orcamento/**` (3 JS, 4 HTML); `
 - Valores aceitos em `:tipo` não foram enumerados a partir do código (depende dos dados).
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Orcamento-e-Documentos-Publicados|Backend: Orçamento e documentos publicados]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Orcamento-e-Documentos-Publicados|Backend: Orçamento e documentos publicados]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]].

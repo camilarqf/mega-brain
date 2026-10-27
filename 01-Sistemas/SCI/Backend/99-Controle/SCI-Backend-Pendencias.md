@@ -41,7 +41,7 @@ Voltar: [[01-Sistemas/SCI/Backend/SCI-Backend-Index|Índice do Backend]] · [[01
 | 15 | Os projetos de teste `SCI.Application.Tests` e `SCI.Api.Tests` (sem `.csproj`) serão adicionados à solução? | Lote 7 |
 
 ## Riscos para tratar fora do cofre
-Itens 1 a 4 (e o 17) de [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] (bypass, `generate-database`, `DELETE /unidade`, segredos versionados e rotação).
+Itens 1 a 4 (e o 17) de [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] (bypass, `generate-database`, `DELETE /unidade`, segredos versionados e rotação).
 
 ## Próximo passo exato
 Responder as perguntas 11 a 15; lote 8 opcional (ver [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Registro-de-Analise|Registro de análise]]).

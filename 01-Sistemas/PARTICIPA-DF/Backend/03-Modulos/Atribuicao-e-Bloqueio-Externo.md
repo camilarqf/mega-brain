@@ -24,7 +24,7 @@ sources:
 
 # Atribuição, bloqueio externo e conta LGPD
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
 
 ## Objetivo
 Documentar três mecanismos de apoio: atribuição da manifestação a um operador, bloqueio externo disparado por outro sistema (denúncia) e a transferência de manifestações para uma conta institucional (LGPD).
@@ -57,7 +57,7 @@ Handlers de `AtribuirParaOperador`, `AplicarBloqueioExterno`, `RemoverBloqueioEx
 - ❓ Demais operações da fila de `MoverManifestacoesParaContaLGPD`.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]] (bloqueio de **usuário**, outro conceito)
+- [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]] (bloqueio de **usuário**, outro conceito)
 
 ## Pendências e próximo passo
 - ✅ `DenunciaRecusadaConsumer` lido (2026-10-23). Busca por chamadores de `AplicarBloqueioExterno`: nenhum no repositório (ver acima). Falta confirmar com o time quem aplica o bloqueio externo.

@@ -48,7 +48,7 @@ Registrar linguagem, framework e bibliotecas efetivamente declaradas.
 - ❓ `NEW_RELIC_APP_NAME` é definido nos arquivos de ambiente, mas nenhuma dependência de agente New Relic consta aqui; ver [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Observabilidade-e-Logs|Observabilidade]].
 
 ## Relacionamentos
-- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Arquitetura|Arquitetura]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Arquitetura|Arquitetura]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Confirmar a versão de scikit-learn usada no treino dos modelos em produção (ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|Pendências]]).

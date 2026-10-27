@@ -43,7 +43,7 @@ O serviço é **somente provedor**: não há clientes HTTP, filas nem banco no c
 - ❓ O `PARTICIPA-DF` envia o relato do cidadão a este serviço; se o serviço é institucional (dono não identificado) é relevante para a LGPD.
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/04-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Fluxo de triagem]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]] · [[01-Sistemas/Iza/Api/05-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Fluxo de triagem]]
 
 ## Pendências e próximo passo
 - Registrar o dono e as URLs por ambiente quando informados.

@@ -39,7 +39,7 @@ Arquivos em `sources`. Listagem e cadastro lidos em detalhe; `visualizar` e `atu
 - **Ir para as OS**: `listarOsAcaoControle` converte tipo e naturezas da ação em ids (`AUDITORIA=1`, `CONSULTORIA=2`, `INSPECAO=3`; naturezas `CONFORMIDADE=1` a `PROGRAMA_INTEGRIDADE=5`), grava-os no estado (`definirDadosDaAcaoControle`) e navega para `ordem-servico/listar/:id` após um `setTimeout` de 300 ms. O estado é usado depois para buscar as descrições de fase.
 - **Cadastro** (`AcaoControleCadastrarComponent`, formulário reativo). Campos obrigatórios: unidade de auditoria interna, área executora, tipo, classificação, programa de governo (código), objetivo PPA, naturezas, unidades auditadas, ano de programação, quantidade de membros, dias úteis, esforço total, descrição da ação (máx. 30 caracteres) e POAC (`idPoac`). Opcional: objetivo da ação (máx. 500). Cadastros dependentes em cascata: área executora depende da unidade de auditoria interna; objetivo PPA, do programa de governo (cada um carregado por *action*/efeito NgRx). Após salvar volta a `pages/home`.
 - **POAC**: `PoacService.pesquisarPorAno` consulta `GET /poac/pesquisar-ano?anoPoac=`.
-- **Chamadas** (`AcaoControleService`): `GET /acao-controle/listar`, `GET /acao-controle/pesquisar?id=`, `POST /acao-controle/cadastrar`, `PUT /acao-controle/atualizar/{id}`, `DELETE /acao-controle/inativar?id=`, `GET /acao-controle/validar/{id}`. Cadastros auxiliares: `GET /unidade-auditoria/listar`, `/area-executora/listar/{id}`, `/programa-governo/listar`, `/objetivo-ppa/listar/{codigo}`, `/unidade-auditada/listar`. Catálogo em [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]].
+- **Chamadas** (`AcaoControleService`): `GET /acao-controle/listar`, `GET /acao-controle/pesquisar?id=`, `POST /acao-controle/cadastrar`, `PUT /acao-controle/atualizar/{id}`, `DELETE /acao-controle/inativar?id=`, `GET /acao-controle/validar/{id}`. Cadastros auxiliares: `GET /unidade-auditoria/listar`, `/area-executora/listar/{id}`, `/programa-governo/listar`, `/objetivo-ppa/listar/{codigo}`, `/unidade-auditada/listar`. Catálogo em [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]].
 - **Rotas**: `visualizar/:id` (`CONSULTAR_ACAO`), `atualizar/:id` (`EDITAR_ACAO`), `cadastrar-acao-controle` (`CRIAR_ACAO` declarada **sem** `canActivate`).
 
 ## Regras de negócio
@@ -52,7 +52,7 @@ Nenhuma regra de negócio verificável foi extraída do frontend além das valid
 - Telas `visualizar` e `atualizar` e templates HTML lidos só por estrutura.
 
 ## Relacionamentos
-- Ordens de serviço da ação: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]] · Permissões: [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Padrão de estado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]]
+- Ordens de serviço da ação: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]] · Permissões: [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Padrão de estado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendências]].

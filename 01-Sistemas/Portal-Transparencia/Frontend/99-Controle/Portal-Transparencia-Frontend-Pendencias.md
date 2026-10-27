@@ -41,6 +41,6 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Fronten
 
 ## Próximo passo exato
 1. Responder as perguntas acima (principalmente #3, #4 e #6) e registrar a decisão.
-2. Rodar `gulp test` em ambiente compatível (Node 6) e anotar a cobertura em [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura|Testes e cobertura]].
+2. Rodar `gulp test` em ambiente compatível (Node 6) e anotar a cobertura em [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura|Testes e cobertura]].
 3. Aprofundar por módulo (parâmetros/DTO × Backend) começando por Despesas e Prestando Contas.
 4. Atualizar com a skill `atualizar-documentacao` quando `git diff dca3e933..HEAD` mostrar mudanças.

@@ -49,7 +49,7 @@ Commit `dca3e933`. Rotas em `index.route.js`; `components/despesas/**` (30 arqui
 
 Rotas comentadas (controllers ainda no repositório): `/despesas/restos-a-pagar`, `/despesas/execucao-emendas`, `/despesas/acao`.
 
-**Serviço e dados.** `DespesasService` (`despesas.service.js`) concentra 87 chamadas `GET`/`POST` (famílias em [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo]]). Tabelas usam `tabela-consulta` (URL no HTML) e `PagingService`. A tela de execução de despesa usa `ExecucaoDespesaService` (`/v2/dashboard-execucao-despesa/*`) e o mapa de regiões administrativas (`/v2/despesas-ras`, `delimitacao_ras.json`, `localizacoes_ras.json`).
+**Serviço e dados.** `DespesasService` (`despesas.service.js`) concentra 87 chamadas `GET`/`POST` (famílias em [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo]]). Tabelas usam `tabela-consulta` (URL no HTML) e `PagingService`. A tela de execução de despesa usa `ExecucaoDespesaService` (`/v2/dashboard-execucao-despesa/*`) e o mapa de regiões administrativas (`/v2/despesas-ras`, `delimitacao_ras.json`, `localizacoes_ras.json`).
 
 **Exportação.** Cerca de 25 controllers chamam `RelatorioService.exportar('/despesa/relatorio/…')` (PDF ou CSV).
 
@@ -62,7 +62,7 @@ Rotas comentadas (controllers ainda no repositório): `/despesas/restos-a-pagar`
 - Cobertura parcial: templates, SCSS e a lógica interna de cada controller foram lidos por amostragem.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]] · [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API]] · [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]]
 - Backend: [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Despesa|Módulo Despesa]]
 
 ## Pendências e próximo passo

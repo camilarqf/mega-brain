@@ -42,7 +42,7 @@ Registrar health checks, métricas e logs.
 - Ver agente New Relic em [[01-Sistemas/PeoplesCheck/Servico/01-Visao-Geral/PeoplesCheck-Servico-Deploy-e-Ambientes|Deploy e ambientes]].
 
 ## Relacionamentos
-- [[01-Sistemas/PeoplesCheck/Servico/06-Seguranca/PeoplesCheck-Servico-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/PeoplesCheck/Servico/07-Integracoes/PeoplesCheck-Servico-Integracao-CouchDB|Integração CouchDB]]
+- [[01-Sistemas/PeoplesCheck/Servico/08-Seguranca/PeoplesCheck-Servico-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/PeoplesCheck/Servico/07-Integracoes/PeoplesCheck-Servico-Integracao-CouchDB|Integração CouchDB]]
 
 ## Pendências e próximo passo
 - Definir se o MongoDB deve ter indicador de saúde próprio.

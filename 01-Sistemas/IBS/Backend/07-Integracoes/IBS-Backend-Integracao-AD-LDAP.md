@@ -42,10 +42,10 @@ Voltar: [[01-Sistemas/IBS/Backend/IBS-Backend-Index|Índice]]
 ## Inferências e limitações
 - 🔶 Tráfego `ldap://` sem TLS no código: a senha trafega em texto claro até o AD, a menos que a rede ou o AD imponham outra proteção (não verificado).
 - ❓ Hosts, versões do AD, dono e SLA dos ADs não estão no repositório.
-- Regras de repetição entre servidores: [[01-Sistemas/IBS/Backend/03-Regras-de-Negocio/IBS-Backend-Regra-Ordem-de-Tentativa-LDAP|Ordem de tentativa]].
+- Regras de repetição entre servidores: [[01-Sistemas/IBS/Backend/04-Regras-de-Negocio/IBS-Backend-Regra-Ordem-de-Tentativa-LDAP|Ordem de tentativa]].
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/IBS/Backend/04-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/06-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/IBS/Backend/05-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo]] · [[01-Sistemas/IBS/Backend/08-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]
 
 ## Pendências e próximo passo
 - Confirmar se o transporte é protegido por outro meio (rede, VPN) e quem é o dono dos ADs.

@@ -37,7 +37,7 @@ sources:
 
 # Usuários, operadores e perfis
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ## Objetivo
 Documentar a capacidade de gestão de identidades do sistema: quem são os usuários (cidadãos, pessoas jurídicas e operadores), como os perfis dão acesso e quais endpoints e comandos existem. O modelo completo de dados fica no lote 3.
@@ -72,7 +72,7 @@ classDiagram
 - ✅ Regras de unidade: o operador SO só pode ter como padrão uma unidade ativa em SO ou SIC (`IsUnidadePadraoValid`); o SIC não faz essa checagem em `AlterarUnidadeAtual`.
 - ✅ `OperadorSIC.IsUnidadeAtualSuperiorSic()`: a unidade atual é do tipo `UnidadeSicSuperior`.
 - ✅ `TipoOperadorEnum`: `SO`, `SIC`.
-- ✅ Bloquear e desbloquear: ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
+- ✅ Bloquear e desbloquear: ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
 
 ### Endpoints por controller (rotas e acesso)
 | Controller | Base | Acesso | Capacidades |
@@ -99,7 +99,7 @@ Autenticação e senha: `AutenticarUsuario`, `AlterarSenha`, `RecuperarSenha`, `
 - ✅ `OperadorSO.Atualizar` reinicia a lista de unidades (`Unidades = new List<Unidade>()`); 🔶 as unidades extras precisam ser reinseridas depois.
 - ✅ `OperadorSIC.Atualizar` substitui `Unidades` pela lista recebida.
 - ✅ Operadores ativos recebem exigência de senha complexa; os demais usuários, simples.
-- ✅ Operador inativo após 90 dias sem login ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
+- ✅ Operador inativo após 90 dias sem login ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
 
 ## Inferências e limitações
 - 🔶 Cadastro de cidadão é anônimo (autoatendimento) e o de operador exige operador; `OrigemCadastroUsuarioEnum` (`AutoCadastro`, `Operador`) indica as duas origens.

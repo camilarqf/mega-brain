@@ -14,7 +14,7 @@ tags:
 
 # Pendências e pontos a confirmar
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Registro-de-Analise|Registro-de-Analise]], [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Registro-de-Analise|Registro-de-Analise]], [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Perguntas de negócio (confirmar com o time)
 - [ ] Expansão oficial das siglas **SICI**, **OSI**, **POAC**, **SUBCI**, **RP / RPM / RM** — ver [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]].
@@ -71,7 +71,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [ ] Analisar o repositório `sici-frontend` (ainda não analisado; HEAD local `7f497cc` em 2026-10-18) e só então consolidar a visão de negócio em [[01-Sistemas/SICI/SICI-Contexto-do-Sistema|Contexto-do-Sistema]].
 - [ ] Decidir se a base pode ser sincronizada com o remoto do cofre (ver `BRAIN-RULES.md`: classificar o conteúdo e confirmar se o remoto é autorizado).
 - [ ] Validar os itens 🔶 com testes ou consultas em homologação (duplicidade de numeração, fases apagadas no cancelamento, `ID_STATUS` legado).
-- [ ] Revisar com o time os débitos 🔴 de [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- [ ] Revisar com o time os débitos 🔴 de [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 
 ## A investigar (histórico dos lotes)
 - [x] Lote 2: entidades JPA × tabelas, relacionamentos e evolução do schema.
@@ -80,4 +80,4 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [x] Lote 4: a ausência de lock no cálculo `max + 1` **não** é compensada no código (sem lock, sem unique, isolamento padrão e uma chamada HTTP no meio). O risco de duplicidade continua; confirmar nos dados.
 - [x] Lote 4: algoritmo de `VerifyCode.forOS` / `forDocumento`, o que é coberto pelo hash SHA-256 e como funciona a validação → [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]].
 - [x] Lote 5: `AcaoControle.alterarSituacaoAC` é chamado só na assinatura da ABERTURA (→ `OSI_EMITIDA`); na prática só altera `situacao`.
-- [x] Lote 6: matriz completa de endpoints × roles → [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
+- [x] Lote 6: matriz completa de endpoints × roles → [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].

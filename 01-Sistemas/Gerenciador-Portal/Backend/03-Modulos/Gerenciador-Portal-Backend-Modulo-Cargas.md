@@ -35,7 +35,7 @@ Permitir que o operador acompanhe o controle de cargas de dados do Portal (somen
 - ✅ O módulo **não grava nem dispara cargas**; só consulta.
 
 ## Falhas e dependências
-- ✅ Os quatro filtros opcionais são concatenados diretamente ao SQL entre aspas: **injeção de SQL** possível em `listar-cargas` (análise estática; exploração não testada). Ver [[01-Sistemas/Gerenciador-Portal/Backend/08-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]].
+- ✅ Os quatro filtros opcionais são concatenados diretamente ao SQL entre aspas: **injeção de SQL** possível em `listar-cargas` (análise estática; exploração não testada). Ver [[01-Sistemas/Gerenciador-Portal/Backend/09-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]].
 - ✅ A resposta de `listar-quantidade-status` depende da **posição** na lista; status novos não são contados.
 - ✅ Depende do esquema `Carga` do banco `DB_PRT_TRANSPARENCIA`, o mesmo citado nas pendências do Portal ([[01-Sistemas/Portal-Transparencia/Backend/99-Controle/Portal-Transparencia-Backend-Pendencias|pendência 4]]).
 
@@ -43,7 +43,7 @@ Permitir que o operador acompanhe o controle de cargas de dados do Portal (somen
 - 🔶 O significado dos status (`SEM ALTER.`, `REALIZADO`) e quem alimenta `Carga.Controle` (ETL) não constam neste repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Portal-Backend-Integracao-SQL-Server|Integração com o SQL Server]] · [[01-Sistemas/Gerenciador-Portal/Backend/05-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Portal-Backend-Integracao-SQL-Server|Integração com o SQL Server]] · [[01-Sistemas/Gerenciador-Portal/Backend/06-API/Gerenciador-Portal-Backend-Catalogo-de-Endpoints|Endpoints]]
 
 ## Pendências e próximo passo
 - Identificar o processo que escreve em `Carga.Controle`.

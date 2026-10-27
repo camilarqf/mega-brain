@@ -50,16 +50,16 @@ As rotas `denuncias` e `encaminhados` têm só `AuthGuard`, sem `data.role` (ace
 
 ### Ambientes
 - ✅ `environment.ts` reexporta `environment.dev`; os arquivos `dev`, `hom` e `prod` definem as chaves `production`, `apiUrl` e `participaUrl` (valores omitidos).
-- ✅ `apiUrl` é a base de todas as chamadas ao `sci-backend`; `participaUrl` só é usada nos links da tela de login (ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Integracoes|Integrações]]).
+- ✅ `apiUrl` é a base de todas as chamadas ao `sci-backend`; `participaUrl` só é usada nos links da tela de login (ver [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Integracoes|Integrações]]).
 - ✅ `environment.dev.ts` estava modificado na árvore de trabalho; fora do escopo e não registrado.
 - ✅ Perfis de build `development`, `homolog` e `production` ([[01-Sistemas/SCI/Frontend/01-Visao-Geral/SCI-Frontend-Stack-e-Dependencias|Stack]]).
 
 ## Inferências e limitações
-- 🔶 Os nomes de perfil precisam coincidir letra a letra com o texto devolvido pelo backend; a comparação com [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança e autorização do backend]] não foi feita.
+- 🔶 Os nomes de perfil precisam coincidir letra a letra com o texto devolvido pelo backend; a comparação com [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança e autorização do backend]] não foi feita.
 - A tabela vem das rotas e do menu; o que cada tela permite por perfil só foi lido onde indicado nos módulos.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Frontend/05-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]]
+- [[01-Sistemas/SCI/Frontend/08-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendências]].

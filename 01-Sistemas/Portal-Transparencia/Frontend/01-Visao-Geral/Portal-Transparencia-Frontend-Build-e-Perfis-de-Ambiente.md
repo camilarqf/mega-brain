@@ -56,7 +56,7 @@ No perfil `homologacao` as constantes `api`, `apisuperbusca`, `caminhoImagens` e
 **Mocks.** `db.json` e `routes.json` (dados de exemplo de `despesa-categoria`, `despesa-credor` …) sugerem uso de `json-server` em desenvolvimento antigo; não há dependência `json-server` no `package.json`.
 
 ## Falhas e dependências
-- `src/app/config.js` **é versionado** e foi alterado nos commits `cc44e3f1` e `21068a92` (2026-10-20/21, ramo `feature/refatoracao-acesso-minio`). Como contém endereços de infraestrutura, ver [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]].
+- `src/app/config.js` **é versionado** e foi alterado nos commits `cc44e3f1` e `21068a92` (2026-10-20/21, ramo `feature/refatoracao-acesso-minio`). Como contém endereços de infraestrutura, ver [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]].
 - Sem pipeline versionado (ver [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Stack-e-Dependencias|Stack]]).
 
 ## Inferências e limitações
@@ -64,7 +64,7 @@ No perfil `homologacao` as constantes `api`, `apisuperbusca`, `caminhoImagens` e
 - 🔶 `caminhoImagens/Arquivos/DadosAbertos` apontam para *buckets* de armazenamento de objetos (nomes `portal-imagens`, `portal-arquivos`, `portal-dados-abertos` no sufixo); a relação com o MinIO documentado no cofre ([[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Index|MinIO-CGDF]]) não está confirmada.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS|Arquitetura]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]
 - Backend: [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Perfis-e-Ambientes|Perfis do Backend]]
 
 ## Pendências e próximo passo

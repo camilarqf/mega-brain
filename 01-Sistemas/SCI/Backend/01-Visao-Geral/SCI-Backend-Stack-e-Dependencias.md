@@ -49,7 +49,7 @@ Registrar linguagem, framework, bibliotecas e projetos da solução.
 - Valores de configuração e `appsettings*.json` não foram reproduzidos.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integrações externas]]
+- [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integrações externas]]
 
 ## Pendências e próximo passo
 - Confirmar o papel de `src/SCI.HtmlToPdfClient` e de `Legacy/`.

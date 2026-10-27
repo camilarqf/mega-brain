@@ -6,7 +6,7 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-27
 commit_data: 2026-09-29
 branch: master
 tags:
@@ -22,7 +22,7 @@ Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] ·
 
 ## Base analisada
 - Repositório: `sici-frontend` (endereço omitido); branch `master`; commit `418642f` (2026-09-29); working tree com apenas arquivos não rastreados (`.agents/`, um log `hs_err_pid*.log`), sem alteração em arquivos versionados.
-- Método: leitura estática. Depois dos lotes, `ng build` (produção) e `ng test` foram executados em 2026-10-18 (resultados em [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]]); a aplicação **não** foi executada. Nenhum arquivo do repositório foi alterado (saídas temporárias removidas).
+- Método: leitura estática. Depois dos lotes, `ng build` (produção) e `ng test` foram executados em 2026-10-18 (resultados em [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]]); a aplicação **não** foi executada. Nenhum arquivo do repositório foi alterado (saídas temporárias removidas).
 - O `HEAD` registrado antes em [[01-Sistemas/SICI/SICI-Repositorios|Repositórios]] (`7f497cc`) era só uma leitura de hash, sem análise; foi substituído por este commit.
 
 ## Regras de proteção aplicadas
@@ -40,10 +40,10 @@ Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] ·
 |---|---|---|---|---|
 | 0 | Cadastro, retomada e esqueleto | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Index]], este registro, [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendencias]]; atualizados Repositórios, Index do sistema e Catálogo |
 | 1 | Fundamentos | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Stack-e-Dependencias|Stack]], [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]] (parcial), [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Perfis-e-Ambientes|Perfis-e-Ambientes]] (parcial), [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]] |
-| 2 | Segurança e sessão | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] (parcial), [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]] |
-| 3 | Módulos e fluxos | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Gestao-SUBCI-e-Perfis|Gestao-SUBCI-e-Perfis]] (todas parciais), [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]], [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]], [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] (parcial) |
-| 4 | API consumida e integrações | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]] (parcial), [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Integracoes|Integracoes]] (parcial); atualizados Mapa de integrações (linha frontend → backend e hipótese do QR Code). Catálogo: sem ID novo |
-| 5 | Qualidade | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]], [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]] (parcial) |
+| 2 | Segurança e sessão | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] (parcial), [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]] |
+| 3 | Módulos e fluxos | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Gestao-SUBCI-e-Perfis|Gestao-SUBCI-e-Perfis]] (todas parciais), [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] (parcial) |
+| 4 | API consumida e integrações | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]] (parcial), [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Integracoes|Integracoes]] (parcial); atualizados Mapa de integrações (linha frontend → backend e hipótese do QR Code). Catálogo: sem ID novo |
+| 5 | Qualidade | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]], [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]] (parcial) |
 
 ## O que não foi coberto
 - Templates HTML e SCSS (lidos só por trechos pontuais); `ordem-servico-cadastrar` (1607 linhas) e `-atualizar` (790) por trechos; `acao-controle-visualizar`/`atualizar`; `ckeditor`; modais de layout; reducers/seletores/efeitos além de OS, validação e autenticação.
@@ -59,3 +59,6 @@ Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] ·
 4. Para aprofundar: lote 6 — `ordem-servico-cadastrar`/`atualizar` (regras de formulário por modelo de OS), reducers/seletores e comparação de DTOs com o backend.
 5. Consolidar a visão integrada (tela → API → regra) em [[01-Sistemas/SICI/SICI-Contexto-do-Sistema|Contexto do sistema]] quando houver aprovação.
 6. Sugerir `sincronizar-brain` (nenhum `git add`/commit/push foi executado).
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

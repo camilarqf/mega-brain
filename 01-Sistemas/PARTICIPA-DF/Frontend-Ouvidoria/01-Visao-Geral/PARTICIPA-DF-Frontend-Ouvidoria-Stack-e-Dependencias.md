@@ -57,7 +57,7 @@ Bibliotecas de terceiros ficam **versionadas** em `assets/lib` e `assets/css` (n
 | Plugins | `gulp-ng-config` (gera `app/api.config.js` a partir de `api.config.json`), `gulp-angular-templatecache` (gera `app/views-dist.js`), `gulp-concat`, `gulp-minify`, `gulp-clean-css`, `gulp-rev`/`gulp-rev-replace`, `gulp-html-replace`, `browser-sync`, `htmlhint` |
 | Saída | `public/build` (dev) e `public/dist` (homolog/prod); `public/` está no `.gitignore` |
 | Contêiner | `Dockerfile` e `Dockerfile.dev` com `node:10.17.0`, `gulp` global; `docker-compose.yml` expõe as portas 3000 e 3001 |
-| Teste | nenhum (`npm test` é um `echo` de erro) — ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Testes-e-Cobertura|Testes-e-Cobertura]] |
+| Teste | nenhum (`npm test` é um `echo` de erro) — ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Testes-e-Cobertura|Testes-e-Cobertura]] |
 
 ### Versão do Node (inconsistente)
 - `README.md` e `Dockerfile*`: Node 10 (`10.17.0`).
@@ -66,7 +66,7 @@ Bibliotecas de terceiros ficam **versionadas** em `assets/lib` e `assets/css` (n
 
 ## Inferências e limitações
 - 🔶 `packages.config`, `Properties/AssemblyInfo.cs` e `Properties/PublishProfiles/*.pubxml` vêm de um projeto Visual Studio/.NET antigo (nome do pacote `OuvCidadania.Ui`); hoje o build real é o Gulp.
-- 🔶 AngularJS 1.x está sem suporte oficial desde 2022 (conhecimento externo ao repositório); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 AngularJS 1.x está sem suporte oficial desde 2022 (conhecimento externo ao repositório); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
 - Cobertura `parcial`: cabeçalhos de versão dos arquivos de `assets/lib` não foram lidos.
 
 ## Relacionamentos

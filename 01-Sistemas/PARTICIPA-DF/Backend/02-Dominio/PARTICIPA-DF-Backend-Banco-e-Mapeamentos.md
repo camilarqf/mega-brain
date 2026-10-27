@@ -66,7 +66,7 @@ Mapas FluentNHibernate (Shared 33 arquivos, Ouvidoria 34, SIC 37) e `Startup.Con
 - ❓ Valor e origem da `database-connection-string` por ambiente.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]] · [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]] · [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
 
 ## Pendências e próximo passo
 - Obter o DDL (ou a documentação do banco) com o time para confirmar chaves, índices e dono do esquema.

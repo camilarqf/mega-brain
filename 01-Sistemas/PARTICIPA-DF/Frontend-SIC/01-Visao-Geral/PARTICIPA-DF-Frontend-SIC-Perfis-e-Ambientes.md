@@ -73,7 +73,7 @@ Arquivos em `sources`, commit `5518a81`. Os valores dos `*.env.yml` não foram l
 - ❓ Se `ENVIRONMENT` é usada pelo pipeline Jenkins (fora do repositório).
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Arquitetura|Arquitetura]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Integracoes-Externas|Integracoes-Externas]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Arquitetura|Arquitetura]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Integracoes-Externas|Integracoes-Externas]]
 
 ## Pendências e próximo passo
 - Confirmar com o time o uso de `ENVIRONMENT`, a existência de `Web.config`/`auth.html` e o objetivo do prefixo `/participa-df-sic-test/`. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

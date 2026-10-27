@@ -53,7 +53,7 @@ Arquivos em `sources`, commit `5518a81`. Cabeçalhos de versão de `assets/lib/*
 - ❓ Versões das demais bibliotecas de `assets/lib` não foram lidas.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Perfis-e-Ambientes|Perfis-e-Ambientes]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Perfis-e-Ambientes|Perfis-e-Ambientes]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Pendências e próximo passo
 - Confirmar a versão de Node usada pelo time (o `Dockerfile` usa 10.17.0) e se as bibliotecas sem uso podem ser removidas. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

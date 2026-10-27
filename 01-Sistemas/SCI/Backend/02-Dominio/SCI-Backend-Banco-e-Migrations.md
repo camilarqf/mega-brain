@@ -49,7 +49,7 @@ Descrever os contextos EF, as tabelas, a leitura por Dapper e o mecanismo de cri
 - Cardinalidades e índices únicos dos mappings não detalhados (cobertura parcial).
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]]
+- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]] · [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]]
 
 ## Pendências e próximo passo
 - Usuário informou (2026-10-19) que o endpoint só funciona em dev e local; confirmar o mecanismo no código/pipeline.

@@ -44,7 +44,7 @@ sources:
 
 # Integrações externas
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[Mapa-de-Integracoes|Mapa de integrações]], [[Catalogo-de-Sistemas|Catálogo (serviços externos)]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[Mapa-de-Integracoes|Mapa de integrações]], [[Catalogo-de-Sistemas|Catálogo (serviços externos)]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 
 Provedor: [[01-Sistemas/Servico-HtmlToPdf/Servico/07-Integracoes/Servico-HtmlToPdf-Servico-Integracoes|Servico-HtmlToPdf]] (✅ confirmado pelo usuário).
@@ -88,7 +88,7 @@ Projetos de cliente e arquivos em `sources`; configuração apenas por nome. Com
 - ✅ Uso: notificações de manifestações, pedidos, recursos, prorrogações, omissões, cadastro e recuperação de senha, exclusão de conta.
 
 ### 3. PeoplesCheck
-Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalogo-de-Endpoints|PeoplesCheck]] (✅ confirmado pelo usuário em 2026-10-19; contrato e regras do lado servidor em [[01-Sistemas/PeoplesCheck/PeoplesCheck-Index|PeoplesCheck-Index]]).
+Provedor: [[01-Sistemas/PeoplesCheck/Servico/06-API/PeoplesCheck-Servico-Catalogo-de-Endpoints|PeoplesCheck]] (✅ confirmado pelo usuário em 2026-10-19; contrato e regras do lado servidor em [[01-Sistemas/PeoplesCheck/PeoplesCheck-Index|PeoplesCheck-Index]]).
 - ✅ Operações: `Check` (GET, parâmetro `data`), `CountTry` (GET), `Challenge` (POST JSON), `CheckPJ` (GET `…/{cnpj}?data=cpf`, exige o aceite de responsabilidade). Cabeçalho `X-API-KEY` (valor omitido). Os endpoints expostos em `SecurityController` (`check`, `count-try`, `challenge`, `check-cpf-vinculado-pj`) são **anônimos** e repassam os dados do chamador.
 - ✅ Se `Challenge` retorna 200, a resposta é gravada em cache (`GravarDesafioEmCache`).
 - ✅ Resiliência igual à do MailService (retry, breaker, fallback 400, timeout de 5 s).
@@ -96,7 +96,7 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - 🔶 Finalidade: validar identidade de pessoa (CPF e vínculo CPF–CNPJ) no cadastro; o contrato de resposta não está no repositório.
 
 ### 4. SEI (recurso de 3ª instância)
-- ✅ Via SDK `CGDF.SEI.DotNet.SDK` (`AddSeiConnection`): cria o processo (`SeiProcedimento`, tipo e unidade em `IntegracaoSicSeiSettings`, nível de acesso **público**) e junta o PDF do pedido (`SeiDocumento`, tipo "R", com remetente configurado). Detalhes em [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]].
+- ✅ Via SDK `CGDF.SEI.DotNet.SDK` (`AddSeiConnection`): cria o processo (`SeiProcedimento`, tipo e unidade em `IntegracaoSicSeiSettings`, nível de acesso **público**) e junta o PDF do pedido (`SeiDocumento`, tipo "R", com remetente configurado). Detalhes em [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]].
 - ✅ O vínculo (id do processo, número, documento) é gravado em `TB_VINCULO_PEDIDO_SEI`.
 - 🔶 `SeiConnectionSettings.WsURL` e a sigla de sistema indicam web service SEI (SOAP).
 
@@ -158,12 +158,12 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/05-API/PeoplesCheck-Servico-Catalog
 - 🔶 `PeoplesCheck`/`MailService` repetem a configuração de resiliência (código duplicado entre os dois).
 - 🔶 `unidade 01005` e `01007` são códigos de unidade fixos no código; dependem de dados do banco.
 - ❓ Contratos de resposta do PeoplesCheck, do MailService (`/mail/send`) e do SEI. 🔶 O provedor dos eventos `denuncia-aceita/recusada` é provavelmente o `SCI` (ver Mapa); semântica de retry/DLQ do SDK de PubSub não lida.
-- 🔶 (2026-10-23) Em `DenunciaAceitaConsumer`/`DenunciaRecusadaConsumer` o desbloqueio ocorre **antes** da limpeza do bucket e sem tratamento de erro: falha no S3 deixa os arquivos (com dados do cidadão) no armazenamento temporário. Ver [[01-Sistemas/PARTICIPA-DF/Backend/08-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 (2026-10-23) Em `DenunciaAceitaConsumer`/`DenunciaRecusadaConsumer` o desbloqueio ocorre **antes** da limpeza do bucket e sem tratamento de erro: falha no S3 deixa os arquivos (com dados do cidadão) no armazenamento temporário. Ver [[01-Sistemas/PARTICIPA-DF/Backend/09-Qualidade/PARTICIPA-DF-Backend-Debitos-Tecnicos|Débitos técnicos]].
 - ❓ Quem consome a API `v1` e o serviço "metro".
 
 ## Relacionamentos
 - Provedor Iza (sistema documentado em 2026-10-22): [[01-Sistemas/Iza/Api/07-Integracoes/Iza-Api-Integracoes|Iza → lado provedor]]
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]] · [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro-de-Manifestacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]] · [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro-de-Manifestacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
 - Confirmar com o time: natureza do Iza, consentimento do cidadão, quem é o sistema correcional e os consumidores da API `v1` e "metro".

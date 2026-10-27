@@ -22,7 +22,7 @@ sources:
 
 # Ordem de Serviço (OS de Ação de Controle)
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]]
 
 > Uma OS formaliza um ato sobre uma [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]]: abertura, designação ou exclusão de membros, prorrogação de fases, substituição de coordenador ou cancelamento. A OS só produz efeito sobre equipe e situação da ação **quando é assinada** (ver "Efeitos na assinatura").
 
@@ -118,4 +118,4 @@ Em todos os casos: status → ASSINADA, numeração oficial, PDF com QR Code e c
 | 7 | `validar-data-prorrogacao` → `NullPointerException` se a fase não tiver data vigente | `novaDataFim.isAfter(dataVigente)` | 🔶 |
 | 8 | `SUPER_USUARIO` não aparece em nenhum `hasAnyRole`, então o bypass só acessa endpoints sem `@PreAuthorize` | `JwtAuthenticationConverterCustom`; grep de `SUPER_USUARIO` | ✅ (detalhar no lote 6) |
 
-Registradas também em [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]] e, depois, em [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
+Registradas também em [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]] e, depois, em [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].

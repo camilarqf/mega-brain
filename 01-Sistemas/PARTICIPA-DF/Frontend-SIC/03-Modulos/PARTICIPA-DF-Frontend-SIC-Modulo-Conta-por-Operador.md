@@ -24,7 +24,7 @@ sources:
 
 # Frontend SIC — conta do solicitante por operador
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Fluxo de origem: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Fluxo de origem: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]]
 
 ## Objetivo
 Documentar o cadastro e a atualização de contas de pessoa física (PF) e jurídica (PJ) feitos pelo operador do SIC em nome do solicitante.
@@ -47,11 +47,11 @@ Arquivos em `sources`, commit `5518a81`. Os formulários `.html` não foram deta
 
 ## Inferências e limitações
 - 🔶 O número de tentativas de desafio é por documento, controlado no backend (`security/count-try`); o front apenas exibe o resultado.
-- ✅ Defeitos em `atualizarCadastroPessoaJuridicaCtrl` (ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]): (1) após erro de desafio, a consulta de tentativas usa `extrairCaracteres(vm.cpf)`, mas `vm.cpf` **não é definido** no controller (o CPF está em `vm.cpfVinculado`), o que lança `TypeError` ao chamar `.replace`; (2) `tentativasEsgotadasFim` usa `$ngConfirm`, que **não está injetado** no controller (assinatura: `$routeParams, $location, toastr, Api`), gerando `ReferenceError` ao esgotar as tentativas.
+- ✅ Defeitos em `atualizarCadastroPessoaJuridicaCtrl` (ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]): (1) após erro de desafio, a consulta de tentativas usa `extrairCaracteres(vm.cpf)`, mas `vm.cpf` **não é definido** no controller (o CPF está em `vm.cpfVinculado`), o que lança `TypeError` ao chamar `.replace`; (2) `tentativasEsgotadasFim` usa `$ngConfirm`, que **não está injetado** no controller (assinatura: `$routeParams, $location, toastr, Api`), gerando `ReferenceError` ao esgotar as tentativas.
 - ❓ Validações de campos (máscaras, obrigatoriedade) estão nos templates e nas diretivas `dir*Form`; não analisadas.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]] (dados pessoais na URL) · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]] · Equivalente: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Conta-por-Operador|Conta por operador na Ouvidoria]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/08-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]] (dados pessoais na URL) · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]] · Equivalente: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Conta-por-Operador|Conta por operador na Ouvidoria]]
 
 ## Pendências e próximo passo
 - Ler os templates de conta e as diretivas `shared/` (lote 6 sugerido). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

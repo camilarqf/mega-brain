@@ -39,7 +39,7 @@ Documentar a busca e a consulta de usuários do SIP expostas em `/usuarios/*`.
 - Cobertura parcial: SQL lido, testes só inventariados.
 
 ## Relacionamentos
-- [[01-Sistemas/IBS/Backend/05-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Banco-SIP|Banco SIP]] · [[01-Sistemas/IBS/Backend/06-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]
+- [[01-Sistemas/IBS/Backend/06-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/IBS/Backend/02-Dominio/IBS-Backend-Banco-SIP|Banco SIP]] · [[01-Sistemas/IBS/Backend/08-Seguranca/IBS-Backend-Seguranca-e-Autorizacao|Segurança]]
 
 ## Pendências e próximo passo
 - Identificar os consumidores de `/usuarios/*`.

@@ -38,7 +38,7 @@ Commit `dca3e933`. Arquivos: `src/app/index.module.js`, `index.route.js`, `index
 
 **Camadas.**
 - *Controllers* por tela (`components/<área>/*.controller.js`), com `controllerAs: vm` e injeção por `/** @ngInject */`.
-- *Services* por área (`<área>.service.js`) que montam a requisição `$http` para `api.url + <caminho>`; ver [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]].
+- *Services* por área (`<área>.service.js`) que montam a requisição `$http` para `api.url + <caminho>`; ver [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]].
 - *Diretivas e serviços compartilhados* em `components/compartilhado` (tabelas, filtros, cabeçalho, gráficos, topbar, rodapé, mapa de regiões administrativas, busca, pesquisa de satisfação, `RelatorioService` de exportação PDF/CSV, `PagingService`, `Util`).
 - *Templates* HTML em `components/**` e `template/**`; o `gulp-angular-templatecache` gera `views.js` (módulo `portal`, raiz `app`).
 
@@ -58,7 +58,7 @@ Commit `dca3e933`. Arquivos: `src/app/index.module.js`, `index.route.js`, `index
 - Cobertura parcial: templates HTML, SCSS e diretivas de gráfico/mapa foram lidos por amostragem.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API do Backend]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração com a API do Backend]]
 - Backend: [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Arquitetura-em-Camadas|Arquitetura do Backend]]
 
 ## Pendências e próximo passo

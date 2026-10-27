@@ -44,7 +44,7 @@ Tela `/carga-portal` (`CargaController`, `cargaAPI`): consulta **somente leitura
 - ❓ Quais funções (`listarStatus`, `listarEsquema`) são disparadas pelo HTML (não há `ng-init` no código; o HTML não foi lido).
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Cargas|Backend: Cargas]] · [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backend-Modulo-Cargas|Backend: Cargas]] · [[01-Sistemas/Gerenciador-Portal/Frontend/07-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas]]
 
 ## Pendências e próximo passo
 - Ler `carga.html` para confirmar quais chamadas o HTML dispara.

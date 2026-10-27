@@ -18,7 +18,7 @@ sources:
 
 # Frontend SIC — super-busca
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Detalhe do pedido: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Caixa-de-Entrada-e-Detalhamento|Caixa de entrada e detalhamento]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Detalhe do pedido: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Caixa-de-Entrada-e-Detalhamento|Caixa de entrada e detalhamento]]
 
 ## Objetivo
 Documentar a busca livre por pedidos e solicitantes (`/super-busca`), com item de menu visível a todo usuário autenticado (a rota não tem guarda).
@@ -39,7 +39,7 @@ Documentar a busca livre por pedidos e solicitantes (`/super-busca`), com item d
 - ❓ O que `consultar-por-termo` pesquisa (protocolo, nome, CPF/CNPJ, texto) está no backend.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Conta-por-Operador|Conta-por-Operador]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Conta-por-Operador|Conta-por-Operador]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Pendências e próximo passo
 - Confirmar no backend o escopo de `consultar-por-termo`. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

@@ -48,11 +48,11 @@ Descrever os dois bancos, as coleções e as consultas. Endereços, usuários e 
 - ✅ O DAO usa a API de baixo nível (`MongoTemplate.getCollection`) e não o mapeamento de `@Document`; `MongoConfig` cria `MongoClient` e `MongoTemplate` a partir de `spring.data.mongodb.uri` e `spring.data.mongodb.database` (valores por perfil, omitidos).
 - ✅ **O campo `expirationDate` é gravado com `new Date()`** (momento de criação), não com um vencimento futuro. A "expiração" real é o apagamento por `deleteOldChallenges` (`expirationDate <= data de referência`).
 - ✅ Não há índices, TTL nem migrations no repositório.
-- ✅ **Contagem de tentativas** (`countLastTryByPersonId` e `countLastTryByAssociatedPersonId`): somam `countTry` dos desafios da pessoa (ou da pessoa associada). O filtro monta um `Document` com a chave `expirationDate` **duas vezes** (`$gte` 24 h atrás e `$lt` agora); a segunda `append` substitui a primeira, de modo que só vale `expirationDate < agora`. A janela de 24 h portanto não é aplicada na consulta; vale a limpeza dos desafios com mais de 24 h. Ver [[01-Sistemas/PeoplesCheck/Servico/09-Regras-de-Negocio/PeoplesCheck-Servico-Regra-Limite-de-Tentativas|Limite de tentativas]].
+- ✅ **Contagem de tentativas** (`countLastTryByPersonId` e `countLastTryByAssociatedPersonId`): somam `countTry` dos desafios da pessoa (ou da pessoa associada). O filtro monta um `Document` com a chave `expirationDate` **duas vezes** (`$gte` 24 h atrás e `$lt` agora); a segunda `append` substitui a primeira, de modo que só vale `expirationDate < agora`. A janela de 24 h portanto não é aplicada na consulta; vale a limpeza dos desafios com mais de 24 h. Ver [[01-Sistemas/PeoplesCheck/Servico/04-Regras-de-Negocio/PeoplesCheck-Servico-Regra-Limite-de-Tentativas|Limite de tentativas]].
 - ✅ `countLastTryByPersonId` filtra `associatedPersonId = null`; `countLastTryByAssociatedPersonId` não filtra o `personId`.
 
 ## Inferências e limitações
-- 🔴 ✅ O seletor do CouchDB é montado por **concatenação de texto** com o dado informado, sem escape (ver [[01-Sistemas/PeoplesCheck/Servico/08-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]]).
+- 🔴 ✅ O seletor do CouchDB é montado por **concatenação de texto** com o dado informado, sem escape (ver [[01-Sistemas/PeoplesCheck/Servico/09-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]]).
 - 🔶 `JuridicalPersonRepository.getJuridicalSubsidiaryPersonMapper` usa `docs[0]` sem checar vazio (exceção se o CNPJ completo não existir, embora a base exista).
 - 🔶 `NaturalPersonMapper` e `JuridicalSubsidiaryPersonMapper` usam `Integer.parseInt` da situação (exceção se o campo vier nulo).
 - 🔶 `CouchDBHealthCheck` cria um novo cliente HTTP (e um novo pool) a cada verificação, sem fechar.

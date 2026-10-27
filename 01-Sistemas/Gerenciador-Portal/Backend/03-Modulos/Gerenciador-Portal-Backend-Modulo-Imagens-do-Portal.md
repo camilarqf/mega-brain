@@ -52,7 +52,7 @@ Gerenciar as imagens exibidas no Portal: **slideshow** (categoria 55) e **painé
 - ❓ Se a leitura pelo Portal usa o bucket `portal-imagens` ou ainda o diretório compartilhado.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Portal-Backend-Integracao-MinIO-S3|Integração com MinIO/S3]] · [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações do Frontend do Portal]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Portal-Backend-Integracao-MinIO-S3|Integração com MinIO/S3]] · [[01-Sistemas/Gerenciador-Portal/Backend/02-Dominio/Gerenciador-Portal-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações do Frontend do Portal]]
 
 ## Pendências e próximo passo
 - Confirmar se `salvar-sem-ordenar` ainda é usado pelo cliente e o fluxo de leitura das imagens no Portal.

@@ -28,7 +28,7 @@ Voltar: [[01-Sistemas/IBS/IBS-Index|IBS]]
 ## Informações confirmadas
 - ✅ Atores técnicos: Keycloak (consumidor de `POST /auth`), servidores AD/LDAP (validação de credencial) e SQL Server `DB_SIP` (vínculo, unidades e roteamento).
 - ✅ Além de `/auth`, expõe consulta de usuários (`/usuarios/buscar`, `/usuarios/{idUsuario}`) e `/healthcheck`.
-- ✅ Visão técnica: [[01-Sistemas/IBS/Backend/04-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo de autenticação]], [[01-Sistemas/IBS/Backend/05-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]], [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-AD-LDAP|AD/LDAP]] e [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-SIP-SQLServer|SIP]].
+- ✅ Visão técnica: [[01-Sistemas/IBS/Backend/05-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo de autenticação]], [[01-Sistemas/IBS/Backend/06-API/IBS-Backend-Catalogo-de-Endpoints|Endpoints]], [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-AD-LDAP|AD/LDAP]] e [[01-Sistemas/IBS/Backend/07-Integracoes/IBS-Backend-Integracao-SIP-SQLServer|SIP]].
 
 ## Inferências e limitações
 - 🔶 O `README.md` descreve responsabilidades "futuras" (ex.: OIDC, consulta a fontes corporativas); o código analisado não expõe endpoints OIDC.

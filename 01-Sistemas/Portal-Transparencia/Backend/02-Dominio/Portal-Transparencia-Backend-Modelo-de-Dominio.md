@@ -53,7 +53,7 @@ Listagem dos pacotes `modelo` (122 arquivos), `dto` (10), `enums` (7); leitura d
 - ❓ Campos, chaves e significado de negócio de cada classe não foram detalhados; fica para os módulos por área.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Arquitetura-em-Camadas|Arquitetura-em-Camadas]] · [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]]
+- [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Arquitetura-em-Camadas|Arquitetura-em-Camadas]] · [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]]
 
 ## Pendências e próximo passo
 - Módulos por área criados no lote 7 (ver [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]]); falta detalhar os campos de cada classe.

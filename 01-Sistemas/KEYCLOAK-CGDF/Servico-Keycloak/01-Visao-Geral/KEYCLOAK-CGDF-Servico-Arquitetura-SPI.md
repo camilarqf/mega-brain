@@ -24,7 +24,7 @@ sources:
 ---
 # Arquitetura da extensão (SPI)
 
-Voltar: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/KEYCLOAK-CGDF-Servico-Index|Índice]] · Relacionado: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/02-Dominio/KEYCLOAK-CGDF-Servico-Modelo-de-Claims|Modelo-de-Claims]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]
+Voltar: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/KEYCLOAK-CGDF-Servico-Index|Índice]] · Relacionado: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/05-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/02-Dominio/KEYCLOAK-CGDF-Servico-Modelo-de-Claims|Modelo-de-Claims]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]
 
 ## Objetivo
 Descrever as classes do módulo `providers/` (pacote `br.gov.df.cg.ibs.keycloak`) e como o Keycloak as carrega.
@@ -62,7 +62,7 @@ Escolhas de projeto visíveis no código:
 - ✅ `IbsRestClient` não é referenciado por nenhuma outra classe do repositório (busca por `IbsRestClient` em `providers/src`): `IbsAuthenticator` usa `IbsApiClient` direto, e `IbsRestClientTest` (apesar do nome) testa `IbsApiClient`. A classe parece código morto.
 
 ## Relacionamentos
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/01-Visao-Geral/KEYCLOAK-CGDF-Servico-Stack-e-Dependencias|Stack-e-Dependencias]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/06-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/01-Visao-Geral/KEYCLOAK-CGDF-Servico-Stack-e-Dependencias|Stack-e-Dependencias]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
 - Nenhuma específica.

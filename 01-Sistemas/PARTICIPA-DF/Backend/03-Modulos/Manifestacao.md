@@ -24,7 +24,7 @@ sources:
 
 # Módulo Manifestação (Ouvidoria)
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 ## Objetivo
 Visão do módulo de Ouvidoria: o que é uma manifestação, quais controllers e comandos existem e como o sistema decide **o que cada operador pode fazer** em cada manifestação.
@@ -77,7 +77,7 @@ Uma única consulta decide 19 ações (por ação ou em lote), combinando estado
 | Download de anexo | `DWL_RQV` | operador corrente na unidade |
 | Ver dados do manifestante | `VSL_DMT` | `VisualizarManifestante` |
 
-- ✅ **Manifestação bloqueada pela unidade**: `ManifestacaoEstaBloqueada` é verdadeira quando a manifestação está em atendimento e existe **outra** manifestação "bloqueante" na mesma unidade (`ConsultarManifestacaoBloqueante`); só `TratarBloqueadas` ignora isso. A bloqueante vem do mecanismo de prazos que bloqueiam a caixa de entrada ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]]).
+- ✅ **Manifestação bloqueada pela unidade**: `ManifestacaoEstaBloqueada` é verdadeira quando a manifestação está em atendimento e existe **outra** manifestação "bloqueante" na mesma unidade (`ConsultarManifestacaoBloqueante`); só `TratarBloqueadas` ignora isso. A bloqueante vem do mecanismo de prazos que bloqueiam a caixa de entrada ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]]).
 - ✅ **Usuário bloqueado**: se o manifestante está bloqueado (`Usuario.IsBloqueado()`), detalhar exige a funcionalidade específica (`DetalharManifestacaoDeUsuarioInconsistente`, `…Inexistente` ou `…Falecido`).
 - ✅ **Bloqueio externo** (`BloqueadaExternamente`) impede quase todas as ações de operador ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]]).
 
@@ -94,7 +94,7 @@ Uma única consulta decide 19 ações (por ação ou em lote), combinando estado
 - ❓ `DashboardController`, cadastros (assunto, classificação, formulário), `ColecoesController`, exportações e `MoverManifestacoesParaContaLGPD` (usado na exclusão de conta?) ficaram como visão geral.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]] · [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]] · [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
 
 ## Pendências e próximo passo
 - Ler `resumo`, `Dashboard`, `Colecoes`, cadastros e exportações no lote 6 (catálogo de endpoints).

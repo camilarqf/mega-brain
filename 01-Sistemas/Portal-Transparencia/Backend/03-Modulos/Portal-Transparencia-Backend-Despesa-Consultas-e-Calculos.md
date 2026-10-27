@@ -74,7 +74,7 @@ Leitura dos templates listados em `sources` com um extrator que separa o SQL **f
 - 🔶 Os códigos dos elementos 96, 92 e 51 correspondem a "ressarcimento", "despesas de exercícios anteriores" e "obras e instalações" pelo nome do flag; a tabela de elementos da contabilidade não foi consultada.
 - 🔶 A lista de fontes Covid está **fixa no template**; novas fontes exigem alterar o arquivo.
 - ❓ Os demais 142 arquivos de `despesa` (diárias e passagens, emendas, QDD, execução OCA, painéis, gráficos) não foram revisados em nível de cálculo.
-- ⚠️ Esses mesmos templates contêm os pontos de injeção de SQL descritos em [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Revisao-de-Injecao-de-SQL|Revisão de injeção de SQL]].
+- ⚠️ Esses mesmos templates contêm os pontos de injeção de SQL descritos em [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Revisao-de-Injecao-de-SQL|Revisão de injeção de SQL]].
 
 ## Relacionamentos
 - [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Despesa|Despesa]] · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache-e-Mascaramento]] · [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Banco-e-Migrations|Banco-e-Migrations]]

@@ -28,7 +28,7 @@ sources:
 
 # Perfis de build e ambientes — SICI Frontend
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Integracoes|Integracoes]] · Backend: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis do Backend]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Integracoes|Integracoes]] · Backend: [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis do Backend]]
 
 > Não são reproduzidos endereços, IPs de servidores de deploy, nomes de credenciais nem valores de variáveis. Só nomes de chaves.
 
@@ -48,7 +48,7 @@ Arquivos em `sources`. Pipelines e Docker lidos, não executados.
 | `local` (padrão do `serve`) | nenhuma: usa `environment.ts` | sem otimização; `urlApi` absoluto (endereço omitido), `production: false` |
 
 ### Chaves de `environment`
-`production`, `urlApi` e, nas configurações empacotadas, `name`. Nos perfis `development`, `homolog` e `prod`, `urlApi` é `/api` (caminho relativo, resolvido pelo proxy do nginx) e `name` vale `staging`, `sandbox` e `prod`, respectivamente. Não há chave de Keycloak nos arquivos de ambiente (relevante para [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]).
+`production`, `urlApi` e, nas configurações empacotadas, `name`. Nos perfis `development`, `homolog` e `prod`, `urlApi` é `/api` (caminho relativo, resolvido pelo proxy do nginx) e `name` vale `staging`, `sandbox` e `prod`, respectivamente. Não há chave de Keycloak nos arquivos de ambiente (relevante para [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]).
 
 ### Imagem e servidor web
 - `Dockerfile` em dois estágios: build com `node:20.19.2` (`npm ci --legacy-peer-deps`, `ng build --configuration=${profile} --base-href=${base_href}`, `--source-map=false`, `--stats-json`) e execução com `nginx:alpine`. Argumentos: `profile` (padrão `production`) e `base_href` (padrão `/`).
@@ -70,7 +70,7 @@ Arquivos em `sources`. Pipelines e Docker lidos, não executados.
 - Não foram verificados os valores das variáveis nem os endereços reais.
 
 ## Relacionamentos
-- [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]] · [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]] · [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendências]].

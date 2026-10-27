@@ -28,7 +28,7 @@ Voltar: [[01-Sistemas/KEYCLOAK-CGDF/KEYCLOAK-CGDF-Index|KEYCLOAK-CGDF]]
 
 ## Informações confirmadas
 - ✅ O repositório contém três partes: SPI `providers/`, empacotamento `.docker/` + `.jenkins-pipelines/` e tema `integra-login/`.
-- ✅ A extensão autentica no **IBS** (Direct Grant) e injeta claims corporativas no token (detalhes em [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/02-Dominio/KEYCLOAK-CGDF-Servico-Modelo-de-Claims|Modelo-de-Claims]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]).
+- ✅ A extensão autentica no **IBS** (Direct Grant) e injeta claims corporativas no token (detalhes em [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/05-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/02-Dominio/KEYCLOAK-CGDF-Servico-Modelo-de-Claims|Modelo-de-Claims]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]).
 - ✅ Os ambientes e o banco (MSSQL) vêm dos arquivos de pipeline e do Dockerfile (valores omitidos).
 
 ## Inferências e limitações

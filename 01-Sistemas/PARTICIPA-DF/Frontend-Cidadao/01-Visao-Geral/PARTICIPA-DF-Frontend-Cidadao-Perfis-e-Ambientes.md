@@ -37,7 +37,7 @@ Arquivos em `sources`, commit `d250804`.
 | `production` | `environment.prod.ts` | `production` (`true`), `apiUrl`, `apiCgdfLocalization` | ✅ `apiUrl` é um endereço absoluto (omitido). |
 | `development` | usa `environment.ts` | — | sem `fileReplacements`; `sourceMap` e sem otimização. |
 
-- ✅ `apiCgdfLocalization` é lido somente por `ol-map.component.ts` ([[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/03-API-e-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Integracoes-Externas|Integrações externas]]).
+- ✅ `apiCgdfLocalization` é lido somente por `ol-map.component.ts` ([[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/07-Integracoes/PARTICIPA-DF-Frontend-Cidadao-Integracoes-Externas|Integrações externas]]).
 - ✅ `applicationName` existe só em `environment.ts`; os arquivos de homolog e prod não o definem.
 - ✅ O identificador do Google Analytics está fixo no código (`app.component.ts` e `index.html`), não em ambiente.
 

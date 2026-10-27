@@ -43,7 +43,7 @@ Arquivos em `sources`, commit `5518a81`. As telas (`*.html`) foram lidas só por
 - ✅ `index.html` contém a barra de navegação (`navCtrl`), o `ng-view`, três modais globais (alternar unidade, exceção 500, *spinner*) e a diretiva `custom-exception`.
 
 ### Camada de acesso à API
-- ✅ Serviço `Api` (`app/api.service.js`) com `GET`, `POST` (prefixam `configService.urlApi`) e `GETe`, `POSTe` (URL absoluta). Todas as chamadas são `$http` com `Content-Type: application/json`; não há camada de serviços por domínio — **os controllers chamam `Api` direto** (97 chamadas em `app/`). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]].
+- ✅ Serviço `Api` (`app/api.service.js`) com `GET`, `POST` (prefixam `configService.urlApi`) e `GETe`, `POSTe` (URL absoluta). Todas as chamadas são `$http` com `Content-Type: application/json`; não há camada de serviços por domínio — **os controllers chamam `Api` direto** (97 chamadas em `app/`). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]].
 - ✅ `configService` (constante `urlApi`) vem de `api.config.json` por ambiente via `gulp-ng-config`. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Perfis-e-Ambientes|Perfis-e-Ambientes]].
 
 ### Interceptores `$http` (registrados em `app.module.js` e módulos auxiliares)
@@ -61,14 +61,14 @@ Arquivos em `sources`, commit `5518a81`. As telas (`*.html`) foram lidas só por
 - ✅ Componentes reutilizáveis: diretivas de formulário `dirInputForm`, `dirSelectForm`, `dirMultiselectForm`, `dirTextAreaForm` (em `app/shared`), `uplArquivos` (envio de anexos) e `uplPedido` (lista, download e remoção de anexos do pedido), `ngEnter`.
 
 ### Fluxo de navegação
-- ✅ O menu (`index.html`) é controlado por `vm.isAuth` e pelas permissões de `operador-sic/consultar-permissoes` (item **Gerenciar** com a lista `PermissoesDeGerenciamento`, vindas do backend). As rotas **não têm `resolve` nem guarda**: a proteção real depende do backend (401/403). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]].
+- ✅ O menu (`index.html`) é controlado por `vm.isAuth` e pelas permissões de `operador-sic/consultar-permissoes` (item **Gerenciar** com a lista `PermissoesDeGerenciamento`, vindas do backend). As rotas **não têm `resolve` nem guarda**: a proteção real depende do backend (401/403). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/08-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]].
 
 ## Inferências e limitações
 - 🔶 Tratamento de erro misto: `tokenAuthInterceptor` e `exceptionInterception` reagem ambos ao 401/403 (redireção ao login e `$location.path('/')`); o efeito combinado não foi testado.
 - 🔶 `$rootScope.$on(...)` em `customException` e `error500` é registrado sem remoção; não foi avaliado vazamento.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Rotas-e-Telas|Rotas-e-Telas]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · Equivalente no front de Ouvidoria: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/01-Visao-Geral/PARTICIPA-DF-Frontend-Ouvidoria-Arquitetura|Arquitetura do Frontend Ouvidoria]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Rotas-e-Telas|Rotas-e-Telas]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · Equivalente no front de Ouvidoria: [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/01-Visao-Geral/PARTICIPA-DF-Frontend-Ouvidoria-Arquitetura|Arquitetura do Frontend Ouvidoria]]
 
 ## Pendências e próximo passo
 - Ler os templates de conta/registro e as diretivas `shared/` com mais profundidade (lote 6 sugerido no [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Registro-de-Analise|Registro-de-Analise]]).

@@ -42,7 +42,7 @@ Documentar a tela de encaminhados (processos enviados a outras unidades) e o ger
 - ✅ Tipos de processo: `ProcessoAdmissibilidade` (1) e `ProcessoInvestigativoPreliminar` (2); tipos de envolvido: agente público, ente privado, não identificado.
 
 ## Inferências e limitações
-- ❓ O backend analisado não possui `GET pessoa/processos` (ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]).
+- ❓ O backend analisado não possui `GET pessoa/processos` (ver [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]).
 - 🔶 O significado de "reprovar", "devolver" e "rejeitar devolução" vem dos nomes dos endpoints e dos modais; as regras de transição estão no backend ([[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Encaminhamento|módulo do backend]]).
 
 ## Relacionamentos

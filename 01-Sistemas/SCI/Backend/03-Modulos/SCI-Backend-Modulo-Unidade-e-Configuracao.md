@@ -39,11 +39,11 @@ Documentar a unidade organizacional, seus vínculos com outros sistemas e a conf
 - ✅ Consultas: `GET /unidade`, `/por-tipo/{id}`, `/has-gestor`, `/configuracao/{id}`.
 
 ## Inferências e limitações
-- ⚠️ `DELETE /unidade/{id}` não declara política; vale só `[Authorize]` do controller ([[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]). A política `unidade.CriarUnidadePolicy` existe e não encontrei uso.
+- ⚠️ `DELETE /unidade/{id}` não declara política; vale só `[Authorize]` do controller ([[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]). A política `unidade.CriarUnidadePolicy` existe e não encontrei uso.
 - 🔶 Não achei endpoint de criação de unidade; as unidades vêm de seed (`04-Insert-TB_UNIDADE.sql`, não lido) e do `UnidadeAtualizada`.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Denuncia-e-Demanda|Denúncia e Demanda]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]]
+- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Denuncia-e-Demanda|Denúncia e Demanda]] · [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]] · [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]]
 
 ## Pendências e próximo passo
 - Confirmar como unidades novas são cadastradas em produção.

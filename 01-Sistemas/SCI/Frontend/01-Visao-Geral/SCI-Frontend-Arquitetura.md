@@ -44,10 +44,10 @@ Descrever a organização do código, a navegação e o uso de NgRx do `sci-fron
 
 ### Padrões
 - ✅ Um `NgModule` com roteamento próprio por área, carregado com `loadChildren`. Rotas e perfis: [[01-Sistemas/SCI/Frontend/01-Visao-Geral/SCI-Frontend-Rotas-e-Telas|Rotas e telas]].
-- ✅ Clientes HTTP em `store/services/*.service.ts` (25 serviços), todos com `environment.apiUrl` como base. Lista: [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]].
+- ✅ Clientes HTTP em `store/services/*.service.ts` (25 serviços), todos com `environment.apiUrl` como base. Lista: [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]].
 - ✅ NgRx registrado em `AppModule` com reducers e efeitos para usuário, JAD, demanda, assunto, unidade, pessoa (física e jurídica), análise, arquivo, assinatura, conduta, origem da denúncia, recomendação, situação funcional, tipificação, tipo de documento e processos da pessoa. `StoreDevtools` só quando `environment.production` é falso.
 - ✅ `clearStateMetaReducer` zera todo o estado NgRx na ação `logoutSuccess`.
-- ✅ Três interceptors em `HTTP_INTERCEPTORS`: `AuthInterceptor` (cabeçalho `Authorization: Bearer`), `LoadingInterceptor` (spinner com contador de requisições pendentes) e `ErrorInterceptor` (normaliza o erro; trata 401/403). Detalhe em [[01-Sistemas/SCI/Frontend/05-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]].
+- ✅ Três interceptors em `HTTP_INTERCEPTORS`: `AuthInterceptor` (cabeçalho `Authorization: Bearer`), `LoadingInterceptor` (spinner com contador de requisições pendentes) e `ErrorInterceptor` (normaliza o erro; trata 401/403). Detalhe em [[01-Sistemas/SCI/Frontend/08-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Segurança e sessão]].
 - ✅ Nem toda tela passa pela store: `denuncias` e a maior parte do PIP chamam os serviços diretamente.
 - ✅ Filtros das caixas de entrada ficam em `sessionStorage` (`caixa-entrada-filtro.service.ts`).
 - ✅ Avisos por `ToastService` (PrimeNG) e `NotificacaoService`; erros globais por `GlobalErrorService` e `GlobalErrorComponent`.

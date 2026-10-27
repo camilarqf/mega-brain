@@ -36,7 +36,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|
 - [ ] Os motivos de bloqueio `Id` 1 (PF) e 5 (PJ) e a regra de 2 tentativas / 24 h são os do backend?
 - [ ] Quantos dias a prorrogação concede no SIC? (o front só envia a justificativa.)
 - [ ] Há etapas de teste ou lint no pipeline externo?
-- [ ] Corrigir os defeitos D1 a D4 e tratar S1 de [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]].
+- [ ] Corrigir os defeitos D1 a D4 e tratar S1 de [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]].
 
 ## Cobertura a completar
 - [ ] Lote 6: ler os templates de detalhamento, registro, conta e gerencial e as diretivas `app/shared/*`.

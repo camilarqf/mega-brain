@@ -28,7 +28,7 @@ Ponto de entrada HTTP (e TCP para o RabbitMQ) das aplicações da CGDF em Docker
 ## Informações confirmadas
 - ✅ O repositório contém só configuração: um Dockerfile, duas configurações principais do Nginx, os arquivos `location` por aplicação e os parâmetros do pipeline Jenkins. Não há código de aplicação nem testes.
 - ✅ O `ENVIRONMENT` do contêiner escolhe a configuração: `production`/`prod` usa `nginx.conf`; `nonprod`, `nonproduction`, `staging`, `sandbox`, `homolog` e `homologacao` usam `nginx-nonprod.conf`; qualquer outro valor encerra o contêiner com erro.
-- ✅ Roteamento por prefixo de path para serviços Swarm resolvidos por DNS interno. Ver [[01-Sistemas/INGRESS-CGDF/Nginx/05-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]] e [[01-Sistemas/INGRESS-CGDF/Nginx/01-Visao-Geral/INGRESS-CGDF-Nginx-Arquitetura|Arquitetura]].
+- ✅ Roteamento por prefixo de path para serviços Swarm resolvidos por DNS interno. Ver [[01-Sistemas/INGRESS-CGDF/Nginx/06-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]] e [[01-Sistemas/INGRESS-CGDF/Nginx/01-Visao-Geral/INGRESS-CGDF-Nginx-Arquitetura|Arquitetura]].
 - ✅ Proxy TCP na porta 5672 para dois nós RabbitMQ. Ver [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Proxy-TCP-RabbitMQ|Proxy TCP RabbitMQ]].
 
 ## Inferências e limitações

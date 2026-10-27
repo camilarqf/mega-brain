@@ -23,7 +23,7 @@ sources:
 
 # Módulo — OS Genérica (frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 ## Objetivo
 Telas da **OS genérica**: ordem de serviço que não nasce de uma ação de controle (modelo `GENERICA`), com listagem própria, cadastro, PDF, envio e assinatura.
@@ -36,7 +36,7 @@ Arquivos em `sources`; cadastro lido por estrutura de formulário (cobertura `pa
 - **Cadastro** (`ordem-generica-cadastrar`, `EDITAR_OS`): formulário com `areaExecutoraId` (obrigatório), `identificador`, `observacao`, `coordenadorId`, `ordemServicoAssociada`, lista de **artigos** (`descricao` obrigatória; o payload leva `numeroArtigo` e `descricao`), **fases** (`descricao`, `dataInicio`, `dataFim`, `duracao`) e um grupo com `arquivo` e `descricao` (máx. 1000). Auditores vêm de `listarAuditoresOrdemServico`. Depois de salvar volta à lista. Salva por `POST /ordem-servico-generica/salvar-os`, atualiza por `PUT /atualizar/{id}`.
 - **PDF** (`visualizar-pdf-generica/:id`): `GET /ordem-servico-generica/gerar-pdf?id=`, mesmos botões da OS comum (enviar quando `CRIADA`/`DEVOLVIDA` e `exibirBotaoEnviar`; assinar quando `ENVIADA` e `exibirBotaoAssinar`, flags definidos pela `origem` da navegação).
 - **Status**: `PUT /ordem-servico-generica/alterarStatusOs/{id}` (`ENVIADA`; devolução com motivo por *action* NgRx).
-- **Assinatura**: `AssinaturaGenericaService` guarda no contexto do popup o **corpo completo** da OS (`areaExecutora`, `coordenador`, `auditores`, `artigos`, `fases`, `osVinculada`, `status = ASSINADA`) e o popup envia esse corpo em `POST /assinaturas/assinar-os-generica/{id}` ([[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]).
+- **Assinatura**: `AssinaturaGenericaService` guarda no contexto do popup o **corpo completo** da OS (`areaExecutora`, `coordenador`, `auditores`, `artigos`, `fases`, `osVinculada`, `status = ASSINADA`) e o popup envia esse corpo em `POST /assinaturas/assinar-os-generica/{id}` ([[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]).
 - Na lista geral de OS, as genéricas entram num grupo "Ordens Genéricas".
 
 ## Inferências e limitações
@@ -46,7 +46,7 @@ Arquivos em `sources`; cadastro lido por estrutura de formulário (cobertura `pa
 - Anexo (`arquivo`): destino e envio não foram identificados no serviço lido.
 
 ## Relacionamentos
-- [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]] · [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
+- [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Assinatura-e-Validacao|Assinatura-e-Validacao]] · [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendências]].

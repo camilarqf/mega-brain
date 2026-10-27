@@ -65,7 +65,7 @@ Evidências: `api/acaoControle/AcaoControleController.java` (depende de `AcaoCon
 | Classes vazias de esqueleto | `infrastructure/external/ExternalClass`, `infrastructure/exception/advice/AdviceClass`, `infrastructure/exception/error/ErrorClass` |
 | Camada de serviço + use case redundantes | `XxxService`/`XxxServiceImpl` muitas vezes só delega para use cases |
 
-Detalhamento e priorização em [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
+Detalhamento e priorização em [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 
 ## Módulos funcionais
 🔶 Agrupamento derivado dos subpacotes de `api`, `application/usecase` e `domain/port/in`:

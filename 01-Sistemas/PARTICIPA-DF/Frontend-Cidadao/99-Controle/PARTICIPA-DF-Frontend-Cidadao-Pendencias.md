@@ -29,7 +29,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidada
 - [ ] `security/notify` e o login assistido: o `sessionId = MD5(token)` é exigência do backend/dos outros front-ends?
 - [ ] O token é cancelado no servidor no logout? (O frontend não chama `CancelarToken`.) Há tempo de expiração e tratamento de `401`?
 - [ ] O que o backend faz com `notificarExistencia: true` em `pessoa-fisica/existe` e `pessoa-juridica/existe`?
-- [ ] O que significam `ExceptionDetails.Id` 1 e 5 no login (bloqueio PF/PJ)? Conferir em [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
+- [ ] O que significam `ExceptionDetails.Id` 1 e 5 no login (bloqueio PF/PJ)? Conferir em [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
 - [ ] O `AuthGuard` deve realmente redirecionar duas vezes quando há pendência de LGPD/senha?
 - [ ] O limite de anexos (4 MB total/arquivo) é regra de negócio ou técnica? O backend impõe o mesmo?
 - [ ] Um registro de pedido com vários órgãos gera um pedido por órgão (`Lote`)?

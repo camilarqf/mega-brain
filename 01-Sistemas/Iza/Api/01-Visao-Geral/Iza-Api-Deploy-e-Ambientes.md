@@ -56,16 +56,16 @@ Descrever imagem, parâmetros de implantação e diferenças entre ambientes, se
 **Jenkinsfiles legados (`deploy/`)**
 - ✅ Constroem a imagem, enviam a um registry interno (HTTP), removem o contêiner antigo e sobem outro por SSH com `docker run -d --restart unless-stopped`, montando `/mnt/iza-modelos`.
 - ✅ Produção (`Jenkinsfile`): 2 servidores ("zona1" e "zona2"), contêiner `cgdf-iza`, porta `8000:8000`. Homologação (`Jenkinsfile.hom`): 1 servidor, contêiner `cgdf-iza-hom`, porta `8002:8000`, `--memory=4g`.
-- ✅ Após o build, o `Jenkinsfile` de produção notifica um canal do Discord; no `.hom` a notificação está comentada. Ver [[01-Sistemas/Iza/Api/06-Seguranca/Iza-Api-Seguranca|Segurança]].
+- ✅ Após o build, o `Jenkinsfile` de produção notifica um canal do Discord; no `.hom` a notificação está comentada. Ver [[01-Sistemas/Iza/Api/08-Seguranca/Iza-Api-Seguranca|Segurança]].
 
 ## Inferências e limitações
-- 🔶 O ingress da CGDF roteia o serviço `cgdf-iza` para `iza-api:8000`, o que coincide com o nome de contêiner e a porta interna do pipeline Swarm; ver [[01-Sistemas/INGRESS-CGDF/Nginx/05-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas do ingress]].
+- 🔶 O ingress da CGDF roteia o serviço `cgdf-iza` para `iza-api:8000`, o que coincide com o nome de contêiner e a porta interna do pipeline Swarm; ver [[01-Sistemas/INGRESS-CGDF/Nginx/06-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas do ingress]].
 - 🔶 Não se sabe qual dos dois mecanismos (Swarm por `deployment.params.yml` ou Jenkinsfile legado) está ativo; o histórico de ramos (`feat/novo-cluster-swarm-*`) sugere migração para o Swarm.
 - ✅ Defeito no `Jenkinsfile.hom`: no ramo "sem volume" o comando tem `--memory=4g--restart` (faltou espaço). O ramo não é usado enquanto `volume` estiver definido.
 - ❓ URLs, domínios, quem popula `/mnt/iza-modelos` e como os modelos são atualizados/versionados não constam no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Observabilidade-e-Logs|Observabilidade e logs]] · [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Observabilidade-e-Logs|Observabilidade e logs]] · [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Confirmar o mecanismo de deploy ativo e o processo de publicação dos modelos; ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|Pendências]].

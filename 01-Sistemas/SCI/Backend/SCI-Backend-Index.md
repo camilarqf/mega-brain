@@ -37,17 +37,17 @@ Evidência: `src/SCI.Api/Program.cs`, `src/SCI.Domain/*`.
 - [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Documentos-e-Assinaturas|Documentos-e-Assinaturas]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Unidade-e-Configuracao|Unidade-e-Configuracao]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Identidade-e-Permissoes|Identidade-e-Permissoes]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Cadastros-de-Apoio|Cadastros-de-Apoio]]
 
 ### 04 — Fluxos
-- [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo-Denuncia-ate-Admissibilidade]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Fluxo-Ciclo-do-PIP]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+- [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo-Denuncia-ate-Admissibilidade]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Fluxo-Ciclo-do-PIP]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ### 05 a 08 — API, segurança, integrações, qualidade
-- [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-S3-Anexos-de-Denuncia|Integracao-S3-Anexos-de-Denuncia]]
-- [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracao-S3-Anexos-de-Denuncia|Integracao-S3-Anexos-de-Denuncia]]
+- [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ### 99 — Controle
 - [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Registro-de-Analise|Registro-de-Analise]] — commit analisado, cobertura por lote
 - [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Pendencias|Pendencias]] — dúvidas a confirmar com o time
 
-## Principais riscos (resumo de [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
+## Principais riscos (resumo de [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
 1. 🔴 Bypass de autenticação por lista fixa de CPFs e senha fixa no código.
 2. 🔴 Segredos (JWT, BCadastro) versionados em `appsettings*.json`.
 3. 🟡 `POST /support/generate-database` anônimo e destrutivo; segundo o usuário só funciona em dev e local (barrado por feature flag).

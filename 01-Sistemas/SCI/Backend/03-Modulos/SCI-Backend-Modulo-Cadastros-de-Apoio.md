@@ -42,7 +42,7 @@ Documentar as tabelas de apoio consultadas pela aplicação e o cadastro adminis
 - Conteúdo de listas e seeds não lido. Tabelas de status são espelho dos enums ([[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|Enums e estados]]).
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco]] · [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
+- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco]] · [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
 
 ## Pendências e próximo passo
 - Ler `EnvolvidoBuilder` por completo para documentar o preenchimento de envolvidos.

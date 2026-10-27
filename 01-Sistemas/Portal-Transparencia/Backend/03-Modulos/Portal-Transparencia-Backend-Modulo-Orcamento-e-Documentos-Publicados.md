@@ -23,7 +23,7 @@ sources:
 ---
 # Módulo Orçamento e documentos publicados
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Orçamento)
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Orçamento)
 
 ## Objetivo
 Documentar o **catálogo de documentos publicados** (PDFs e links por categoria, ano e data de referência) e as consultas de orçamento (PPA, LDO, LOA, Lei de Responsabilidade Fiscal e relatórios gerenciais), que são servidas por ele. O mesmo catálogo é usado por outras áreas.
@@ -40,7 +40,7 @@ Leitura de `OrcamentoService` (lista de métodos e trechos), `RelatorioControlle
 - ✅ Outras áreas que leem o mesmo catálogo: remuneração (tabelas, quadro, "saiba mais"), servidores (relatórios e pendências), patrimônio (demonstrativos), prestação de contas (legislação, publicidade, outros relatórios), diárias e passagens ("saiba mais") e convênios.
 
 ## Inferências e limitações
-- ✅ **Risco confirmado no fluxo**: `POST /orcamento/data-referencias` coloca o corpo bruto em `rel.CD_CATEGORIA in ( $codigos )` sem validação (ver [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]). `POST /orcamento/categorias` usa um `switch` sobre `tipo`; com corpo vazio (`required=false`) o `switch` sobre `null` lança `NullPointerException` (→ 500).
+- ✅ **Risco confirmado no fluxo**: `POST /orcamento/data-referencias` coloca o corpo bruto em `rel.CD_CATEGORIA in ( $codigos )` sem validação (ver [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]). `POST /orcamento/categorias` usa um `switch` sobre `tipo`; com corpo vazio (`required=false`) o `switch` sobre `null` lança `NullPointerException` (→ 500).
 - 🔶 `DT_REFERENCIA` é texto; a ordenação `order by DT_REFERENCIA desc` pode não seguir a ordem cronológica.
 - 🔶 Os ids são números mágicos acoplados à carga do banco; alterar a tabela de categorias exige mudar o código.
 - ❓ Quem publica os arquivos e carrega `Servidor.Relatorio` (e onde ficam as URLs) não está neste repositório.

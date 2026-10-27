@@ -40,7 +40,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Port
 
 ## Falhas e dependências
 - ✅ Credenciais do banco versionadas, inclusive comentadas nos perfis `dev` e na classe `PersistenceConfiguration` (valores não registrados).
-- ✅ SQL por concatenação em ao menos `CargaService`, `ArquivoDAO`, `ServidorDAO`, `ServidorMedidaProtetivaDAO`, `CategoriaService` ([[01-Sistemas/Gerenciador-Portal/Backend/08-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]]).
+- ✅ SQL por concatenação em ao menos `CargaService`, `ArquivoDAO`, `ServidorDAO`, `ServidorMedidaProtetivaDAO`, `CategoriaService` ([[01-Sistemas/Gerenciador-Portal/Backend/09-Qualidade/Gerenciador-Portal-Backend-Debitos-Tecnicos|Débitos]]).
 - ✅ Falha de conexão vira `504` (handler); consulta SQL inválida vira `500`.
 
 ## Inferências e limitações

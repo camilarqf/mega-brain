@@ -74,7 +74,7 @@ Descrever camadas, o caminho de comandos e consultas e o ciclo de eventos de dom
 - Cobertura parcial: handlers de evento lidos por amostragem.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco]] · [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Modelo-de-Dominio|Modelo de domínio]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Banco-e-Migrations|Banco]] · [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ler os demais `EventHandlers` e confirmar a ausência de compensação em falhas.

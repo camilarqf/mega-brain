@@ -6,7 +6,7 @@ repository: sci-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
-updated: 2026-10-19
+updated: 2026-10-27
 commit_data: 2026-10-08
 branch: master
 tags:
@@ -54,7 +54,7 @@ Controlar lotes, cobertura e o próximo passo da análise do `sci-frontend`.
 | Execução (`ng build`, `ng test`, app) | | | não executado |
 
 ### Confronto com o backend
-- Script de extração local (não versionado) comparou verbo + caminho das chamadas do cliente com os atributos `[Route]` e `[Http*]` dos controllers do `sci-backend` no commit `8e3c8648`: 136 de 144 combinações coincidem; 8 sem rota (ver [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]).
+- Script de extração local (não versionado) comparou verbo + caminho das chamadas do cliente com os atributos `[Route]` e `[Http*]` dos controllers do `sci-backend` no commit `8e3c8648`: 136 de 144 combinações coincidem; 8 sem rota (ver [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas de API]]).
 
 ### Alterações de estrutura no cofre (2026-10-19)
 - Criada a pasta `01-Sistemas/SCI/Frontend/` com 21 notas.
@@ -72,3 +72,6 @@ Controlar lotes, cobertura e o próximo passo da análise do `sci-frontend`.
 2. Lote 5 (opcional): ler os componentes de análise e revisão do JAD e do PIP, as caixas de entrada restantes, `core/models` (DTOs) e comparar com os `Requests/Responses` do backend; ler `Jenkinsfile.*` por completo.
 3. Após novos commits: `git diff 5e20fda1ec781719cb277c36d160db2efd5a6c1b..HEAD --stat` e reabrir as notas cujos `sources` mudaram (`atualizar-documentacao`).
 4. Sincronização do cofre só com `sincronizar-brain` e autorização da categoria de conteúdo (b).
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

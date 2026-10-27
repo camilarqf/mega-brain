@@ -6,7 +6,7 @@ repository: portal-transparencia-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
-updated: 2026-10-21
+updated: 2026-10-27
 commit_data: 2026-10-21
 branch: master
 tags:
@@ -34,10 +34,10 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Fronten
 |---|---|---|---|---|
 | 0 | Índice, stack, controle, atualização de repositório/catálogo | ✅ concluído | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Frontend-Index\|Index]], [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Stack-e-Dependencias\|Stack]], este registro, [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias\|Pendências]] |
 | 1 | Arquitetura, build e perfis | ✅ concluído | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Arquitetura-AngularJS\|Arquitetura]], [[01-Sistemas/Portal-Transparencia/Frontend/01-Visao-Geral/Portal-Transparencia-Frontend-Build-e-Perfis-de-Ambiente\|Build e perfis]] |
-| 2 | API e integrações | ✅ concluído (parâmetros/DTO não comparados) | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend\|Integração com a API]], [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API\|Catálogo de chamadas]], [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas\|Integrações externas]] |
+| 2 | API e integrações | ✅ concluído (parâmetros/DTO não comparados) | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend\|Integração com a API]], [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Catalogo-de-Chamadas-a-API\|Catálogo de chamadas]], [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas\|Integrações externas]] |
 | 3 | Módulos: Despesas, Receitas, Servidores, Orçamento | ✅ concluído (parcial: lógica dos controllers por amostragem) | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Despesas\|Despesas]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Receitas\|Receitas]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Servidores\|Servidores]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Orcamento\|Orçamento]] |
 | 4 | Módulos: Licitações, Convênios, Patrimônio, Prestando Contas, Super Busca, Institucionais | ✅ concluído (parcial) | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Licitacoes-e-Contratos\|Licitações]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Convenios\|Convênios]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Patrimonio\|Patrimônio]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Prestacao-de-Contas\|Prestando Contas]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Super-Busca\|Super Busca]], [[01-Sistemas/Portal-Transparencia/Frontend/03-Modulos/Portal-Transparencia-Frontend-Modulo-Paginas-Institucionais-e-Navegacao\|Institucionais]] |
-| 5 | Segurança, testes e débitos | ✅ concluído | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade\|Segurança]], [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura\|Testes]], [[01-Sistemas/Portal-Transparencia/Frontend/06-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos\|Débitos]] |
+| 5 | Segurança, testes e débitos | ✅ concluído | 2026-10-21 | [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade\|Segurança]], [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Testes-e-Cobertura\|Testes]], [[01-Sistemas/Portal-Transparencia/Frontend/09-Qualidade/Portal-Transparencia-Frontend-Debitos-Tecnicos\|Débitos]] |
 
 ## Alterações em notas existentes (lote 0 e 2)
 - `Portal-Transparencia-Repositorios`: linha do frontend (analisado, commit `dca3e933`).
@@ -47,3 +47,6 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Fronten
 
 ## Próximo passo exato
 Ver "Próximo passo exato" em [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]]: responder #3, #4 e #6; depois comparar parâmetros/DTO por módulo (Despesas e Prestando Contas primeiro).
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

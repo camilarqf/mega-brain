@@ -73,7 +73,7 @@ Documentar o PIP: criação, ato de instauração (minuta), diligências, análi
 - Visões por perfil (`visao-*`) são consultas SQL não detalhadas.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Ciclo do PIP]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Documentos-e-Assinaturas|Documentos e assinaturas]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|Estados]]
+- [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Ciclo-do-PIP|Ciclo do PIP]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Documentos-e-Assinaturas|Documentos e assinaturas]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|Estados]]
 
 ## Pendências e próximo passo
 - Ler as regras de usuário (conclusão) e as consultas das visões; confirmar o significado de "matriz".

@@ -47,7 +47,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 
 ## Observações
 - 🔶 `spring-boot-starter-cache` e `-aop` estão declarados, mas não foram encontrados `@Cacheable`, `@EnableCaching` nem aspectos próprios na varredura inicial — possivelmente não utilizados. Confirmar no lote 6.
-- 🔶 `hibernate-core` fixado em 6.2.3 enquanto o Boot 3.3 gerencia uma versão mais nova (6.5.x) → risco de incompatibilidade. Ver [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- 🔶 `hibernate-core` fixado em 6.2.3 enquanto o Boot 3.3 gerencia uma versão mais nova (6.5.x) → risco de incompatibilidade. Ver [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - ✅ Testcontainers usa **PostgreSQL**, mas o banco da aplicação é **SQL Server** (`application-*.properties` → `SQLServerDriver`).
 - ✅ Dialeto configurado: `SQLServer2012Dialect` (obsoleto no Hibernate 6).
 

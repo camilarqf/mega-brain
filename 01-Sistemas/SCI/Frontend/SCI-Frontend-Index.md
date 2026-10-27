@@ -31,13 +31,13 @@ Sistema: [[01-Sistemas/SCI/SCI-Index|SCI]] · [[01-Sistemas/SCI/SCI-Repositorios
 - [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Encaminhamento-e-Gerenciador|Encaminhamento-e-Gerenciador]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Administracao-e-Gestao|Administracao-e-Gestao]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Assinatura-e-Validacao|Assinatura-e-Validacao]]
 
 **Fluxos**
-- [[01-Sistemas/SCI/Frontend/02-Fluxos/SCI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]] · [[01-Sistemas/SCI/Frontend/02-Fluxos/SCI-Frontend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo-Denuncia-ate-Admissibilidade]] · [[01-Sistemas/SCI/Frontend/02-Fluxos/SCI-Frontend-Fluxo-Ciclo-do-PIP|Fluxo-Ciclo-do-PIP]]
+- [[01-Sistemas/SCI/Frontend/05-Fluxos/SCI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]] · [[01-Sistemas/SCI/Frontend/05-Fluxos/SCI-Frontend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo-Denuncia-ate-Admissibilidade]] · [[01-Sistemas/SCI/Frontend/05-Fluxos/SCI-Frontend-Fluxo-Ciclo-do-PIP|Fluxo-Ciclo-do-PIP]]
 
 **API e integrações**
-- [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/SCI/Frontend/04-API-e-Integracoes/SCI-Frontend-Integracoes|Integracoes]] · [[Mapa-de-Integracoes|Mapa de integrações]]
+- [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/SCI/Frontend/07-Integracoes/SCI-Frontend-Integracoes|Integracoes]] · [[Mapa-de-Integracoes|Mapa de integrações]]
 
 **Segurança e qualidade**
-- [[01-Sistemas/SCI/Frontend/05-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/SCI/Frontend/08-Seguranca/SCI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 **Controle**
 - [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Registro-de-Analise|Registro-de-Analise]] · [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendencias]]
@@ -53,7 +53,7 @@ Repositório `sci-frontend`, branch `master`, commit `5e20fda` (último commit d
 ## Inferências e limitações
 - Cobertura `parcial`: leitura estática; templates HTML, SCSS, a maior parte dos formulários e os componentes de análise/revisão por amostragem; DTOs não comparados campo a campo; `ng build`/`ng test` e a aplicação **não** foram executados.
 - A validade das notas depende do commit analisado; para atualizar, usar `atualizar-documentacao`.
-- Ponto de atenção principal: contrato cliente–servidor desalinhado (ver [[01-Sistemas/SCI/Frontend/06-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos]]).
+- Ponto de atenção principal: contrato cliente–servidor desalinhado (ver [[01-Sistemas/SCI/Frontend/09-Qualidade/SCI-Frontend-Debitos-Tecnicos|Débitos técnicos]]).
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Mapa-de-Integracoes|Mapa de integrações]]

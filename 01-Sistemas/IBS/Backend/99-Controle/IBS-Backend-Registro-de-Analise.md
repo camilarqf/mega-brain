@@ -6,7 +6,7 @@ repository: identity-broker-service
 status: pendente
 coverage: parcial
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
-updated: 2026-10-18
+updated: 2026-10-27
 commit_data: 2026-08-31
 branch: master
 tags:
@@ -50,3 +50,6 @@ Decisões do usuário (2026-10-18): ID do sistema `IBS`, componente `Backend`; c
 
 ## Pendências e próximo passo
 - **Próximo passo exato:** a análise inicial está concluída. Para refinar: (1) ler `LoginContextualizado`, o `LoginUsuario` de `fonteautenticacao` e o conteúdo dos testes de infra para elevar a cobertura de `Modelo-de-Dominio`, `Consulta-de-Usuarios` e `Testes`; (2) resolver as pendências de dono e consumidores. Para mudanças futuras no código, usar a skill `atualizar-documentacao` (`git diff cf0959a..HEAD`).
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

@@ -21,11 +21,11 @@ Fonte única das regras do vault, usada por Claude Code, Codex, Skills e pelo Ob
 - Um sistema de negócio vive em `01-Sistemas/<Sistema>/`. **Sistema de negócio não é sinônimo de repositório**: vários repositórios podem compor um sistema, e um componente (`Backend`, `Frontend`, `Servico-X`) corresponde a um repositório.
 - Pastas da raiz: `00-Paineis/` (consultas Bases), `01-Sistemas/`, `02-Temas/` (notas de tema que ligam vários sistemas) e `99-Templates/`.
 - A documentação técnica de cada repositório vive em uma subpasta do sistema (`Backend/`, `Frontend/`, `Servico-X/`).
-- As pastas de componente usam numeração fixa, igual em todos os componentes; criar só as necessárias, deixando lacunas na numeração:
+- O índice do componente (`<Sistema>-<Componente>-Index`) fica na raiz da pasta do componente; as demais notas usam numeração fixa, igual em todos os componentes. Criar só as pastas necessárias, deixando lacunas na numeração:
 
 | Pasta | Conteúdo |
 |---|---|
-| `01-Visao-Geral` | `<Componente>-Index`, arquitetura, stack, deploy, ambientes, glossário |
+| `01-Visao-Geral` | arquitetura, stack, deploy, ambientes, glossário |
 | `02-Dominio` | modelo de domínio, enums e estados, banco e persistência |
 | `03-Modulos` | módulos; rotas e telas (frontends) |
 | `04-Regras-de-Negocio` | regras de negócio |

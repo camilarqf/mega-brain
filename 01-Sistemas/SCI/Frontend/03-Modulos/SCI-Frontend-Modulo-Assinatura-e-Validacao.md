@@ -37,7 +37,7 @@ Documentar a assinatura de documentos (nota técnica, minuta do despacho do PIP,
 - ✅ O modal de assinatura da nota técnica carrega os cargos do usuário (`GET cargo/por-usuario`) e envia o cargo escolhido em `assinarNotaTecnica`; o conteúdo dos modais de assinatura do PIP não foi lido.
 
 ## Inferências e limitações
-- 🔶 `POST documento/validar` exige autenticação no backend ([[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]), mas a página `/validacao` é pública. Sem cookie, o `AuthInterceptor` não envia token e uma resposta 401 leva o `ErrorInterceptor` a redirecionar ao login; o comportamento não foi executado. Mesma pendência do backend (item 10).
+- 🔶 `POST documento/validar` exige autenticação no backend ([[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]), mas a página `/validacao` é pública. Sem cookie, o `AuthInterceptor` não envia token e uma resposta 401 leva o `ErrorInterceptor` a redirecionar ao login; o comportamento não foi executado. Mesma pendência do backend (item 10).
 - ❓ Como o QR Code do documento chega à página `/validacao` (parâmetro e URL) não foi verificado.
 - Componentes de assinatura lidos por amostragem; ver Pendências.
 

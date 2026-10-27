@@ -23,7 +23,7 @@ sources:
 
 # SUBCI e substitutos
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 > O **SUBCI titular** (ou seu **substituto vigente**) é a única pessoa que pode **assinar** OS. O vínculo é feito pela tabela `TB_SUBCI` (auditor + `STATUS_TITULAR`), **independentemente** do perfil/role SUBCI do auditor.
 
@@ -60,4 +60,4 @@ Como `POST /subci/cadastrar` e `POST /subci/{id}/substitutos` **não têm `@PreA
 e, em seguida, **assinar OS oficiais**, já que a assinatura confere só a tabela `TB_SUBCI`/`TB_SUBCI_SUBSTITUTO`, não a role.
 
 Evidência: `SubciController` (anotações), `CriarSubci.salvar`, `SubciSubstitutoServiceImpl.criarPeriodo`, `AssinarOrdemServico.resolverAssinanteAutorizado`. Não há trilha de auditoria de quem cadastrou o titular ou o substituto.
-Prioridade alta em [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]. Confirmar se algum controle externo (gateway, frontend) bloqueia — ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
+Prioridade alta em [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]. Confirmar se algum controle externo (gateway, frontend) bloqueia — ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].

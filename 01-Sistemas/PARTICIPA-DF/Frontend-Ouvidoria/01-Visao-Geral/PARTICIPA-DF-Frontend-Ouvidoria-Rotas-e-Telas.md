@@ -32,9 +32,9 @@ Catalogar as rotas `ngRoute` (modo hash, `hashPrefix('')`) e relacionar cada uma
 ### Manifestações
 | Rota | Controller | Tela | Nota |
 |---|---|---|---|
-| `/` | `caixaDeEntradaCtrl` | caixa de entrada | [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Caixa-de-Entrada-e-Detalhamento|Fluxo]] |
+| `/` | `caixaDeEntradaCtrl` | caixa de entrada | [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Caixa-de-Entrada-e-Detalhamento|Fluxo]] |
 | `/detalhar-manifestacao/:id` | `detalheManifestacaoCtrl` | detalhe e tratamento | idem |
-| `/prorrogacao-prazo` | `prorrogacaoDePrazoCtrl` | solicitações de prorrogação | [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Prorrogacao-de-Prazo|Fluxo]] |
+| `/prorrogacao-prazo` | `prorrogacaoDePrazoCtrl` | solicitações de prorrogação | [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Prorrogacao-de-Prazo|Fluxo]] |
 | `/super-busca` | `superBuscaCtrl` | busca por termo | caixa de entrada |
 | `/painel-avaliacao` | `painelAvaliacaoCtrl` | avaliação/pesquisa de satisfação | ⚠️ depende de serviços não definidos |
 | `/exportar-pdf/:id` | `visualizacaoImpressaoCtrl` | impressão (`exportar-pdf-operador.html`, 143 bytes) | ⚠️ depende de `manifestacaoAPI` não definido |
@@ -47,7 +47,7 @@ Catalogar as rotas `ngRoute` (modo hash, `hashPrefix('')`) e relacionar cada uma
 | `/manifestacaoPorOperador/registrar` e `/registrar/:usuarioId` | `registrarManifestacaoPorOperadorCtrl` |
 | `/manifestacaoPorOperador/finalizar/:id?` | `finalizarManifestacaoPorOperadorCtrl` |
 
-Detalhe em [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]].
+Detalhe em [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]].
 
 ### Conta do manifestante (feita pelo operador)
 `/cadastrar-pessoa-fisica/:nomeUsuario/:dataNascimentoUsuario/:nomeMaeUsuario/:cpf/:returnRoute?`, `/atualizar-pessoa-fisica/:id/:returnRoute?`, `/cadastrar-pessoa-juridica/:razaoSocial/:nomeFantasia?/:tipoEntidade/:cnpj/:cpfVinculado/:returnRoute?`, `/atualizar-pessoa-juridica/:id/:returnRoute?`. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Conta-por-Operador|Modulo-Conta-por-Operador]].
@@ -59,7 +59,7 @@ Detalhe em [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-
 
 ### Dashboards e autenticação
 - `/dashboard/rel_operacoes_de_atendente`, `/dashboard/rel_operacoes_unidade` ([[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/03-Modulos/PARTICIPA-DF-Frontend-Ouvidoria-Modulo-Dashboards-e-Relatorios|Dashboards]]).
-- `/auth/:sessionId` → `authCtrl` ([[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Autenticacao|Fluxo-Autenticacao]]).
+- `/auth/:sessionId` → `authCtrl` ([[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Autenticacao|Fluxo-Autenticacao]]).
 
 ### Menu (`index.html`, `navCtrl`)
 Itens: Nova Manifestação (`/manifestacaoPorOperador`), caixa de entrada, super busca (permissão `PesquisarManifestacao`), Produtividade por operador e por unidade (`VisualizarPaineis`), Gerenciar (`GerenciarSistema`), e o menu do usuário com "Trocar Unidade" e "Sair".
@@ -74,10 +74,10 @@ Itens: Nova Manifestação (`/manifestacaoPorOperador`), caixa de entrada, super
 | `grid-prazo`/`form-prazo` | controllers e templates existem, mas **nenhuma rota** os usa (idem `perfilCtrl`, `unidadeCtrl`, `usuarioCtrl`, `questionarioCtrl`, `loginCtrl`, `rel_*` exceto 2). |
 
 ## Inferências e limitações
-- 🔶 As rotas com problema podem estar mortas ou servidas por outra versão do código; não foi executada a aplicação. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 As rotas com problema podem estar mortas ou servidas por outra versão do código; não foi executada a aplicação. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/04-API-e-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]]
 
 ## Pendências e próximo passo
 - Confirmar com o time quais telas estão em uso em produção. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

@@ -41,7 +41,7 @@ Registrar a tecnologia, as bibliotecas e o ferramental de build do `gerenciador-
 | Outras | jQuery 2.1, lodash e underscore, moment, Highcharts e c3, `angulartics`, `ngMask`, `angular-ui-mask`, ~70 dependências Bower no total |
 | Build | Gulp 3 (`gulp-ng-config`, `gulp-sass`, `gulp-uglify`, `gulp-angular-templatecache`…) e Bower (`bower_components`) |
 | Runtime de build | Node `6.11.3` (`.tool-versions` e `FROM node:6.11.3` no `Dockerfile`) |
-| Testes | Karma + Jasmine + PhantomJS (ver [[01-Sistemas/Gerenciador-Portal/Frontend/07-Qualidade/Gerenciador-Portal-Frontend-Testes-e-Cobertura|Testes]]) |
+| Testes | Karma + Jasmine + PhantomJS (ver [[01-Sistemas/Gerenciador-Portal/Frontend/09-Qualidade/Gerenciador-Portal-Frontend-Testes-e-Cobertura|Testes]]) |
 | Dependências de `package.json` em runtime | `angular-bootstrap-datetimepicker`, `angular-date-time-input`, `fancy-log` |
 
 - ✅ O `.bowerrc` desliga a verificação de TLS (`strict-ssl: false`) e aponta o registro Bower público.
@@ -49,7 +49,7 @@ Registrar a tecnologia, as bibliotecas e o ferramental de build do `gerenciador-
 - ✅ O `angular-bootstrap` está em `^2.4.0` enquanto o código usa `$modal` do `angular-strap` (o módulo `ui.bootstrap` está comentado em `index.module.js`).
 
 ## Inferências e limitações
-- 🔶 AngularJS e Node 6 saíram de suporte há muito tempo; isso é fato externo ao repositório, e o risco está em [[01-Sistemas/Gerenciador-Portal/Frontend/07-Qualidade/Gerenciador-Portal-Frontend-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 AngularJS e Node 6 saíram de suporte há muito tempo; isso é fato externo ao repositório, e o risco está em [[01-Sistemas/Gerenciador-Portal/Frontend/09-Qualidade/Gerenciador-Portal-Frontend-Debitos-Tecnicos|Débitos técnicos]].
 - ❓ Versões efetivamente instaladas (sem `bower_components` no repositório).
 
 ## Relacionamentos

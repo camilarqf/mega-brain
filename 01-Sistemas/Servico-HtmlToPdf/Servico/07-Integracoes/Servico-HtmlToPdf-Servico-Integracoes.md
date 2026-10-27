@@ -41,7 +41,7 @@ O serviço é **somente provedor**: não há clientes HTTP, filas nem banco no c
 - ❓ Se algum consumidor envia `X-Request-ID` não foi verificado.
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/05-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Catálogo de endpoints]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/06-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Catálogo de endpoints]]
 
 ## Pendências e próximo passo
 - Registrar o dono e as URLs por ambiente quando informados.

@@ -28,8 +28,8 @@ Notas do sistema:
 - [[01-Sistemas/SICI/SICI-Repositorios|Repositórios]]: repositórios, commits analisados e estado.
 
 Atalhos do backend:
-- [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
-- [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]
+- [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Débitos técnicos e riscos]]
+- [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]
 - [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendências]]
 
 ## Inferências e limitações

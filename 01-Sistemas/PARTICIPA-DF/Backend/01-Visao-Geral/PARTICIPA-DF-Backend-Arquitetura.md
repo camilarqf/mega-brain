@@ -25,7 +25,7 @@ sources:
 
 # Arquitetura do backend
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Stack-e-Dependencias|Stack]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Stack-e-Dependencias|Stack]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
 
 ## Objetivo
 Descrever a estrutura em camadas e os padrões do backend: host, serviços de domínio, mediação de comandos e persistência.
@@ -62,7 +62,7 @@ flowchart TD
 - ✅ Controllers enviam objetos de comando/consulta pelo MediatR; `OuvDFBaseController.ProcessCommand` devolve `400` com `Notifications` (Flunt) se `!command.IsValid`, senão `200` com `command.Response`.
 - ✅ Consultas também são comandos: ex.: `ConsultarManifestacoesVencidas` com `ConsultarManifestacoesVencidasHandler : CommandHandler<…>` em `Infra/Queries`.
 - ✅ MediatR registra handlers dos 4 assemblies: Api, `OuvDF.Shared`, `OuvDF.ServicoOuvidoria`, `OuvDF.ServicoInformacaoCidadao`. Os consumidores de `OuvDF.IntegrationServices` não são handlers MediatR: são `IIntegrationEventHandler<T>` do SDK PubSub e enviam comandos pelo `IMediator`.
-- ✅ Casos de uso longos são **workflows** de passos (`PipelineBehaviorWorkflow`, `AddStep<...>`): ver [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]].
+- ✅ Casos de uso longos são **workflows** de passos (`PipelineBehaviorWorkflow`, `AddStep<...>`): ver [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]].
 - ✅ Políticas via `AddPolicyManagement` (hoje uma: `IsSolicitacaoZeladoria`).
 
 ### Persistência
@@ -88,7 +88,7 @@ flowchart TD
 - ✅ Health checks: SQL Server, `LocalStorage` (Degraded), `SharedStorage` (Unhealthy), `MailService` (Degraded), `RabbitMQ` (Degraded).
 - ✅ Tempo da aplicação: `IApplicationDateTime` singleton, configurável por `ApplicationDateTime`; `Startup` registra aviso se difere de `DateTime.Now`.
 - ✅ Eventos de integração: `ConfigurePubSub` com consumidores de fila.
-- ✅ Jobs: contrato `IJob` (`Name`, `Execute`) e `AddJob<T>`; execução por endpoint ([[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
+- ✅ Jobs: contrato `IJob` (`Name`, `Execute`) e `AddJob<T>`; execução por endpoint ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
 - ✅ JSON: Newtonsoft com `DefaultContractResolver`, cultura pt-BR, ignorando nulos.
 
 ## Inferências e limitações

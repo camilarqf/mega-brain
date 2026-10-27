@@ -25,13 +25,13 @@ sources:
 
 # Rotas e telas — SICI Frontend
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]], [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Arquitetura|Arquitetura]], [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
 
 ## Objetivo
 Mapear as rotas do roteador Angular, a proteção de cada uma e as telas correspondentes.
 
 ## Evidências
-Arquivos de roteamento em `sources`. "Permissão" é a chave de `PermissionProfiles`; perfis por permissão em [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]].
+Arquivos de roteamento em `sources`. "Permissão" é a chave de `PermissionProfiles`; perfis por permissão em [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]].
 
 ## Informações confirmadas ✅
 ### Rotas da raiz (`AppRoutingModule`)
@@ -73,7 +73,7 @@ Grupos: **Ações de Controle**, **Gestão Ordens de Serviço** (visível se `LI
 
 ## Inferências e limitações
 - 🔶 `template-editor` não é usada pelo menu lido; o componente só tem navegação de volta. A finalidade não foi identificada.
-- 🔶 `GuardPerfil` só atua quando a rota declara `permissions`/`perfis` **e** o guard está em `canActivate`: a rota de cadastro de ação declara a permissão sem o guard. Registrado em [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- 🔶 `GuardPerfil` só atua quando a rota declara `permissions`/`perfis` **e** o guard está em `canActivate`: a rota de cadastro de ação declara a permissão sem o guard. Registrado em [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - Conteúdo de `*.html` não foi lido em detalhe.
 
 ## Relacionamentos

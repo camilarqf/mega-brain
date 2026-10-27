@@ -31,11 +31,11 @@ Listar lacunas e confirmações pendentes.
 |---|---|---|---|
 | 1 | ~~Confirmar que este repositório é o `Servico-HtmlToPdf` chamado por PARTICIPA-DF, SCI e SICI~~ — resolvido | ✅ | [[01-Sistemas/Servico-HtmlToPdf/Servico/07-Integracoes/Servico-HtmlToPdf-Servico-Integracoes|Integrações]] |
 | 2 | ~~Dono do serviço~~ — resolvido (CGDF); SLA não definido/informado (baixa prioridade) | ❓ | [[01-Sistemas/Servico-HtmlToPdf/Servico-HtmlToPdf-Contexto-do-Sistema|Contexto]] |
-| 3 | URLs e exposição de rede por ambiente | ❓ | [[01-Sistemas/Servico-HtmlToPdf/Servico/06-Seguranca/Servico-HtmlToPdf-Servico-Seguranca|Segurança]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Deploy-e-Ambientes|Deploy]] |
+| 3 | URLs e exposição de rede por ambiente | ❓ | [[01-Sistemas/Servico-HtmlToPdf/Servico/08-Seguranca/Servico-HtmlToPdf-Servico-Seguranca|Segurança]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Deploy-e-Ambientes|Deploy]] |
 | 4 | ~~`LOG_LEVEL` efetivo por ambiente~~ — resolvido (`WARNING`) | ✅ | [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Observabilidade-e-Logs|Observabilidade]] |
 | 5 | Quais consumidores usam `.logo-ouv` e `.card-left` | 🔶 | [[01-Sistemas/Servico-HtmlToPdf/Servico/03-Modulos/Servico-HtmlToPdf-Servico-Geracao-de-PDF|Geração de PDF]] |
-| 6 | Executar os testes e medir cobertura | ❓ | [[01-Sistemas/Servico-HtmlToPdf/Servico/08-Qualidade/Servico-HtmlToPdf-Servico-Testes-e-Cobertura|Testes]] |
-| 7 | Comportamento real do `url_fetcher` do WeasyPrint 70 (URLs absolutas e `file:`) | 🔶 | [[01-Sistemas/Servico-HtmlToPdf/Servico/06-Seguranca/Servico-HtmlToPdf-Servico-Seguranca|Segurança]] |
+| 6 | Executar os testes e medir cobertura | ❓ | [[01-Sistemas/Servico-HtmlToPdf/Servico/09-Qualidade/Servico-HtmlToPdf-Servico-Testes-e-Cobertura|Testes]] |
+| 7 | Comportamento real do `url_fetcher` do WeasyPrint 70 (URLs absolutas e `file:`) | 🔶 | [[01-Sistemas/Servico-HtmlToPdf/Servico/08-Seguranca/Servico-HtmlToPdf-Servico-Seguranca|Segurança]] |
 
 ## Relacionamentos
 - [[01-Sistemas/Servico-HtmlToPdf/Servico/Servico-HtmlToPdf-Servico-Index|Índice do Serviço]]

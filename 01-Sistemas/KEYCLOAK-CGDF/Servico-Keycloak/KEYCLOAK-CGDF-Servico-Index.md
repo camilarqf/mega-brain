@@ -31,16 +31,16 @@ Sistema: [[01-Sistemas/KEYCLOAK-CGDF/KEYCLOAK-CGDF-Index|KEYCLOAK-CGDF]] · [[01
 
 ### 03 — Módulos e regras de negócio
 - [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/03-Modulos/KEYCLOAK-CGDF-Servico-Tema-Integra-Login|Tema-Integra-Login]]
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/03-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Username-Interno-IdUsuario|Regra-Username-Interno-IdUsuario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/03-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Validacao-do-Formulario|Regra-Validacao-do-Formulario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/03-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Normalizacao-do-Usuario|Regra-Normalizacao-do-Usuario]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Username-Interno-IdUsuario|Regra-Username-Interno-IdUsuario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Validacao-do-Formulario|Regra-Validacao-do-Formulario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Normalizacao-do-Usuario|Regra-Normalizacao-do-Usuario]]
 
 ### 04 a 08 — Fluxo, API, segurança, integrações, qualidade
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/05-API/KEYCLOAK-CGDF-Servico-Contrato-Token-Endpoint|Contrato-Token-Endpoint]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/06-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Qualidade/KEYCLOAK-CGDF-Servico-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/05-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/06-API/KEYCLOAK-CGDF-Servico-Contrato-Token-Endpoint|Contrato-Token-Endpoint]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/07-Integracoes/KEYCLOAK-CGDF-Servico-Integracao-IBS|Integracao-IBS]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/09-Qualidade/KEYCLOAK-CGDF-Servico-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/09-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ### 99 — Controle
 - [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/99-Controle/KEYCLOAK-CGDF-Servico-Registro-de-Analise|Registro-de-Analise]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/99-Controle/KEYCLOAK-CGDF-Servico-Pendencias|Pendencias]]
 
-## Principais pontos de atenção (resumo de [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]])
+## Principais pontos de atenção (resumo de [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/09-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Debitos-Tecnicos]])
 1. README diz que o 403 do IBS vira `invalid_grant`; o código o trata como `server_error`.
 2. Runtime `keycloak:25.0.2` vs. compilação 26.3.2 e README.
 3. O tema `integra-login` não é copiado pelo Dockerfile.

@@ -36,12 +36,12 @@ Commit `dca3e933`. Rota `/busca` → `SuperBuscaController`; `super-busca.servic
 - ✅ O host é `apisuperbusca` (não o `api`), portanto sem `x-client-id`.
 
 ## Inferências e limitações
-- 🔶 CPF no caminho da URL pode ficar registrado em logs de proxy/servidor do serviço de busca; avaliado em [[01-Sistemas/Portal-Transparencia/Frontend/05-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]].
+- 🔶 CPF no caminho da URL pode ficar registrado em logs de proxy/servidor do serviço de busca; avaliado em [[01-Sistemas/Portal-Transparencia/Frontend/08-Seguranca/Portal-Transparencia-Frontend-Seguranca-e-Privacidade|Segurança e privacidade]].
 - ❓ O provedor do serviço (índice) e seu contrato estão fora deste repositório.
 - Cobertura parcial: a lista completa de categorias e templates não foi enumerada.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]
+- [[01-Sistemas/Portal-Transparencia/Frontend/07-Integracoes/Portal-Transparencia-Frontend-Integracoes-Externas|Integrações externas]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Portal-Transparencia/Frontend/99-Controle/Portal-Transparencia-Frontend-Pendencias|Pendências]].

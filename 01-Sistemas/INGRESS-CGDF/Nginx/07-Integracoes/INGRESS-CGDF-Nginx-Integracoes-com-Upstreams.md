@@ -23,7 +23,7 @@ Voltar: [[01-Sistemas/INGRESS-CGDF/Nginx/INGRESS-CGDF-Nginx-Index|Índice do Ngi
 ## Visão geral
 | Consumidor | Provedor | Tecnologia | Contrato | Direção |
 |---|---|---|---|---|
-| `INGRESS-CGDF` | serviços Swarm listados abaixo | HTTP (proxy reverso) | prefixo de path → serviço:porta ([[01-Sistemas/INGRESS-CGDF/Nginx/05-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]]) | saída do ingress; entrada de clientes |
+| `INGRESS-CGDF` | serviços Swarm listados abaixo | HTTP (proxy reverso) | prefixo de path → serviço:porta ([[01-Sistemas/INGRESS-CGDF/Nginx/06-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]]) | saída do ingress; entrada de clientes |
 
 ## Evidências
 - `locations/**/*.conf`: `set $upstream` e `proxy_pass` de cada rota.

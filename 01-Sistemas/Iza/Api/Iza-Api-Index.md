@@ -24,11 +24,11 @@ Navegação da documentação do repositório `cgdf-iza`.
 - Visão geral: [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Arquitetura|Arquitetura]] · [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Deploy-e-Ambientes|Deploy e ambientes]] · [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Observabilidade-e-Logs|Observabilidade e logs]]
 - Domínio: [[01-Sistemas/Iza/Api/02-Dominio/Iza-Api-Modelos-e-Artefatos|Modelos e artefatos]]
 - Módulo: [[01-Sistemas/Iza/Api/03-Modulos/Iza-Api-Predicao-de-Triagem|Predição de triagem]]
-- Fluxo: [[01-Sistemas/Iza/Api/04-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Triagem de manifestação]]
-- API: [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]]
-- Segurança: [[01-Sistemas/Iza/Api/06-Seguranca/Iza-Api-Seguranca|Segurança]]
+- Fluxo: [[01-Sistemas/Iza/Api/05-Fluxos/Iza-Api-Fluxo-Triagem-de-Manifestacao|Triagem de manifestação]]
+- API: [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]]
+- Segurança: [[01-Sistemas/Iza/Api/08-Seguranca/Iza-Api-Seguranca|Segurança]]
 - Integrações: [[01-Sistemas/Iza/Api/07-Integracoes/Iza-Api-Integracoes|Integrações (lado provedor)]]
-- Qualidade: [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Testes-e-Cobertura|Testes e cobertura]] · [[01-Sistemas/Iza/Api/08-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
+- Qualidade: [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Testes-e-Cobertura|Testes e cobertura]] · [[01-Sistemas/Iza/Api/09-Qualidade/Iza-Api-Debitos-Tecnicos|Débitos técnicos]]
 - Controle: [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|Pendências]]
 
 ## Inferências e limitações

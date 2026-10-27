@@ -63,7 +63,7 @@ Leitura de `StorageController`, `StorageService` e `StorageUrlService` (atualiza
 - ✅ Defeito de código: `recuperarPaginasMaisPopulares` itera sempre 15 posições; com menos linhas lança `IndexOutOfBoundsException`, que o `ResourceExceptionHandler` converte em `204`.
 
 ### 3. RabbitMQ (entrada)
-- ✅ O backend consome mensagens de uma fila anônima ligada à exchange fanout `medida-protetiva-topic`; ver [[01-Sistemas/Portal-Transparencia/Backend/04-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo]]. Chaves: `spring.rabbitmq.host/port/username/password/virtual-host` (virtual hosts `development`, `homolog`, `prod`).
+- ✅ O backend consome mensagens de uma fila anônima ligada à exchange fanout `medida-protetiva-topic`; ver [[01-Sistemas/Portal-Transparencia/Backend/05-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo]]. Chaves: `spring.rabbitmq.host/port/username/password/virtual-host` (virtual hosts `development`, `homolog`, `prod`).
 
 ### 4. API para outros sistemas (backend como provedor)
 - ✅ `/integracao/*` (8 rotas GET): `funcao-servidor`, `verificar-sutcs`, `consultar-servidor`, `nome-servidor`, `consultar-servidor-ativo`, `pesquisar-servidor` (por CPF, matrícula, órgão ou nome), `nota-empenho/{gestão}/{unidade}/{número}` e `listar-nl-ob/{ug}/{gestão}/{empenho}`. Sem autenticação além do cabeçalho `x-client-id`.
@@ -95,7 +95,7 @@ Leitura de `StorageController`, `StorageService` e `StorageUrlService` (atualiza
 - ❓ Publicador da mensagem `expirePortal` e instância do RabbitMQ (se é a mesma usada pelo `PARTICIPA-DF`/`SCI`) não identificados.
 
 ## Relacionamentos
-- [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Index|MinIO-CGDF]] · [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integrações do PARTICIPA-DF (MailService)]]
+- [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Index|MinIO-CGDF]] · [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/PARTICIPA-DF-Backend-Integracoes-Externas|Integrações do PARTICIPA-DF (MailService)]]
 
 ## Pendências e próximo passo
 - Storage: identificar o `gerenciador`, confirmar a visibilidade do bucket e como os arquivos chegam ao MinIO (pendências 18 e 19).

@@ -74,11 +74,11 @@ flowchart TD
 `inputForm`, `selectForm`, `multiselectForm`, `textAreaForm` (campos de formulário), `atrComplementar` (atributos complementares dinâmicos), `ngEnter`, `upload` (anexos, usa `Api` e `$ngConfirm`) e `mapOpenStreet` (mapa e geocodificação). Serviços de mapa: `MapService` e `mapOLService`.
 
 ## Inferências e limitações
-- 🔶 A navegação por permissão é só visual: o bloqueio efetivo depende do backend (as rotas de `app.routes.js` não têm guarda). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]].
-- Há uma convivência de dois estilos (controllers `vm` com `Api` e controllers `$scope` com serviços `*API` que não estão definidos no repositório); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
+- 🔶 A navegação por permissão é só visual: o bloqueio efetivo depende do backend (as rotas de `app.routes.js` não têm guarda). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/08-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]].
+- Há uma convivência de dois estilos (controllers `vm` com `Api` e controllers `$scope` com serviços `*API` que não estão definidos no repositório); ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/01-Visao-Geral/PARTICIPA-DF-Frontend-Ouvidoria-Stack-e-Dependencias|Stack-e-Dependencias]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/04-API-e-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/01-Visao-Geral/PARTICIPA-DF-Frontend-Ouvidoria-Stack-e-Dependencias|Stack-e-Dependencias]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/08-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]]
 
 ## Pendências e próximo passo
 - Ler as diretivas `shared/` e `upload` em detalhe (regras de validação e limites de anexo). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

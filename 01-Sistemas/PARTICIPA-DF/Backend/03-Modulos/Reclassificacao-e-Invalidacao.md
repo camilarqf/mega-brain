@@ -23,7 +23,7 @@ sources:
 
 # Reclassificação e invalidação
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]]
 
 ## Objetivo
 Documentar a mudança de classificação/assunto de uma manifestação (integral, parcial e seccional) e a invalidação.
@@ -61,7 +61,7 @@ Passos: Validar → RecuperarDadosBd → **ValidarPermissao** → RecuperarDados
 - ❓ Regras de `DefinirTramitePorReclassificacao` e do passo integral.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/06-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
 - Confirmar com o time a regra da reclassificação seccional (comparação invertida).

@@ -42,7 +42,7 @@ Registrar o que a API emite para diagnóstico: logs, métricas e verificação d
 - ❓ Destino e retenção dos logs (além do limite de 5 × 5m do Swarm) não constam no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Deploy-e-Ambientes|Deploy e ambientes]] · [[01-Sistemas/Iza/Api/05-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]]
+- [[01-Sistemas/Iza/Api/01-Visao-Geral/Iza-Api-Deploy-e-Ambientes|Deploy e ambientes]] · [[01-Sistemas/Iza/Api/06-API/Iza-Api-Catalogo-de-Endpoints|Catálogo de endpoints]]
 
 ## Pendências e próximo passo
 - Confirmar se há agente New Relic ativo; ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Pendencias|Pendências]].

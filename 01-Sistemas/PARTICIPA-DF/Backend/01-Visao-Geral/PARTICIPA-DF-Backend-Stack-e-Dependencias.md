@@ -76,7 +76,7 @@ Repositório `participa-df-backend`, commit `4901ad5`; tabelas de projetos e pac
 - ✅ `tests/`: xUnit, Moq, Shouldly, AutoFixture, coverlet (UnitTests); IntegrationTests também usa `StructureMap`, `CGDF.DotNet.SDK.Services.Generators` e `System.Data.SqlClient`. Detalhes no lote 8.
 
 ## Inferências e limitações
-- 🔶 `Cronos` é referenciado em `OuvDF.Shared.csproj`, mas nenhum `.cs` o usa; não há agendador dentro do código (ver [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
+- 🔶 `Cronos` é referenciado em `OuvDF.Shared.csproj`, mas nenhum `.cs` o usa; não há agendador dentro do código (ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]).
 - 🔶 `Serilog.Sinks.NewRelic.Logs`, `.Discord` e `.File` estão em `OuvDF.Api.csproj`; `Program.cs` usa Console e Grafana Loki. Se NewRelic/Discord/File são ativados por `ReadFrom.Configuration`, é ❓ (não verificado nos valores).
 - ❓ O SDK `CGDF.DotNet.SDK.*` é um pacote interno; o comportamento interno (autenticação, pipeline de comandos) não foi lido.
 - ❓ Sem fonte nuget privada documentada além de `src/nuget_sources.config` (não lido).

@@ -24,7 +24,7 @@ sources:
 
 # Arquitetura — SICI Frontend
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]], [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]], [[01-Sistemas/SICI/Frontend/04-API-e-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Relacionado: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]], [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]], [[01-Sistemas/SICI/Frontend/07-Integracoes/SICI-Frontend-Chamadas-de-API|Chamadas-de-API]]
 
 ## Objetivo
 Descrever a estrutura de pastas, a composição de módulos, o estado global (NgRx) e a cadeia de interceptors do frontend.
@@ -55,7 +55,7 @@ Arquivos listados em `sources`. Leitura estática; componentes de tela grandes (
 - `provideStore` em `AppModule` registra 13 chaves: `acoesControle`, `acaoControle`, `areaExecutora`, `unidadeAuditoriaInterna`, `unidadesAuditadas`, `programaGoverno`, `objetivoPpa`, `ordemServico`, `auditor`, `auth`, `gestaoSubci`, `assinatura`, `ordemServicoGenerica`. As chaves `acoesControle` e `acaoControle` usam o **mesmo** reducer.
 - Efeitos registrados em `provideEffects`: `AcaoControle`, `OrdemServico`, `Auditor`, `AreaExecutora`, `UnidadeAuditoriaInterna`, `UnidadesAuditadas`, `ProgramaGoverno`, `ObjetivoPpa`, `GestaoSubci` e `OrdemServicoGenerica`. `AssinaturaEffects` (validação de assinatura) está registrado só em `EffectsModule.forRoot`.
 - Padrão: componente despacha *action* → *effect* chama o serviço HTTP → reducer atualiza o estado → seletor alimenta a tela. Parte das telas também chama serviços diretamente (por exemplo `alterarStatusOs` em `acao-controle-os`, `visualizar-pdf`).
-- O perfil do usuário (`auth`) é preenchido pelo `AuthService` ([[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]]).
+- O perfil do usuário (`auth`) é preenchido pelo `AuthService` ([[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Autenticacao|Fluxo-Autenticacao]]).
 
 ### Interceptors (ordem de registro em `AppModule`)
 1. `HttpTokenService`: anexa `Authorization: Bearer` quando há token válido e a URL é da própria origem ou da API; ignora `/auth/login` e `/assets/`.
@@ -64,11 +64,11 @@ Arquivos listados em `sources`. Leitura estática; componentes de tela grandes (
 4. `LoadingInterceptor`: mostra/oculta o spinner global por contador de requisições (cabeçalho `skip-spinner` desativa).
 
 ## Inferências e limitações
-- 🔶 `AppModule` também importa `StoreModule.forRoot(reducers)` (que declara só `ordemServico`) e `EffectsModule.forRoot([...])`, além de `provideStore`/`provideEffects`: registro duplicado do mesmo reducer/efeitos. Efeito em dobro não foi observado (nenhuma execução). Registrado em [[01-Sistemas/SICI/Frontend/06-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
+- 🔶 `AppModule` também importa `StoreModule.forRoot(reducers)` (que declara só `ordemServico`) e `EffectsModule.forRoot([...])`, além de `provideStore`/`provideEffects`: registro duplicado do mesmo reducer/efeitos. Efeito em dobro não foi observado (nenhuma execução). Registrado em [[01-Sistemas/SICI/Frontend/09-Qualidade/SICI-Frontend-Debitos-Tecnicos|Debitos-Tecnicos]].
 - Cobertura parcial: templates HTML e SCSS foram lidos só por amostragem; lógica interna de `ordem-servico-cadastrar`/`atualizar` e dos reducers não foi lida linha a linha.
 
 ## Relacionamentos
-- Segurança: [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Módulos: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Gestao-SUBCI-e-Perfis|Gestao-SUBCI-e-Perfis]]
+- Segurança: [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]] · Módulos: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Gestao-SUBCI-e-Perfis|Gestao-SUBCI-e-Perfis]]
 - Backend (hexagonal): [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Arquitetura-Hexagonal|Arquitetura do Backend]]
 
 ## Pendências e próximo passo

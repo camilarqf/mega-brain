@@ -41,7 +41,7 @@ Voltar: [[01-Sistemas/PeoplesCheck/Servico/PeoplesCheck-Servico-Index|Índice do
 - ✅ Sem retry, circuit breaker, fallback nem timeout configurados; erro de E/S é registrado em log e relançado (`IOException`) → 5xx ao consumidor.
 - ✅ O CouchDB é dependência síncrona de `GET /people/check` e `POST /challenge/check`.
 - 🔴 ✅ TLS sem validação de certificado e de host (`HttClientFactory`).
-- 🔴 ✅ Seletor construído por concatenação do dado informado (sem escape): ver [[01-Sistemas/PeoplesCheck/Servico/08-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
+- 🔴 ✅ Seletor construído por concatenação do dado informado (sem escape): ver [[01-Sistemas/PeoplesCheck/Servico/09-Qualidade/PeoplesCheck-Servico-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Inferências e limitações
 - ❓ Dono, URL e origem das réplicas; ID `CouchDB` cadastrado no catálogo como serviço externo, com dono não identificado.

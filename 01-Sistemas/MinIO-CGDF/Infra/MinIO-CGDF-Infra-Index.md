@@ -22,7 +22,7 @@ Navegação da documentação do repositório `minio-infra`.
 
 ## Informações confirmadas
 - Visão geral: [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]] · [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Deploy-e-Ambientes|Deploy e ambientes]]
-- Qualidade: [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
+- Qualidade: [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
 - Controle: [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Registro-de-Analise|Registro de análise]] · [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]]
 
 ## Inferências e limitações

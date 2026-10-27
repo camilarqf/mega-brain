@@ -39,7 +39,7 @@ Listar o que a análise não conseguiu confirmar.
 - As pendências 4 e 7 são hipóteses; as demais aguardam informação.
 
 ## Relacionamentos
-- [[01-Sistemas/INGRESS-CGDF/Nginx/08-Qualidade/INGRESS-CGDF-Nginx-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/INGRESS-CGDF/Nginx/09-Qualidade/INGRESS-CGDF-Nginx-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ver o próximo passo exato no [[01-Sistemas/INGRESS-CGDF/Nginx/99-Controle/INGRESS-CGDF-Nginx-Registro-de-Analise|Registro de análise]].

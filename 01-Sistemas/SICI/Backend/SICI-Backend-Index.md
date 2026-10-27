@@ -41,17 +41,17 @@ Evidência: `pom.xml`, pacote `br.gov.df.cg.sici`, `domain/enums/EModeloOrdemSer
 - [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] · [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]]
 
 ### 04 — Fluxos
-- [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · [[01-Sistemas/SICI/Backend/04-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · [[01-Sistemas/SICI/Backend/04-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+- [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ### 05 a 08 — API, segurança, integrações, qualidade
-- [[01-Sistemas/SICI/Backend/05-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]]
-- [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]]
+- [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]] · [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ### 99 — Controle
 - [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Registro-de-Analise|Registro-de-Analise]] — commit analisado, cobertura por lote
 - [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]] — dúvidas a confirmar com o time
 
-## Principais riscos (resumo de [[01-Sistemas/SICI/Backend/08-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
+## Principais riscos (resumo de [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]])
 1. 🔴 Qualquer auditor autenticado pode se cadastrar como SUBCI/substituto e assinar OS oficiais.
 2. 🔴 Segredos versionados no repositório.
 3. 🔴 Numeração oficial sujeita a duplicidade (sem lock nem unique).

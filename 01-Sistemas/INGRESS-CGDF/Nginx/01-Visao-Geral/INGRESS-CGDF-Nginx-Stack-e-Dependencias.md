@@ -35,7 +35,7 @@ Registrar tecnologias e dependências de execução.
 | CI/CD | Jenkins, parâmetros em `.jenkins-pipelines/` | ver [[01-Sistemas/INGRESS-CGDF/Nginx/01-Visao-Geral/INGRESS-CGDF-Nginx-Build-Deploy-e-Ambientes|Build, deploy e ambientes]] |
 | Código de aplicação, gerenciador de dependências, testes | não há | árvore versionada |
 
-- ✅ Dependências de execução: os serviços upstream (resolvidos por nome na rede Swarm) e os dois nós RabbitMQ do proxy TCP. Lista em [[01-Sistemas/INGRESS-CGDF/Nginx/05-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]].
+- ✅ Dependências de execução: os serviços upstream (resolvidos por nome na rede Swarm) e os dois nós RabbitMQ do proxy TCP. Lista em [[01-Sistemas/INGRESS-CGDF/Nginx/06-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]].
 
 ## Inferências e limitações
 - ❓ Versão do Nginx efetivamente em uso (depende do momento do build, por causa da tag flutuante).

@@ -41,7 +41,7 @@ Registrar linguagens, versões e dependências do repositório `keycloak`.
 | Tema de login | Keycloakify (Angular) 11.9.2, `themeName` `integra-login`, `parent=keycloak`, `darkMode=true`, 30 locales | `login.ftl`, `theme.properties` |
 
 ## Inferências e limitações
-- ❓ A versão de runtime (25.0.2 na imagem) difere da versão de compilação (26.3.2) e da citada no `README.md`; ver [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/99-Controle/KEYCLOAK-CGDF-Servico-Pendencias|Pendências]] e [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Débitos técnicos]].
+- ❓ A versão de runtime (25.0.2 na imagem) difere da versão de compilação (26.3.2) e da citada no `README.md`; ver [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/99-Controle/KEYCLOAK-CGDF-Servico-Pendencias|Pendências]] e [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/09-Qualidade/KEYCLOAK-CGDF-Servico-Debitos-Tecnicos|Débitos técnicos]].
 - Dependências de runtime do Keycloak (Jackson, SPI) são `provided`: o jar não as empacota.
 
 ## Relacionamentos

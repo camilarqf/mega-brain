@@ -41,7 +41,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Port
 - ✅ **Cliente OIDC**: `client_id` `gerenciador-portal-client`; o segredo vem de `${SSO_CLIENT_SECRET}` (secret do Swarm `…-gerenciador-portal-transparencia-sso-client-secret-v1`).
 - ✅ **`idOrgao`** enviado = `so.auth.id-orgao` (17 nos perfis versionados); a autorização local compara a claim `idOrgao` com `autorizacao.id-orgao` (também 17) e as unidades com `autorizacao.id-unidades` (duas unidades configuradas).
 - ✅ **Claims lidas**: `nomePessoa`, `login`, `matricula`, `siglaOrgao`, `idOrgao`, `nomeOrgao`, `autenticado`, `unidades[{idUnidade, siglaUnidade, descricaoUnidade}]`.
-- ✅ **Tratamento de erros**: 401 e demais 4xx, 5xx e falha de rede viram `AutenticacaoException`, e o handler responde sempre `401` ([[01-Sistemas/Gerenciador-Portal/Backend/06-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]). Não há *timeout*, *retry* nem *circuit breaker* (`RestTemplate` padrão).
+- ✅ **Tratamento de erros**: 401 e demais 4xx, 5xx e falha de rede viram `AutenticacaoException`, e o handler responde sempre `401` ([[01-Sistemas/Gerenciador-Portal/Backend/08-Seguranca/Gerenciador-Portal-Backend-Seguranca-e-Autorizacao|Segurança]]). Não há *timeout*, *retry* nem *circuit breaker* (`RestTemplate` padrão).
 - ✅ Desvio: o usuário de desenvolvimento configurado autentica **sem** chamar o SSO.
 
 ## Falhas e dependências
@@ -54,7 +54,7 @@ Voltar: [[01-Sistemas/Gerenciador-Portal/Backend/07-Integracoes/Gerenciador-Port
 - ❓ Escopo do cliente OIDC, expiração do token e se a URL `http` é interna ou termina TLS num proxy.
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Gerenciador-Portal/Backend/04-Fluxos/Gerenciador-Portal-Backend-Fluxo-Login-e-Autorizacao|Fluxo de login]] · [[01-Sistemas/IBS/IBS-Index|IBS]] (autenticação por trás do Keycloak, 🔶)
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/Gerenciador-Portal/Backend/05-Fluxos/Gerenciador-Portal-Backend-Fluxo-Login-e-Autorizacao|Fluxo de login]] · [[01-Sistemas/IBS/IBS-Index|IBS]] (autenticação por trás do Keycloak, 🔶)
 
 ## Pendências e próximo passo
 - Confirmar a instância do Keycloak e se o tráfego `http` está restrito à rede interna.

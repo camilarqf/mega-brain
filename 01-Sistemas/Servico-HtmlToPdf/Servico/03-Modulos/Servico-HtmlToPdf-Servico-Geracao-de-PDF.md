@@ -43,7 +43,7 @@ Documentar a capacidade única do serviço: transformar HTML em PDF.
 - ❓ Fontes disponíveis no contêiner não foram inspecionadas.
 
 ## Relacionamentos
-- [[01-Sistemas/Servico-HtmlToPdf/Servico/04-Fluxos/Servico-HtmlToPdf-Servico-Fluxo-Geracao-de-PDF|Fluxo]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/05-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/08-Qualidade/Servico-HtmlToPdf-Servico-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/Servico-HtmlToPdf/Servico/05-Fluxos/Servico-HtmlToPdf-Servico-Fluxo-Geracao-de-PDF|Fluxo]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/06-API/Servico-HtmlToPdf-Servico-Catalogo-de-Endpoints|Endpoints]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/09-Qualidade/Servico-HtmlToPdf-Servico-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Confirmar com os consumidores quais usam `.logo-ouv` e `.card-left`.

@@ -40,14 +40,14 @@ Descrever as camadas, o mediator (CQRS) e a montagem dos beans do `identity-brok
 - ✅ Handlers registrados: `AutenticarUsuario`, `MontarClaims`, `ObterIdentidadeInstitucional`, `ObterFontesPorSufixo`, `ResolverFontesPorOrgao`, `BuscarUsuarios`, `ObterUsuario`.
 - ✅ Dependência `application` → `infra` existe (ex.: `AutenticacaoService` usa `LdapBindService` e `IdentidadeInstitucionalService`; `UsuarioController` importa `UsuarioProjection` de `infra`), portanto a separação não é hexagonal estrita.
 - ✅ `@EnableScheduling` em `IbsApplicationConfig` (recarga do cache de fontes).
-- ✅ Tratamento de erros centralizado em `GlobalExceptionHandler` (ver [[01-Sistemas/IBS/Backend/05-API/IBS-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]).
+- ✅ Tratamento de erros centralizado em `GlobalExceptionHandler` (ver [[01-Sistemas/IBS/Backend/06-API/IBS-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]]).
 
 ## Inferências e limitações
 - 🔶 O `README.md` fala em "DDD, CQRS e Event-Driven Domain". Não há eventos em uso: `domain/events/Event`, `application/eventHandlers/EventHandler` e `application/listeners/Listener` são classes vazias/esqueleto, e `Bus` (`infra/cqrs/bus`) é só um delegador ao mediator, registrado como bean sem uso encontrado. Os `.gitkeep` em `infra/services/*` e `infra/data/*` indicam pastas planejadas e vazias.
-- ✅ A classe `application.exceptions.Exception` (nome igual ao de `java.lang.Exception`) não é referenciada em nenhum outro arquivo de `src`; ver [[01-Sistemas/IBS/Backend/08-Qualidade/IBS-Backend-Debitos-Tecnicos|Débitos técnicos]].
+- ✅ A classe `application.exceptions.Exception` (nome igual ao de `java.lang.Exception`) não é referenciada em nenhum outro arquivo de `src`; ver [[01-Sistemas/IBS/Backend/09-Qualidade/IBS-Backend-Debitos-Tecnicos|Débitos técnicos]].
 
 ## Relacionamentos
-- [[01-Sistemas/IBS/Backend/IBS-Backend-Index|Índice]] · [[01-Sistemas/IBS/Backend/01-Visao-Geral/IBS-Backend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/IBS/Backend/04-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo de autenticação]]
+- [[01-Sistemas/IBS/Backend/IBS-Backend-Index|Índice]] · [[01-Sistemas/IBS/Backend/01-Visao-Geral/IBS-Backend-Stack-e-Dependencias|Stack]] · [[01-Sistemas/IBS/Backend/05-Fluxos/IBS-Backend-Fluxo-Autenticacao|Fluxo de autenticação]]
 
 ## Pendências e próximo passo
 - Nenhuma além das listadas em [[01-Sistemas/IBS/Backend/99-Controle/IBS-Backend-Pendencias|Pendências]].

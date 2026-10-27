@@ -28,7 +28,7 @@ sources:
 ---
 # Módulo Apoio e atualização de dados
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seções Comum, Data de atualização e API v2)
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seções Comum, Data de atualização e API v2)
 
 ## Objetivo
 Documentar as funções transversais: "data da última atualização" de cada consulta, arquivos e textos, pesquisa de satisfação, imagens, órgãos da LAI, e-mail, analytics e utilitários.
@@ -57,7 +57,7 @@ Leitura de `DataAtualizacaoService`/`Controller`, de `selectDataUltimaAtualizaca
 - ✅ `EnqueteService` é um esqueleto (retorna `null`).
 
 ### Outros utilitários
-- ✅ `GET /send-email`, `/cache-expire/*`, `/analytics/*`, `/integracao/*` e `/healthcheck`: ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache-e-Mascaramento]] e [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
+- ✅ `GET /send-email`, `/cache-expire/*`, `/analytics/*`, `/integracao/*` e `/healthcheck`: ver [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache-e-Mascaramento]] e [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
 - ✅ SQL de gráficos gerais em `sql/comum` (`selectGraficoDespesasXReceitas`, `selectEvolucaoGrupoDespesa`).
 
 ## Inferências e limitações

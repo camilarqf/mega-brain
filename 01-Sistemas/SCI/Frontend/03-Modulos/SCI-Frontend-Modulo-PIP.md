@@ -58,7 +58,7 @@ Documentar as telas do PIP: instauração, edição, análise, revisão, diligê
 - Telas de formulário e modais lidos por amostragem.
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-PIP|Módulo do backend]] · [[01-Sistemas/SCI/Frontend/02-Fluxos/SCI-Frontend-Fluxo-Ciclo-do-PIP|Fluxo do ciclo do PIP]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Assinatura-e-Validacao|Assinatura e validação]]
+- [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-PIP|Módulo do backend]] · [[01-Sistemas/SCI/Frontend/05-Fluxos/SCI-Frontend-Fluxo-Ciclo-do-PIP|Fluxo do ciclo do PIP]] · [[01-Sistemas/SCI/Frontend/03-Modulos/SCI-Frontend-Modulo-Assinatura-e-Validacao|Assinatura e validação]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SCI/Frontend/99-Controle/SCI-Frontend-Pendencias|Pendências]].

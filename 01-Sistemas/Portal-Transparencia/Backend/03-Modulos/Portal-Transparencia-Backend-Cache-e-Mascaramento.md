@@ -27,7 +27,7 @@ sources:
 ---
 # Cache e mascaramento de dados protegidos
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/Portal-Transparencia/Backend/04-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Invalidacao-de-Cache-de-Mascarados]]
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/Portal-Transparencia/Backend/05-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Invalidacao-de-Cache-de-Mascarados]]
 
 ## Objetivo
 Documentar como o backend **oculta registros de pessoas com medida protetiva** nas consultas e como os caches em memória são mantidos e invalidados.
@@ -56,7 +56,7 @@ Leitura de `MascaramentoAspect`, `MascaramentoService`, `MascaramentoAMQService`
 | `cacheRemuneracao` | `cacheManagerRemuneracao` | máx. 100 entradas, 1 dia | `JdbcUtil.executarComTotalizadorRemuneracao` (pesquisa de remuneração; a chave inclui a data da última carga, ver [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Modulo-Servidores-e-Remuneracao|Servidores e Remuneração]]) |
 | `cacheDespesaFiltros` | `cacheManagerDespesaFiltros` | máx. 200 entradas, 1 dia | 3 métodos de filtros em `DespesaService`, chave `método:exercicio` |
 - ✅ Invalidação manual por HTTP, sem autenticação: `GET /cache-expire/valores-mascarados` (limpa `cacheMascarados` **e** `cacheRemuneracao`), `GET /cache-expire/remuneracao` e `GET /cache-expire/despesa-filtros`; resposta `CacheExpireInfo` (data e lista de caches).
-- ✅ Invalidação por evento RabbitMQ: ver [[01-Sistemas/Portal-Transparencia/Backend/04-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo]].
+- ✅ Invalidação por evento RabbitMQ: ver [[01-Sistemas/Portal-Transparencia/Backend/05-Fluxos/Portal-Transparencia-Backend-Fluxo-Invalidacao-de-Cache-de-Mascarados|Fluxo]].
 
 ## Inferências e limitações
 - 🔶 Por ser cache por instância, em ambiente com várias réplicas cada uma mantém seu cache; a mensagem fanout alcança todas, mas o `GET /cache-expire` atinge uma só.
@@ -65,7 +65,7 @@ Leitura de `MascaramentoAspect`, `MascaramentoService`, `MascaramentoAMQService`
 - ❓ Quem cadastra os valores em `TB_MEDIDA_PROTETIVA` e quem publica a mensagem de expiração (outro sistema) não são identificáveis neste repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Modelo-de-Dominio|Modelo-de-Dominio]] · [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Arquitetura-em-Camadas|Arquitetura-em-Camadas]]
+- [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/Portal-Transparencia/Backend/07-Integracoes/Portal-Transparencia-Backend-Integracoes-Externas|Integracoes-Externas]] · [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Modelo-de-Dominio|Modelo-de-Dominio]] · [[01-Sistemas/Portal-Transparencia/Backend/01-Visao-Geral/Portal-Transparencia-Backend-Arquitetura-em-Camadas|Arquitetura-em-Camadas]]
 
 ## Pendências e próximo passo
 - Confirmar com o time quem alimenta `TB_MEDIDA_PROTETIVA` e publica `expirePortal`; confirmar se o filtro (remover linhas) é o comportamento desejado e não o de substituir por `*`.

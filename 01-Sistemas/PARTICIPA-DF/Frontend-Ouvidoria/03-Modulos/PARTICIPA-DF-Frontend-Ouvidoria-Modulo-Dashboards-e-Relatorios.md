@@ -49,11 +49,11 @@ Arquivos em `sources`, commit `9d8ecdb`. Cobertura `parcial`: lidos os dois cont
 - ✅ Rota existe (`painelAvaliacaoCtrl`), mas o controller depende de `avaliacaoPorOperadorAPI`, `manifestacaoAPI` e `questionarioAPI` (não definidos). Pelo código, o propósito é o operador registrar uma solicitação de avaliação do atendimento e conduzir a pesquisa de satisfação em nome do manifestante (`registrarSolicitacaoDeAvaliacao`, `confirmarAvaliacaoAtendimento`, `registrarPesquisaDeSatisfacaoPorOperador`). Permissão no template: `GerenciarPainelAvaliacao`. Funcionamento atual: ❓ não confirmado.
 
 ## Inferências e limitações
-- 🔶 A caixa de entrada oferece indicadores rápidos (em análise, fora do prazo, resolvida etc.) que cobrem parte dos relatórios legados; ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/02-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Caixa-de-Entrada-e-Detalhamento|Caixa-de-Entrada-e-Detalhamento]].
+- 🔶 A caixa de entrada oferece indicadores rápidos (em análise, fora do prazo, resolvida etc.) que cobrem parte dos relatórios legados; ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Caixa-de-Entrada-e-Detalhamento|Caixa-de-Entrada-e-Detalhamento]].
 - Os 11 painéis/relatórios (22 arquivos `.js`/`.html`) não foram todos lidos linha a linha.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/04-API-e-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/06-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 ## Pendências e próximo passo
 - Decidir com o time se os relatórios legados e o painel de avaliação devem ser removidos ou restaurados. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

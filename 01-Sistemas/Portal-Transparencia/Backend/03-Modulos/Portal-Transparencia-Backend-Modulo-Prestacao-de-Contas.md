@@ -21,7 +21,7 @@ sources:
 ---
 # Módulo Prestação de Contas
 
-Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/05-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Prestação de contas)
+Voltar: [[01-Sistemas/Portal-Transparencia/Backend/Portal-Transparencia-Backend-Index|Índice do Backend]] · Rotas: [[01-Sistemas/Portal-Transparencia/Backend/06-API/Portal-Transparencia-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] (seção Prestação de contas)
 
 ## Objetivo
 Documentar a segunda maior área do portal: transparência ativa sobre programas sociais, conselhos, empresas punidas e do programa de integridade, processos disciplinares e investigativos, Prospera DF, gastos com publicidade e outros relatórios.
@@ -50,11 +50,11 @@ Leitura da lista de métodos dos 17 serviços, dos 16 controllers (107 rotas) e 
 
 ## Inferências e limitações
 - 🔶 "Sucor" (schema de PAD/PIP) provavelmente é a unidade responsável pela correição; sigla não explicada no código. O "PIP" aqui (investigação preliminar) corresponde ao tema do sistema `SCI`, mas **não há evidência** de integração entre eles.
-- ✅ Beneficiários: 6 listas usam `dbo.FN_MASCARA_NR_CPF` no SQL; a lista de programas sociais devolve NIS e CPF **sem máscara** e só exclui registros anonimizados (`CD_ANONIMIZADO <> 1`); empresas punidas e Prospera DF devolvem CPF/CNPJ sem máscara. Ver [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]].
+- ✅ Beneficiários: 6 listas usam `dbo.FN_MASCARA_NR_CPF` no SQL; a lista de programas sociais devolve NIS e CPF **sem máscara** e só exclui registros anonimizados (`CD_ANONIMIZADO <> 1`); empresas punidas e Prospera DF devolvem CPF/CNPJ sem máscara. Ver [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]].
 - ❓ Fórmulas, critérios de elegibilidade e regras de cada programa não estão no código lido.
 
 ## Relacionamentos
-- [[01-Sistemas/Portal-Transparencia/Backend/06-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]] (CPF, NIS e documento por programa)
+- [[01-Sistemas/Portal-Transparencia/Backend/08-Seguranca/Portal-Transparencia-Backend-Dados-Pessoais-Expostos|Dados pessoais expostos]] (CPF, NIS e documento por programa)
 - [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Cache-e-Mascaramento|Cache-e-Mascaramento]] · [[01-Sistemas/Portal-Transparencia/Backend/03-Modulos/Portal-Transparencia-Backend-Relatorios-e-Exportacao|Relatorios-e-Exportacao]] · [[01-Sistemas/Portal-Transparencia/Backend/02-Dominio/Portal-Transparencia-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 ## Pendências e próximo passo

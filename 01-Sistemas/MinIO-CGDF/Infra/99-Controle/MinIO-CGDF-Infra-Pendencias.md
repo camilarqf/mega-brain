@@ -36,7 +36,7 @@ Listar o que a análise não conseguiu confirmar.
 - Nenhuma das pendências foi inferida; todas aguardam informação ou versionamento.
 
 ## Relacionamentos
-- [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ver o próximo passo exato no [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Registro-de-Analise|Registro de análise]].

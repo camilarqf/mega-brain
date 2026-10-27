@@ -23,7 +23,7 @@ sources:
 
 # Módulo — Gestão SUBCI e perfis (frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] · Relacionado: [[01-Sistemas/SICI/Frontend/05-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] · Relacionado: [[01-Sistemas/SICI/Frontend/08-Seguranca/SICI-Frontend-Seguranca-e-Sessao|Seguranca-e-Sessao]]
 
 ## Objetivo
 Área de **Administração** (menu visível a quem tem `EDITAR_PERFIL`, hoje só `SUBCI`): cadastrar o SUBCI titular e seus substitutos e vincular perfis a auditores.
@@ -42,11 +42,11 @@ Arquivos em `sources`; leitura dos componentes e serviços.
 ## Inferências e limitações
 - 🔶 O perfil de id `1` fixo parece corresponder a SUBCI (para dar acesso ao titular/substituto), mas a correspondência com a tabela de perfis do backend não foi verificada. Se os ids mudarem entre ambientes, a tela vincula o perfil errado.
 - 🔶 As duas chamadas (cadastro e vínculo de perfil) são independentes: se a segunda falhar, o auditor fica cadastrado sem o perfil; tratamento de erro não localizado.
-- 🔶 O bloqueio por `EDITAR_PERFIL` é só de tela: no backend `POST /subci/cadastrar` e `POST /subci/{id}/substitutos` não têm restrição de perfil (achado S1 em [[01-Sistemas/SICI/Backend/06-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]).
+- 🔶 O bloqueio por `EDITAR_PERFIL` é só de tela: no backend `POST /subci/cadastrar` e `POST /subci/{id}/substitutos` não têm restrição de perfil (achado S1 em [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]).
 - Regras de vigência do substituto (datas) são do backend; o frontend envia as datas escolhidas.
 
 ## Relacionamentos
-- Quem assina: [[01-Sistemas/SICI/Frontend/02-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Rotas: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]]
+- Quem assina: [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Rotas: [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/SICI/Frontend/99-Controle/SICI-Frontend-Pendencias|Pendências]].

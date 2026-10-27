@@ -6,7 +6,7 @@ repository: minio-infra
 status: confirmado
 coverage: completa
 analyzed_commit: f36efc5fa586f71a2f964f0f3a51a8b9383d84d2
-updated: 2026-10-21
+updated: 2026-10-27
 commit_data: 2026-08-19
 branch: master
 tags:
@@ -30,7 +30,7 @@ Controlar os lotes da análise de `minio-infra`.
 |---|---|---|---|
 | 0 | Identificação e estrutura | [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Index|Index]], [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Contexto-do-Sistema|Contexto]], [[01-Sistemas/MinIO-CGDF/MinIO-CGDF-Repositorios|Repositórios]], [[01-Sistemas/MinIO-CGDF/Infra/MinIO-CGDF-Infra-Index|Índice da Infra]]; cadastro no `Catalogo-de-Sistemas` | concluído |
 | 1 | Stack, arquitetura, deploy | [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Stack-e-Dependencias|Stack]], [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Arquitetura|Arquitetura]], [[01-Sistemas/MinIO-CGDF/Infra/01-Visao-Geral/MinIO-CGDF-Infra-Deploy-e-Ambientes|Deploy]] | concluído |
-| 2 | Débitos e controle | [[01-Sistemas/MinIO-CGDF/Infra/08-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos]], [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]]; hipótese no `Mapa-de-Integracoes` | concluído |
+| 2 | Débitos e controle | [[01-Sistemas/MinIO-CGDF/Infra/09-Qualidade/MinIO-CGDF-Infra-Debitos-Tecnicos|Débitos]], [[01-Sistemas/MinIO-CGDF/Infra/99-Controle/MinIO-CGDF-Infra-Pendencias|Pendências]]; hipótese no `Mapa-de-Integracoes` | concluído |
 
 - Decisões do usuário (2026-10-21): ID `MinIO-CGDF`; publicação autorizada; ignorar arquivos não commitados.
 
@@ -43,3 +43,6 @@ Controlar os lotes da análise de `minio-infra`.
 
 ## Pendências e próximo passo
 - **Próximo passo exato:** quando `scripts/` e as mudanças da árvore forem commitados, comparar `git diff --name-only f36efc5..HEAD` com os `sources` e acionar `atualizar-documentacao` (novos: scripts de policy, serviço de bootstrap, segredos e integração com o consumidor, que o usuário informou ser outro sistema). Informar dono, SLA e URLs.
+
+## Histórico de estrutura
+- 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).

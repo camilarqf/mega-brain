@@ -20,7 +20,7 @@ sources:
 ---
 # Modelo de claims (IBS → usuário Keycloak → token)
 
-Voltar: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/KEYCLOAK-CGDF-Servico-Index|Índice]] · Relacionado: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/01-Visao-Geral/KEYCLOAK-CGDF-Servico-Arquitetura-SPI|Arquitetura-SPI]]
+Voltar: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/KEYCLOAK-CGDF-Servico-Index|Índice]] · Relacionado: [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/05-Fluxos/KEYCLOAK-CGDF-Servico-Fluxo-Direct-Grant-IBS|Fluxo-Direct-Grant-IBS]], [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/01-Visao-Geral/KEYCLOAK-CGDF-Servico-Arquitetura-SPI|Arquitetura-SPI]]
 
 ## Objetivo
 Mapear cada dado devolvido pelo IBS até o atributo do usuário, a nota de sessão e a claim do token. Não contém dados reais.
@@ -58,7 +58,7 @@ Regras do mapper (`IbsClaimsProtocolMapper`):
 - 🔶 Que `idUsuario` seja "o hash gerado pelo processo ETL na origem" é afirmação do README, não verificável aqui.
 
 ## Relacionamentos
-- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/03-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Username-Interno-IdUsuario|Regra-Username-Interno-IdUsuario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/06-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/04-Regras-de-Negocio/KEYCLOAK-CGDF-Servico-Regra-Username-Interno-IdUsuario|Regra-Username-Interno-IdUsuario]] · [[01-Sistemas/KEYCLOAK-CGDF/Servico-Keycloak/08-Seguranca/KEYCLOAK-CGDF-Servico-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
 - Confirmar com o time do IBS o contrato oficial (campos opcionais e tipos).

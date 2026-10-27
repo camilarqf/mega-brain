@@ -62,7 +62,7 @@ Contraparte 🔶: `PARTICIPA-DF` (publica `denuncia-registrada`; consome `denunc
 - ❓ Nome do exchange e da fila (valores de configuração).
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Denuncia-e-Demanda|Denúncia e Demanda]] · [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/SCI/Backend/03-Modulos/SCI-Backend-Modulo-Denuncia-e-Demanda|Denúncia e Demanda]] · [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo]]
 
 ## Pendências e próximo passo
 - Confirmar com o time o comportamento de reentrega/DLQ e a ordem entre a cópia dos anexos e a remoção dos objetos pelo `PARTICIPA-DF`.

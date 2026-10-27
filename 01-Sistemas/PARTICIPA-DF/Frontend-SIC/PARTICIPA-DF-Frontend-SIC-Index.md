@@ -31,13 +31,13 @@ Sistema: [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index|PARTICIPA-DF]] · [[01-Si
 - [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Rotas-e-Telas|Rotas-e-Telas]]
 
 **Segurança e fluxos**
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]]
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/08-Seguranca/PARTICIPA-DF-Frontend-SIC-Seguranca-e-Sessao|Seguranca-e-Sessao]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 **Fluxos**
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Caixa-de-Entrada-e-Detalhamento|Fluxo-Caixa-de-Entrada-e-Detalhamento]]
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Prorrogacao-e-Reencaminhamento|Fluxo-Prorrogacao-e-Reencaminhamento]]
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/02-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Caixa-de-Entrada-e-Detalhamento|Fluxo-Caixa-de-Entrada-e-Detalhamento]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Prorrogacao-e-Reencaminhamento|Fluxo-Prorrogacao-e-Reencaminhamento]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Registro-por-Operador|Fluxo-Registro-por-Operador]]
 
 **Módulos**
 - [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Gerencial|Modulo-Gerencial]]
@@ -45,12 +45,12 @@ Sistema: [[01-Sistemas/PARTICIPA-DF/PARTICIPA-DF-Index|PARTICIPA-DF]] · [[01-Si
 - [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Super-Busca|Modulo-Super-Busca]]
 
 **API e integrações**
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]]
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/04-API-e-Integracoes/PARTICIPA-DF-Frontend-SIC-Integracoes-Externas|Integracoes-Externas]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Chamadas-de-API|Chamadas-de-API]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/07-Integracoes/PARTICIPA-DF-Frontend-SIC-Integracoes-Externas|Integracoes-Externas]]
 
 **Qualidade**
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Testes-e-Cobertura|Testes-e-Cobertura]]
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/06-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Testes-e-Cobertura|Testes-e-Cobertura]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]]
 
 **Controle**
 - [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Registro-de-Analise|Registro-de-Analise]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendencias]]

@@ -33,7 +33,7 @@ Descrever como a configuração está organizada e como a imagem escolhe o que e
 - ✅ **Bloco `http`** (igual nas duas configurações, exceto a porta): `resolver` apontando para o DNS interno do Docker (`ipv6=off valid=10s`), um `map` de `Upgrade` para `Connection` (usado pelo WebSocket do `painel-ouvidoria`) e um único `server` que inclui `health-check.conf` e `locations/<ambiente>/*.conf`.
   - Produção escuta em `8080`; nonprod escuta em `80`.
 - ✅ **Bloco `stream`**: porta `5672` para um upstream `rabbitmq_cluster`. Ver [[01-Sistemas/INGRESS-CGDF/Nginx/07-Integracoes/INGRESS-CGDF-Nginx-Proxy-TCP-RabbitMQ|Proxy TCP RabbitMQ]].
-- ✅ **Um arquivo `location` por aplicação**, com duas variantes de rota (principal e teste em produção; staging e sandbox em nonprod). Ver [[01-Sistemas/INGRESS-CGDF/Nginx/05-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]] e [[01-Sistemas/INGRESS-CGDF/Nginx/04-Fluxos/INGRESS-CGDF-Nginx-Fluxo-de-Roteamento-de-Requisicao|Fluxo]].
+- ✅ **Um arquivo `location` por aplicação**, com duas variantes de rota (principal e teste em produção; staging e sandbox em nonprod). Ver [[01-Sistemas/INGRESS-CGDF/Nginx/06-API/INGRESS-CGDF-Nginx-Catalogo-de-Rotas|Catálogo de rotas]] e [[01-Sistemas/INGRESS-CGDF/Nginx/05-Fluxos/INGRESS-CGDF-Nginx-Fluxo-de-Roteamento-de-Requisicao|Fluxo]].
 - ✅ **Health check próprio**: `GET /healthcheck` responde `200 ok` sem log de acesso, sem consultar upstream.
 - ✅ `EXPOSE 80` e `EXPOSE 8080` no Dockerfile; o `HEALTHCHECK` do Dockerfile está comentado.
 
@@ -42,7 +42,7 @@ Descrever como a configuração está organizada e como a imagem escolhe o que e
 - ❓ Quem fica à frente deste Nginx (TLS, domínio, balanceador) não consta no repositório.
 
 ## Relacionamentos
-- [[01-Sistemas/INGRESS-CGDF/Nginx/01-Visao-Geral/INGRESS-CGDF-Nginx-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/INGRESS-CGDF/Nginx/08-Qualidade/INGRESS-CGDF-Nginx-Debitos-Tecnicos|Débitos técnicos]]
+- [[01-Sistemas/INGRESS-CGDF/Nginx/01-Visao-Geral/INGRESS-CGDF-Nginx-Stack-e-Dependencias|Stack e dependências]] · [[01-Sistemas/INGRESS-CGDF/Nginx/09-Qualidade/INGRESS-CGDF-Nginx-Debitos-Tecnicos|Débitos técnicos]]
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/INGRESS-CGDF/Nginx/99-Controle/INGRESS-CGDF-Nginx-Pendencias|Pendências]].

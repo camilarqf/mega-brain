@@ -34,20 +34,20 @@ Voltar: [[01-Sistemas/SCI/Backend/07-Integracoes/SCI-Backend-Integracoes-Externa
 - Chaves de `ParticipaDFClientSettings`: `Uri`, `Timeout`, `HealthCheckEndpoint`, `AuthenticateEndpoint`, `RetryCount`, `RetryIntervalInSeconds`, `HandledEventsAllowedBeforeBreaking`, `DurationOfBreakInSeconds`, `FallbackMessage` (valores não lidos).
 
 ## Informações confirmadas
-- ✅ Uso: login do SCI — o `AutenticarUsuarioHandler` envia o CPF formatado como `Login` e a senha digitada; sucesso emite o JWT do SCI ([[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo de autenticação]]).
+- ✅ Uso: login do SCI — o `AutenticarUsuarioHandler` envia o CPF formatado como `Login` e a senha digitada; sucesso emite o JWT do SCI ([[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Autenticacao|Fluxo de autenticação]]).
 - ✅ Resiliência (Polly no `HttpClient`): retry com intervalo, circuit breaker, timeout de 5 s por tentativa mais `HttpClient.Timeout` configurável.
 - ✅ Existe `HealthCheckEndpoint` configurado (uso no `/health` não confirmado).
 
 ## Falhas e dependências
 - ✅ Qualquer exceção ou resposta de erro vira `AuthenticationFailedException` com a mensagem do provedor.
-- ✅ Indisponibilidade do `PARTICIPA-DF` impede o login (exceto a exceção de bypass descrita em [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]).
+- ✅ Indisponibilidade do `PARTICIPA-DF` impede o login (exceto a exceção de bypass descrita em [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Debitos-Tecnicos|Débitos técnicos]]).
 
 ## Inferências e limitações
-- 🔶 A rota real corresponde, provavelmente, a `security/auth` do `PARTICIPA-DF` (catalogada em [[01-Sistemas/PARTICIPA-DF/Backend/05-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catálogo de endpoints do PARTICIPA-DF]], anônima). O valor de `AuthenticateEndpoint` não foi lido.
+- 🔶 A rota real corresponde, provavelmente, a `security/auth` do `PARTICIPA-DF` (catalogada em [[01-Sistemas/PARTICIPA-DF/Backend/06-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catálogo de endpoints do PARTICIPA-DF]], anônima). O valor de `AuthenticateEndpoint` não foi lido.
 - ❓ Se o `PARTICIPA-DF` conhece o SCI como consumidor desse endpoint.
 
 ## Relacionamentos
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/SCI/Backend/06-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/SCI/Backend/08-Seguranca/SCI-Backend-Seguranca-e-Autorizacao|Segurança]]
 
 ## Pendências e próximo passo
 - Confirmar o endpoint com o time do `PARTICIPA-DF`.

@@ -46,7 +46,7 @@ Descrever a estrutura da aplicação Flask.
 - Execução síncrona: o gunicorn usa o worker padrão (sem `--worker-class`), então cada worker atende uma requisição por vez. 🔶 conclusão pelo padrão do gunicorn, não testada.
 
 ## Relacionamentos
-- [[01-Sistemas/Servico-HtmlToPdf/Servico/04-Fluxos/Servico-HtmlToPdf-Servico-Fluxo-Geracao-de-PDF|Fluxo de geração]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Observabilidade-e-Logs|Observabilidade]]
+- [[01-Sistemas/Servico-HtmlToPdf/Servico/05-Fluxos/Servico-HtmlToPdf-Servico-Fluxo-Geracao-de-PDF|Fluxo de geração]] · [[01-Sistemas/Servico-HtmlToPdf/Servico/01-Visao-Geral/Servico-HtmlToPdf-Servico-Observabilidade-e-Logs|Observabilidade]]
 
 ## Pendências e próximo passo
 - Nenhuma específica.

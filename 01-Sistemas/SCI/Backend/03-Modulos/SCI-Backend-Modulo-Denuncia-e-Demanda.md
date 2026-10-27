@@ -68,10 +68,10 @@ Documentar a entrada de trabalho no SCI: denúncias recebidas e demandas tratada
 - 🔶 O aceite envia o comando de criar a demanda **dentro do handler do evento de domínio**, depois do `SaveChanges` do aceite: se a criação falhar, a denúncia fica aceita sem demanda (nenhuma compensação vista). O handler do aceite checa `UnidadeAptaParaCriarDemanda` antes para reduzir esse caso.
 - 🔶 `DemandaCriadaPorDenunciaConsumer` não trata falha de download do S3; o comportamento de reentrega depende do SDK. Anexos já copiados não são duplicados na repetição.
 - ❓ Motivo da troca de perfil (Autoridade → Apoio) em aceitar/recusar não consta no código.
-- Cobertura parcial: handlers de criar/atualizar demanda lidos por nome; testes novos apenas listados (ver [[01-Sistemas/SCI/Backend/08-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]]).
+- Cobertura parcial: handlers de criar/atualizar demanda lidos por nome; testes novos apenas listados (ver [[01-Sistemas/SCI/Backend/09-Qualidade/SCI-Backend-Testes-e-Cobertura|Testes]]).
 
 ## Relacionamentos
-- [[01-Sistemas/SCI/Backend/04-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo denúncia → admissibilidade]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|Enums e estados]] · [[01-Sistemas/SCI/Backend/05-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
+- [[01-Sistemas/SCI/Backend/05-Fluxos/SCI-Backend-Fluxo-Denuncia-ate-Admissibilidade|Fluxo denúncia → admissibilidade]] · [[01-Sistemas/SCI/Backend/02-Dominio/SCI-Backend-Enums-e-Estados|Enums e estados]] · [[01-Sistemas/SCI/Backend/06-API/SCI-Backend-Catalogo-de-Endpoints|Endpoints]]
 
 ## Pendências e próximo passo
 - ✅ Resolvida em 2026-10-23 (`29989114`): a conversão denúncia aceita → demanda existe no código (ver [[01-Sistemas/SCI/Backend/99-Controle/SCI-Backend-Pendencias|Pendências]]). Falta confirmar com o time o motivo da troca de perfil e o tratamento de falha na criação da demanda.

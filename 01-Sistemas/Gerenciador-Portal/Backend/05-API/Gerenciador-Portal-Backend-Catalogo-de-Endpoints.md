@@ -107,7 +107,7 @@ Ver [[01-Sistemas/Gerenciador-Portal/Backend/03-Modulos/Gerenciador-Portal-Backe
 - ❓ Códigos de resposta de sucesso/erro por rota não foram testados em execução.
 
 ## Relacionamentos
-- [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Arquitetura-em-Camadas|Arquitetura]] · [[Mapa-de-Integracoes|Mapa de integrações]]
+- [[01-Sistemas/Gerenciador-Portal/Backend/01-Visao-Geral/Gerenciador-Portal-Backend-Arquitetura-em-Camadas|Arquitetura]] · [[Mapa-de-Integracoes|Mapa de integrações]] · Consumidor: [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Catalogo-de-Chamadas-a-API|Catálogo de chamadas do Frontend]]
 
 ## Pendências e próximo passo
 - Confirmar em execução se o Spring Data REST expõe os repositórios (pendência no registro).

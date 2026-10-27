@@ -14,10 +14,11 @@ tags:
 # Gerenciador do Portal da Transparência — índice do sistema
 
 ## Objetivo
-Ponto de entrada do sistema de negócio **Gerenciador-Portal** (nome no pipeline: "Gerenciador do Portal da Transparência"; `artifactId` `GerenciadorPortal`; descrição do `pom.xml`: "Gerenciador do portal da trasparencia"). Só o backend foi analisado (ver [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Repositorios|Repositórios]]).
+Ponto de entrada do sistema de negócio **Gerenciador-Portal** (nome no pipeline: "Gerenciador do Portal da Transparência"; `artifactId` `GerenciadorPortal`; descrição do `pom.xml`: "Gerenciador do portal da trasparencia"). Backend e frontend foram analisados (ver [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Repositorios|Repositórios]]).
 
 ## Evidências
 - Cadastro: [[Catalogo-de-Sistemas|Catálogo de sistemas]] (ID `Gerenciador-Portal`, cadastrado em 2026-10-27 com autorização do usuário; o ID usa hífen por causa da seção 3 do `BRAIN-RULES.md`).
+- Documentação técnica do frontend: [[01-Sistemas/Gerenciador-Portal/Frontend/Gerenciador-Portal-Frontend-Index|Índice do Frontend]] (commit `d6a737a`).
 - Documentação técnica do backend: [[01-Sistemas/Gerenciador-Portal/Backend/Gerenciador-Portal-Backend-Index|Índice do Backend]] (commit `14b185f`).
 
 ## Informações confirmadas
@@ -34,11 +35,11 @@ Ponto de entrada do sistema de negócio **Gerenciador-Portal** (nome no pipeline
 | Componente | Estado | Entrada |
 |---|---|---|
 | `gerenciador-portal-backend` | analisado (lotes 0 a 4, leitura estática, cobertura parcial) | [[01-Sistemas/Gerenciador-Portal/Backend/Gerenciador-Portal-Backend-Index|Índice do Backend]] |
-| frontend | ❓ não identificado/não analisado (os parâmetros `usuarioLogado` e a ordenação por prioridade indicam um cliente web, 🔶) | — |
+| `gerenciador-portal-frontend` | analisado (lotes 0 a 3, leitura estática, cobertura parcial; SPA AngularJS 1.6) | [[01-Sistemas/Gerenciador-Portal/Frontend/Gerenciador-Portal-Frontend-Index|Índice do Frontend]] |
 
 ## Relacionamentos
 - [[Mapa-de-Integracoes|Mapa de integrações]]
 - [[01-Sistemas/Portal-Transparencia/Portal-Transparencia-Index|Portal-Transparencia]]
 
 ## Pendências e próximo passo
-- Ver [[01-Sistemas/Gerenciador-Portal/Backend/99-Controle/Gerenciador-Portal-Backend-Pendencias|Pendências]]. Próximo passo: localizar e documentar o frontend; confirmar com o time a relação com o Portal.
+- Ver [[01-Sistemas/Gerenciador-Portal/Backend/99-Controle/Gerenciador-Portal-Backend-Pendencias|Pendências]]. Próximo passo: responder as pendências do backend e do frontend; confirmar com o time a relação com o Portal.

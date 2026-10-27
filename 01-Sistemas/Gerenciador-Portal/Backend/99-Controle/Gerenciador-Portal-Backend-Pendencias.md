@@ -27,12 +27,14 @@ Origem em cada linha (lote/nota).
 | # | Pergunta | Origem |
 |---|---|---|
 | 1 | Onde está o **frontend** do Gerenciador (repositório) e como ele usa `usuarioLogado`/`x-client-id`? O token do SSO chega ao backend? | Lote 1 |
+| | *Anotação (2026-10-27)*: respondida em parte — o frontend é o `gerenciador-portal-frontend`; envia `x-client-id` (UUID do navegador) e o login em `usuarioLogado`/`usuarioAutenticado`; **não** envia token (ver [[01-Sistemas/Gerenciador-Portal/Frontend/05-API-e-Integracoes/Gerenciador-Portal-Frontend-Integracao-API-Backend\|integração do frontend]]). | Frontend lote 1 |
 | 2 | Qual a relação exata com o Portal-Transparencia? O Gerenciador chama `/storage/health` e `/storage/url` do Portal (pendência 18 do Portal) ou é o cliente web que o faz? | Lote 3 |
 | 3 | A API está atrás de gateway/WAF/rede restrita? O ingress (`gerenciador-portal-transparencia`) exige algo além do `x-client-id`? | Lote 1 |
 | 4 | O **Spring Data REST** realmente expõe os repositórios em execução? | Lote 1 |
 | 5 | As credenciais versionadas (banco, MongoDB, RabbitMQ, usuário de desenvolvimento) já foram rotacionadas? O login de desenvolvimento deve existir em `prod`? | Lote 1/4 |
 | 6 | Por que a exclusão apaga no disco local e não no MinIO? Quem limpa os objetos antigos? `salvar-sem-ordenar` ainda é usado? | Lote 2 |
 | 7 | Quem consome `expireSuperbusca` e `expirePortal`? O cliente chama `expirar-cache` depois de cada alteração? O broker é o mesmo do PARTICIPA-DF/SCI? | Lote 3 |
+| | *Anotação (2026-10-27)*: o frontend chama `GET /servidores-medida-protetiva/expirar-cache` após ocultar ou remover servidor (ver [[01-Sistemas/Gerenciador-Portal/Frontend/03-Modulos/Gerenciador-Portal-Frontend-Modulo-Medida-Protetiva\|módulo no frontend]]); consumidores da fila continuam desconhecidos. | Frontend lote 2 |
 | 8 | Qual o dono do banco `DB_PRT_TRANSPARENCIA` (DDL) e os privilégios do usuário da aplicação? | Lote 2 |
 | 9 | Quem alimenta `Carga.Controle` e o significado de `SEM ALTER.`/`REALIZADO`? | Lote 2 |
 | 10 | Qual o significado das categorias de arquivo único (50 a 59) e de 55/56 (imagens)? | Lote 2 |
@@ -41,7 +43,7 @@ Origem em cada linha (lote/nota).
 | 13 | A instância do Keycloak é a do `KEYCLOAK-CGDF`? O endpoint `http` é interno? | Lote 3 |
 
 ### Lacunas da análise
-- ❓ Frontend não analisado; comportamento em execução e DDL não verificados.
+- ❓ Comportamento em execução e DDL não verificados (o frontend foi analisado em 2026-10-27: [[01-Sistemas/Gerenciador-Portal/Frontend/Gerenciador-Portal-Frontend-Index|Índice do Frontend]]).
 - ❓ Diff do commit `14b185f` (corrige usuário logado) não lido.
 - ❓ Testes não versionados (`HealthcheckTest`, `ClientIdFilterTest`) fora do escopo; o segundo parece depender de uma mudança do filtro ainda não commitada.
 

@@ -6,7 +6,7 @@ repository: portal-transparencia-frontend
 status: pendente
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
-updated: 2026-10-21
+updated: 2026-10-27
 tags:
   - portal-transparencia
   - frontend
@@ -22,7 +22,7 @@ Voltar: [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Fronten
 |---|---|---|
 | 1 | Qual é o perfil usado em produção e como são feitos o *build* e a implantação (o `Jenkinsfile.prod` foi removido em 2026-10-14)? Como o proxy mapeia `/api`, `/api-super-busca` e `/arquivos/*`? | Lote 1 |
 | 2 | Quem é o dono do serviço `apisuperbusca` (índice de busca) e onde está o repositório? Deve ser cadastrado como sistema? | Lote 2 |
-| 3 | Qual sistema é o "gerenciador" (`apiGerenciador`), usado em Quadros Temáticos e Setor Desejado? É o mesmo citado nas pendências do Backend (#18)? | Lote 2 |
+| 3 | Qual sistema é o "gerenciador" (`apiGerenciador`), usado em Quadros Temáticos e Setor Desejado? É o mesmo citado nas pendências do Backend (#18)? 🔶 Pode ser o `Gerenciador-Portal` ([[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Index|índice]]), informado pelo usuário como sistema à parte (2026-10-27); a URL `apiGerenciador` não foi comparada com o serviço dele. | Lote 2 |
 | 4 | Os *buckets* `portal-imagens`, `portal-arquivos` e `portal-dados-abertos` são do `MinIO-CGDF`? A refatoração `feature/refatoracao-acesso-minio` pretende que o frontend use `/storage/url` do Backend em vez das constantes `caminho*`? | Lote 2 |
 | 5 | `src/app/config.js` deve ficar versionado (contém endereços de infraestrutura)? Os endereços internos precisam ser trocados por caminhos relativos? | Lote 1 e 5 |
 | 6 | As chamadas sem rota no Backend (`/despesa/porAcao/empenhado`, `/receita/multas/total`, `/servidor/listarDataReferenciaPorOutrosOrcamento`, `/prestando-contas/detalhamento-conselheiro`, `/licitacoes-contratos/{anos,licitacao/orgao,licitacao/situacao,grafico/*}`) estão em telas ativas? | Lote 2 |

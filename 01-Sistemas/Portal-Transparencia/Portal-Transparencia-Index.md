@@ -2,7 +2,7 @@
 type: index
 system: Portal-Transparencia
 status: pendente
-updated: 2026-10-21
+updated: 2026-10-27
 tags:
   - portal-transparencia
   - moc
@@ -32,7 +32,8 @@ Atalhos do backend:
 
 ## Inferências e limitações
 - ✅ O backend serve consultas públicas (despesa, receita, servidores e remuneração, licitações e contratos, convênios, patrimônio, prestação de contas) ao `portal-transparencia-frontend` (SPA AngularJS, sem login), que envia o `x-client-id` em cada chamada. Ver [[01-Sistemas/Portal-Transparencia/Frontend/04-API-e-Integracoes/Portal-Transparencia-Frontend-Integracao-API-Backend|Integração Frontend → API]].
-- ❓ Demais componentes do sistema (ETL, serviço de busca, "gerenciador") não foram identificados; o contexto de negócio (atores, objetivo oficial) não foi consolidado por falta de evidência no código.
+- 🔶 O "gerenciador" é, segundo o usuário (2026-10-27), um sistema à parte ligado ao Portal: ver [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Index|Gerenciador-Portal]] (sem chamada direta entre os dois no código analisado).
+- ❓ Demais componentes do sistema (ETL, serviço de busca) não foram identificados; o contexto de negócio (atores, objetivo oficial) não foi consolidado por falta de evidência no código.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]] · [[Mapa-de-Integracoes|Mapa de integrações]] · [[Home|Home]]

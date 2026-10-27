@@ -6,7 +6,7 @@ repository:
   - portal-transparencia-frontend
 status: pendente
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-21
+updated: 2026-10-27
 tags:
   - portal-transparencia
   - repositorios
@@ -31,7 +31,8 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 | `portal-transparencia-frontend` | SPA AngularJS 1.4 ("Portal 2016") que consome a API do Backend; sem login | analisado, cobertura parcial | `dca3e933` | [[01-Sistemas/Portal-Transparencia/Frontend/Portal-Transparencia-Frontend-Index|Índice do Frontend]] |
 
 ## Inferências e limitações
-- ❓ Outros componentes (como o ETL que alimenta as tabelas de carga, o serviço de busca `apisuperbusca` e o "gerenciador") não foram identificados.
+- 🔶 O "gerenciador" é um sistema à parte, com ligação ao Portal (informado pelo usuário em 2026-10-27): [[01-Sistemas/Gerenciador-Portal/Gerenciador-Portal-Repositorios|Gerenciador-Portal]] (`gerenciador-portal-backend`). Não pertence a este sistema.
+- ❓ Outros componentes (como o ETL que alimenta as tabelas de carga e o serviço de busca `apisuperbusca`) não foram identificados.
 
 ## Relacionamentos
 - [[Catalogo-de-Sistemas|Catálogo de sistemas]]

@@ -112,7 +112,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] O `SCI` espera o payload atual de `denuncia-registrada` (`ArquivoReferencia` e `Anexos`) e o novo canal `denuncia-criada`? Por que o merge de `integracao-sci-ajustar-payload-arquivos` foi revertido (`2be9deb`)?
 - [ ] Falha do S3 em `DenunciaAceitaConsumer`/`DenunciaRecusadaConsumer`: o SDK de PubSub reprocessa a mensagem (e a remoção do bloqueio roda de novo)? (débito F1)
 - [ ] Os segredos que estiveram nos arquivos versionados foram rotacionados e o histórico do git foi limpo? (A1.1)
-- [ ] Quem aplica `AplicarBloqueioExterno` (sem resposta desde o lote 4)?
+- [ ] Quem aplica `AplicarBloqueioExterno`? Em 2026-10-23 (`820666c`) confirmei que **nenhum código do repositório** envia esse comando; perguntar ao time se o bloqueio é ligado por outro sistema, por rota fora do repositório, ou se a funcionalidade está incompleta (sem ele, `denuncia-aceita`/`denuncia-recusada` só removem um bloqueio que não foi ligado aqui).
 
 ## Próximo passo
 Análise inicial concluída (ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]).

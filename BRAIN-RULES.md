@@ -46,26 +46,26 @@ Fonte única das regras do vault, usada por Claude Code, Codex, Skills e pelo Ob
 
 Esta tabela é a **única fonte** dos valores de `type`, usada por Claude Code, Codex e pelo grafo do Obsidian. Tipos novos só entram aqui, junto com o grupo de cor em `.obsidian/graph.json`.
 
-| `type` | Usar quando a nota… | Exemplo | Cor no grafo (RGB) |
+| `type` | Usar quando a nota… | Exemplo | Família e cor no grafo |
 |---|---|---|---|
-| `system` | descreve o sistema de negócio: objetivo, atores, contexto. | `SICI-Contexto-do-Sistema` | 196, 70, 255 |
-| `index` | é um índice (MOC) de navegação, sem análise própria. | `SICI-Index`, `SICI-Backend-Index`, `Mapa-de-Integracoes` | 196, 70, 255 |
-| `architecture` | descreve estrutura, camadas e padrões de um componente. | `SICI-Backend-Arquitetura-Hexagonal` | 0, 170, 255 |
-| `decision` | registra uma decisão com contexto e alternativas, somente se houver evidência. | — | 0, 170, 255 |
-| `module` | documenta uma capacidade funcional coesa (controllers, casos de uso e modelos de uma área). | `Ordem-de-Servico`, `POAC` | 255, 136, 0 |
-| `flow` | descreve uma sequência ponta a ponta de passos, estados e atores. | `Fluxo-Assinatura-OS` | 57, 255, 20 |
-| `business-rule` | descreve uma regra de negócio específica e verificável no código (condição → efeito); hipótese baseada em nomes vai em "inferências". | — | 255, 221, 0 |
-| `integration` | descreve a comunicação entre um consumidor e um provedor (sistema ou serviço externo): cliente, contrato, direção, falhas. | `SICI-Backend-Integracoes-Externas` | 0, 245, 255 |
-| `api` | descreve o contrato exposto: endpoints, verbos, payloads, códigos HTTP. | `SICI-Backend-Catalogo-de-Endpoints` | 0, 245, 255 |
-| `security` | trata de autenticação, autorização, perfis, proteção de dados e controles de segurança (sem segredos). | `SICI-Backend-Seguranca-e-Autorizacao` | 255, 64, 180 |
-| `technical-debt` | lista débitos, riscos e melhorias recomendadas, separados dos fatos. | `SICI-Backend-Debitos-Tecnicos` | 255, 64, 180 |
-| `domain` | descreve modelos de domínio, entidades conceituais, value objects, enums e estados. | `SICI-Backend-Modelo-de-Dominio`, `SICI-Backend-Enums-e-Estados` | 65, 105, 255 |
-| `persistence` | descreve banco de dados, mapeamento de entidades, constraints e migrations. | `SICI-Backend-Banco-e-Migrations` | 25, 70, 220 |
-| `quality` | descreve testes, cobertura e estratégias de qualidade. | `SICI-Backend-Testes-e-Cobertura` | 255, 105, 180 |
-| `requirement` | registra o que foi **solicitado**: US ou mudança, critérios de aceite, regras pretendidas e análise de impacto. Não descreve comportamento implementado. | `<Sistema>-US-<ID>-<Resumo>` | 255, 99, 71 |
-| `repository` | descreve um repositório de código: estado da análise e relação com o sistema. | `SICI-Repositorios` | 200, 210, 255 |
-| `analysis-log` | controla o processo de análise: lotes, pendências, cobertura. | `SICI-Backend-Registro-de-Analise`, `SICI-Backend-Pendencias` | 200, 210, 255 |
-| `reference` | nenhuma categoria acima representa a natureza predominante (glossário, stack, ambientes e configuração). | `SICI-Backend-Glossario`, `SICI-Backend-Stack-e-Dependencias`, `SICI-Backend-Perfis-e-Ambientes` | 200, 210, 255 |
+| `system` | descreve o sistema de negócio: objetivo, atores, contexto. | `SICI-Contexto-do-Sistema` | Navegação · `#C084FC` |
+| `index` | é um índice (MOC) de navegação, sem análise própria. | `SICI-Index`, `SICI-Backend-Index`, `Mapa-de-Integracoes` | Navegação · `#C084FC` |
+| `architecture` | descreve estrutura, camadas e padrões de um componente. | `SICI-Backend-Arquitetura-Hexagonal` | Estrutura · `#60A5FA` |
+| `decision` | registra uma decisão com contexto e alternativas, somente se houver evidência. | — | Estrutura · `#60A5FA` |
+| `module` | documenta uma capacidade funcional coesa (controllers, casos de uso e modelos de uma área). | `Ordem-de-Servico`, `POAC` | Funcional · `#FB923C` |
+| `flow` | descreve uma sequência ponta a ponta de passos, estados e atores. | `Fluxo-Assinatura-OS` | Fluxo · `#4ADE80` |
+| `business-rule` | descreve uma regra de negócio específica e verificável no código (condição → efeito); hipótese baseada em nomes vai em "inferências". | — | Regra · `#FACC15` |
+| `integration` | descreve a comunicação entre um consumidor e um provedor (sistema ou serviço externo): cliente, contrato, direção, falhas. | `SICI-Backend-Integracoes-Externas` | Contratos · `#22D3EE` |
+| `api` | descreve o contrato exposto: endpoints, verbos, payloads, códigos HTTP. | `SICI-Backend-Catalogo-de-Endpoints` | Contratos · `#22D3EE` |
+| `security` | trata de autenticação, autorização, perfis, proteção de dados e controles de segurança (sem segredos). | `SICI-Backend-Seguranca-e-Autorizacao` | Risco · `#F43F5E` |
+| `technical-debt` | lista débitos, riscos e melhorias recomendadas, separados dos fatos. | `SICI-Backend-Debitos-Tecnicos` | Risco · `#F43F5E` |
+| `domain` | descreve modelos de domínio, entidades conceituais, value objects, enums e estados. | `SICI-Backend-Modelo-de-Dominio`, `SICI-Backend-Enums-e-Estados` | Estrutura · `#60A5FA` |
+| `persistence` | descreve banco de dados, mapeamento de entidades, constraints e migrations. | `SICI-Backend-Banco-e-Migrations` | Estrutura · `#60A5FA` |
+| `quality` | descreve testes, cobertura e estratégias de qualidade. | `SICI-Backend-Testes-e-Cobertura` | Apoio · `#94A3B8` |
+| `requirement` | registra o que foi **solicitado**: US ou mudança, critérios de aceite, regras pretendidas e análise de impacto. Não descreve comportamento implementado. | `<Sistema>-US-<ID>-<Resumo>` | Requisito · `#F472B6` |
+| `repository` | descreve um repositório de código: estado da análise e relação com o sistema. | `SICI-Repositorios` | Apoio · `#94A3B8` |
+| `analysis-log` | controla o processo de análise: lotes, pendências, cobertura. | `SICI-Backend-Registro-de-Analise`, `SICI-Backend-Pendencias` | Apoio · `#94A3B8` |
+| `reference` | nenhuma categoria acima representa a natureza predominante (glossário, stack, ambientes e configuração). | `SICI-Backend-Glossario`, `SICI-Backend-Stack-e-Dependencias`, `SICI-Backend-Perfis-e-Ambientes` | Apoio · `#94A3B8` |
 
 Como escolher:
 - Classificar pelo **conteúdo**, não pelo nome do arquivo nem pela pasta. Em caso de dúvida, vale a natureza predominante da nota.

@@ -11,84 +11,63 @@
       "query": "[type:system] OR [type:index]",
       "color": {
         "a": 1,
-        "rgb": 12863231
+        "rgb": 12616956
       }
     },
     {
-      "query": "[type:architecture] OR [type:decision]",
+      "query": "[type:architecture] OR [type:decision] OR [type:domain] OR [type:persistence]",
       "color": {
         "a": 1,
-        "rgb": 43775
+        "rgb": 6333946
       }
     },
     {
       "query": "[type:module]",
       "color": {
         "a": 1,
-        "rgb": 16746496
+        "rgb": 16486972
       }
     },
     {
       "query": "[type:flow]",
       "color": {
         "a": 1,
-        "rgb": 3800852
+        "rgb": 4906624
       }
     },
     {
       "query": "[type:business-rule]",
       "color": {
         "a": 1,
-        "rgb": 16768256
+        "rgb": 16436245
       }
     },
     {
-      "query": "[type:integration] OR [type:api]",
+      "query": "[type:api] OR [type:integration]",
       "color": {
         "a": 1,
-        "rgb": 62975
+        "rgb": 2282478
       }
     },
     {
       "query": "[type:security] OR [type:technical-debt]",
       "color": {
         "a": 1,
-        "rgb": 16728699
-      }
-    },
-    {
-      "query": "[type:reference] OR [type:analysis-log] OR [type:repository]",
-      "color": {
-        "a": 1,
-        "rgb": 13161215
-      }
-    },
-    {
-      "query": "[type:domain]",
-      "color": {
-        "a": 1,
-        "rgb": 4286975
-      }
-    },
-    {
-      "query": "[type:persistence]",
-      "color": {
-        "a": 1,
-        "rgb": 1656540
-      }
-    },
-    {
-      "query": "[type:quality]",
-      "color": {
-        "a": 1,
-        "rgb": 16738740
+        "rgb": 16007006
       }
     },
     {
       "query": "[type:requirement]",
       "color": {
         "a": 1,
-        "rgb": 16737095
+        "rgb": 16020150
+      }
+    },
+    {
+      "query": "[type:quality] OR [type:reference] OR [type:analysis-log] OR [type:repository]",
+      "color": {
+        "a": 1,
+        "rgb": 9741240
       }
     }
   ],

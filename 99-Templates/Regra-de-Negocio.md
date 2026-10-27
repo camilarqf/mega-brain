@@ -1,5 +1,6 @@
 ---
 type: business-rule
+aliases: []
 system:
 component:
 repository:

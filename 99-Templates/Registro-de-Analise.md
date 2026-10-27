@@ -1,5 +1,6 @@
 ---
 type: analysis-log
+aliases: []
 system:
 repository:
 status: pendente

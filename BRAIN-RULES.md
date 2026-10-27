@@ -19,7 +19,22 @@ Fonte única das regras do vault, usada por Claude Code, Codex, Skills e pelo Ob
 ## 1. Estrutura
 
 - Um sistema de negócio vive em `01-Sistemas/<Sistema>/`. **Sistema de negócio não é sinônimo de repositório**: vários repositórios podem compor um sistema, e um componente (`Backend`, `Frontend`, `Servico-X`) corresponde a um repositório.
+- Pastas da raiz: `00-Paineis/` (consultas Bases), `01-Sistemas/`, `02-Temas/` (notas de tema que ligam vários sistemas) e `99-Templates/`.
 - A documentação técnica de cada repositório vive em uma subpasta do sistema (`Backend/`, `Frontend/`, `Servico-X/`).
+- As pastas de componente usam numeração fixa, igual em todos os componentes; criar só as necessárias, deixando lacunas na numeração:
+
+| Pasta | Conteúdo |
+|---|---|
+| `01-Visao-Geral` | `<Componente>-Index`, arquitetura, stack, deploy, ambientes, glossário |
+| `02-Dominio` | modelo de domínio, enums e estados, banco e persistência |
+| `03-Modulos` | módulos; rotas e telas (frontends) |
+| `04-Regras-de-Negocio` | regras de negócio |
+| `05-Fluxos` | fluxos |
+| `06-API` | contrato exposto pelo componente (endpoints) |
+| `07-Integracoes` | o que o componente consome, inclusive chamadas de API dos frontends |
+| `08-Seguranca` | autenticação, autorização, sessão |
+| `09-Qualidade` | testes, cobertura, débitos técnicos |
+| `99-Controle` | registro de análise e pendências |
 - Requisitos (US e solicitações de mudança) ficam em `01-Sistemas/<Sistema>/Requisitos/`, no sistema dono do requisito.
 - A visão de negócio compartilhada fica na raiz do sistema e só deve ser consolidada quando houver evidências.
 - Não criar pastas de componentes ainda não analisados: citá-los em `<Sistema>-Repositorios.md` como `não analisado`.
@@ -64,11 +79,13 @@ O nome do arquivo é o rótulo da nota no grafo do Obsidian, por isso deve ser �
 - Documentação de um componente: `<Sistema>-<Componente>-<Assunto>.md`. Ex.: `SICI-Backend-Pendencias`.
 - Documentação geral do sistema: `<Sistema>-<Assunto>.md`. Ex.: `SICI-Repositorios`.
 - Requisitos: `<Sistema>-US-<ID>-<Resumo>.md`.
-- Módulos e fluxos de negócio com nome já específico podem manter `<Assunto>.md` (ex.: `POAC`, `Ordem-de-Servico`).
+- Toda nota de sistema leva o prefixo `<Sistema>-` (e `<Componente>-` quando for de um componente), mesmo com assunto já específico; não há exceção para módulos ou fluxos.
+- Temas: `02-Temas/Tema-<Assunto>.md`. Painéis: `00-Paineis/<Assunto>.base`.
 - Notas de vault inteiro (ex.: `Mapa-de-Integracoes`) ficam na raiz.
-- Sem acentos, com hífens e sem prefixo numérico.
+- Sem acentos, com hífens e sem prefixo numérico. O título legível, com acentos, vai em `aliases` (seção 4).
+- IDs de sistema já cadastrados não mudam (são chaves de `system`, `consumer` e `provider`). IDs novos: inicial maiúscula e hífens (ex.: `Portal-Transparencia`); sufixo `-CGDF` só para infraestrutura própria da casa (ex.: `MinIO-CGDF`).
 - **Antes de criar uma nota, verificar se já existe arquivo com o mesmo nome em qualquer pasta do vault** (inclusive `99-Templates/`). Em caso de colisão, usar o prefixo `<Sistema>-<Componente>-`; nunca manter dois arquivos com o mesmo nome.
-- Ao renomear, usar `git mv`, atualizar todos os links `[[…]]` e referências em regras e Skills, e preservar o histórico: registros de análise e decisões mantêm o texto original, e o mapeamento nome antigo → novo fica no registro de análise do componente.
+- Ao renomear, usar `git mv`, atualizar todos os links `[[…]]` e referências em regras e Skills, incluir o nome antigo em `aliases` e preservar o histórico: registros de análise e decisões mantêm o texto original, e o mapeamento nome antigo → novo fica no registro de análise do componente.
 
 ## 4. Schema de metadados
 
@@ -77,7 +94,8 @@ Todo frontmatter usa exatamente estas chaves, em inglês, nesta ordem. Incluir s
 | Campo | Aplica-se a | Formato | Valores / regra |
 |---|---|---|---|
 | `type` | todas | texto | Um valor da seção 2. |
-| `system` | todas, exceto notas de vault inteiro | texto | ID do sistema no catálogo (ex.: `SICI`). |
+| `aliases` | opcional | lista em bloco | Título legível com acentos (ex.: `Registro de manifestação (Cidadão)`) e nomes antigos após renomeação. |
+| `system` | todas, exceto notas de vault inteiro (raiz e `02-Temas/`) | texto | ID do sistema no catálogo (ex.: `SICI`). |
 | `component` | opcional | texto | Parte lógica do sistema. Só se houver evidência; não deduzir. |
 | `repository` | opcional | texto ou lista | Nome do repositório; lista se a nota abranger vários. |
 | `status` | todas | texto | **Confirmação**: `confirmado`, `inferido`, `nao-identificado`, `pendente`. |
@@ -88,7 +106,7 @@ Todo frontmatter usa exatamente estas chaves, em inglês, nesta ordem. Incluir s
 | `updated` | todas | data `YYYY-MM-DD` | Sem aspas. |
 | `commit_data`, `branch` | **somente** `analysis-log` | data / texto | Data do commit analisado e branch. |
 | `consumer`, `provider` | **somente** `integration` (opcionais) | texto | ID do catálogo (sistema ou serviço externo). Preencher apenas com evidência; se desconhecido, omitir. |
-| `tags` | todas | lista em bloco | Minúsculas, sem `#`. |
+| `tags` | opcional | lista em bloco | Somente do vocabulário controlado abaixo; minúsculas, sem `#`. |
 | `sources` | opcional | lista em bloco | Caminhos relativos ao repositório analisado, como no código. |
 
 Regras:
@@ -96,7 +114,20 @@ Regras:
 - Preservar fontes, commits, tags e datas originais; não inventar valores para campos ausentes.
 - Ao atualizar uma nota, alterar `updated`, `analyzed_commit` e `coverage` conforme o caso, sem apagar `created`.
 - Consultas Obsidian (Bases/Dataview) podem filtrar por qualquer chave acima, ex.: `status = "confirmado" AND coverage = "parcial"`.
-- A validação automática está em `scripts/validar-brain.py`; ela lê os valores válidos desta tabela e da seção 2.
+- A validação automática está em `scripts/validar-brain.py`; ela lê os valores válidos desta tabela, do vocabulário de tags e da seção 2.
+
+Vocabulário controlado de tags. Tags marcam **temas transversais** que cruzam sistemas; não repetir o que já está em `type`, `system`, no componente ou na pasta. Tag nova só entra nesta tabela com aprovação do usuário.
+
+| Tag | Usar quando a nota trata de… |
+|---|---|
+| `autenticacao` | login, identidade, tokens, SSO, LDAP |
+| `dados-pessoais` | tratamento de dados pessoais (LGPD), CPF, cadastro de pessoas |
+| `geracao-pdf` | geração de documentos PDF |
+| `armazenamento-objetos` | MinIO, S3, arquivos e anexos |
+| `mensageria` | filas, eventos, RabbitMQ |
+| `busca` | índices e mecanismos de busca |
+| `geolocalizacao` | endereços, mapas, coordenadas |
+| `observabilidade` | logs, métricas, monitoramento |
 
 ## 5. Evidência, confiança e validade
 
@@ -118,7 +149,7 @@ Não carregar todas as notas de um sistema. Seguir os níveis, parando assim que
 3. **N1 — índices**: `<Sistema>-Index` e o índice do componente.
 4. **N2 — notas-alvo**: localizar por `type`, `tags`, `sources` e títulos; ler primeiro o frontmatter e os títulos, e apenas as seções necessárias.
 5. **N3 — vizinhas**: seguir links só quando houver dependência relevante.
-6. **N4 — outros sistemas**: somente pelo `Mapa-de-Integracoes` e quando a integração for relevante à tarefa.
+6. **N4 — outros sistemas**: somente pelo `Mapa-de-Integracoes` ou por uma nota de `02-Temas/`, e quando a relação for relevante à tarefa.
 7. **Verificação**: checar a validade (seção 5) e confirmar o que for importante no código atual, testes e contratos.
 
 Evitar recuperar contexto do Brain em tarefas triviais sem relação com o conhecimento documentado. Informações do Brain são ponto de partida, não prova.
@@ -145,12 +176,14 @@ Evitar recuperar contexto do Brain em tarefas triviais sem relação com o conhe
 - Toda escrita em notas parte de um **plano apresentado e aprovado** (escopo, arquivos, alterações).
 - Não executar `git add`, `commit`, `push`, `reset` ou rebase automaticamente: mostrar o diff e solicitar aprovação explícita para cada operação. Commit e push são aprovados separadamente.
 - Nunca usar `reset --hard`, `push --force` ou comandos destrutivos automaticamente.
+- `.obsidian/graph.json` é versionado por causa dos grupos de cor (seção 2). Mudanças só de visualização (`scale`, `*Strength`, `linkDistance`, `*Multiplier`, `collapse-*`, `close`) não são commitadas: apontar e, com aprovação, descartar.
 - A sincronização (Skill `sincronizar-brain`) nunca é consequência automática de outra Skill.
 - Não alterar código-fonte como consequência de atividades de documentação.
 
 ## 10. Segurança, confidencialidade e remotos
 
 - Nunca copiar credenciais, tokens, segredos, dados pessoais ou material institucional para destinos externos não autorizados, nem para as notas.
+- O Git é o único meio de sincronização do cofre. Obsidian Sync e outros serviços de nuvem não são destinos autorizados; o plugin core `sync` fica desativado.
 - Nunca reproduzir valores de configuração sensíveis; registrar apenas nomes de chaves e endereços omitidos.
 - Antes de sincronizar, classificar o conteúdo por categoria: (a) conhecimento técnico genérico, (b) documentação derivada de código institucional, (c) requisitos, US e análises de impacto, (d) dados pessoais e segredos (nunca publicar).
 - **Remoto configurado**: `origin` → `https://github.com/camilarqf/mega-brain.git`, uma conta pessoal do GitHub. Estar configurado **não** significa autorizado: a autorização deve ser confirmada pelo usuário **para cada categoria de conteúdo** antes de cada sincronização. Documentação institucional (categorias b e c) não é sincronizada sem autorização adequada; se não houver, interromper e propor ambiente institucional.
@@ -163,4 +196,5 @@ Evitar recuperar contexto do Brain em tarefas triviais sem relação com o conhe
 - O cofre é a fonte oficial e única das Skills (`.claude/skills/`). Claude Code e Codex as usam pelas instalações globais (`~/.claude/skills`, `~/.codex/skills`), criadas como junctions por `scripts/sincronizar-skills.py` (rodar em máquina nova); não há cópias a manter em sincronia. Nunca editar fora de `.claude/skills/`.
 - Uma Skill não executa automaticamente outra: o agente indica a próxima Skill e o usuário (ou o mecanismo do agente) a invoca.
 - Skills de terceiros: não modificar, não duplicar suas funções e usá-las quando forem adequadas e estiverem disponíveis na sessão; se o agente não conseguir invocá-las, pedir ao usuário. Instruções incompatíveis (por exemplo, commit/push/PR automáticos) exigem decisão do usuário.
+- Plugins do Obsidian: os core (inclusive Bases) e, da comunidade, somente o Graph Styler (tema `Mega-Brain-Galaxy`, que altera fundo e linhas, não os grupos de cor). Plugin novo só com aprovação do usuário.
 - Claude Code: acesso ao vault com `/add-dir` ou `claude --add-dir`. Codex: conferir caminho e permissões da sessão; não presumir que o cofre está montado.

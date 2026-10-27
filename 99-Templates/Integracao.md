@@ -1,5 +1,6 @@
 ---
 type: integration
+aliases: []
 system:
 component:
 repository:

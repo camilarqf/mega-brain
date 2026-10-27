@@ -1,5 +1,6 @@
 ---
 type: requirement
+aliases: []
 system:
 status: pendente
 lifecycle: proposed

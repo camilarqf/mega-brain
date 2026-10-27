@@ -35,20 +35,27 @@ def ler(p):
     return p.read_bytes().decode("utf-8").replace("\r\n", "\n")
 
 
-def linhas_tabela(trecho):
-    """Linhas de dados de tabelas Markdown (ignora cabecalho e separador)."""
-    saida, vistos_sep = [], False
+def tabelas(trecho):
+    """Linhas de dados de cada tabela Markdown, uma lista por tabela (ignora cabecalho e separador)."""
+    saida, atual, vistos_sep = [], None, False
     for ln in trecho.split("\n"):
         if not ln.startswith("|"):
-            vistos_sep = False
+            vistos_sep, atual = False, None
             continue
         celulas = [c.strip() for c in ln.strip().strip("|").split("|")]
         if all(re.fullmatch(r":?-{3,}:?", c) for c in celulas):
-            vistos_sep = True
+            vistos_sep, atual = True, []
+            saida.append(atual)
             continue
         if vistos_sep:
-            saida.append(celulas)
+            atual.append(celulas)
     return saida
+
+
+def linhas_tabela(trecho, n=0):
+    """Linhas de dados da n-esima tabela do trecho."""
+    t = tabelas(trecho)
+    return t[n] if len(t) > n else []
 
 
 def secao(texto, numero):
@@ -67,8 +74,11 @@ def carregar_regras(vault):
         if m:
             tipos.append(m.group(1))
             r = re.fullmatch(r"(\d+), (\d+), (\d+)", c[-1])
+            h = re.search(r"#([0-9A-Fa-f]{6})\b", c[-1])
             if r:
                 cores[m.group(1)] = tuple(int(x) for x in r.groups())
+            elif h:
+                cores[m.group(1)] = tuple(int(h.group(1)[i:i + 2], 16) for i in (0, 2, 4))
     campos, restritos, valores, obrigatorios = [], {}, {}, set()
     linhas = linhas_tabela(secao(texto, 4))
     todos = [n for c in linhas for n in re.findall(r"`([a-z_]+)`", c[0])]
@@ -82,8 +92,12 @@ def carregar_regras(vault):
                 obrigatorios.add(n)
             if n in ("status", "coverage", "lifecycle"):
                 valores[n] = {t for t in re.findall(r"`([a-z-]+)`", c[3]) if t not in todos}
+    tags = {m.group(1) for c in linhas_tabela(secao(texto, 4), 1)
+            for m in [re.fullmatch(r"`([a-z0-9-]+)`", c[0])] if m}
+    pastas = {m.group(1) for c in linhas_tabela(secao(texto, 1))
+              for m in [re.fullmatch(r"`(\d\d-[A-Za-z-]+)`", c[0])] if m}
     return {"tipos": tipos, "cores": cores, "campos": campos, "restritos": restritos,
-            "valores": valores, "obrigatorios": obrigatorios}
+            "valores": valores, "obrigatorios": obrigatorios, "tags": tags, "pastas": pastas}
 
 
 def frontmatter(texto):
@@ -166,11 +180,21 @@ def main():
             add("erro", nome, "nome de arquivo duplicado: " + ", ".join(ps))
     caminhos = {rel(p)[:-3] for p in notas}
 
+    # pastas de componente fora da numeracao da secao 1
+    if regras["pastas"]:
+        fora = set()
+        for p in notas:
+            for parte in p.relative_to(vault).parts[3:-1]:
+                if re.match(r"\d\d-", parte) and parte not in regras["pastas"]:
+                    fora.add(str(p.parent.relative_to(vault)).replace("\\", "/"))
+        for d in sorted(fora):
+            add("aviso", d, "pasta fora da numeracao da secao 1")
+
     entrantes = set()
     for p in notas:
         r = rel(p)
         texto = ler(p)
-        raiz = len(p.relative_to(vault).parts) == 1
+        raiz = len(p.relative_to(vault).parts) == 1 or r.startswith("02-Temas/")
         modelo = r.startswith("99-Templates/")
         fm = frontmatter(texto)
         if fm is None:
@@ -215,12 +239,14 @@ def main():
                 c = dados.get("analyzed_commit")
                 if c and not re.fullmatch(r"[0-9a-f]{40}", c):
                     add("erro", r, "analyzed_commit deve ter 40 caracteres hexadecimais")
-                for lst in ("tags", "sources"):
+                for lst in ("aliases", "tags", "sources"):
                     if lst in dados and not isinstance(dados[lst], list):
                         add("erro", r, lst + " deve ser lista")
                 for tg in dados.get("tags") or []:
                     if tg != tg.lower() or tg.startswith("#"):
                         add("erro", r, "tag fora do padrao: " + tg)
+                    elif regras["tags"] and tg not in regras["tags"]:
+                        add("aviso", r, "tag fora do vocabulario controlado: " + tg)
                 if ids:
                     sist = dados.get("system")
                     if sist and sist not in ids:

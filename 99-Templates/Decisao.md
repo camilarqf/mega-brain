@@ -1,5 +1,6 @@
 ---
 type: decision
+aliases: []
 system:
 component:
 repository:

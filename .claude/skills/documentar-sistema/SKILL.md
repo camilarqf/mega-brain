@@ -13,7 +13,7 @@ Regras e definições estão em `BRAIN-RULES.md` (seções citadas abaixo); não
 4. **Integrações.** Procurar clientes, adaptadores e configuração de chamadas a outros sistemas ou serviços; registrar consumidor, provedor, tecnologia, contrato e direção quando verificáveis (seção 7). Sem evidência, é hipótese.
 5. **Plano.** Apresentar o plano de lotes pequenos: para cada nota, o `type` (seção 2), o nome (seção 3), as notas existentes que serão atualizadas em vez de duplicadas (seção 8) e os links previstos. **Obter aprovação antes de escrever.**
 6. **Documentar um lote por vez**, com evidências (repositório, commit, arquivo, símbolos) e a distinção ✅/🔶/❓ (seção 5). Regra de negócio só com evidência no código.
-7. **Gerar as notas** com frontmatter da seção 4, nomes da seção 3 e links da seção 8. Atualizar o `Mapa-de-Integracoes` quando houver integração (seção 7). Preservar o material existente e não alterar o código.
+7. **Gerar as notas** nas pastas da seção 1, com frontmatter da seção 4, nomes da seção 3 e links da seção 8. Atualizar o `Mapa-de-Integracoes` quando houver integração (seção 7). Preservar o material existente e não alterar o código.
 8. **Validar** com `python <vault>/scripts/validar-brain.py`; sem Python, conferir à mão tipo, campos, datas, links e nomes únicos. Corrigir antes de encerrar o lote.
 9. **Fechar o lote:** atualizar índice, registro de análise, pendências e `coverage`, com o próximo passo exato (seção 8), e relatar o que não foi coberto.
 10. Backend e frontend do mesmo sistema ficam em pastas próprias; integrar fluxos somente após verificar ambos.

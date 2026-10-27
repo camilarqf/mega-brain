@@ -1,5 +1,6 @@
 ---
 type: module
+aliases: []
 system:
 component:
 repository:

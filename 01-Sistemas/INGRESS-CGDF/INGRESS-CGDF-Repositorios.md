@@ -7,7 +7,7 @@ repository: ingress-controller
 status: confirmado
 coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
-updated: 2026-10-21
+updated: 2026-10-28
 ---
 # INGRESS-CGDF — repositórios
 
@@ -33,3 +33,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/INGRESS-CGDF/Nginx/99-Controle/INGRESS-CGDF-Nginx-Registro-de-Analise|Registro de análise]].
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Ingress da CGDF (imagem Nginx com roteamento por path para serviços Docker Swarm e proxy TCP do RabbitMQ em produção, staging e sandbox; ID proposto pelo plano e aprovado pelo usuário em 2026-10-21; dono não informado; validar permissão antes de publicar)
+- **Repositórios:** `ingress-controller`
+- **Estado:** Analisado (commit `a51459e`; lotes 0 a 3 concluídos, leitura estática, cobertura completa do conteúdo versionado)

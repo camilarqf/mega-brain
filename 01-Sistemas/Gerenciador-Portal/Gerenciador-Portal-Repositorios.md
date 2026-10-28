@@ -8,7 +8,7 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 14b185feeac4f5889a0ce8041a3b5baaead0334b
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # Gerenciador-Portal — repositórios
 
@@ -40,3 +40,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 ## Pendências e próximo passo
 - Para atualizar o backend: `git diff 14b185feeac4f5889a0ce8041a3b5baaead0334b..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o frontend: `git diff d6a737a3a0e5cf1b245aa35c81321638dd0cbecc..HEAD --stat`.
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Gerenciador do Portal da Transparência (API Spring Boot 1.5 que administra o conteúdo do Portal: arquivos/relatórios, imagens, textos das consultas, palavras-chave, órgãos da LAI, medida protetiva e cargas; sistema à parte com ligação ao `Portal-Transparencia`, informado pelo usuário em 2026-10-27; ID escolhido na análise e aceito pelo usuário; o ID usa hífen por causa da seção 3 do `BRAIN-RULES.md`; dono não identificado; validar permissão antes de publicar)
+- **Repositórios:** `gerenciador-portal-backend`, `gerenciador-portal-frontend`
+- **Estado:** Backend analisado (commit `14b185f`; lotes 0 a 4 concluídos, leitura estática, cobertura parcial); frontend AngularJS analisado (commit `d6a737a`; lotes 0 a 3 concluídos, leitura estática, cobertura parcial)

@@ -7,7 +7,7 @@ repository: cgdf-peoples-check-api
 status: confirmado
 coverage: completa
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
-updated: 2026-10-19
+updated: 2026-10-28
 ---
 # PeoplesCheck — repositórios
 
@@ -34,3 +34,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/PeoplesCheck/Servico/99-Controle/PeoplesCheck-Servico-Registro-de-Analise|Registro de análise]].
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** PeoplesCheck (API Spring Boot de validação de CPF/CNPJ e desafio de identidade; provedor do `PARTICIPA-DF`; correspondência confirmada pelo usuário em 2026-10-19; ID reaproveitado do antigo serviço externo; dono: CGDF, informado pelo usuário; validar permissão antes de publicar)
+- **Repositórios:** `cgdf-peoples-check-api`
+- **Estado:** Analisado (commit `21dbf0b`; lotes 0 a 6 concluídos, leitura estática, cobertura completa do código da aplicação)

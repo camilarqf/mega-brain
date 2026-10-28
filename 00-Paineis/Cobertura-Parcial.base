@@ -1,0 +1,15 @@
+filters:
+  and:
+    - file.inFolder("01-Sistemas")
+    - coverage == "parcial"
+views:
+  - type: table
+    name: Cobertura parcial
+    groupBy:
+      property: system
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - updated

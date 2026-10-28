@@ -1,13 +1,19 @@
 # Mega Brain
 
-- [[Catalogo-de-Sistemas|Catálogo de sistemas]]
-  - [[01-Sistemas/SICI/SICI-Index|SICI]]
-- [[Mapa-de-Integracoes|Mapa de integrações]]
+## Navegação
+- [[Catalogo-de-Sistemas|Catálogo de sistemas]]: IDs, repositórios e índices de cada sistema
+- [[Mapa-de-Integracoes|Mapa de integrações]]: quem consome quem
 - [[BRAIN-RULES|Regras da base]]
-- [[99-Templates/Sistema|Template de sistema]]
-- [[99-Templates/Repositorio|Template de repositório]]
-- [[99-Templates/Modulo|Template de módulo]]
-- [[99-Templates/Decisao|Template de decisão]]
-- [[99-Templates/Historia-de-Usuario|Template de história de usuário]]
-- [[99-Templates/Regra-de-Negocio|Template de regra de negócio]]
-- [[99-Templates/Integracao|Template de integração]]
+
+## Sistemas
+![[00-Paineis/Sistemas.base]]
+
+## Painéis
+- [[00-Paineis/Validacao-Pendente.base|Validação pendente]]: notas `inferido` ou `pendente`
+- [[00-Paineis/Cobertura-Parcial.base|Cobertura parcial]]
+- [[00-Paineis/Debitos-Tecnicos.base|Débitos técnicos]]
+- [[00-Paineis/Requisitos.base|Requisitos]] por ciclo de vida
+
+## Templates
+- [[99-Templates/Sistema|Sistema]] · [[99-Templates/Repositorio|Repositório]] · [[99-Templates/Modulo|Módulo]] · [[99-Templates/Regra-de-Negocio|Regra de negócio]]
+- [[99-Templates/Integracao|Integração]] · [[99-Templates/Decisao|Decisão]] · [[99-Templates/Historia-de-Usuario|História de usuário]] · [[99-Templates/Registro-de-Analise|Registro de análise]]

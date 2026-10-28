@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.inFolder("01-Sistemas")
+    - or:
+        - status == "inferido"
+        - status == "pendente"
+views:
+  - type: table
+    name: Validação pendente
+    groupBy:
+      property: system
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - updated

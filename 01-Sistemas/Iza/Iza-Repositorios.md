@@ -7,7 +7,7 @@ repository: cgdf-iza
 status: confirmado
 coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
-updated: 2026-10-22
+updated: 2026-10-28
 ---
 # Iza — repositórios
 
@@ -35,3 +35,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Iza/Api/99-Controle/Iza-Api-Registro-de-Analise|Registro de análise]].
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Iza — Robô Iza / OUV-IA (API FastAPI com 4 modelos de aprendizado de máquina que sugerem assunto, classificação, unidade e indício de denúncia a partir do relato; provedor do `PARTICIPA-DF`; ID reaproveitado do antigo serviço externo, por decisão do usuário em 2026-10-22; dono não informado; validar permissão antes de publicar)
+- **Repositórios:** `cgdf-iza` (remoto `cgdf-iza-api`)
+- **Estado:** Analisado (commit `988360c`; lotes 0 a 3 concluídos, leitura estática, cobertura parcial: modelos `.joblib` fora do repositório)

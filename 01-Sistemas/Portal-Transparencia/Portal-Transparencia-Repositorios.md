@@ -8,7 +8,7 @@ repository:
   - portal-transparencia-frontend
 status: pendente
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
-updated: 2026-10-27
+updated: 2026-10-28
 ---
 # Portal-Transparencia — repositórios
 
@@ -39,3 +39,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 ## Pendências e próximo passo
 - Para atualizar o backend: `git diff 9434e58f35284618d236f25b3ed2f2b307a7e345..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o frontend: `git diff dca3e933ffd7e5bbfd173133e88d14f94304cb52..HEAD --stat`.
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Portal da Transparência (backend Spring Boot 1.3 com consultas públicas de despesa, receita, servidores/remuneração, licitações e contratos, convênios, patrimônio e prestação de contas; nome informado pelo usuário em 2026-10-19; o ID usa hífen por causa da seção 3 do `BRAIN-RULES.md`; frontend `portal-transparencia-frontend` confirmado pelo usuário em 2026-10-21; validar permissão antes de publicar)
+- **Repositórios:** `portal-transparencia-backend` (pasta local `PT2016_BackEnd`), `portal-transparencia-frontend` (pasta local `PT2016_FrontEnd`)
+- **Estado:** Backend analisado (commit `e98fcc38`; lotes 0 a 9 concluídos (o 9 é a atualização do storage MinIO) (inclui módulos por área funcional e revisões de injeção de SQL e dados pessoais), leitura estática, cobertura parcial); frontend AngularJS analisado por leitura estática (commit `dca3e93`; lotes 0 a 5, cobertura parcial)

@@ -1,0 +1,36 @@
+filters:
+  and:
+    - file.inFolder("01-Sistemas")
+views:
+  - type: table
+    name: Sistemas
+    filters:
+      and:
+        - type == "repository"
+    order:
+      - file.name
+      - system
+      - status
+      - coverage
+      - updated
+    sort:
+      - property: system
+        direction: ASC
+  - type: table
+    name: Estado da análise
+    filters:
+      and:
+        - type == "analysis-log"
+        - file.name.endsWith("Registro-de-Analise")
+    order:
+      - file.name
+      - system
+      - repository
+      - coverage
+      - analyzed_commit
+      - commit_data
+      - branch
+      - updated
+    sort:
+      - property: system
+        direction: ASC

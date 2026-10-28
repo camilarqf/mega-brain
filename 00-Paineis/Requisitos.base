@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.inFolder("01-Sistemas")
+    - type == "requirement"
+views:
+  - type: table
+    name: Requisitos
+    groupBy:
+      property: lifecycle
+      direction: ASC
+    order:
+      - file.name
+      - system
+      - lifecycle
+      - status
+      - updated

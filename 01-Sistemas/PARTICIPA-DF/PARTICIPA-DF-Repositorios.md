@@ -11,7 +11,7 @@ repository:
 status: pendente
 coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 # PARTICIPA-DF — repositórios
 
@@ -50,3 +50,9 @@ Relacionar os repositórios do sistema Participa DF, o estado da análise e o co
 - Para atualizar o frontend de Ouvidoria: `git diff 9d8ecdb..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o frontend: `git diff d250804..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o backend: `git diff 820666c..HEAD --stat` (skill `atualizar-documentacao`). Última atualização: 2026-10-23 (`4901ad5..820666c`, ver [[01-Sistemas/PARTICIPA-DF/Backend/99-Controle/PARTICIPA-DF-Backend-Registro-de-Analise|Registro-de-Analise]]).
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Participa DF (nome do app no pipeline; namespace `OuvDF`; nome oficial a validar; validar permissão antes de publicar)
+- **Repositórios:** `participa-df-backend`, `participa-df-frontend` (Cidadão), `participa-df-ouv-frontend` (Ouvidoria), `participa-df-sic-frontend` (SIC); 3 de 3 front-ends identificados
+- **Estado:** Backend analisado (commit `4901ad5`; lotes 0 a 8 concluídos, cobertura parcial); frontend `participa-df-frontend` analisado (commit `d250804`; lotes 0 a 5, cobertura parcial); frontend `participa-df-ouv-frontend` (AngularJS, Ouvidoria) analisado (commit `9d8ecdb`; lotes 0 a 5, cobertura parcial); frontend `participa-df-sic-frontend` (AngularJS, SIC) em análise (commit `5518a81`; lotes 0 a 5, cobertura parcial)

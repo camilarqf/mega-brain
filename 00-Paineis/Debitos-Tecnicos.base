@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.inFolder("01-Sistemas")
+    - type == "technical-debt"
+views:
+  - type: table
+    name: Débitos técnicos
+    order:
+      - file.name
+      - system
+      - status
+      - coverage
+      - updated
+    sort:
+      - property: system
+        direction: ASC

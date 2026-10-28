@@ -7,7 +7,7 @@ repository:
   - sici-backend
   - sici-frontend
 status: pendente
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 # SICI — repositórios
 
@@ -37,3 +37,9 @@ Relacionar os repositórios que compõem o sistema SICI, o estado da análise e 
 ## Pendências e próximo passo
 - Para atualizar o frontend: `git diff 418642f..HEAD --stat` (skill `atualizar-documentacao`).
 - Para atualizar o backend: `git diff 1871e32..HEAD --stat` (skill `atualizar-documentacao`).
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** SICI (validar permissão antes de publicar)
+- **Repositórios:** `sici-backend`, `sici-frontend`
+- **Estado:** Backend analisado (commit `1871e32`; cobertura parcial em 2 notas); frontend analisado por leitura estática (commit `418642f`; lotes 0 a 5, cobertura parcial)

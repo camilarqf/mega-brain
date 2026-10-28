@@ -8,7 +8,7 @@ repository:
   - sci-frontend
 status: pendente
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
-updated: 2026-10-19
+updated: 2026-10-28
 ---
 # SCI — repositórios
 
@@ -37,3 +37,9 @@ Relacionar os repositórios do SCI, o estado da análise e o commit de referênc
 
 ## Pendências e próximo passo
 - Para atualizar: `git diff 8e3c8648386d0ee6767df7819faea9cdd44bef9c..HEAD --stat` no backend e `git diff 5e20fda1ec781719cb277c36d160db2efd5a6c1b..HEAD --stat` no frontend (skill `atualizar-documentacao`).
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** SCI (backend .NET de denúncias, admissibilidade e PIP; contraparte dos eventos de denúncia do `PARTICIPA-DF` por 🔶 canais iguais; sigla sem expansão no código; cadastrado com autorização do usuário em 2026-10-19; validar permissão antes de publicar)
+- **Repositórios:** `sci-backend`, `sci-frontend`
+- **Estado:** Backend analisado (commit `8e3c864`; lotes 0 a 6, cobertura parcial); frontend analisado por leitura estática (commit `5e20fda`; lotes 0 a 4, cobertura parcial)

@@ -7,7 +7,7 @@ repository: cgdf-html-to-pdf
 status: confirmado
 coverage: completa
 analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
-updated: 2026-10-19
+updated: 2026-10-28
 tags:
   - geracao-pdf
 ---
@@ -36,3 +36,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Ver [[01-Sistemas/Servico-HtmlToPdf/Servico/99-Controle/Servico-HtmlToPdf-Servico-Registro-de-Analise|Registro de análise]].
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Serviço HTTP de geração de PDF a partir de HTML (Flask + WeasyPrint; endpoint `POST /html-to-pdf/generate`, contrato `HtmlString`); provedor dos backends do PARTICIPA-DF, SCI e SICI (correspondência confirmada pelo usuário em 2026-10-19); ID reaproveitado do antigo serviço externo, por decisão do usuário em 2026-10-19; dono: CGDF (informado pelo usuário)
+- **Repositórios:** `cgdf-html-to-pdf`
+- **Estado:** Analisado (commit `1393a68`; lotes 0 a 3 concluídos, leitura estática, cobertura completa do código da aplicação)

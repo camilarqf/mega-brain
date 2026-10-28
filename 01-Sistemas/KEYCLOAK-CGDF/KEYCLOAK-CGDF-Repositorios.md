@@ -7,7 +7,7 @@ repository: keycloak
 status: pendente
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 # KEYCLOAK-CGDF — repositórios
 
@@ -33,3 +33,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Para atualizar: `git diff 1755591..HEAD --stat` no repositório (skill `atualizar-documentacao`).
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** Keycloak da CGDF (imagem, extensão Java de autenticação via IBS e tema de login; ID escolhido pelo usuário)
+- **Repositórios:** `keycloak`
+- **Estado:** Analisado (commit `1755591`; lotes 0 a 3 concluídos, cobertura parcial: tema só por inventário)

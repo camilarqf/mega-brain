@@ -7,7 +7,7 @@ repository: identity-broker-service
 status: confirmado
 coverage: parcial
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
-updated: 2026-10-18
+updated: 2026-10-28
 ---
 # IBS — repositórios
 
@@ -33,3 +33,9 @@ Relacionar os repositórios do sistema, o estado da análise e o commit de refer
 
 ## Pendências e próximo passo
 - Para atualizar: `git diff cf0959a..HEAD --stat` no repositório (skill `atualizar-documentacao`).
+
+## Histórico do catálogo (até 2026-10-28)
+Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificação (melhorias do cofre, lote 6):
+- **Sistema:** IBS — Identity Broker Service (autenticação por bind LDAP e claims do SIP; serviço chamado pelo Keycloak, confirmado pelo usuário; dono não identificado)
+- **Repositórios:** `identity-broker-service`
+- **Estado:** Analisado (commit `cf0959a`; lotes 0 a 4 concluídos, cobertura parcial em 3 notas)

@@ -1,5 +1,5 @@
 ---
-type: api
+type: integration
 aliases:
   - "Chamadas de API — SICI Frontend"
 system: SICI
@@ -7,7 +7,7 @@ repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
-updated: 2026-10-18
+updated: 2026-10-28
 sources:
   - src/core/services/**/*.ts
   - src/app/components/layout/assinatura-autenticacao/assinatura-autenticacao.component.ts

@@ -304,7 +304,7 @@ def a_s6b(fx, ev):
     brain = fx.brain
     r = subprocess.run([sys.executable, str(brain / "scripts/validar-brain.py"), str(brain), "--json"], capture_output=True, text=True, encoding="utf-8")
     val = json.loads(r.stdout)
-    emp = (brain / "01-Sistemas/ALFA/Backend/Emprestimos.md").read_text(encoding="utf-8")
+    emp = (brain / "01-Sistemas/ALFA/Backend/03-Modulos/ALFA-Backend-Modulo-Emprestimos.md").read_text(encoding="utf-8")
     mud = [m.replace("\\", "/") for m in fx.mudancas("brain")]
     return {"validador_sem_erros": val["erros"] == 0, "erros_validador": [x["msg"] for x in val["achados"] if x["nivel"] == "erro"][:5],
             "emprestimos_commit_atualizado": ("analyzed_commit: " + fx.head0["alfa"]) in emp,

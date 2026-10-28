@@ -1,5 +1,5 @@
 ---
-type: api
+type: integration
 aliases:
   - "Catálogo de chamadas à API — Gerenciador-Portal Frontend"
 system: Gerenciador-Portal
@@ -9,7 +9,7 @@ status: confirmado
 coverage: parcial
 analyzed_commit: d6a737a3a0e5cf1b245aa35c81321638dd0cbecc
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-28
 sources:
   - src/app/components/login/loginAPI.js
   - src/app/components/arquivos/arquivoApi.js

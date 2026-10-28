@@ -1,5 +1,5 @@
 ---
-type: api
+type: integration
 aliases:
   - "Frontend — catálogo de chamadas à API"
 system: Portal-Transparencia
@@ -8,7 +8,7 @@ repository: portal-transparencia-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
-updated: 2026-10-21
+updated: 2026-10-28
 sources:
   - src/app/components/despesas/despesas.service.js
   - src/app/components/receitas/receitas.service.js

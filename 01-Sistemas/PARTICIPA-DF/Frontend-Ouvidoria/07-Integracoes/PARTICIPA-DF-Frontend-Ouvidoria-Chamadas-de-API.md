@@ -1,5 +1,5 @@
 ---
-type: api
+type: integration
 aliases:
   - "Frontend Ouvidoria — chamadas de API ao backend"
 system: PARTICIPA-DF
@@ -7,7 +7,7 @@ repository: participa-df-ouv-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
-updated: 2026-10-18
+updated: 2026-10-28
 sources:
   - app/api.service.js
   - app/token-auth-interceptor.js

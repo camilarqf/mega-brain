@@ -55,3 +55,4 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidada
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
 - 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).
+- 2026-10-28: `PARTICIPA-DF-Frontend-Cidadao-Chamadas-de-API` reclassificada de `api` para `integration` (descreve o lado consumidor; decisão do usuário).

@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - SUBCI-e-Substitutos
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -23,7 +25,7 @@ sources:
 
 # SUBCI e substitutos
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 > O **SUBCI titular** (ou seu **substituto vigente**) é a única pessoa que pode **assinar** OS. O vínculo é feito pela tabela `TB_SUBCI` (auditor + `STATUS_TITULAR`), **independentemente** do perfil/role SUBCI do auditor.
 
@@ -49,7 +51,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - Os períodos são imutáveis (`SubciSubstituto` só tem `criar`/`reconstituir`): não há edição nem exclusão por API.
 
 ### Uso na assinatura e nos PDFs
-- `AssinarOrdemServico.resolverAssinanteAutorizado`: titular ativo → substituto vigente **na data de hoje** → senão `AccessDeniedException`. Ver [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]].
+- `AssinarOrdemServico.resolverAssinanteAutorizado`: titular ativo → substituto vigente **na data de hoje** → senão `AccessDeniedException`. Ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]].
 - `ObterSubciVigenteParaDocumento.executar(data)`: nome, matrícula e flag "substituto" para as **minutas** de PDF.
 
 ## ⚠️ Risco de escalada de privilégio ✅

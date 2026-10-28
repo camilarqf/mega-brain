@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Ordem-de-Servico
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -22,9 +24,9 @@ sources:
 
 # Ordem de Serviço (OS de Ação de Controle)
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]]
 
-> Uma OS formaliza um ato sobre uma [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]]: abertura, designação ou exclusão de membros, prorrogação de fases, substituição de coordenador ou cancelamento. A OS só produz efeito sobre equipe e situação da ação **quando é assinada** (ver "Efeitos na assinatura").
+> Uma OS formaliza um ato sobre uma [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]]: abertura, designação ou exclusão de membros, prorrogação de fases, substituição de coordenador ou cancelamento. A OS só produz efeito sobre equipe e situação da ação **quando é assinada** (ver "Efeitos na assinatura").
 
 ## Endpoints — `/os-acao-controle` ✅
 Fonte: `api/ordemServico/OrdemServicoController.java`
@@ -39,7 +41,7 @@ Fonte: `api/ordemServico/OrdemServicoController.java`
 | PUT | `/alterarStatusOs/{id}` | SUBCI, COORDENADOR, AUDITOR, DIRETOR | `AlterarStatusOrdemServico` |
 | DELETE | `/excluir/{id}` | SUBCI, COORDENADOR, DIRETOR | `ExcluirOrdemServico` |
 | POST | `/{id}/fases` | **nenhuma** (só autenticado) | `SalvarFaseOrdemServico` |
-| POST | `/{idOrdemServicoBase}/prorrogacoes` | **nenhuma** | `CriarProrrogacaoOrdemServico` — ver [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]] |
+| POST | `/{idOrdemServicoBase}/prorrogacoes` | **nenhuma** | `CriarProrrogacaoOrdemServico` — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]] |
 | PUT | `/{idOrdemServico}/prorrogacoes` | **nenhuma** | `AtualizarProrrogacaoOrdemServico` |
 | POST | `/cancelar-os/{id}` (`id` = ação de controle) | SUBCI, COORDENADOR, DIRETOR | `CancelarOrdemServico` |
 | PUT | `/cancelamento/{idOrdemServico}/{idCancelamento}` | **nenhuma** | `OrdemServicoServiceImpl.atualizarJustificativaCancelamento` |
@@ -64,7 +66,7 @@ Fluxo (método anotado com `@Transactional`):
 9. Grava as fases (`FaseOrdemServico`: fase, descrição, datas e duração).
 
 ## Efeitos na assinatura ✅
-Fonte: `AssinarOrdemServico.executar` (detalhe em [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]])
+Fonte: `AssinarOrdemServico.executar` (detalhe em [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]])
 
 | Modelo | Efeito ao assinar |
 |---|---|

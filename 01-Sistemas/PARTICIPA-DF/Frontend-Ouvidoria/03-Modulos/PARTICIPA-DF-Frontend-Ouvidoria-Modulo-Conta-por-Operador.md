@@ -53,7 +53,7 @@ Arquivos em `sources`, commit `9d8ecdb`. Cobertura `parcial`: lidos os controlle
 - 🔶 O frontend não valida CPF/CNPJ por algoritmo nos controllers lidos; a verificação acontece no backend (`security/check`).
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
 
 ## Pendências e próximo passo
 - Ler os templates de conta (campos e máscaras). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/99-Controle/PARTICIPA-DF-Frontend-Ouvidoria-Pendencias|Pendências]].

@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - Regras-de-Prazo-e-Prorrogacao
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -27,7 +29,7 @@ sources:
 
 # Regras de prazo e prorrogação (Ouvidoria)
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
 
 ## Objetivo
 Registrar, em condição → efeito, as regras de cálculo de prazo, vencimento, prazos de notificação e prorrogação das manifestações. Só regras verificadas no código; valores configuráveis aparecem como nome de chave.

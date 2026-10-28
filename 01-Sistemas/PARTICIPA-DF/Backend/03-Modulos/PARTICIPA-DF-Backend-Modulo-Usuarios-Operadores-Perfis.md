@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Usuarios-Operadores-Perfis
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -37,7 +39,7 @@ sources:
 
 # Usuários, operadores e perfis
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ## Objetivo
 Documentar a capacidade de gestão de identidades do sistema: quem são os usuários (cidadãos, pessoas jurídicas e operadores), como os perfis dão acesso e quais endpoints e comandos existem. O modelo completo de dados fica no lote 3.
@@ -72,7 +74,7 @@ classDiagram
 - ✅ Regras de unidade: o operador SO só pode ter como padrão uma unidade ativa em SO ou SIC (`IsUnidadePadraoValid`); o SIC não faz essa checagem em `AlterarUnidadeAtual`.
 - ✅ `OperadorSIC.IsUnidadeAtualSuperiorSic()`: a unidade atual é do tipo `UnidadeSicSuperior`.
 - ✅ `TipoOperadorEnum`: `SO`, `SIC`.
-- ✅ Bloquear e desbloquear: ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
+- ✅ Bloquear e desbloquear: ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
 
 ### Endpoints por controller (rotas e acesso)
 | Controller | Base | Acesso | Capacidades |

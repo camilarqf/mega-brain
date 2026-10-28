@@ -32,7 +32,7 @@ sources:
 
 # Fluxo de tramitação, resposta e avaliação
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Enums-e-Estados|Enums-e-Estados]]
 
 ## Objetivo
 Descrever o atendimento depois do registro: atribuição, tramitação entre unidades, respostas (preliminar, definitiva, complementar), esclarecimentos e a avaliação do cidadão.
@@ -56,7 +56,7 @@ stateDiagram-v2
     Resolvida --> Resolvida_após_resposta_complementar : avaliação após complementar
     NãoResolvida --> Não_resolvida_após_resposta_complementar : avaliação após complementar
 ```
-(Transições de prazo, prorrogação e invalidação: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] e [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]].)
+(Transições de prazo, prorrogação e invalidação: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] e [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]].)
 
 ### 1. Tramitação (`POST …/tramite`, papel `OperadorSO`)
 1. ✅ Exige operador e manifestação existentes e a permissão `TRM_MNF`.

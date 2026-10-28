@@ -163,7 +163,7 @@ Provedor: [[01-Sistemas/PeoplesCheck/Servico/06-API/PeoplesCheck-Servico-Catalog
 
 ## Relacionamentos
 - Provedor Iza (sistema documentado em 2026-10-22): [[01-Sistemas/Iza/Api/07-Integracoes/Iza-Api-Integracoes|Iza → lado provedor]]
-- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]] · [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro-de-Manifestacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
+- [[Mapa-de-Integracoes|Mapa de integrações]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]] · [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro-de-Manifestacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]]
 
 ## Pendências e próximo passo
 - Confirmar com o time: natureza do Iza, consentimento do cidadão, quem é o sistema correcional e os consumidores da API `v1` e "metro".

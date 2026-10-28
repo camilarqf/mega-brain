@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - Regras-de-Prazo-do-SIC
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -28,7 +30,7 @@ sources:
 
 # Regras de prazo do SIC
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Pedido-e-Recurso|Pedido-e-Recurso]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] (Ouvidoria), [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Pedido-e-Recurso|Pedido-e-Recurso]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] (Ouvidoria), [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 ## Objetivo
 Reunir, em condição → efeito, todas as regras de prazo do pedido e dos recursos. As durações vêm de configuração (`ServicoInformacaoCidadaoSettings`); os valores **não foram lidos**.

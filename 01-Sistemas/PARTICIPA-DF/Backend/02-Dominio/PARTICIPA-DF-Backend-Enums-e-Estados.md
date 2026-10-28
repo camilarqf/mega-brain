@@ -148,7 +148,7 @@ stateDiagram-v2
     Recebida --> Invalida : invalidar
     EmAnálise --> Invalida : invalidar
 ```
-- ✅ Origens e destinos conforme `Manifestacao.ValidarFluxoDeSituacao` (usada só na avaliação) e nos comandos de resposta, atribuição, prorrogação e invalidação. `Invalida` aceita 10 origens (todas menos ela mesma). Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]].
+- ✅ Origens e destinos conforme `Manifestacao.ValidarFluxoDeSituacao` (usada só na avaliação) e nos comandos de resposta, atribuição, prorrogação e invalidação. `Invalida` aceita 10 origens (todas menos ela mesma). Detalhes e ressalvas em [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]].
 - 🔶 As setas "invalidar" a partir dos demais estados (Respondida, avaliadas, Vencida, Prorrogada…) foram omitidas do desenho por clareza; o código as permite.
 
 ## Inferências e limitações

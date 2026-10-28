@@ -33,14 +33,14 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 ## Planejamento
 | Método | Rota | Roles | Nota |
 |---|---|---|---|
-| POST | `/poac/cadastrar` | — | [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]] |
+| POST | `/poac/cadastrar` | — | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-POAC|POAC]] |
 | GET | `/poac/listar` · `/poac/pesquisar` · `/poac/pesquisar-ano` | — | |
-| POST | `/acao-controle/cadastrar` | S C D | [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]] |
+| POST | `/acao-controle/cadastrar` | S C D | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]] |
 | GET | `/acao-controle/listar` · `/pesquisar` · `/pesquisar-poac/{idPoac}` · `/validar/{id}` | — | |
 | PUT | `/acao-controle/atualizar/{id}` | S C D | |
 | DELETE | `/acao-controle/inativar?id=` | S C | bloqueia se houver OS |
 
-## Ordem de Serviço — `/os-acao-controle` ([[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]])
+## Ordem de Serviço — `/os-acao-controle` ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]])
 | Método | Rota | Roles |
 |---|---|---|
 | POST | `/salvar-os/{acaoControleId}` | S C D A (cancelamento: S C D, checado no use case) |
@@ -58,7 +58,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 | GET | `/gerar-pdf?id=` | — |
 | GET | `/validar-data-prorrogacao` | — |
 
-## OS Genérica — `/ordem-servico-generica` ([[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]])
+## OS Genérica — `/ordem-servico-generica` ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]])
 | Método | Rota | Roles |
 |---|---|---|
 | POST | `/salvar-os` | — |
@@ -66,7 +66,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 | PUT | `/atualizar/{id}` · `/alterarStatusOs/{id}` | — |
 | DELETE | `/excluir/{id}` | — |
 
-## Assinatura — `/assinaturas` ([[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]])
+## Assinatura — `/assinaturas` ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]])
 | Método | Rota | Roles | Nota |
 |---|---|---|---|
 | POST | `/assinar-os/{idOrdemServico}` | — | só o SUBCI titular ou o substituto vigente (checado no use case) |
@@ -78,18 +78,18 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 ## Pessoas e papéis
 | Método | Rota | Roles | Nota |
 |---|---|---|---|
-| POST | `/subci/cadastrar` | — ⚠️ | [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]] |
+| POST | `/subci/cadastrar` | — ⚠️ | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]] |
 | GET | `/subci/listar` | S | |
 | GET | `/subci/pesquisar` | — | |
 | POST | `/subci/{idSubci}/substitutos` | — ⚠️ | |
 | GET | `/subci/{idSubci}/substitutos` | — | |
-| GET | `/auditor/listar` · `/listar-por-acao/{id}` · `/listar-nao-relacionados-por-acao/{id}` | — | [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] |
+| GET | `/auditor/listar` · `/listar-por-acao/{id}` · `/listar-nao-relacionados-por-acao/{id}` | — | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] |
 | GET | `/auditores/com-perfil` | S | |
 | PUT | `/auditores/{idAuditor}/vincular-perfis` | S | |
 | GET | `/perfis` | — | |
 | GET | `/coordenador/listar` · `/listar-por-coordenador/{id}` · `/listar-nao-relacionados/{id}` | — | |
 
-## Cadastros auxiliares ([[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]])
+## Cadastros auxiliares ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Cadastros-Auxiliares|Cadastros-Auxiliares]])
 `GET /unidade-auditoria/listar` · `GET /area-executora/listar/{id}` · `GET /programa-governo/listar` · `GET /objetivo-ppa/listar/{codigo}` · `GET /unidade-auditada/listar` · `GET /fase/listar` · `GET /fase/descricao-fase` — todos `—`.
 
 ## Operação

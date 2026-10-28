@@ -36,12 +36,12 @@ Evidência: `pom.xml`, pacote `br.gov.df.cg.sici`, `domain/enums/EModeloOrdemSer
 - [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]] · [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]] · [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
 
 ### 03 — Módulos
-- [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]] · [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]] · [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]] · [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]]
-- [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] · [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]] · [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]]
-- [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] · [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]]
+- [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-POAC|POAC]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]]
+- [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]]
+- [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]] · [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Cadastros-Auxiliares|Cadastros-Auxiliares]]
 
 ### 04 — Fluxos
-- [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
+- [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]]
 
 ### 05 a 08 — API, segurança, integrações, qualidade
 - [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]] · [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]] · [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]]

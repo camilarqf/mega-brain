@@ -73,7 +73,7 @@ sequenceDiagram
 - ✅ `/logout` limpa o `localStorage` local e volta à home; não chama o backend.
 
 ## Inferências e limitações
-- 🔶 As faixas `ExceptionDetails.Id` 1 e 5 correspondem a "usuário/PJ bloqueado por dados inconsistentes"; o significado vem do backend e deve ser conferido em [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
+- 🔶 As faixas `ExceptionDetails.Id` 1 e 5 correspondem a "usuário/PJ bloqueado por dados inconsistentes"; o significado vem do backend e deve ser conferido em [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
 - 🔶 Se o erro do login não trouxer `ExceptionDetails` (ex.: falha de rede), `e.error.ExceptionDetails.Id` pode lançar exceção no callback (acesso sem verificação nula).
 - ❓ O texto das mensagens de erro de credenciais inválidas vem do interceptor (`BadRequest`), não do componente.
 

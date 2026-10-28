@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - Fluxo-Ciclo-de-Vida-OS
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -20,7 +22,7 @@ sources:
 
 # Fluxo — ciclo de vida da OS
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 ## 1. Sequência de OS dentro de uma ação de controle ✅ / 🔶
 

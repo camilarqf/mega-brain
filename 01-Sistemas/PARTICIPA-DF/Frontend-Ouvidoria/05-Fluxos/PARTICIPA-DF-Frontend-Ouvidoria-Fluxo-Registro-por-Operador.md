@@ -72,7 +72,7 @@ flowchart TD
 
 ## Inferências e limitações
 - 🔶 `pesquisarCnpj` encadeia `.then(Api.POST(...))` (a segunda chamada é disparada imediatamente, não após o `check`), então a verificação `security/check` e `pessoa-juridica/existe` correm em paralelo. Ver [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/09-Qualidade/PARTICIPA-DF-Frontend-Ouvidoria-Debitos-Tecnicos|Débitos técnicos]].
-- 🔶 Os códigos de motivação 1 e 5 e as regras do desafio devem ser conferidos com [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]] (a mesma convenção aparece no Frontend Cidadão).
+- 🔶 Os códigos de motivação 1 e 5 e as regras do desafio devem ser conferidos com [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]] (a mesma convenção aparece no Frontend Cidadão).
 - 🔶 A sugestão de assunto por IA provavelmente chega ao serviço `Iza` pelo backend; não verificado deste lado.
 
 ## Relacionamentos

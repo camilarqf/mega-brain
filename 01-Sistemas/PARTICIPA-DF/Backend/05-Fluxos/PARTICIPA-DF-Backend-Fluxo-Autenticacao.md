@@ -26,7 +26,7 @@ sources:
 
 # Fluxo de autenticação e senha
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]]
 
 ## Objetivo
 Descrever passo a passo, com atores e estados, o login, o login assistido por sessão, o logout e a recuperação/alteração de senha.
@@ -103,7 +103,7 @@ sequenceDiagram
 | Estado | Efeito no login |
 |---|---|
 | Sem bloqueio | autentica |
-| Com `BloqueioUsuario` | recusa e informa o motivo ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]) |
+| Com `BloqueioUsuario` | recusa e informa o motivo ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]]) |
 | `RedefinirSenha = true` | ✅ campo existe e é limpo ao trocar a senha; ❓ onde o cliente é forçado a trocar |
 
 ## Inferências e limitações
@@ -111,7 +111,7 @@ sequenceDiagram
 - 🔶 Os pontos sinalizados aqui são analisados em [[01-Sistemas/PARTICIPA-DF/Backend/08-Seguranca/PARTICIPA-DF-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
 
 ## Pendências e próximo passo
 - Confirmar com o time o uso do login assistido e a exigência de troca de senha (`RedefinirSenha`).

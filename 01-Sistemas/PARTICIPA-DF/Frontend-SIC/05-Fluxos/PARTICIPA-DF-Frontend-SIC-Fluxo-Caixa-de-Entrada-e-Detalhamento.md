@@ -81,7 +81,7 @@ Arquivos em `sources`, commit `5518a81`. `detalhamento-pedido.html` (799 linhas)
 - ❓ Regras de situação, classificação e prazos são do backend; não analisadas aqui.
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Prorrogacao-e-Reencaminhamento|Prorrogacao-e-Reencaminhamento]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Super-Busca|Super-Busca]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · Regras de prazo no backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
+- [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/05-Fluxos/PARTICIPA-DF-Frontend-SIC-Fluxo-Prorrogacao-e-Reencaminhamento|Prorrogacao-e-Reencaminhamento]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/03-Modulos/PARTICIPA-DF-Frontend-SIC-Modulo-Super-Busca|Super-Busca]] · [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/09-Qualidade/PARTICIPA-DF-Frontend-SIC-Debitos-Tecnicos|Debitos-Tecnicos]] · Regras de prazo no backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
 
 ## Pendências e próximo passo
 - Confrontar payloads e códigos de ação com os controllers do backend (lote 7 sugerido). Ver [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/99-Controle/PARTICIPA-DF-Frontend-SIC-Pendencias|Pendências]].

@@ -60,7 +60,7 @@ Lista (`grid-*`) + formulário (`form-*`): a lista faz `POST <recurso>/listar` c
 - ❓ Quais funcionalidades existem em `perfil-so/funcionalidade` e o mapeamento para as permissões do menu (`GerenciarSistema` etc.) estão no backend.
 
 ## Relacionamentos
-- Backend: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
+- Backend: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
 - [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/07-Integracoes/PARTICIPA-DF-Frontend-Ouvidoria-Chamadas-de-API|Chamadas-de-API]] · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/05-Fluxos/PARTICIPA-DF-Frontend-Ouvidoria-Fluxo-Registro-por-Operador|Registro-por-Operador]] (usa assuntos e formulários) · [[01-Sistemas/PARTICIPA-DF/Frontend-Ouvidoria/08-Seguranca/PARTICIPA-DF-Frontend-Ouvidoria-Seguranca-e-Sessao|Seguranca-e-Sessao]]
 
 ## Pendências e próximo passo

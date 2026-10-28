@@ -29,7 +29,7 @@ sources:
 
 # Módulo — Ordem de Serviço (frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico (Backend)]], [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]] · Fluxos: [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico (Backend)]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]] · Fluxos: [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Ciclo-de-Vida-OS|Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Assinatura-OS]]
 
 ## Objetivo
 Telas para emitir, editar, enviar, devolver, prorrogar, cancelar, excluir, visualizar em PDF e assinar **ordens de serviço** (OS) vinculadas a uma ação de controle.

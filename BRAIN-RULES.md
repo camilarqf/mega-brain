@@ -52,8 +52,8 @@ Esta tabela é a **única fonte** dos valores de `type`, usada por Claude Code, 
 | `index` | é um índice (MOC) de navegação, sem análise própria. | `SICI-Index`, `SICI-Backend-Index`, `Mapa-de-Integracoes` | Navegação · `#C084FC` |
 | `architecture` | descreve estrutura, camadas e padrões de um componente. | `SICI-Backend-Arquitetura-Hexagonal` | Estrutura · `#60A5FA` |
 | `decision` | registra uma decisão com contexto e alternativas, somente se houver evidência. | — | Estrutura · `#60A5FA` |
-| `module` | documenta uma capacidade funcional coesa (controllers, casos de uso e modelos de uma área). | `Ordem-de-Servico`, `POAC` | Funcional · `#FB923C` |
-| `flow` | descreve uma sequência ponta a ponta de passos, estados e atores. | `Fluxo-Assinatura-OS` | Fluxo · `#4ADE80` |
+| `module` | documenta uma capacidade funcional coesa (controllers, casos de uso e modelos de uma área). | `SICI-Backend-Modulo-Ordem-de-Servico`, `SICI-Backend-Modulo-POAC` | Funcional · `#FB923C` |
+| `flow` | descreve uma sequência ponta a ponta de passos, estados e atores. | `SICI-Backend-Fluxo-Assinatura-OS` | Fluxo · `#4ADE80` |
 | `business-rule` | descreve uma regra de negócio específica e verificável no código (condição → efeito); hipótese baseada em nomes vai em "inferências". | — | Regra · `#FACC15` |
 | `integration` | descreve a comunicação entre um consumidor e um provedor (sistema ou serviço externo): cliente, contrato, direção, falhas. | `SICI-Backend-Integracoes-Externas` | Contratos · `#22D3EE` |
 | `api` | descreve o contrato exposto: endpoints, verbos, payloads, códigos HTTP. | `SICI-Backend-Catalogo-de-Endpoints` | Contratos · `#22D3EE` |

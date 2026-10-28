@@ -44,7 +44,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] Existe bloqueio por tentativas de login? Para que serve `count-try` do PeoplesCheck?
 - [ ] O login assistido por sessão (`notify`/`token-retrieve`) é usado por qual cliente? O hub `/notification-auth` precisa de autorização?
 - [ ] Por que `AtualizarHistoricoDeSenha` está comentado (`TODO: Revisar`)? A regra das 3 últimas senhas está ativa?
-- [ ] Regra "falecido não pode ser desbloqueado": está inativa por erro? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]])
+- [ ] Regra "falecido não pode ser desbloqueado": está inativa por erro? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]])
 - [ ] `BloquearUsuarioHandler` engole exceções: o operador de sistema tem a funcionalidade 36 (Bloquear/Desbloquear)?
 - [ ] Os endpoints de `OperadorSICController` e `PerfilSICController` só com `[Authorize]` são protegidos por funcionalidade nos handlers?
 - [ ] O token de login deve falhar para usuários sem PF/PJ (ex.: `OperadorWS`) por causa de `claims.First(Name)`?
@@ -60,8 +60,8 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] Qual a relação entre `Cidadao`, `Estrangeiro` e `PessoaFisica`?
 
 ## Perguntas surgidas no lote 4
-- [ ] Qual é o valor de `PrazoManifestacaoPadrao` e a regra de negócio dos prazos (dias corridos com ajuste ao dia útil)? A janela de ±5 dias para solicitar prorrogação é regra oficial? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]])
-- [ ] Na reclassificação seccional, `assuntoEhDiferenteDoOriginal` compara igualdade: erro? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]])
+- [ ] Qual é o valor de `PrazoManifestacaoPadrao` e a regra de negócio dos prazos (dias corridos com ajuste ao dia útil)? A janela de ±5 dias para solicitar prorrogação é regra oficial? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]])
+- [ ] Na reclassificação seccional, `assuntoEhDiferenteDoOriginal` compara igualdade: erro? ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]])
 - [ ] `InvalidarManifestacao` deveria repetir as regras da ação `NVL_MNF` (operador corrente, unidade, estado)?
 - [ ] O que devolve `POST manifestacao/resumo` (anônimo)? Há dados pessoais?
 - [ ] `POST prorrogacao-prazo/indeferir` deve exigir o papel `OperadorSO` e a funcionalidade `GerenciarProrrogacoes`?
@@ -72,7 +72,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
 - [ ] Os handlers (Resposta, Prorrogação etc.) são transientes? Eles guardam estado em campo de instância.
 
 ## Perguntas surgidas no lote 5
-- [ ] Qual o valor de cada prazo do SIC (`QtdDiadPrazoPedido`, `…Prorrogacao`, `…ParaResponder`, `…ParaRecorrer`, `…NotificacaoOrgao`, `…RecursoTerceiraInstancia`, `…NotificacaoCGDF`) e a base legal? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]])
+- [ ] Qual o valor de cada prazo do SIC (`QtdDiadPrazoPedido`, `…Prorrogacao`, `…ParaResponder`, `…ParaRecorrer`, `…NotificacaoOrgao`, `…RecursoTerceiraInstancia`, `…NotificacaoCGDF`) e a base legal? ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]])
 - [ ] Os endpoints de `NotificacaoController` (omissão de resposta) precisam ser autenticados? Quem os usa manualmente? ([[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Omissao-de-Resposta|Fluxo-Omissao-de-Resposta]])
 - [ ] `ReencaminharPedido` deveria verificar a permissão `RRE_PDD` e o operador atual? `PermiteRemoverOperadorAtual` deve ser sempre `true`?
 - [ ] O processo SEI de recurso de 3ª instância é criado com acesso **público** e com o PDF do pedido; isso é intencional? Como tratar pedidos com sigilo restrito ou dados pessoais? ([[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]])

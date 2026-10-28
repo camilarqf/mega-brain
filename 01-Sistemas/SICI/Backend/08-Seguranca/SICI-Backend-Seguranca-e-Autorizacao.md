@@ -21,7 +21,7 @@ sources:
 
 # Segurança e autorização
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]] · Relacionado: [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]] · Relacionado: [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 > Análise **estática** do código. Não houve teste de intrusão nem execução da aplicação. Nenhum segredo foi lido ou registrado.
 
@@ -53,11 +53,11 @@ Totais: **61 endpoints** (`@*Mapping`). **14** têm restrição de role: 12 por 
 ## Achados de segurança
 | # | Severidade | Achado | Evidência | Status |
 |---|---|---|---|---|
-| S1 | 🔴 Crítica | **Escalada para assinante**: qualquer auditor autenticado se cadastra como SUBCI titular ou substituto e passa a assinar OS oficiais | `SubciController` sem `@PreAuthorize`; `AssinarOrdemServico.resolverAssinanteAutorizado` — [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]] | ✅ |
+| S1 | 🔴 Crítica | **Escalada para assinante**: qualquer auditor autenticado se cadastra como SUBCI titular ou substituto e passa a assinar OS oficiais | `SubciController` sem `@PreAuthorize`; `AssinarOrdemServico.resolverAssinanteAutorizado` — [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]] | ✅ |
 | S2 | 🔴 Crítica | **Segredos versionados**: senha de banco, segredo do HMAC (`integra.verify.secret`) e lista de super-usuários em `application-*.properties` no Git, em todos os ambientes | `git ls-files`; classificação literal/placeholder feita sem exibir valores | ✅ |
-| S3 | 🟠 Alta | Status **ASSINADA sem assinatura** via `PUT /alterarStatusOs` (OS e OS genérica) | `AlterarStatusOrdemServico`, `EStatusOrdemServico` — [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]] | ✅ |
-| S4 | 🟠 Alta | 46 endpoints sem controle de perfil, incluindo escrita e exclusão (ex.: excluir OS genérica assinada) | [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] | ✅ |
-| S5 | 🟠 Alta | Validação do QR Code sempre "válido"; não verifica integridade nem cancelamento | `AssinaturaServiceImpl.validarPorCodigo` — [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]] | ✅ |
+| S3 | 🟠 Alta | Status **ASSINADA sem assinatura** via `PUT /alterarStatusOs` (OS e OS genérica) | `AlterarStatusOrdemServico`, `EStatusOrdemServico` — [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]] | ✅ |
+| S4 | 🟠 Alta | 46 endpoints sem controle de perfil, incluindo escrita e exclusão (ex.: excluir OS genérica assinada) | [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]] | ✅ |
+| S5 | 🟠 Alta | Validação do QR Code sempre "válido"; não verifica integridade nem cancelamento | `AssinaturaServiceImpl.validarPorCodigo` — [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]] | ✅ |
 | S6 | 🟡 Média | **IDOR** em downloads de PDF (`/assinaturas/{id}/download*`) e consultas por id: sem checagem de vínculo com a ação | `AssinaturaController` | ✅ |
 | S7 | 🟡 Média | CORS `*` | `SecurityConfig.corsConfigurationSource` | ✅ (mitigado por Bearer, sem cookies) |
 | S8 | 🟡 Média | Login por ROPC (`grant_type=password`): a API recebe a senha do usuário | `KeycloakAuthAdapter.autenticar` | ✅ |

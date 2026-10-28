@@ -23,7 +23,7 @@ sources:
 
 # Módulo — OS Genérica (frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 ## Objetivo
 Telas da **OS genérica**: ordem de serviço que não nasce de uma ação de controle (modelo `GENERICA`), com listagem própria, cadastro, PDF, envio e assinatura.
@@ -41,7 +41,7 @@ Arquivos em `sources`; cadastro lido por estrutura de formulário (cobertura `pa
 
 ## Inferências e limitações
 - 🔶 O frontend não chama `DELETE /ordem-servico-generica/excluir/{id}` (busca textual): a exclusão de OS genérica existe no backend, sem tela correspondente neste commit.
-- 🔶 Como a assinatura reenvia o corpo da OS gravado no popup, o conteúdo assinado depende do que o frontend monta; se o backend usa o corpo recebido em vez do registro salvo, divergências são possíveis. A regra do backend deve ser conferida em [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]].
+- 🔶 Como a assinatura reenvia o corpo da OS gravado no popup, o conteúdo assinado depende do que o frontend monta; se o backend usa o corpo recebido em vez do registro salvo, divergências são possíveis. A regra do backend deve ser conferida em [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]].
 - 🔶 `artigos` no formulário usa só `descricao` obrigatória, enquanto o payload leva também `numeroArtigo`; a origem desse número não foi lida.
 - Anexo (`arquivo`): destino e envio não foram identificados no serviço lido.
 

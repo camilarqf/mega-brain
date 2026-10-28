@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - Fluxo-Assinatura-OS
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -18,7 +20,7 @@ sources:
 
 # Fluxo — assinatura de uma OS
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]]
 
 ## Sequência ✅
 `POST /assinaturas/assinar-os/{idOrdemServico}` → `AssinaturaController.assinar` → `AssinaturaServiceImpl.salvar` → `AssinarDocumento` → `AssinarOrdemServico.executar` (`@Transactional(rollbackFor = Exception.class)`).
@@ -68,7 +70,7 @@ sequenceDiagram
 ## Falhas e rollback ✅
 - Qualquer exceção desfaz **as gravações** no banco.
 - ⚠️ A chamada ao serviço de PDF (passo 10) acontece **antes** da checagem de status (passo 15). Uma OS em CRIADA ou DEVOLVIDA gera um PDF externo que depois é descartado.
-- 🔶 Entre a leitura do `max` (passo 6) e o `INSERT` da numeração (passo 13) há uma chamada HTTP externa. Isso **alarga a janela de concorrência** que pode gerar números duplicados — ver [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]] (achado #1).
+- 🔶 Entre a leitura do `max` (passo 6) e o `INSERT` da numeração (passo 13) há uma chamada HTTP externa. Isso **alarga a janela de concorrência** que pode gerar números duplicados — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]] (achado #1).
 
 ## OS genérica — diferenças ✅
 `AssinarOrdemServicoGenerica.executar`:

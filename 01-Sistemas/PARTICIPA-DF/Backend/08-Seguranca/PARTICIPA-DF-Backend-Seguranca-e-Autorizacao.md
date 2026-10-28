@@ -39,7 +39,7 @@ sources:
 
 # Segurança e autorização
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]], [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]]
 
 ## Objetivo
 Registrar como o backend autentica, autoriza e audita, e quais pontos de atenção aparecem no código. **Sem segredos**: nada de chaves, senhas ou valores de configuração.
@@ -97,15 +97,15 @@ Fatos acima; abaixo, o que **não** é confirmado ou merece atenção. As recome
 - 🔶 **Hub SignalR** sem `[Authorize]` visível e `Clients.All`.
 - 🔶 **Histórico de senhas**: a rotina `AtualizarHistoricoDeSenha` está comentada (`//TODO: Revisar`), logo a regra "três senhas anteriores" pode não ser aplicada (a mensagem existe, mas o histórico só é preenchido se a rotina o fizer).
 - 🔶 `/jobs/*` sem `[Authorize]` visível. Se o SDK impõe autenticação global, ❓ não confirmado.
-- 🔶 A regra "falecido não pode ser desbloqueado" parece sem efeito ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]]).
+- 🔶 A regra "falecido não pode ser desbloqueado" parece sem efeito ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]]).
 - 🔶 Nome no token: `claims.First(Name)` quebra para usuário que não seja pessoa física/jurídica (ex.: `OperadorWS`).
 - ❓ Rotação de segredos e política de expiração em produção; valores em `Jwt.ExpirationDays`.
 - ❓ Se a autorização por funcionalidade ocorre para todos os endpoints de operador (muitos têm só `[Authorize]`).
 
 ## Relacionamentos
 - Fluxo detalhado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]].
-- Entidades e endpoints: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]].
-- Bloqueios: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
+- Entidades e endpoints: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]].
+- Bloqueios: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Bloqueio-de-Usuario|Bloqueio-de-Usuario]].
 - PeoplesCheck e MailService (lote 7): [[01-Sistemas/PARTICIPA-DF/Backend/01-Visao-Geral/PARTICIPA-DF-Backend-Arquitetura|Arquitetura]].
 
 ## Pendências e próximo passo

@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Assinatura-Digital
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -36,7 +38,7 @@ sources:
 
 # Assinatura eletrônica de OS
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Fluxo: [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
 
 > ✅ É uma **assinatura eletrônica simples** controlada pela aplicação: o login do usuário autenticado é comparado com o SUBCI titular ou o substituto vigente. Não há certificado digital, ICP-Brasil nem assinatura criptográfica do PDF.
 

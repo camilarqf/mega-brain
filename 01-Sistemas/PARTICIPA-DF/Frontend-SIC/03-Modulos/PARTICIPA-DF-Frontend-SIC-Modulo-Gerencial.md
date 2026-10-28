@@ -30,7 +30,7 @@ sources:
 
 # Frontend SIC — módulo gerencial
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Rotas: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Rotas-e-Telas|Rotas-e-Telas]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|Índice do Frontend SIC]] · Rotas: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/01-Visao-Geral/PARTICIPA-DF-Frontend-SIC-Rotas-e-Telas|Rotas-e-Telas]] · Backend: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]]
 
 ## Objetivo
 Documentar o CRUD de operadores, perfis, unidades e feriados do SIC.
@@ -58,7 +58,7 @@ Padrão comum: tela de listagem (`grid-*`) com filtros, paginação por `PageNum
 
 ### Feriados (`/feriado`, `/feriado/:id`)
 - ✅ Listagem: `POST acesso-informacao/feriado/`; edição: `POST .../get-feriado-por-id` e `POST .../gravar-feriado`. Um feriado sem `Ano` é **recorrente** (caixa "ano recorrente" limpa o ano). A data exibida usa `Dia`, `Mes` e `Ano` (o ano corrente quando recorrente).
-- 🔶 Os feriados alimentam o cálculo de prazos de pedidos (ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]), que é feito no backend.
+- 🔶 Os feriados alimentam o cálculo de prazos de pedidos (ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]), que é feito no backend.
 
 ## Inferências e limitações
 - ✅ `grid-perfil` transforma `Ativo == false` em `null` antes de filtrar, então não é possível filtrar apenas perfis inativos.

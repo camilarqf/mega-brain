@@ -24,7 +24,7 @@ sources:
 
 # Fluxo de registro e resposta de pedido
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Pedido-e-Recurso|Pedido-e-Recurso]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Pedido-e-Recurso|Pedido-e-Recurso]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Recursos-e-Instancias|Fluxo-Recursos-e-Instancias]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
 
 ## Objetivo
 Descrever o registro de um pedido de acesso à informação (pelo autor ou pelo operador), sua distribuição às unidades, a atribuição a um operador, o reencaminhamento e a primeira resposta.
@@ -45,7 +45,7 @@ flowchart TD
     F --> G[NotificarAutor]
 ```
 1. ✅ Entradas: `POST acesso-informacao/pedido` (autor) e `…/pedido/por-operador` (operador em nome do cidadão), ambas com limite de 40.000.000 bytes, `[Authorize]` e `LogAudit`.
-2. ✅ `SetContext`: gera um **lote** (GUID em maiúsculas), carrega o subassunto, o tipo de entrada e o autor; situação inicial `Recebido`; grau de sigilo `Publico` se `IsPublico`, senão `Restrito`; data = `IApplicationDateTime.Current`; **prazo** = `QtdDiadPrazoPedido` dias (ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]).
+2. ✅ `SetContext`: gera um **lote** (GUID em maiúsculas), carrega o subassunto, o tipo de entrada e o autor; situação inicial `Recebido`; grau de sigilo `Publico` se `IsPublico`, senão `Restrito`; data = `IApplicationDateTime.Current`; **prazo** = `QtdDiadPrazoPedido` dias (ver [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]).
 3. ✅ `CriarPedido`: cria o `Pedido` base (texto 3 a 8.000, assunto, usuário e tipo de entrada obrigatórios).
 4. ✅ `GravarPedido`: para **cada unidade** de `request.Unidades`, abre uma transação, **clona** o pedido (`Pedido.Clonar`, com `Lote`, unidade, situação `Recebido` e `PrazoVigente = Prazo` original), copia os arquivos, salva e publica o evento `PedidoRegistrado`.
 5. ✅ A resposta devolve o `Lote` (um autor pode acompanhar os pedidos das várias unidades pelo lote: `POST …/pedido/consultar-por-lote`).
@@ -80,7 +80,7 @@ stateDiagram-v2
 ## Inferências e limitações
 - 🔶 Cada unidade é gravada em uma transação separada; uma falha na terceira unidade deixa as duas primeiras gravadas (sem desfazer) e o e-mail do autor pode não sair.
 - 🔶 `_mediator.Publish(new PedidoRegistrado ...)` não tem `await` no passo `GravarPedido`.
-- 🔶 `ReencaminharPedidoHandler` não consulta a permissão `RRE_PDD` nem o papel além do atributo do endpoint; ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Pedido-e-Recurso|Pedido-e-Recurso]].
+- 🔶 `ReencaminharPedidoHandler` não consulta a permissão `RRE_PDD` nem o papel além do atributo do endpoint; ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Pedido-e-Recurso|Pedido-e-Recurso]].
 - 🔶 `RegistrarRespostaPedidoHandler` guarda `_pedido` em campo de instância para o e-mail pós-execução (transiente? ❓).
 - ❓ Regras de `Validar`, `ValidarArquivos` (tipos e tamanhos) e `NotificarAutor`; efeito do evento `PedidoRegistrado` (quem o consome).
 

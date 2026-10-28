@@ -85,7 +85,7 @@ Detalhes do S3 e do contrato: [[01-Sistemas/PARTICIPA-DF/Backend/07-Integracoes/
 ## Inferências e limitações
 - 🔶 Quem publica `denuncia-aceita` e `denuncia-recusada` não está no código; provavelmente o `SCI` (ver [[Mapa-de-Integracoes|Mapa]]).
 - 🔶 Desbloqueio antes da limpeza do bucket e sem tratamento de erro nos consumidores (débito novo).
-- 🔶 Nenhum código do repositório envia `AplicarBloqueioExterno`; no fluxo acima a manifestação não é bloqueada ao enviar `denuncia-registrada` (ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]]).
+- 🔶 Nenhum código do repositório envia `AplicarBloqueioExterno`; no fluxo acima a manifestação não é bloqueada ao enviar `denuncia-registrada` (ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]]).
 - 🔶 Pelo nome, `BloquearSolicitacaoZeladoria` impede o registro de certas solicitações; regra não lida.
 
 ## Relacionamentos

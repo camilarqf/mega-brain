@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - OS-Generica
 system: SICI
 repository: sici-backend
 status: pendente
@@ -19,7 +21,7 @@ sources:
 
 # OS Genérica
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 > OS **sem ação de controle**: documento livre composto de **artigos**, **descrições de fase** com datas, **anexos**, equipe (coordenador e auditores), área executora e um texto de "OS vinculada". Usa o mesmo ciclo de status e a mesma assinatura das OS de ação de controle (modelo `GENERICA`, id 7).
 
@@ -36,7 +38,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 | DELETE | `/excluir/{id}` | `ExcluirOrdemServicoGenerica.excluir` |
 | GET | `/gerar-pdf` | `GerarPdfOrdemServicoGenerica` (minuta via [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|serviço de PDF]]) |
 
-Assinatura e download: `POST /assinaturas/assinar-os-generica/{id}` e `GET /assinaturas/{id}/download-generica` — ver [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]].
+Assinatura e download: `POST /assinaturas/assinar-os-generica/{id}` e `GET /assinaturas/{id}/download-generica` — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]].
 
 ## Regras ✅
 - **Criação**: artigos obrigatórios (lista não vazia) e área executora obrigatória; trata coordenador e auditores (ramos para ausentes); grava artigos, descrições e anexos (tabelas V29, V30, V51).
@@ -46,7 +48,7 @@ Assinatura e download: `POST /assinaturas/assinar-os-generica/{id}` e `GET /assi
 
 ## Lacunas ✅
 - ⚠️ `ExcluirOrdemServicoGenerica.excluir` apaga direto, **sem verificar assinatura**, ao contrário de `ExcluirOrdemServico`. Uma OS genérica assinada pode ser excluída. Documento e numeração ficam órfãos, porque `TB_DOCUMENTO.ID_DOCUMENTO_RELACIONADO` não tem FK e a V44 removeu a FK da numeração.
-- ⚠️ Mesma brecha de `PUT /alterarStatusOs` com `status = ASSINADA` sem assinatura (ver [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], lacuna #2).
+- ⚠️ Mesma brecha de `PUT /alterarStatusOs` com `status = ASSINADA` sem assinatura (ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], lacuna #2).
 - `osVinculada` é texto livre e não referencia uma OS.
 
 Cobertura parcial: os ramos de coordenador/auditores e o mapeamento de artigos e anexos não foram lidos linha a linha.

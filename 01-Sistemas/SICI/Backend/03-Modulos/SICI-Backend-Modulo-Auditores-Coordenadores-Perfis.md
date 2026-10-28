@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Auditores-Coordenadores-Perfis
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -25,7 +27,7 @@ sources:
 
 # Auditores, coordenadores e perfis
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]]
 
 > O **auditor** é o usuário do sistema: o login no Keycloak (`preferred_username`) precisa bater com `TB_AUDITOR.DS_LOGIN` de um auditor **ativo**. Os **perfis** do auditor (`TB_AUDITOR_PERFIL`) viram as roles da aplicação.
 
@@ -55,7 +57,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 ## Coordenador ✅
 - Vínculo por OS em `TB_COORDENADOR_TB_ORDEM_SERVICO` (`IN_ATIVO`, `ID_OS_SUBSTITUICAO`).
 - "Coordenador da ação" = coordenador **ativo** em alguma OS da ação (`existeCoordenadorAtivoParaAcaoControle`).
-- A substituição é feita por OS SUBSTITUICAO — ver [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]] e [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]].
+- A substituição é feita por OS SUBSTITUICAO — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]] e [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]].
 
 ## Observações
 - ✅ Não há cadastro, edição nem inativação de auditor por API. 🔶 A carga de `TB_AUDITOR` vem de seeder ou de processo externo.

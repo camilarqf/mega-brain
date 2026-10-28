@@ -190,6 +190,12 @@ def main():
         for d in sorted(fora):
             add("aviso", d, "pasta fora da numeracao da secao 1")
 
+    # prefixo do sistema (secao 3)
+    for p in notas:
+        partes = p.relative_to(vault).parts
+        if partes[0] == "01-Sistemas" and len(partes) > 2 and not p.stem.startswith(partes[1] + "-"):
+            add("aviso", rel(p), "nota sem o prefixo do sistema: " + partes[1] + "-")
+
     entrantes = set()
     for p in notas:
         r = rel(p)

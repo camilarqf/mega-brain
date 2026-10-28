@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - POAC
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -20,7 +22,7 @@ sources:
 
 # POAC
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]]
 
 > Plano anual que agrupa as ações de controle (🔶 provável "Plano Operacional Anual de Controle"). Ligação: `TB_ACAO_CONTROLE.ID_POAC` (V24).
 

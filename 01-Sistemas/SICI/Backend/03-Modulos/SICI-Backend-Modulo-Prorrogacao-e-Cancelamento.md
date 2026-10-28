@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Prorrogacao-e-Cancelamento
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -26,7 +28,7 @@ sources:
 
 # Prorrogação e cancelamento de OS
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]]
 
 ## Prorrogação
 
@@ -62,7 +64,7 @@ Detalhes confirmados:
 - ⚠️ As linhas de prorrogação ficam ligadas à **OS-base** (abertura ou prorrogação anterior), **não à nova OS PRORROGACAO**. O retorno de `salvarPorAcaoControle` é descartado. O vínculo entre a OS PRORROGACAO e suas datas é resolvido depois pelo encadeamento (`OrdemServicoServiceImpl.obterIdOsReferenciaProrrogacao`).
 - Regras de domínio: data fim ≥ data início e duração > 0 (`ProrrogacaoOrdemServico.criar`).
 - A variável `dataFinalAtual` é calculada e não é usada.
-- ⚠️ A pré-condição "assinada" usa `isAssinada()` (status). Com a lacuna #2 de [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], dá para satisfazê-la sem assinatura real.
+- ⚠️ A pré-condição "assinada" usa `isAssinada()` (status). Com a lacuna #2 de [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], dá para satisfazê-la sem assinatura real.
 
 ### Atualização — `AtualizarProrrogacaoOrdemServico` ✅
 Endpoint: `PUT /os-acao-controle/{idOrdemServico}/prorrogacoes`.

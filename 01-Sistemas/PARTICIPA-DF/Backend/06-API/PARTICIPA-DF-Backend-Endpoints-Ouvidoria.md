@@ -19,7 +19,7 @@ sources:
 
 # Endpoints da Ouvidoria (108)
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/06-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]] · Índice: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Backend]] · Módulo: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/06-API/PARTICIPA-DF-Backend-Catalogo-de-Endpoints|Catálogo de endpoints]] · Índice: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Backend]] · Módulo: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Manifestacao|Manifestacao]]
 
 ## Objetivo
 Listar os endpoints dos 22 controllers de `Controllers/ServicoOuvidoria`. Legenda e advertências estão no catálogo geral; aqui só a lista.

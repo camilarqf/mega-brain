@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Manifestacao
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -24,7 +26,7 @@ sources:
 
 # Módulo Manifestação (Ouvidoria)
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Registro-de-Manifestacao|Fluxo-Registro]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Fluxo-Tramitacao-e-Resposta|Fluxo-Tramitacao-e-Resposta]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Reclassificacao-e-Invalidacao|Reclassificacao-e-Invalidacao]], [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]], [[01-Sistemas/PARTICIPA-DF/Backend/02-Dominio/PARTICIPA-DF-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
 ## Objetivo
 Visão do módulo de Ouvidoria: o que é uma manifestação, quais controllers e comandos existem e como o sistema decide **o que cada operador pode fazer** em cada manifestação.
@@ -77,9 +79,9 @@ Uma única consulta decide 19 ações (por ação ou em lote), combinando estado
 | Download de anexo | `DWL_RQV` | operador corrente na unidade |
 | Ver dados do manifestante | `VSL_DMT` | `VisualizarManifestante` |
 
-- ✅ **Manifestação bloqueada pela unidade**: `ManifestacaoEstaBloqueada` é verdadeira quando a manifestação está em atendimento e existe **outra** manifestação "bloqueante" na mesma unidade (`ConsultarManifestacaoBloqueante`); só `TratarBloqueadas` ignora isso. A bloqueante vem do mecanismo de prazos que bloqueiam a caixa de entrada ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]]).
+- ✅ **Manifestação bloqueada pela unidade**: `ManifestacaoEstaBloqueada` é verdadeira quando a manifestação está em atendimento e existe **outra** manifestação "bloqueante" na mesma unidade (`ConsultarManifestacaoBloqueante`); só `TratarBloqueadas` ignora isso. A bloqueante vem do mecanismo de prazos que bloqueiam a caixa de entrada ([[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]]).
 - ✅ **Usuário bloqueado**: se o manifestante está bloqueado (`Usuario.IsBloqueado()`), detalhar exige a funcionalidade específica (`DetalharManifestacaoDeUsuarioInconsistente`, `…Inexistente` ou `…Falecido`).
-- ✅ **Bloqueio externo** (`BloqueadaExternamente`) impede quase todas as ações de operador ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]]).
+- ✅ **Bloqueio externo** (`BloqueadaExternamente`) impede quase todas as ações de operador ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Atribuicao-e-Bloqueio-Externo|Atribuicao-e-Bloqueio-Externo]]).
 
 ### Regras gerais da entidade
 - ✅ `Relato` com 3 a 13.000 caracteres; manifestação identificada exige usuário; classificação sem anonimato exige identificação.

@@ -25,7 +25,7 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-SIC/PARTICIPA-DF-Frontend-SIC-Index|
 Registrar as duas ações administrativas do detalhe do pedido que não geram resposta ao cidadão.
 
 ## Evidências
-`detalhamentoPedidoCtrl` e `detalhamento-pedido.html`, commit `5518a81`. Regras de prazo do backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] (não reconferidas).
+`detalhamentoPedidoCtrl` e `detalhamento-pedido.html`, commit `5518a81`. Regras de prazo do backend: [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]] e [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] (não reconferidas).
 
 ## Informações confirmadas
 

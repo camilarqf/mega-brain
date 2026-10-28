@@ -23,13 +23,13 @@ sources:
 
 # Fluxo — ciclo de vida da OS (visão do frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS (Backend)]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/05-Fluxos/SICI-Frontend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]]
 
 ## Objetivo
 Mostrar quais transições de status a interface **oferece**, por quem e por qual chamada. As regras que de fato validam as transições são do backend.
 
 ## Evidências
-Arquivos em `sources`; regras do backend em [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Ciclo-de-Vida-OS (Backend)]].
+Arquivos em `sources`; regras do backend em [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Ciclo-de-Vida-OS (Backend)]].
 
 ## Informações confirmadas ✅
 ```mermaid
@@ -59,7 +59,7 @@ Na lista geral as OS são ordenadas por prioridade de status (`ENVIADA`, `DEVOLV
 OS genérica segue o mesmo ciclo com chamadas em `/ordem-servico-generica` ([[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-OS-Generica|OS-Generica]]).
 
 ## Inferências e limitações
-- 🔶 `CANCELADA` aparece como status exibido (selo e PDF), mas o frontend não faz uma transição direta: cria uma OS do tipo cancelamento (modelo 5) que, ao ser assinada, supõe-se cancelar a ação. O efeito sobre as demais OS é regra do backend ([[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]]).
+- 🔶 `CANCELADA` aparece como status exibido (selo e PDF), mas o frontend não faz uma transição direta: cria uma OS do tipo cancelamento (modelo 5) que, ao ser assinada, supõe-se cancelar a ação. O efeito sobre as demais OS é regra do backend ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]]).
 - 🔶 O backend aceita `ASSINADA` em `alterarStatusOs` sem assinatura (achado S3); o frontend não usa essa via em telas ativas, mas o método `alterarStatusOs` aceita qualquer `status`.
 - Transições não listadas (por exemplo reabertura) não foram encontradas no frontend.
 

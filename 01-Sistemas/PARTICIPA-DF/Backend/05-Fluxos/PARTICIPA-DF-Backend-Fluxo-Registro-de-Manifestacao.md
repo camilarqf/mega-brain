@@ -22,7 +22,7 @@ sources:
 
 # Fluxo de registro de manifestação
 
-Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
+Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Manifestacao|Manifestacao]], [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]], [[01-Sistemas/PARTICIPA-DF/Backend/05-Fluxos/PARTICIPA-DF-Backend-Workflows-e-Consumidores|Workflows-e-Consumidores]]
 
 ## Objetivo
 Descrever o registro de uma manifestação nas três variantes (manifestante, operador, integrada) e o resultado de cada passo.
@@ -64,7 +64,7 @@ flowchart TD
 4. ✅ **Construtor**: unidade inicial = `Classificacao.UnidadeTramiteInicial` ou, se nula, a do `Assunto`; `ResponsavelPorResposta` = unidade inicial; `Abertura = DateTime.Now`; `Vencimento` = fim do prazo; `Token` = SHA-256 de relato, data, hora/minuto, classificação e assunto.
 5. ✅ **AtualizarPrazos**: copia para a manifestação todos os `NotificacaoDePrazo` **ativos** e **sem** "marcar como vencida", criando `Prazo`s a partir da abertura (`QtdDias` depois da data de abertura).
 6. ✅ **NotificarManifestante**: envia e-mail ao manifestante (passo lido só pelo nome; template `nova-manifestacao.html`, 🔶).
-7. ✅ Quando `Usuario.Email` existe, o e-mail é enviado; sem e-mail, ver `PodeReceberEmail()` ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Manifestacao|Manifestacao]]).
+7. ✅ Quando `Usuario.Email` existe, o e-mail é enviado; sem e-mail, ver `PodeReceberEmail()` ([[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Manifestacao|Manifestacao]]).
 
 ### Respostas de erro
 Os passos devolvem `ErrorResponse` com notificações (`400`, via `ProcessCommand`). Quando a validação de anonimato falha, o passo grava um log de aviso com contexto.

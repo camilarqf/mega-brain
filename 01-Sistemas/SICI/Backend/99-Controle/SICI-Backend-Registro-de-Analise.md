@@ -5,7 +5,7 @@ repository: sici-backend
 status: confirmado
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 created: 2026-10-16
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-05
 branch: master
 tags:
@@ -36,14 +36,14 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 | 0 | Descoberta geral (estrutura, pom, endpoints, segurança, enums, use cases principais por amostragem) | ✅ concluído | 2026-10-16 | — (resultado no chat) |
 | 1 | Base: stack, arquitetura, ambientes, glossário, controle | ✅ concluído | 2026-10-16 | [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Arquitetura-Hexagonal|Arquitetura-Hexagonal]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Perfis-e-Ambientes|Perfis-e-Ambientes]], [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]], [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]] |
 | 2 | Domínio: models, enums, entidades JPA, migrations | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]] (+ correção em [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]]) |
-| 3 | Ordem de Serviço completa | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] |
-| 4 | Assinatura, numeração, PDF, templates | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]] (parcial: Keycloak no lote 6) |
-| 5 | Ação de Controle, POAC, OS Genérica, SUBCI, auditores, cadastros | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] (parcial), [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/03-Modulos/Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]] |
+| 3 | Ordem de Serviço completa | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Ciclo-de-Vida-OS|Fluxo-Ciclo-de-Vida-OS]] |
+| 4 | Assinatura, numeração, PDF, templates | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]], [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Assinatura-OS|Fluxo-Assinatura-OS]], [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]] (parcial: Keycloak no lote 6) |
+| 5 | Ação de Controle, POAC, OS Genérica, SUBCI, auditores, cadastros | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]] (parcial), [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Auditores-Coordenadores-Perfis|Auditores-Coordenadores-Perfis]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Cadastros-Auxiliares|Cadastros-Auxiliares]] |
 | 6 | Segurança, API, testes, débitos técnicos | ✅ concluído | 2026-10-18 | [[01-Sistemas/SICI/Backend/05-Fluxos/SICI-Backend-Fluxo-Autenticacao|Fluxo-Autenticacao]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]], [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Testes-e-Cobertura|Testes-e-Cobertura]], [[01-Sistemas/SICI/Backend/09-Qualidade/SICI-Backend-Debitos-Tecnicos|Debitos-Tecnicos]] (+ Keycloak em [[01-Sistemas/SICI/Backend/07-Integracoes/SICI-Backend-Integracoes-Externas|Integracoes-Externas]]) |
 
 ## Resultado final
 - **27 notas** em 10 pastas; todas as notas previstas no plano foram criadas.
-- Cobertura parcial declarada em: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]] (seeders não lidos, de propósito) e [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]] (ramos internos de criação/atualização).
+- Cobertura parcial declarada em: [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]] (seeders não lidos, de propósito) e [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]] (ramos internos de criação/atualização).
 - Itens ❓/🔶 abertos: ver [[01-Sistemas/SICI/Backend/99-Controle/SICI-Backend-Pendencias|Pendencias]].
 - Para atualizar esta base depois de novos commits: `git diff 1871e32..HEAD --stat` e reabrir as notas dos módulos afetados (os campos `fontes` do frontmatter indicam quais arquivos cada nota cobre).
 
@@ -100,3 +100,15 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: notas renomeadas com o prefixo do sistema (seção 3 do `BRAIN-RULES.md`; melhorias do cofre, lote 4). O nome antigo ficou em `aliases`:
+  - `Acao-de-Controle` → `SICI-Backend-Modulo-Acao-de-Controle`
+  - `Assinatura-Digital` → `SICI-Backend-Modulo-Assinatura-Digital`
+  - `Auditores-Coordenadores-Perfis` → `SICI-Backend-Modulo-Auditores-Coordenadores-Perfis`
+  - `Cadastros-Auxiliares` → `SICI-Backend-Modulo-Cadastros-Auxiliares`
+  - `Fluxo-Assinatura-OS` → `SICI-Backend-Fluxo-Assinatura-OS`
+  - `Fluxo-Ciclo-de-Vida-OS` → `SICI-Backend-Fluxo-Ciclo-de-Vida-OS`
+  - `OS-Generica` → `SICI-Backend-Modulo-OS-Generica`
+  - `Ordem-de-Servico` → `SICI-Backend-Modulo-Ordem-de-Servico`
+  - `POAC` → `SICI-Backend-Modulo-POAC`
+  - `Prorrogacao-e-Cancelamento` → `SICI-Backend-Modulo-Prorrogacao-e-Cancelamento`
+  - `SUBCI-e-Substitutos` → `SICI-Backend-Modulo-SUBCI-e-Substitutos`

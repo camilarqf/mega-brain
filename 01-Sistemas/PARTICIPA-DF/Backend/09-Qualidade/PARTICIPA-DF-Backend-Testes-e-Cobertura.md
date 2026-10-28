@@ -75,7 +75,7 @@ Comparei as pastas de `Domain/Commands` com os nomes dos arquivos de teste (um c
 - ❓ Quem executa os testes e quando (pipeline fora do repositório).
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/Regras-de-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao|Regras-de-Prazo-e-Prorrogacao]] · [[01-Sistemas/PARTICIPA-DF/Backend/04-Regras-de-Negocio/PARTICIPA-DF-Backend-Regra-Prazo-do-SIC|Regras-de-Prazo-do-SIC]]
 
 ## Pendências e próximo passo
 - Executar a suíte em um ambiente isolado para obter resultado e cobertura (sob autorização).

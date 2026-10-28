@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Cadastros-Auxiliares
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -24,7 +26,7 @@ sources:
 
 # Cadastros auxiliares (somente leitura)
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Banco-e-Migrations|Banco-e-Migrations]]
 
 > Tabelas de referência populadas por **seeders** (V2, V55 — não lidos) e migrations. A API só **consulta** esses dados: não há endpoints de escrita. Nenhum endpoint tem `@PreAuthorize`.
 
@@ -39,7 +41,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 | GET | `/fase/descricao-fase` | descrição padrão por fase × tipo de ação × natureza | `BuscarDescricaoFaseAcao` |
 
 ## Observações
-- ✅ Hierarquias usadas pelo formulário da ação: **UAI → áreas executoras** e **programa de governo → objetivos PPA**. A consistência programa × objetivos é validada na criação da ação ([[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]]).
+- ✅ Hierarquias usadas pelo formulário da ação: **UAI → áreas executoras** e **programa de governo → objetivos PPA**. A consistência programa × objetivos é validada na criação da ação ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]]).
 - ✅ Registros **"A DEFINIR"** com id `999` em programa de governo e unidade auditada servem de placeholder e são checados por `GET /acao-controle/validar/{id}`.
 - ❓ Não foi verificado se `/unidade-auditada/listar` filtra `IN_ATIVO = 1` (coluna criada na V54).
 - ✅ `TB_DESCRICAO_FASE_ACAO` passou de textos para ids (fase/tipo/natureza) nas V4–V6. A descrição gerada entra na fase da OS e no PDF.

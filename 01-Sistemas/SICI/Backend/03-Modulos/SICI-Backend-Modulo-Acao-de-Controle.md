@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - Acao-de-Controle
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -21,9 +23,9 @@ sources:
 
 # Ação de Controle
 
-Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
+Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Relacionado: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Cadastros-Auxiliares|Cadastros-Auxiliares]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Enums-e-Estados|Enums-e-Estados]], [[01-Sistemas/SICI/Backend/02-Dominio/SICI-Backend-Modelo-de-Dominio|Modelo-de-Dominio]]
 
-> Unidade de planejamento do controle interno: um trabalho de auditoria, consultoria ou inspeção de um ano, ligado a um POAC, a uma UAI e área executora, às unidades auditadas e ao programa/objetivos do PPA. Todas as [[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|OS]] nascem a partir dela.
+> Unidade de planejamento do controle interno: um trabalho de auditoria, consultoria ou inspeção de um ano, ligado a um POAC, a uma UAI e área executora, às unidades auditadas e ao programa/objetivos do PPA. Todas as [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|OS]] nascem a partir dela.
 
 ## Endpoints — `/acao-controle` ✅
 | Método | Rota | Roles | Delegação |
@@ -64,7 +66,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - ⚠️ Ids mágicos `999` fixos no código (`AcaoControleRepository`).
 
 ### Situação
-Só muda automaticamente na assinatura da ABERTURA → `OSI_EMITIDA` ([[01-Sistemas/SICI/Backend/03-Modulos/Ordem-de-Servico|Ordem-de-Servico]]). As demais situações (`EM_PLANEJAMENTO`… `FINALIZADO_*`) não têm fluxo no backend analisado. 🔶 Podem ser enviadas no request de atualização ou ainda não ter sido implementadas.
+Só muda automaticamente na assinatura da ABERTURA → `OSI_EMITIDA` ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Ordem-de-Servico|Ordem-de-Servico]]). As demais situações (`EM_PLANEJAMENTO`… `FINALIZADO_*`) não têm fluxo no backend analisado. 🔶 Podem ser enviadas no request de atualização ou ainda não ter sido implementadas.
 
 ## Observações
 - ✅ `AcaoControleRepositoryAdapter.buscarPorId` lança `ResourceNotFoundException`, mas vários chamadores testam `== null`: esses testes nunca são verdadeiros.

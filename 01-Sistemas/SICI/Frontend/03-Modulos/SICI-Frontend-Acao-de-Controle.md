@@ -25,7 +25,7 @@ sources:
 
 # Módulo — Ação de Controle (frontend)
 
-Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle (Backend)]], [[01-Sistemas/SICI/Backend/03-Modulos/POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/Cadastros-Auxiliares|Cadastros-Auxiliares]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]]
+Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] · Backend: [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle (Backend)]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-POAC|POAC]], [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Cadastros-Auxiliares|Cadastros-Auxiliares]] · Relacionado: [[01-Sistemas/SICI/Frontend/03-Modulos/SICI-Frontend-Ordem-de-Servico|Ordem-de-Servico]], [[01-Sistemas/SICI/Frontend/01-Visao-Geral/SICI-Frontend-Rotas-e-Telas|Rotas-e-Telas]]
 
 ## Objetivo
 Telas de listagem, cadastro, consulta e edição de **ações de controle** (auditoria, consultoria, inspeção) e porta de entrada para as OS de cada ação.
@@ -46,7 +46,7 @@ Arquivos em `sources`. Listagem e cadastro lidos em detalhe; `visualizar` e `atu
 Nenhuma regra de negócio verificável foi extraída do frontend além das validações de formulário acima (campos obrigatórios e limites de tamanho). Regras de domínio da ação ficam no backend.
 
 ## Inferências e limitações
-- 🔶 "Excluir" no frontend chama `inativar`; o backend bloqueia a inativação se houver OS ([[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]]). O tratamento da mensagem de erro na tela não foi lido.
+- 🔶 "Excluir" no frontend chama `inativar`; o backend bloqueia a inativação se houver OS ([[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]]). O tratamento da mensagem de erro na tela não foi lido.
 - 🔶 `GET /acao-controle/validar/{id}` existe no serviço, mas o uso na tela não foi localizado.
 - 🔶 O padrão do ano da programação e do POAC (qual POAC é escolhido) não foi lido; o campo é obrigatório.
 - Telas `visualizar` e `atualizar` e templates HTML lidos só por estrutura.

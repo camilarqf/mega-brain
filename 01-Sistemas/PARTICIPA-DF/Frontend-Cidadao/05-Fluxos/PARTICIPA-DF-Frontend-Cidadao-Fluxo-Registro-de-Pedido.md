@@ -46,7 +46,7 @@ flowchart TD
 - ✅ O rascunho do pedido é mantido em `localStorage` (serviço `PedidoStateManager`, arquivo de nome duplicado `pedido-state-manager.service.ts.service.ts`).
 
 ## Inferências e limitações
-- 🔶 O uso de `Lote` e de `consultar-por-lote` indica que um registro com vários órgãos gera vários pedidos (um por órgão), mas isso não foi confirmado nesta análise; ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Pedido-e-Recurso|Pedido-e-Recurso]].
+- 🔶 O uso de `Lote` e de `consultar-por-lote` indica que um registro com vários órgãos gera vários pedidos (um por órgão), mas isso não foi confirmado nesta análise; ver [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Pedido-e-Recurso|Pedido-e-Recurso]].
 - ❓ Regras de validação de anexos de pedido (limites).
 
 ## Relacionamentos

@@ -239,7 +239,7 @@ Legenda: **anônimo** = `[AllowAnonymous]` na ação ou na classe; **sem atribut
 | GET | `v2/usuario` | anônimo |  | `bool` |
 
 ## Relacionamentos
-- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
+- [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis|Usuarios-Operadores-Perfis]] · [[01-Sistemas/PARTICIPA-DF/Backend/03-Modulos/PARTICIPA-DF-Backend-Jobs-Agendados|Jobs-Agendados]]
 
 ## Pendências e próximo passo
 - Confirmar no SDK se há autenticação global; se não, os 25 endpoints sem atributo são risco de acesso (lote 8).

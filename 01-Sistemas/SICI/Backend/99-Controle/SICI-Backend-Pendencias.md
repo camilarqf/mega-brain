@@ -20,7 +20,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [ ] Expansão oficial das siglas **SICI**, **OSI**, **POAC**, **SUBCI**, **RP / RPM / RM** — ver [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Glossario|Glossario]].
 - [ ] A validação de documento por QR Code (`GET /assinaturas/validacao`) deveria ser **pública**? Hoje exige autenticação (não está no `permitAll` de `SecurityConfig`). Existe outro sistema que faz a validação pública?
 - [ ] Na Ação de Auditoria, a mensagem de erro cita "Riscos", mas o código aceita **Governança** (`AcaoControle.validarNaturezaAcaoControle`). Qual é a regra correta?
-- [x] Regra de geração do código da Ação de Controle → resolvido no lote 5: o "contador" é `MAX(codigo)` do ano (`countByAnoCadastro`), e o código tem formato `SSSSAAAA`. Ver [[01-Sistemas/SICI/Backend/03-Modulos/Acao-de-Controle|Acao-de-Controle]].
+- [x] Regra de geração do código da Ação de Controle → resolvido no lote 5: o "contador" é `MAX(codigo)` do ano (`countByAnoCadastro`), e o código tem formato `SSSSAAAA`. Ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Acao-de-Controle|Acao-de-Controle]].
 
 ## Perguntas técnicas
 - [ ] Qual profile Spring é ativado de fato no container? O Dockerfile usa `-P SPRING_PROFILES_ACTIVE` literal — ver [[01-Sistemas/SICI/Backend/01-Visao-Geral/SICI-Backend-Stack-e-Dependencias|Stack-e-Dependencias]].
@@ -40,7 +40,7 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [ ] Outras OS (designação, exclusão, substituição, cancelamento) **devem** exigir ABERTURA assinada? A regra existe em `OrdemServico.validarCriacaoComBaseNasOrdens`, mas nunca é chamada.
 - [ ] Algum perfil deveria poder levar uma OS a ASSINADA por `PUT /alterarStatusOs` sem assinar? O frontend envia esse status em algum caso?
 - [ ] Trocar o tipo/modelo de uma OS na atualização é um comportamento desejado?
-- [ ] As fases das OS canceladas estão sendo apagadas ao assinar o cancelamento? — ver [[01-Sistemas/SICI/Backend/03-Modulos/Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]].
+- [ ] As fases das OS canceladas estão sendo apagadas ao assinar o cancelamento? — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Prorrogacao-e-Cancelamento|Prorrogacao-e-Cancelamento]].
 - [ ] Endpoints de prorrogação, fases, justificativa de cancelamento e PDF devem ter restrição de perfil?
 - [ ] A ação de controle deveria mudar de situação ao ser cancelada?
 
@@ -53,9 +53,9 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [ ] Qual é o serviço externo de PDF (tecnologia, responsável, timeouts esperados)?
 
 ## Perguntas surgidas no lote 5
-- [ ] **Urgente**: algum controle fora do backend (gateway, frontend) impede um auditor comum de chamar `POST /subci/cadastrar` ou `POST /subci/{id}/substitutos` e se tornar assinante? — ver [[01-Sistemas/SICI/Backend/03-Modulos/SUBCI-e-Substitutos|SUBCI-e-Substitutos]].
+- [ ] **Urgente**: algum controle fora do backend (gateway, frontend) impede um auditor comum de chamar `POST /subci/cadastrar` ou `POST /subci/{id}/substitutos` e se tornar assinante? — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-SUBCI-e-Substitutos|SUBCI-e-Substitutos]].
 - [ ] A ação de controle pode ser alterada depois da OS de abertura assinada?
-- [ ] OS genérica assinada pode ser excluída? Hoje pode — ver [[01-Sistemas/SICI/Backend/03-Modulos/OS-Generica|OS-Generica]].
+- [ ] OS genérica assinada pode ser excluída? Hoje pode — ver [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-OS-Generica|OS-Generica]].
 - [ ] As situações `EM_PLANEJAMENTO` a `FINALIZADO_*` são alteradas por quem e quando?
 - [ ] Cadastro de POAC deve ter restrição de perfil e validação de datas e ano?
 - [ ] Como os auditores são cadastrados e inativados (`TB_AUDITOR`)? Não há API.
@@ -78,6 +78,6 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
 - [x] Lote 3: `fasesReconectadas` descartado em `OrdemServico.cancelar` → provável perda de fases (ver acima). `OrdemServico.id()` só é chamado em teste (`FaseOrdemServicoMapperTest`, linha 67), que recebe `null` sem perceber.
 - [x] Lote 6: `java.lang.module.ResolutionException` não tem handler e não há handler genérico → 500 (`/error` padrão).
 - [x] Lote 4: a ausência de lock no cálculo `max + 1` **não** é compensada no código (sem lock, sem unique, isolamento padrão e uma chamada HTTP no meio). O risco de duplicidade continua; confirmar nos dados.
-- [x] Lote 4: algoritmo de `VerifyCode.forOS` / `forDocumento`, o que é coberto pelo hash SHA-256 e como funciona a validação → [[01-Sistemas/SICI/Backend/03-Modulos/Assinatura-Digital|Assinatura-Digital]].
+- [x] Lote 4: algoritmo de `VerifyCode.forOS` / `forDocumento`, o que é coberto pelo hash SHA-256 e como funciona a validação → [[01-Sistemas/SICI/Backend/03-Modulos/SICI-Backend-Modulo-Assinatura-Digital|Assinatura-Digital]].
 - [x] Lote 5: `AcaoControle.alterarSituacaoAC` é chamado só na assinatura da ABERTURA (→ `OSI_EMITIDA`); na prática só altera `situacao`.
 - [x] Lote 6: matriz completa de endpoints × roles → [[01-Sistemas/SICI/Backend/06-API/SICI-Backend-Catalogo-de-Endpoints|Catalogo-de-Endpoints]], [[01-Sistemas/SICI/Backend/08-Seguranca/SICI-Backend-Seguranca-e-Autorizacao|Seguranca-e-Autorizacao]].

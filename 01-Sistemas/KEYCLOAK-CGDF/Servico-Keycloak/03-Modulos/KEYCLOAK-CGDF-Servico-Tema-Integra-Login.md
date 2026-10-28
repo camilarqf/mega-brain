@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Tema de login `integra-login`"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -8,10 +10,7 @@ coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
 tags:
-  - keycloak-cgdf
-  - tema
-  - keycloakify
-  - login
+  - autenticacao
 sources:
   - integra-login/login/theme.properties
   - integra-login/login/login.ftl

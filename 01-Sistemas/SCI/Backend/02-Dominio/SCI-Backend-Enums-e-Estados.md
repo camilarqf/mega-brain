@@ -1,5 +1,7 @@
 ---
 type: domain
+aliases:
+  - "SCI Backend — enums e estados"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - enums
-  - estados
 sources:
   - src/SCI.Domain/GestaoAdmissibilidade/Enums
   - src/SCI.Domain/GestaoPIP/Enums

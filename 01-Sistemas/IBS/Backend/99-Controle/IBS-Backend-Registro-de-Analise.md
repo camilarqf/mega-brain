@@ -1,17 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — IBS Backend"
 system: IBS
 component: Backend
 repository: identity-broker-service
 status: pendente
 coverage: parcial
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-08-31
 branch: master
-tags:
-  - ibs
-  - registro-de-analise
 ---
 # Registro de análise — IBS Backend
 
@@ -53,3 +52,4 @@ Decisões do usuário (2026-10-18): ID do sistema `IBS`, componente `Backend`; c
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

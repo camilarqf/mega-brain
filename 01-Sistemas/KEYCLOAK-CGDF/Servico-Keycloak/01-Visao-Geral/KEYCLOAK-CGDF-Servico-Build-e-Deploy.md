@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Build, deploy e ambientes"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - build
-  - deploy
-  - ambientes
 sources:
   - .docker/Dockerfile
   - .docker/inject-docker-secrets-entrypoint.sh

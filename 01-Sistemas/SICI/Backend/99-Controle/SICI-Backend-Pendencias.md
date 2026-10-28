@@ -1,15 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências e pontos a confirmar"
 system: SICI
 repository: sici-backend
 status: pendente
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 created: 2026-10-16
 updated: 2026-10-18
-tags:
-  - sici
-  - pendencias
-  - duvidas
 ---
 
 # Pendências e pontos a confirmar

@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Iza Api — observabilidade e logs"
 system: Iza
 component: Api
 repository: cgdf-iza
@@ -8,10 +10,7 @@ coverage: completa
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
 tags:
-  - iza
   - observabilidade
-  - logs
-  - metricas
 sources:
   - src/main.py
   - src/log_config.py

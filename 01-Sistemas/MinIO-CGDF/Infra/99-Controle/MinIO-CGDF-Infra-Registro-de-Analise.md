@@ -1,17 +1,18 @@
 ---
 type: analysis-log
+aliases:
+  - "MinIO CGDF — registro de análise"
 system: MinIO-CGDF
 component: Infra
 repository: minio-infra
 status: confirmado
 coverage: completa
 analyzed_commit: f36efc5fa586f71a2f964f0f3a51a8b9383d84d2
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-08-19
 branch: master
 tags:
-  - minio
-  - registro-de-analise
+  - armazenamento-objetos
 ---
 # MinIO CGDF — registro de análise
 
@@ -46,3 +47,4 @@ Controlar os lotes da análise de `minio-infra`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

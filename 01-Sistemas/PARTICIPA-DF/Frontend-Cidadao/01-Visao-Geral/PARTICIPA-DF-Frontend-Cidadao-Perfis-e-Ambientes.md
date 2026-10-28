@@ -1,16 +1,13 @@
 ---
 type: reference
+aliases:
+  - "Frontend Cidadão — perfis e ambientes"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: completa
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - ambientes
-  - configuracao
 sources:
   - src/environments/environment.ts
   - src/environments/environment.homolog.ts

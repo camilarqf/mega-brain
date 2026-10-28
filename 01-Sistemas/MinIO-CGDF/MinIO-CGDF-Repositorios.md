@@ -1,5 +1,7 @@
 ---
 type: repository
+aliases:
+  - "MinIO CGDF — repositórios"
 system: MinIO-CGDF
 repository: minio-infra
 status: confirmado
@@ -7,8 +9,7 @@ coverage: completa
 analyzed_commit: f36efc5fa586f71a2f964f0f3a51a8b9383d84d2
 updated: 2026-10-21
 tags:
-  - minio
-  - repositorios
+  - armazenamento-objetos
 ---
 # MinIO CGDF — repositórios
 

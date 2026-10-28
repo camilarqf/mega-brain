@@ -1,16 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências — SICI Frontend"
 system: SICI
 repository: sici-frontend
 status: pendente
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - pendencias
-  - duvidas
 ---
 
 # Pendências — SICI Frontend

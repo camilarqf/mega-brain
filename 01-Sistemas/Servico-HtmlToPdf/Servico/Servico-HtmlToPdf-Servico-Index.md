@@ -1,14 +1,14 @@
 ---
 type: index
+aliases:
+  - "Serviço HtmlToPdf — índice do componente Serviço"
 system: Servico-HtmlToPdf
 component: Servico
 repository: cgdf-html-to-pdf
 status: confirmado
 updated: 2026-10-19
 tags:
-  - html-to-pdf
-  - moc
-  - servico
+  - geracao-pdf
 ---
 # Serviço HtmlToPdf — índice do componente Serviço
 

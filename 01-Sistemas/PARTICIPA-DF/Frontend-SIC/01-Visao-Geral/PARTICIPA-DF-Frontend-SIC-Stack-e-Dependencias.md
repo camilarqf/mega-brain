@@ -1,16 +1,13 @@
 ---
 type: reference
+aliases:
+  - "Frontend SIC — stack e dependências"
 system: PARTICIPA-DF
 repository: participa-df-sic-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5518a8141d83784eab17ebe61d84331d842add2c
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-sic
-  - stack
-  - dependencias
 sources:
   - package.json
   - package-lock.json

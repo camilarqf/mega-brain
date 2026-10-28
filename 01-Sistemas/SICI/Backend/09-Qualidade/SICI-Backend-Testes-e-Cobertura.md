@@ -1,15 +1,13 @@
 ---
 type: quality
+aliases:
+  - "Testes e cobertura"
 system: SICI
 repository: sici-backend
 status: confirmado
 coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags:
-  - sici
-  - qualidade
-  - testes
 sources:
   - src/test/java/br/gov/df/cg/sici/**
   - target/surefire-reports/*.txt (execução local de 2026-10-09)

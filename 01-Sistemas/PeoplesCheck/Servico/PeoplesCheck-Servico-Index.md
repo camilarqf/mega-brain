@@ -1,14 +1,12 @@
 ---
 type: index
+aliases:
+  - "PeoplesCheck — índice do componente Serviço"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
 status: confirmado
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - moc
-  - servico
 ---
 # PeoplesCheck — índice do componente Serviço
 

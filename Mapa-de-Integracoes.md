@@ -1,10 +1,9 @@
 ---
 type: index
+aliases:
+  - "Mapa de integrações"
 status: pendente
 updated: 2026-10-27
-tags:
-  - integracoes
-  - moc
 ---
 
 # Mapa de integrações

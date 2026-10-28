@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integrações externas"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -9,15 +11,8 @@ created: 2026-10-18
 updated: 2026-10-23
 consumer: PARTICIPA-DF
 tags:
-  - participa-df
-  - backend
-  - integracoes
-  - iza
-  - sei
-  - rabbitmq
-  - email
-  - s3
-  - minio
+  - armazenamento-objetos
+  - mensageria
 sources:
   - src/OuvDF.DefaultHttpClient
   - src/OuvDF.Iza.Client

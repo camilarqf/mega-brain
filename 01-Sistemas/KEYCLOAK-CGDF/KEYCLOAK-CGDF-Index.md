@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "KEYCLOAK-CGDF — índice do sistema"
 system: KEYCLOAK-CGDF
 status: pendente
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - moc
-  - sistema
 ---
 # KEYCLOAK-CGDF — índice do sistema
 

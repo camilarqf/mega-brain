@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Iza Api — fluxo de triagem de manifestação"
 system: Iza
 component: Api
 repository: cgdf-iza
@@ -7,10 +9,6 @@ status: inferido
 coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
-tags:
-  - iza
-  - fluxo
-  - triagem
 sources:
   - src/main.py
   - src/internal/description.py

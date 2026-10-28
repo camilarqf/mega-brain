@@ -1,19 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — Frontend Ouvidoria"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 created: 2026-10-18
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-09-09
 branch: master
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - controle
-  - cobertura
 ---
 
 # Registro de análise — Frontend Ouvidoria
@@ -58,3 +55,4 @@ Fim do plano aprovado (lotes 0 a 5). Próximos: (1) responder as Pendências com
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

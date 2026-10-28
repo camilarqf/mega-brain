@@ -1,16 +1,13 @@
 ---
 type: quality
+aliases:
+  - "Frontend Ouvidoria — testes e cobertura"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
 coverage: completa
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - qualidade
-  - testes
 sources:
   - package.json
   - gulpfile.js

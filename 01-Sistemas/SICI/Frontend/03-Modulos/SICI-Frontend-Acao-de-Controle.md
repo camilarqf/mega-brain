@@ -1,16 +1,13 @@
 ---
 type: module
+aliases:
+  - "Módulo — Ação de Controle (frontend)"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - modulo
-  - acao-de-controle
 sources:
   - src/app/pages/acao-controle/acao-controle-listar/acao-controle-listar.component.ts
   - src/app/pages/acao-controle/acao-controle-cadastrar/acao-controle-cadastrar.component.ts

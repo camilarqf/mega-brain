@@ -1,17 +1,13 @@
 ---
 type: persistence
+aliases:
+  - "Banco de dados e migrations"
 system: SICI
 repository: sici-backend
 status: pendente
 coverage: parcial
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags:
-  - sici
-  - banco
-  - sqlserver
-  - flyway
-  - migrations
 sources:
   - src/main/resources/db/migrations
   - infrastructure/persistence/entity

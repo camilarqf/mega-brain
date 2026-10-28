@@ -1,16 +1,13 @@
 ---
 type: module
+aliases:
+  - "Módulo — OS Genérica (frontend)"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - modulo
-  - os-generica
 sources:
   - src/app/pages/ordem-servico/ordem-servico-generica-listar/ordem-servico-generica-listar.component.ts
   - src/app/pages/ordem-servico/ordem-servico-generica-cadastrar/ordem-servico-generica-cadastrar.component.ts

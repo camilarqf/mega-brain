@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "Portal da Transparência — índice do sistema"
 system: Portal-Transparencia
 status: pendente
 updated: 2026-10-27
-tags:
-  - portal-transparencia
-  - moc
-  - sistema
 ---
 # Portal da Transparência — índice do sistema
 

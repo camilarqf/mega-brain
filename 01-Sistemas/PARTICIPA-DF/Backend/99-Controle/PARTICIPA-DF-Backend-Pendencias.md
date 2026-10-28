@@ -1,15 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências e pontos a confirmar"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: pendente
 analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
 updated: 2026-10-23
-tags:
-  - participa-df
-  - pendencias
-  - duvidas
 ---
 
 # Pendências e pontos a confirmar

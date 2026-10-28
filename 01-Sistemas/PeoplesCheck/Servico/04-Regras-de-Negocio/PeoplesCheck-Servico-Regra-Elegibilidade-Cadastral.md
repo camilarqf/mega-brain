@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - "PeoplesCheck Serviço — regra: elegibilidade cadastral"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -8,9 +10,7 @@ coverage: completa
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
 updated: 2026-10-19
 tags:
-  - peoplescheck
-  - regra
-  - situacao-cadastral
+  - dados-pessoais
 sources:
   - src/main/java/br/gov/df/peoplescheckapi/domain/NaturalPerson.java
   - src/main/java/br/gov/df/peoplescheckapi/domain/JuridicalPerson.java

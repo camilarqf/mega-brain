@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "SCI Frontend — perfis e ambientes"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
-tags:
-  - sci
-  - frontend
-  - perfis
-  - ambientes
 sources:
   - src/app/core/enums/user-roles.enum.ts
   - src/app/core/enums/Perfil.enum.ts

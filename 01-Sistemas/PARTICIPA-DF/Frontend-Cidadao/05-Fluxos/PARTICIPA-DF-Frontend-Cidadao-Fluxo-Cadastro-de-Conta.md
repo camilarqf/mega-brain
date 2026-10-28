@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Frontend Cidadão — fluxo de cadastro e manutenção de conta"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
@@ -7,12 +9,7 @@ coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-cidadao
-  - fluxo
-  - conta
-  - pessoa-fisica
-  - pessoa-juridica
+  - dados-pessoais
 sources:
   - src/app/pages/conta/conta-routing.module.ts
   - src/app/pages/conta/validar-cpf/validar-cpf.component.ts

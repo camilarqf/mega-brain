@@ -1,19 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-21
 branch: master
-tags:
-  - portal-transparencia
-  - frontend
-  - controle
-  - cobertura
 ---
 
 # Registro de análise
@@ -50,3 +47,4 @@ Ver "Próximo passo exato" em [[01-Sistemas/Portal-Transparencia/Frontend/99-Con
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

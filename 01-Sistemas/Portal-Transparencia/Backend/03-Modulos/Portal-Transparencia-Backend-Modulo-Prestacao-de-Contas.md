@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Módulo Prestação de Contas"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
 updated: 2026-10-19
-tags:
-  - portal-transparencia
-  - backend
-  - modulo
-  - prestacao-de-contas
 sources:
   - src/main/java/br/gov/df/transparencia/api/prestandoContas
   - src/main/java/br/gov/df/transparencia/servico/prestandoContas

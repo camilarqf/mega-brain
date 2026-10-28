@@ -1,5 +1,7 @@
 ---
 type: technical-debt
+aliases:
+  - "IBS Backend — débitos técnicos e riscos"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -7,9 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
-tags:
-  - ibs
-  - debitos-tecnicos
 sources:
   - src/main/java/br/gov/df/cg/ibs/application/autenticacao/services/AutenticacaoService.java
   - src/main/java/br/gov/df/cg/ibs/api/exceptions/GlobalExceptionHandler.java

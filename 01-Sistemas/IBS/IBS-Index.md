@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "IBS — índice do sistema"
 system: IBS
 status: confirmado
 updated: 2026-10-18
-tags:
-  - ibs
-  - moc
-  - sistema
 ---
 # IBS — índice do sistema
 

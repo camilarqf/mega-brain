@@ -1,5 +1,7 @@
 ---
 type: index
+aliases:
+  - "KEYCLOAK-CGDF — Serviço Keycloak (índice)"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -7,10 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - moc
-  - servico
 ---
 # KEYCLOAK-CGDF — Serviço Keycloak (índice)
 

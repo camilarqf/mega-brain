@@ -1,14 +1,13 @@
 ---
 type: repository
+aliases:
+  - "KEYCLOAK-CGDF — repositórios"
 system: KEYCLOAK-CGDF
 repository: keycloak
 status: pendente
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - repositorios
 ---
 # KEYCLOAK-CGDF — repositórios
 

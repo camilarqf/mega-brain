@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "SCI Backend — ciclo do PIP"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
 updated: 2026-10-19
-tags:
-  - sci
-  - backend
-  - fluxo
-  - pip
 sources:
   - src/SCI.Domain/GestaoPIP/Entities/PIP.cs
   - src/SCI.Application/UseCases/GestaoPip

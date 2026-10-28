@@ -1,16 +1,13 @@
 ---
 type: quality
+aliases:
+  - "Frontend Cidadão — testes e cobertura"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: completa
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - testes
-  - qualidade
 sources:
   - karma.conf.js
   - tsconfig.spec.json

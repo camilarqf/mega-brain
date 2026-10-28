@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração SCI → PARTICIPA-DF (autenticação)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -10,9 +12,6 @@ updated: 2026-10-19
 consumer: SCI
 provider: PARTICIPA-DF
 tags:
-  - sci
-  - integracao
-  - participa-df
   - autenticacao
 sources:
   - src/SCI.ParticipaDF.Client/Services/ParticipaDFClient.cs

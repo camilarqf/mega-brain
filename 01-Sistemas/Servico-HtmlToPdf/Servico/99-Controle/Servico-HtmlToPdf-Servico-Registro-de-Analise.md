@@ -1,17 +1,18 @@
 ---
 type: analysis-log
+aliases:
+  - "Serviço HtmlToPdf — registro de análise"
 system: Servico-HtmlToPdf
 component: Servico
 repository: cgdf-html-to-pdf
 status: confirmado
 coverage: completa
 analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-09-23
 branch: master
 tags:
-  - html-to-pdf
-  - registro-de-analise
+  - geracao-pdf
 ---
 # Serviço HtmlToPdf — registro de análise
 
@@ -48,3 +49,4 @@ Controlar os lotes da análise de `cgdf-html-to-pdf`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

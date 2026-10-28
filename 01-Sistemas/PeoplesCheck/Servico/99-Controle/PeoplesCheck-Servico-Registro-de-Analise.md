@@ -1,17 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "PeoplesCheck Serviço — registro de análise"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
 status: confirmado
 coverage: completa
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-05-21
 branch: master
-tags:
-  - peoplescheck
-  - registro-de-analise
 ---
 # PeoplesCheck Serviço — registro de análise
 
@@ -50,3 +49,4 @@ Controlar os lotes da análise de `cgdf-peoples-check-api`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "PeoplesCheck Serviço — pendências"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -7,9 +9,6 @@ status: pendente
 coverage: completa
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - pendencias
 ---
 # PeoplesCheck Serviço — pendências
 

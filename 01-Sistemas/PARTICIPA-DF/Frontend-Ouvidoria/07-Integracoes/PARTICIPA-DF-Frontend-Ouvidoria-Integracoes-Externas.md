@@ -1,15 +1,13 @@
 ---
 type: integration
+aliases:
+  - "Frontend Ouvidoria — integrações"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - integracao
 sources:
   - app/api.service.js
   - app/api.config.js

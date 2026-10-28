@@ -1,5 +1,7 @@
 ---
 type: repository
+aliases:
+  - "PARTICIPA-DF — repositórios"
 system: PARTICIPA-DF
 repository:
   - participa-df-backend
@@ -10,9 +12,6 @@ status: pendente
 coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
 updated: 2026-10-18
-tags:
-  - participa-df
-  - repositorios
 ---
 # PARTICIPA-DF — repositórios
 

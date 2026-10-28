@@ -1,16 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências — Frontend SIC"
 system: PARTICIPA-DF
 repository: participa-df-sic-frontend
 status: pendente
 analyzed_commit: 5518a8141d83784eab17ebe61d84331d842add2c
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-sic
-  - pendencias
-  - duvidas
 ---
 
 # Pendências — Frontend SIC

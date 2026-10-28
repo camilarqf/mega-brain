@@ -1,5 +1,7 @@
 ---
 type: api
+aliases:
+  - "Contrato do token endpoint (fluxo IBS)"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -8,10 +10,7 @@ coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
 tags:
-  - keycloak-cgdf
-  - api
-  - oidc
-  - token
+  - autenticacao
 sources:
   - README.md
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/authenticator/IbsAuthenticator.java

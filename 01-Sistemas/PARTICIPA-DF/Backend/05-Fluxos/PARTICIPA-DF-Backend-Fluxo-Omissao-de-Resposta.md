@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Fluxo de prorrogação e omissão de resposta"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -7,13 +9,6 @@ coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - participa-df
-  - backend
-  - sic
-  - fluxo
-  - omissao
-  - prorrogacao
 sources:
   - src/OuvDF.ServicoInformacaoCidadao/Jobs
   - src/OuvDF.ServicoInformacaoCidadao/Domain/Commands/ProrrogarPrazoPedido/ProrrogarPrazoPedidoHandler.cs

@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "IBS Backend — stack e dependências"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -7,9 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
-tags:
-  - ibs
-  - stack
 sources:
   - pom.xml
   - .docker/Dockerfile

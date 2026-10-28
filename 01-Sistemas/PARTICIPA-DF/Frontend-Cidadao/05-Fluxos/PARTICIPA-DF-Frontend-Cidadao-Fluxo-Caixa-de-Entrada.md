@@ -1,17 +1,13 @@
 ---
 type: flow
+aliases:
+  - "Frontend Cidadão — fluxo da caixa de entrada"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - fluxo
-  - caixa-de-entrada
-  - recurso
 sources:
   - src/app/pages/caixa-entrada/caixa-entrada-routing.module.ts
   - src/app/pages/caixa-entrada/manifestacao/consultar-manifestacoes/consultar-manifestacoes.component.ts

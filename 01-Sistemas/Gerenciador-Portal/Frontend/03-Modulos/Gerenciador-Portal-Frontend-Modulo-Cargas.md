@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Módulo Cargas — Gerenciador-Portal Frontend"
 system: Gerenciador-Portal
 component: Frontend
 repository: gerenciador-portal-frontend
@@ -8,11 +10,6 @@ coverage: parcial
 analyzed_commit: d6a737a3a0e5cf1b245aa35c81321638dd0cbecc
 created: 2026-10-27
 updated: 2026-10-27
-tags:
-  - gerenciador-portal
-  - frontend
-  - modulo
-  - cargas
 sources:
   - src/app/components/carga-portal/cargaCtrl.js
   - src/app/components/carga-portal/cargaApi.js

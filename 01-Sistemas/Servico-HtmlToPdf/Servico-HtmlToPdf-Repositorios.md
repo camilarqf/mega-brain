@@ -1,5 +1,7 @@
 ---
 type: repository
+aliases:
+  - "Serviço HtmlToPdf — repositórios"
 system: Servico-HtmlToPdf
 repository: cgdf-html-to-pdf
 status: confirmado
@@ -7,8 +9,7 @@ coverage: completa
 analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
 updated: 2026-10-19
 tags:
-  - html-to-pdf
-  - repositorios
+  - geracao-pdf
 ---
 # Serviço HtmlToPdf — repositórios
 

@@ -1,14 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências e pontos a confirmar — Serviço Keycloak"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
 status: pendente
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - pendencias
 ---
 # Pendências e pontos a confirmar — Serviço Keycloak
 

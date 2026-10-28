@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Fluxo — autenticação (frontend)"
 system: SICI
 repository: sici-frontend
 status: confirmado
@@ -7,11 +9,7 @@ coverage: completa
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
 tags:
-  - sici
-  - frontend
-  - fluxo
   - autenticacao
-  - login
 sources:
   - src/app/auth/login/login.component.ts
   - src/core/services/auth/auth.service.ts

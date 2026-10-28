@@ -1,18 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "SCI Frontend — registro de análise"
 system: SCI
 component: Frontend
 repository: sci-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-08
 branch: master
-tags:
-  - sci
-  - frontend
-  - registro
 ---
 # SCI Frontend — registro de análise
 
@@ -75,3 +73,4 @@ Controlar lotes, cobertura e o próximo passo da análise do `sci-frontend`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

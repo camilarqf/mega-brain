@@ -1,5 +1,7 @@
 ---
 type: api
+aliases:
+  - "Catálogo de endpoints"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -8,11 +10,6 @@ coverage: parcial
 analyzed_commit: 14b185feeac4f5889a0ce8041a3b5baaead0334b
 created: 2026-10-27
 updated: 2026-10-27
-tags:
-  - gerenciador-portal
-  - backend
-  - api
-  - endpoints
 sources:
   - src/main/java/br/gov/df/cgdf/gerenciador/api
   - src/main/java/br/gov/df/cgdf/gerenciador/config/prometheus/PrometheusMetricsController.java

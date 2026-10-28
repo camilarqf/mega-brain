@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Módulo Conteúdo do Portal (palavras-chave, textos e órgãos da LAI)"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -9,12 +11,7 @@ analyzed_commit: 14b185feeac4f5889a0ce8041a3b5baaead0334b
 created: 2026-10-27
 updated: 2026-10-27
 tags:
-  - gerenciador-portal
-  - backend
-  - modulo
-  - textos
-  - palavras-chave
-  - lai
+  - busca
 sources:
   - src/main/java/br/gov/df/cgdf/gerenciador/api/PalavraController.java
   - src/main/java/br/gov/df/cgdf/gerenciador/api/TextoConsultaController.java

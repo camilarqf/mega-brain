@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - "IBS Backend — regra: mapeamento de falhas para HTTP"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -7,10 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
-tags:
-  - ibs
-  - regra
-  - erros
 sources:
   - src/main/java/br/gov/df/cg/ibs/api/exceptions/GlobalExceptionHandler.java
   - src/main/java/br/gov/df/cg/ibs/domain/autenticacao/enums/MotivoFalhaAutenticacao.java

@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "PARTICIPA-DF — índice do sistema"
 system: PARTICIPA-DF
 status: pendente
 updated: 2026-10-18
-tags:
-  - participa-df
-  - moc
-  - sistema
 ---
 # PARTICIPA-DF — índice do sistema
 

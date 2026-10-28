@@ -1,5 +1,7 @@
 ---
 type: quality
+aliases:
+  - "Testes e cobertura"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -7,10 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - testes
-  - qualidade
 sources:
   - providers/src/test/java/br/gov/df/cg/ibs/keycloak/authenticator/IbsAuthenticatorTest.java
   - providers/src/test/java/br/gov/df/cg/ibs/keycloak/client/IbsRestClientTest.java

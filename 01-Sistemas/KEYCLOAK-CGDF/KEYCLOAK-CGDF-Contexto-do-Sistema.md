@@ -1,14 +1,13 @@
 ---
 type: system
+aliases:
+  - "KEYCLOAK-CGDF — contexto do sistema"
 system: KEYCLOAK-CGDF
 repository: keycloak
 status: pendente
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - contexto
 sources:
   - README.md
   - providers/pom.xml

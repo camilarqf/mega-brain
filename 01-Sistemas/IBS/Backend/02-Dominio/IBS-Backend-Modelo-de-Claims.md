@@ -1,5 +1,7 @@
 ---
 type: domain
+aliases:
+  - "IBS Backend — modelo de claims"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -8,9 +10,7 @@ coverage: completa
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
 tags:
-  - ibs
-  - dominio
-  - claims
+  - autenticacao
 sources:
   - src/main/java/br/gov/df/cg/ibs/domain/claims/ClaimsUsuario.java
   - src/main/java/br/gov/df/cg/ibs/api/auth/AutenticarUsuarioResponse.java

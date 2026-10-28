@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Frontend Ouvidoria — registro de manifestação por operador"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
@@ -7,12 +9,7 @@ coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-ouvidoria
-  - fluxo
-  - manifestacao
-  - registro
-  - anexos
+  - armazenamento-objetos
 sources:
   - app/manifestacao/registro/por-operador/manifestacao-por-operadorCtrl.js
   - app/manifestacao/registro/por-operador/registrar-manifestacao-por-operador-ctrl.js

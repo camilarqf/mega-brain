@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal → RabbitMQ (expirar cache)"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -11,10 +13,7 @@ updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: RabbitMQ
 tags:
-  - gerenciador-portal
-  - integracao
-  - rabbitmq
-  - cache
+  - mensageria
 sources:
   - src/main/java/br/gov/df/cgdf/gerenciador/services/ServidorMedidaProtetivaService.java
   - src/main/java/br/gov/df/cgdf/gerenciador/util/HttpClientImpl.java

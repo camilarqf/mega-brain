@@ -1,5 +1,7 @@
 ---
 type: technical-debt
+aliases:
+  - "Débitos técnicos e riscos"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -7,10 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - debitos
-  - riscos
 sources:
   - README.md
   - .docker/Dockerfile

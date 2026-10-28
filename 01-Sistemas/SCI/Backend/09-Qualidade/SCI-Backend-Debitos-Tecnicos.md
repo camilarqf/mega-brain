@@ -1,5 +1,7 @@
 ---
 type: technical-debt
+aliases:
+  - "SCI Backend — débitos técnicos e riscos"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - debitos
-  - riscos
-  - seguranca
 sources:
   - src/SCI.Application/UseCases/AutenticarUsuario/AutenticarUsuarioHandler.cs
   - src/SCI.Api/Controllers/SupportController.cs

@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "SICI — índice do sistema"
 system: SICI
 status: pendente
 updated: 2026-10-18
-tags:
-  - sici
-  - moc
-  - sistema
 ---
 # SICI — índice do sistema
 

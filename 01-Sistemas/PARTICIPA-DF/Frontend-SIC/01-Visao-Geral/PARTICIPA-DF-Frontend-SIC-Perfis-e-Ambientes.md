@@ -1,17 +1,13 @@
 ---
 type: reference
+aliases:
+  - "Frontend SIC — perfis, ambientes e build"
 system: PARTICIPA-DF
 repository: participa-df-sic-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5518a8141d83784eab17ebe61d84331d842add2c
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-sic
-  - ambientes
-  - build
-  - deploy
 sources:
   - api.config.json
   - app/api.config.js

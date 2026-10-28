@@ -1,19 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — Frontend Cidadão"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 created: 2026-10-18
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-07-03
 branch: master
-tags:
-  - participa-df
-  - frontend-cidadao
-  - controle
-  - cobertura
 ---
 
 # Registro de análise — Frontend Cidadão
@@ -57,3 +54,4 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Frontend-Cidadao/PARTICIPA-DF-Frontend-Cidada
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

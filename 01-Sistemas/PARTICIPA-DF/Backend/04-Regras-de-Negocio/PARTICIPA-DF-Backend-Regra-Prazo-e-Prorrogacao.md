@@ -1,7 +1,8 @@
 ---
 type: business-rule
 aliases:
-  - Regras-de-Prazo-e-Prorrogacao
+  - "Regras de prazo e prorrogação (Ouvidoria)"
+  - "Regras-de-Prazo-e-Prorrogacao"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -9,12 +10,6 @@ coverage: parcial
 analyzed_commit: 4901ad501a86773f40dcd36fb90470a3ba5c0c96
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - participa-df
-  - backend
-  - ouvidoria
-  - prazo
-  - prorrogacao
 sources:
   - src/OuvDF.Shared/Domain/Services/CalculadoraPrazoService.cs
   - src/OuvDF.ServicoOuvidoria/Domain/Entities/Manifestacao.cs

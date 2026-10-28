@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Keycloak → IBS"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -10,9 +12,7 @@ updated: 2026-10-18
 consumer: KEYCLOAK-CGDF
 provider: IBS
 tags:
-  - keycloak-cgdf
-  - integracao
-  - ibs
+  - autenticacao
 sources:
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/client/IbsApiClient.java
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/client/IbsLoginRequest.java

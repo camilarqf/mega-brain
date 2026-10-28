@@ -1,12 +1,11 @@
 ---
 type: system
+aliases:
+  - "PeoplesCheck — contexto do sistema"
 system: PeoplesCheck
 status: confirmado
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - contexto
 sources:
   - pom.xml
   - src/main/java/br/gov/df/peoplescheckapi/api/controllers/PeopleController.java

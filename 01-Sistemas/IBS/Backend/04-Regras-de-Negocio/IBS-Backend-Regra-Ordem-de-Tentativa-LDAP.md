@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - "IBS Backend — regra: ordem de tentativa, fallback e fonte recente"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -8,9 +10,7 @@ coverage: completa
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
 tags:
-  - ibs
-  - regra
-  - ldap
+  - autenticacao
 sources:
   - src/main/java/br/gov/df/cg/ibs/application/autenticacao/services/AutenticacaoService.java
   - src/main/java/br/gov/df/cg/ibs/infra/ldap/LdapBindService.java

@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "MinIO CGDF — deploy e ambientes"
 system: MinIO-CGDF
 component: Infra
 repository: minio-infra
@@ -8,9 +10,7 @@ coverage: completa
 analyzed_commit: f36efc5fa586f71a2f964f0f3a51a8b9383d84d2
 updated: 2026-10-21
 tags:
-  - minio
-  - deploy
-  - ambientes
+  - armazenamento-objetos
 sources:
   - config/production/stack.yml
   - config/staging/stack.yml

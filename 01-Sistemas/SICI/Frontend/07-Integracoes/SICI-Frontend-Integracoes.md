@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integrações — SICI Frontend"
 system: SICI
 repository: sici-frontend
 status: confirmado
@@ -9,11 +11,7 @@ updated: 2026-10-18
 consumer: SICI
 provider: SICI
 tags:
-  - sici
-  - frontend
-  - integracao
-  - backend
-  - keycloak
+  - autenticacao
 sources:
   - src/environments/environment.prod.ts
   - nginx.conf

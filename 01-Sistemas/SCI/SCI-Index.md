@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "SCI — índice do sistema"
 system: SCI
 status: pendente
 updated: 2026-10-19
-tags:
-  - sci
-  - moc
-  - sistema
 ---
 # SCI — índice do sistema
 

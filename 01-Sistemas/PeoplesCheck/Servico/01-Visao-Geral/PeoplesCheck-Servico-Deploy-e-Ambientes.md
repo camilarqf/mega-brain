@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "PeoplesCheck Serviço — deploy e ambientes"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -7,10 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - deploy
-  - ambientes
 sources:
   - .docker/Dockerfile
   - .jenkins-pipelines/deployment.params.yml

@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração IBS → SIP (SQL Server)"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -10,10 +12,7 @@ updated: 2026-10-18
 consumer: IBS
 provider: SIP-SQLServer
 tags:
-  - ibs
-  - integracao
-  - sqlserver
-  - sip
+  - autenticacao
 sources:
   - pom.xml
   - src/main/resources/application.properties

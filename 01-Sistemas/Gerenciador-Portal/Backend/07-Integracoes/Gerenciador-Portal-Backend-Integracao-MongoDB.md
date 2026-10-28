@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal → MongoDB"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -11,10 +13,7 @@ updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: MongoDB-Portal
 tags:
-  - gerenciador-portal
-  - integracao
-  - mongodb
-  - palavras-chave
+  - busca
 sources:
   - src/main/java/br/gov/df/cgdf/gerenciador/config/MongoConfiguration.java
   - src/main/java/br/gov/df/cgdf/gerenciador/model/PalavraChave.java

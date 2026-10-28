@@ -1,17 +1,13 @@
 ---
 type: flow
+aliases:
+  - "Frontend SIC — prorrogação de prazo e reencaminhamento"
 system: PARTICIPA-DF
 repository: participa-df-sic-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5518a8141d83784eab17ebe61d84331d842add2c
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-sic
-  - fluxo
-  - prorrogacao
-  - reencaminhamento
 sources:
   - app/caixa-entrada/detalhamento-pedido-ctrl.js
   - app/caixa-entrada/detalhamento-pedido.html

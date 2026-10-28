@@ -1,17 +1,13 @@
 ---
 type: module
+aliases:
+  - "Módulo — Gestão SUBCI e perfis (frontend)"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - modulo
-  - subci
-  - perfis
 sources:
   - src/app/pages/gestao-subci/gestao-subci-cadastrar/gestao-subci-cadastrar.component.ts
   - src/app/pages/gestao-subci/gestao-auditor-perfil/auditor-perfil.component.ts

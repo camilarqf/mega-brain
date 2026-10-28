@@ -1,17 +1,13 @@
 ---
 type: flow
+aliases:
+  - "Frontend Ouvidoria — prorrogação de prazo"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - fluxo
-  - prorrogacao
-  - prazo
 sources:
   - app/manifestacao/prorrogacao/prorrogacao-de-prazo-ctrl.js
   - app/manifestacao/prorrogacao/prorrogacao-de-prazo.html

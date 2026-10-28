@@ -1,5 +1,7 @@
 ---
 type: domain
+aliases:
+  - "Modelo de claims (IBS → usuário Keycloak → token)"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -8,10 +10,7 @@ coverage: completa
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
 tags:
-  - keycloak-cgdf
-  - claims
-  - token
-  - dominio
+  - autenticacao
 sources:
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/client/IbsLoginResponse.java
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/authenticator/IbsAuthenticator.java

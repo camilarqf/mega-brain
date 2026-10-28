@@ -1,5 +1,7 @@
 ---
 type: technical-debt
+aliases:
+  - "Débitos técnicos — Gerenciador-Portal Frontend"
 system: Gerenciador-Portal
 component: Frontend
 repository: gerenciador-portal-frontend
@@ -8,10 +10,6 @@ coverage: parcial
 analyzed_commit: d6a737a3a0e5cf1b245aa35c81321638dd0cbecc
 created: 2026-10-27
 updated: 2026-10-27
-tags:
-  - gerenciador-portal
-  - frontend
-  - debitos-tecnicos
 sources:
   - src/app/components
   - src/app/config.js

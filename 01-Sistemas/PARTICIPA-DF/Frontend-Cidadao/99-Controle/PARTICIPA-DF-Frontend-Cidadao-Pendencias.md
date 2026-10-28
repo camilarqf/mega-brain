@@ -1,16 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências — Frontend Cidadão"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: pendente
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - pendencias
-  - duvidas
 ---
 
 # Pendências — Frontend Cidadão

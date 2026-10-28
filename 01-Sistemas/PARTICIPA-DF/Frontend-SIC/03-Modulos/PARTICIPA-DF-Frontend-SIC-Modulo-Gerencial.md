@@ -1,20 +1,13 @@
 ---
 type: module
+aliases:
+  - "Frontend SIC — módulo gerencial"
 system: PARTICIPA-DF
 repository: participa-df-sic-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 5518a8141d83784eab17ebe61d84331d842add2c
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-sic
-  - modulo
-  - gerencial
-  - operador
-  - perfil
-  - unidade
-  - feriado
 sources:
   - app/gerencial/operadorSIC/grid-operador.ctrl.js
   - app/gerencial/operadorSIC/form-operador.ctrl.js

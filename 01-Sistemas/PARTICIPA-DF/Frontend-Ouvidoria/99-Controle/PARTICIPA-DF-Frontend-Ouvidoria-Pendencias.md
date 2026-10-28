@@ -1,16 +1,13 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências — Frontend Ouvidoria"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: pendente
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 created: 2026-10-18
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - pendencias
-  - duvidas
 ---
 
 # Pendências — Frontend Ouvidoria

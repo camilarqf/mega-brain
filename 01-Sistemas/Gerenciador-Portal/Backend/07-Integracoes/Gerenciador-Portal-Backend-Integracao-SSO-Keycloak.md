@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal → SSO (Keycloak)"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -11,11 +13,7 @@ updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: Keycloak
 tags:
-  - gerenciador-portal
-  - integracao
-  - sso
-  - keycloak
-  - oidc
+  - autenticacao
 sources:
   - src/main/java/br/gov/df/cgdf/gerenciador/services/auth/SsoAuthClient.java
   - src/main/java/br/gov/df/cgdf/gerenciador/services/auth/JwtService.java

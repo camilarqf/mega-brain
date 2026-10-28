@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Frontend Ouvidoria — conta do manifestante feita por operador"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
@@ -7,12 +9,7 @@ coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-ouvidoria
-  - modulo
-  - conta
-  - pessoa-fisica
-  - pessoa-juridica
+  - dados-pessoais
 sources:
   - app/conta/pessoa-fisica
   - app/conta/pessoa-juridica

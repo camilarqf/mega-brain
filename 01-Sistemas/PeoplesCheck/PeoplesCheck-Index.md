@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "PeoplesCheck — índice do sistema"
 system: PeoplesCheck
 status: confirmado
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - moc
-  - sistema
 ---
 # PeoplesCheck — índice do sistema
 

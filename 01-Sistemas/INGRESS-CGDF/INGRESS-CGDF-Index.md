@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "INGRESS-CGDF — índice do sistema"
 system: INGRESS-CGDF
 status: confirmado
 updated: 2026-10-21
-tags:
-  - ingress
-  - moc
-  - sistema
 ---
 # INGRESS-CGDF — índice do sistema
 

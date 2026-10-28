@@ -1,17 +1,13 @@
 ---
 type: flow
+aliases:
+  - "Fluxo — assinatura de OS (frontend)"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: completa
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - fluxo
-  - assinatura
-  - popup
 sources:
   - src/app/components/layout/assinatura-autenticacao/assinatura-autenticacao.component.ts
   - src/core/services/assinatura.service.ts

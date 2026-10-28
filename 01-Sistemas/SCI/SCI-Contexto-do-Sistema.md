@@ -1,14 +1,12 @@
 ---
 type: system
+aliases:
+  - "SCI — contexto do sistema"
 system: SCI
 repository: sci-backend
 status: pendente
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
 updated: 2026-10-19
-tags:
-  - sci
-  - contexto
-  - negocio
 ---
 # SCI — contexto do sistema
 

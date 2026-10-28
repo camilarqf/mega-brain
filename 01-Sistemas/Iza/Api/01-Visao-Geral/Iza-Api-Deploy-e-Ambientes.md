@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Iza Api — deploy e ambientes"
 system: Iza
 component: Api
 repository: cgdf-iza
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
-tags:
-  - iza
-  - deploy
-  - ambientes
-  - jenkins
 sources:
   - Dockerfile
   - .dockerignore

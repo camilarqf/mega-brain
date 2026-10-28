@@ -1,5 +1,7 @@
 ---
 type: domain
+aliases:
+  - "Modelo de domínio"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
 updated: 2026-10-19
-tags:
-  - portal-transparencia
-  - backend
-  - dominio
-  - modelo
 sources:
   - src/main/java/br/gov/df/transparencia/modelo
   - src/main/java/br/gov/df/transparencia/dto

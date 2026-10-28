@@ -1,16 +1,13 @@
 ---
 type: architecture
+aliases:
+  - "Frontend Cidadão — arquitetura"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - arquitetura
-  - angular
 sources:
   - src/app/app.module.ts
   - src/app/app-routing.module.ts

@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "SCI Frontend — integrações"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -8,10 +10,6 @@ coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
 consumer: SCI
-tags:
-  - sci
-  - frontend
-  - integracao
 sources:
   - src/environments
   - src/app/store/services

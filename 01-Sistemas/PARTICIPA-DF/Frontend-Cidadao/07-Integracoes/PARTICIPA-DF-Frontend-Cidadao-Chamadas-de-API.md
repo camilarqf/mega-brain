@@ -1,16 +1,13 @@
 ---
 type: api
+aliases:
+  - "Frontend Cidadão — chamadas à API do backend"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-cidadao
-  - api
-  - consumo
 sources:
   - src/app/core/services/api.service.ts
   - src/app/core/services/authentication.service.ts

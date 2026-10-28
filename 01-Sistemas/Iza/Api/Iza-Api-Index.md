@@ -1,14 +1,12 @@
 ---
 type: index
+aliases:
+  - "Iza — índice do componente Api"
 system: Iza
 component: Api
 repository: cgdf-iza
 status: confirmado
 updated: 2026-10-22
-tags:
-  - iza
-  - moc
-  - api
 ---
 # Iza — índice do componente Api
 

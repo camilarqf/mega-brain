@@ -1,13 +1,12 @@
 ---
 type: system
+aliases:
+  - "Iza — contexto do sistema"
 system: Iza
 repository: cgdf-iza
 status: confirmado
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
-tags:
-  - iza
-  - contexto
 sources:
   - src/main.py
   - src/internal/description.py

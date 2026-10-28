@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "SCI Frontend — fluxo de autenticação"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -8,9 +10,6 @@ coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
 tags:
-  - sci
-  - frontend
-  - fluxo
   - autenticacao
 sources:
   - src/app/auth/login/login.component.ts

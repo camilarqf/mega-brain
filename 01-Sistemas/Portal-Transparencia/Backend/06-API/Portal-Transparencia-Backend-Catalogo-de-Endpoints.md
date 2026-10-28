@@ -1,5 +1,7 @@
 ---
 type: api
+aliases:
+  - "Catálogo de endpoints"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
 updated: 2026-10-21
-tags:
-  - portal-transparencia
-  - backend
-  - api
-  - endpoints
 sources:
   - src/main/java/br/gov/df/transparencia/api
   - src/main/java/br/gov/df/transparencia/api/comum/StorageController.java

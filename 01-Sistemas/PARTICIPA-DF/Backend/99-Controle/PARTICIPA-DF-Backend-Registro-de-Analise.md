@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -9,10 +11,6 @@ created: 2026-10-18
 updated: 2026-10-28
 commit_data: 2026-10-22
 branch: master
-tags:
-  - participa-df
-  - controle
-  - cobertura
 ---
 
 # Registro de análise
@@ -128,3 +126,4 @@ Voltar: [[01-Sistemas/PARTICIPA-DF/Backend/PARTICIPA-DF-Backend-Index|Índice do
   - `Regras-de-Prazo-do-SIC` → `PARTICIPA-DF-Backend-Regra-Prazo-do-SIC`
   - `Regras-de-Prazo-e-Prorrogacao` → `PARTICIPA-DF-Backend-Regra-Prazo-e-Prorrogacao`
   - `Usuarios-Operadores-Perfis` → `PARTICIPA-DF-Backend-Modulo-Usuarios-Operadores-Perfis`
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

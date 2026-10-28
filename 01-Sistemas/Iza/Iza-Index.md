@@ -1,12 +1,10 @@
 ---
 type: index
+aliases:
+  - "Iza — índice do sistema"
 system: Iza
 status: confirmado
 updated: 2026-10-22
-tags:
-  - iza
-  - moc
-  - sistema
 ---
 # Iza — índice do sistema
 

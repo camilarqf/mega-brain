@@ -1,17 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "INGRESS-CGDF — registro de análise"
 system: INGRESS-CGDF
 component: Nginx
 repository: ingress-controller
 status: confirmado
 coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-15
 branch: master
-tags:
-  - ingress
-  - registro-de-analise
 ---
 # INGRESS-CGDF — registro de análise
 
@@ -46,3 +45,4 @@ Controlar os lotes da análise de `ingress-controller`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

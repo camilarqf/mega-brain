@@ -1,14 +1,14 @@
 ---
 type: index
+aliases:
+  - "MinIO CGDF — índice do componente Infra"
 system: MinIO-CGDF
 component: Infra
 repository: minio-infra
 status: confirmado
 updated: 2026-10-21
 tags:
-  - minio
-  - moc
-  - infra
+  - armazenamento-objetos
 ---
 # MinIO CGDF — índice do componente Infra
 

@@ -1,5 +1,7 @@
 ---
 type: architecture
+aliases:
+  - "SCI Backend — arquitetura (CQRS e eventos de domínio)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -8,11 +10,7 @@ coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
 tags:
-  - sci
-  - backend
-  - arquitetura
-  - cqrs
-  - eventos
+  - mensageria
 sources:
   - src/SCI.Api/Program.cs
   - src/SCI.Infrastructure.Data/UnitOfWork.cs

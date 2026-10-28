@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração SCI → serviço HtmlToPdf"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -10,9 +12,7 @@ updated: 2026-10-19
 consumer: SCI
 provider: Servico-HtmlToPdf
 tags:
-  - sci
-  - integracao
-  - pdf
+  - geracao-pdf
 sources:
   - src/SCI.HtmlToPdf.Client/Services/HtmlToPdfApiClient.cs
   - src/SCI.HtmlToPdf.Client/Settings/HtmlToPdfClientSettings.cs

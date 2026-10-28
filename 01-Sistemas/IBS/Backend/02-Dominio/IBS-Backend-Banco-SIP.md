@@ -1,5 +1,7 @@
 ---
 type: persistence
+aliases:
+  - "IBS Backend — banco SIP (persistência)"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -7,11 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: cf0959ae140844926755b218a8452d34f3970ed3
 updated: 2026-10-18
-tags:
-  - ibs
-  - persistencia
-  - sqlserver
-  - sip
 sources:
   - src/main/java/br/gov/df/cg/ibs/infra/identidadeinstitucional/IdentidadeInstitucionalRepository.java
   - src/main/java/br/gov/df/cg/ibs/infra/identidadeinstitucional/UnidadeInstitucionalRepository.java

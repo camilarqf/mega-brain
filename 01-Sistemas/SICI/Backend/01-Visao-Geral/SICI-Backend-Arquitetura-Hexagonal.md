@@ -1,5 +1,7 @@
 ---
 type: architecture
+aliases:
+  - "Arquitetura (hexagonal / ports & adapters)"
 system: SICI
 repository: sici-backend
 status: pendente
@@ -7,11 +9,6 @@ coverage: parcial
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 created: 2026-10-16
 updated: 2026-10-18
-tags:
-  - sici
-  - arquitetura
-  - hexagonal
-  - ports-and-adapters
 sources:
   - src/main/java/br/gov/df/cg/sici
 ---

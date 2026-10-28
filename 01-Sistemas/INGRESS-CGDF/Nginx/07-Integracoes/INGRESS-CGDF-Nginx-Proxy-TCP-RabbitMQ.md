@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "INGRESS-CGDF — proxy TCP para o RabbitMQ"
 system: INGRESS-CGDF
 component: Nginx
 repository: ingress-controller
@@ -10,10 +12,7 @@ updated: 2026-10-21
 consumer: INGRESS-CGDF
 provider: RabbitMQ
 tags:
-  - ingress
-  - nginx
-  - rabbitmq
-  - stream
+  - mensageria
 sources:
   - nginx.conf
   - nginx-nonprod.conf

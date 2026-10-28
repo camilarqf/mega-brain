@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "INGRESS-CGDF — integrações com os upstreams HTTP"
 system: INGRESS-CGDF
 component: Nginx
 repository: ingress-controller
@@ -8,10 +10,6 @@ coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
 updated: 2026-10-22
 consumer: INGRESS-CGDF
-tags:
-  - ingress
-  - nginx
-  - upstreams
 sources:
   - locations/prod/
   - locations/nonprod/

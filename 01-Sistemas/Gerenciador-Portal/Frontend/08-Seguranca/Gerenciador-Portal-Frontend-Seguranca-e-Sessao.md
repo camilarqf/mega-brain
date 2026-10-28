@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "Segurança e sessão — Gerenciador-Portal Frontend"
 system: Gerenciador-Portal
 component: Frontend
 repository: gerenciador-portal-frontend
@@ -9,10 +11,7 @@ analyzed_commit: d6a737a3a0e5cf1b245aa35c81321638dd0cbecc
 created: 2026-10-27
 updated: 2026-10-27
 tags:
-  - gerenciador-portal
-  - frontend
-  - seguranca
-  - sessao
+  - autenticacao
 sources:
   - src/app/token-interceptor.js
   - src/app/index.route.js

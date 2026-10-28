@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "SCI Backend — módulo PIP (Processo Investigativo Preliminar)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - modulo
-  - pip
-  - diligencia
 sources:
   - src/SCI.Domain/GestaoPIP/Entities/PIP.cs
   - src/SCI.Domain/GestaoPIP/Rules

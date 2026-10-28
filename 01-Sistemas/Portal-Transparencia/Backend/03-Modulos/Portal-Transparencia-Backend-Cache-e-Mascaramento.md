@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Cache e mascaramento de dados protegidos"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -8,11 +10,7 @@ coverage: parcial
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
 updated: 2026-10-19
 tags:
-  - portal-transparencia
-  - backend
-  - cache
-  - mascaramento
-  - medida-protetiva
+  - dados-pessoais
 sources:
   - src/main/java/br/gov/df/transparencia/aop/MascaramentoAspect.java
   - src/main/java/br/gov/df/transparencia/annotations/Mascaravel.java

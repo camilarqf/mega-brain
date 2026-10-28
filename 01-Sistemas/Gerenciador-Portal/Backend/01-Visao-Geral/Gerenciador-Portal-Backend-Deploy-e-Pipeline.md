@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Deploy e pipeline"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -8,12 +10,6 @@ coverage: parcial
 analyzed_commit: 14b185feeac4f5889a0ce8041a3b5baaead0334b
 created: 2026-10-27
 updated: 2026-10-27
-tags:
-  - gerenciador-portal
-  - backend
-  - deploy
-  - jenkins
-  - docker
 sources:
   - .docker/Dockerfile
   - .docker/inject-docker-secrets-entrypoint.sh

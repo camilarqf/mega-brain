@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração SCI → BCadastro"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -10,9 +12,7 @@ updated: 2026-10-19
 consumer: SCI
 provider: BCadastro
 tags:
-  - sci
-  - integracao
-  - bcadastro
+  - dados-pessoais
 sources:
   - src/SCI.BCadastro.Client/Services/BCadastroClient.cs
   - src/SCI.BCadastro.Client/BCadastroClientSettings.cs

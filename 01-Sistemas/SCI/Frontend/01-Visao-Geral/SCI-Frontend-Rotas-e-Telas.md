@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "SCI Frontend — rotas e telas"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -7,11 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
-tags:
-  - sci
-  - frontend
-  - rotas
-  - perfis
 sources:
   - src/app/app-routing.module.ts
   - src/app/pages/pages-routing.module.ts

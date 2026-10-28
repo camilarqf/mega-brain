@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Frontend Ouvidoria — fluxo de autenticação"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
@@ -7,11 +9,7 @@ coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-ouvidoria
-  - fluxo
-  - login
-  - sessao
+  - autenticacao
 sources:
   - app/auth/auth-ctrl.js
   - app/auth/auth.html

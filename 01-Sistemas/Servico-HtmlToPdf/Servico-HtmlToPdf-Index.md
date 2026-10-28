@@ -1,12 +1,12 @@
 ---
 type: index
+aliases:
+  - "Serviço HtmlToPdf — índice do sistema"
 system: Servico-HtmlToPdf
 status: confirmado
 updated: 2026-10-19
 tags:
-  - html-to-pdf
-  - moc
-  - sistema
+  - geracao-pdf
 ---
 # Serviço HtmlToPdf — índice do sistema
 

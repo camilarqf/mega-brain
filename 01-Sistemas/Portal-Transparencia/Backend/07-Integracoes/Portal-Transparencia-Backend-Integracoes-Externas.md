@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integrações externas do backend"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -8,10 +10,6 @@ coverage: parcial
 analyzed_commit: e98fcc38c21e0f2063bf0c2c9377d4b492ee5062
 updated: 2026-10-21
 consumer: Portal-Transparencia
-tags:
-  - portal-transparencia
-  - backend
-  - integracoes
 sources:
   - src/main/java/br/gov/df/transparencia/servico/comum/SendMailService.java
   - src/main/java/br/gov/df/transparencia/api/comum/SendMailController.java

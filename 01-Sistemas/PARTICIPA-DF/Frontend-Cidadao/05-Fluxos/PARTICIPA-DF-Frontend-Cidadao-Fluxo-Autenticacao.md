@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Frontend Cidadão — fluxo de autenticação"
 system: PARTICIPA-DF
 repository: participa-df-frontend
 status: confirmado
@@ -7,11 +9,7 @@ coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-cidadao
-  - fluxo
-  - login
-  - desafio
+  - autenticacao
 sources:
   - src/app/pages/login/login.component.ts
   - src/app/pages/conta/desafio-pesssoa-fisica/desafio-pesssoa-fisica.component.ts

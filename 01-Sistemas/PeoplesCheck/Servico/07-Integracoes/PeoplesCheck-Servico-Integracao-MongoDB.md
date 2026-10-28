@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "PeoplesCheck Serviço → MongoDB"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -10,9 +12,7 @@ updated: 2026-10-19
 consumer: PeoplesCheck
 provider: MongoDB
 tags:
-  - peoplescheck
-  - integracao
-  - mongodb
+  - dados-pessoais
 sources:
   - src/main/java/br/gov/df/peoplescheckapi/infrastructure/mongodb/ChallengeCacheDAO.java
   - src/main/java/br/gov/df/peoplescheckapi/infrastructure/mongodb/MongoConfig.java

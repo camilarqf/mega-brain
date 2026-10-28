@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
@@ -7,10 +9,6 @@ status: pendente
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
 updated: 2026-10-27
-tags:
-  - portal-transparencia
-  - frontend
-  - pendencias
 ---
 
 # Pendências

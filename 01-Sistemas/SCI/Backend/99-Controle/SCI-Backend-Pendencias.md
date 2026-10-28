@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Pendências"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -8,9 +10,6 @@ coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 created: 2026-10-19
 updated: 2026-10-23
-tags:
-  - sci
-  - pendencias
 ---
 
 # Pendências

@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal → armazenamento S3 (MinIO)"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -11,10 +13,7 @@ updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: MinIO-CGDF
 tags:
-  - gerenciador-portal
-  - integracao
-  - s3
-  - minio
+  - armazenamento-objetos
 sources:
   - pom.xml
   - src/main/java/br/gov/df/cgdf/gerenciador/config/S3Config.java

@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,13 +9,9 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 created: 2026-10-19
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-23
 branch: master
-tags:
-  - sci
-  - controle
-  - cobertura
 ---
 
 # Registro de análise
@@ -77,3 +75,4 @@ Voltar: [[01-Sistemas/SCI/Backend/SCI-Backend-Index|Índice do Backend]] · Rela
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

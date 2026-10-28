@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "SCI Frontend — módulo JAD (processo de admissibilidade)"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
-tags:
-  - sci
-  - frontend
-  - modulo
-  - jad
-  - admissibilidade
 sources:
   - src/app/pages/jad
   - src/app/store/services/jad.service.ts

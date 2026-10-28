@@ -1,14 +1,13 @@
 ---
 type: repository
+aliases:
+  - "SICI — repositórios"
 system: SICI
 repository:
   - sici-backend
   - sici-frontend
 status: pendente
 updated: 2026-10-18
-tags:
-  - sici
-  - repositorios
 ---
 # SICI — repositórios
 

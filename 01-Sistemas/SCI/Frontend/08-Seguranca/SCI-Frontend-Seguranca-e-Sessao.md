@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "SCI Frontend — segurança e sessão"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -8,11 +10,7 @@ coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
 tags:
-  - sci
-  - frontend
-  - seguranca
-  - sessao
-  - interceptors
+  - autenticacao
 sources:
   - src/app/core/guard/auth.guard.ts
   - src/app/core/guard/alterar-pip.guard.ts

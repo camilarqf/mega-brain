@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Perfis e ambientes"
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -7,11 +9,6 @@ coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 created: 2026-10-16
 updated: 2026-10-18
-tags:
-  - sici
-  - configuracao
-  - ambientes
-  - profiles
 sources:
   - pom.xml
   - src/main/resources/application*.properties

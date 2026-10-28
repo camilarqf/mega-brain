@@ -1,17 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Iza Api — registro de análise"
 system: Iza
 component: Api
 repository: cgdf-iza
 status: confirmado
 coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-03-26
 branch: main
-tags:
-  - iza
-  - registro-de-analise
 ---
 # Iza Api — registro de análise
 
@@ -48,3 +47,4 @@ Controlar os lotes da análise de `cgdf-iza`.
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

@@ -1,17 +1,13 @@
 ---
 type: flow
+aliases:
+  - "Frontend Ouvidoria — caixa de entrada, detalhamento e tratamento"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
-tags:
-  - participa-df
-  - frontend-ouvidoria
-  - fluxo
-  - manifestacao
-  - caixa-de-entrada
 sources:
   - app/manifestacao/caixa-de-entrada/caixa-de-entrada-ctrl.js
   - app/manifestacao/caixa-de-entrada/caixa-de-entrada.html

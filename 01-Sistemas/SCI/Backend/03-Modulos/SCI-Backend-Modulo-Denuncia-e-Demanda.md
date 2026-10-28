@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "SCI Backend — módulo Denúncia e Demanda"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - modulo
-  - denuncia
-  - demanda
 sources:
   - src/SCI.Domain/GestaoAdmissibilidade/Entities/Denuncia.cs
   - src/SCI.Domain/GestaoAdmissibilidade/Entities/Demanda.cs

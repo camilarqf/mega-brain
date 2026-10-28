@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — Gerenciador-Portal Backend"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -7,12 +9,9 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 14b185feeac4f5889a0ce8041a3b5baaead0334b
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-10-22
 branch: fix/corrige-usuario-logado
-tags:
-  - gerenciador-portal
-  - registro-de-analise
 ---
 # Registro de análise — Gerenciador-Portal Backend
 
@@ -50,3 +49,4 @@ Controlar os lotes da análise (retomável por outra sessão).
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

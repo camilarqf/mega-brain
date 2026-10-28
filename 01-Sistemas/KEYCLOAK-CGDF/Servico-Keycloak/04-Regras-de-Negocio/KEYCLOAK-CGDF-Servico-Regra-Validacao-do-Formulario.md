@@ -1,5 +1,7 @@
 ---
 type: business-rule
+aliases:
+  - "Regra: validação do formulário do token endpoint"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
@@ -7,10 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
 updated: 2026-10-18
-tags:
-  - keycloak-cgdf
-  - regra
-  - validacao
 sources:
   - providers/src/main/java/br/gov/df/cg/ibs/keycloak/authenticator/IbsAuthenticator.java
   - providers/src/test/java/br/gov/df/cg/ibs/keycloak/authenticator/IbsAuthenticatorTest.java

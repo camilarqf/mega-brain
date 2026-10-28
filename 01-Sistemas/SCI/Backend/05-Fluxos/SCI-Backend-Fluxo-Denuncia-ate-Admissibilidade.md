@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "SCI Backend — fluxo da denúncia até a conclusão da admissibilidade"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - fluxo
-  - denuncia
-  - admissibilidade
 sources:
   - src/SCI.IntegrationServices/EventConsumers/DenunciaRegistradaConsumer.cs
   - src/SCI.Application/UseCases/GestaoIntegracao

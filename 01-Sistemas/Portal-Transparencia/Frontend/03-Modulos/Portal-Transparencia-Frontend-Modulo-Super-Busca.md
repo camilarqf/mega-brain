@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Frontend — módulo Super Busca"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
@@ -8,11 +10,8 @@ coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
 updated: 2026-10-21
 tags:
-  - portal-transparencia
-  - frontend
-  - modulo
-  - busca
   - dados-pessoais
+  - busca
 sources:
   - src/app/components/super-busca
   - src/app/components/compartilhado/directives/super-buscar-bar.directive.js

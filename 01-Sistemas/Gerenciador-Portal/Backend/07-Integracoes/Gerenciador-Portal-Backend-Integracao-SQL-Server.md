@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal → SQL Server do Portal"
 system: Gerenciador-Portal
 component: Backend
 repository: gerenciador-portal-backend
@@ -10,11 +12,6 @@ created: 2026-10-27
 updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: SQL-Server-Portal
-tags:
-  - gerenciador-portal
-  - integracao
-  - sql-server
-  - banco
 sources:
   - pom.xml
   - src/main/resources/application.properties

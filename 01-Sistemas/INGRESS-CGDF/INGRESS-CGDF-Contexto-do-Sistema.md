@@ -1,13 +1,11 @@
 ---
 type: system
+aliases:
+  - "INGRESS-CGDF — contexto do sistema"
 system: INGRESS-CGDF
 status: confirmado
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
 updated: 2026-10-21
-tags:
-  - ingress
-  - nginx
-  - contexto
 sources:
   - Dockerfile
   - nginx.conf

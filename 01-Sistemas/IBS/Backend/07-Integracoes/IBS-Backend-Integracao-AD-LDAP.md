@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração IBS → AD (LDAP)"
 system: IBS
 component: Backend
 repository: identity-broker-service
@@ -10,10 +12,7 @@ updated: 2026-10-18
 consumer: IBS
 provider: AD-LDAP
 tags:
-  - ibs
-  - integracao
-  - ldap
-  - active-directory
+  - autenticacao
 sources:
   - src/main/java/br/gov/df/cg/ibs/infra/ldap/LdapBindService.java
   - src/main/java/br/gov/df/cg/ibs/application/autenticacao/services/AutenticacaoService.java

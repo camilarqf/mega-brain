@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "Frontend Ouvidoria — segurança e sessão"
 system: PARTICIPA-DF
 repository: participa-df-ouv-frontend
 status: confirmado
@@ -7,11 +9,7 @@ coverage: parcial
 analyzed_commit: 9d8ecdb6b027b5283d71cee49bc40aa452be6afe
 updated: 2026-10-18
 tags:
-  - participa-df
-  - frontend-ouvidoria
-  - seguranca
-  - sessao
-  - permissoes
+  - autenticacao
 sources:
   - app/token-auth-interceptor.js
   - app/token-storage-service.js

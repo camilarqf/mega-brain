@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "INGRESS-CGDF — pendências"
 system: INGRESS-CGDF
 component: Nginx
 repository: ingress-controller
@@ -7,9 +9,6 @@ status: pendente
 coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
 updated: 2026-10-21
-tags:
-  - ingress
-  - pendencias
 ---
 # INGRESS-CGDF — pendências
 

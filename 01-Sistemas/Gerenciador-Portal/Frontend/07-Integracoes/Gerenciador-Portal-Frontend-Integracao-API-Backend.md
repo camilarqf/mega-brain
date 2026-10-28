@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Gerenciador-Portal Frontend → Backend"
 system: Gerenciador-Portal
 component: Frontend
 repository: gerenciador-portal-frontend
@@ -10,11 +12,6 @@ created: 2026-10-27
 updated: 2026-10-27
 consumer: Gerenciador-Portal
 provider: Gerenciador-Portal
-tags:
-  - gerenciador-portal
-  - frontend
-  - integracao
-  - api-rest
 sources:
   - src/app/token-interceptor.js
   - src/app/index.module.js

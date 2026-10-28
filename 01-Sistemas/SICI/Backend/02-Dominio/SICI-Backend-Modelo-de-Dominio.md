@@ -1,15 +1,13 @@
 ---
 type: domain
+aliases:
+  - "Modelo de domínio"
 system: SICI
 repository: sici-backend
 status: confirmado
 coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags:
-  - sici
-  - dominio
-  - modelo
 sources:
   - src/main/java/br/gov/df/cg/sici/domain/model
 ---

@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "Segurança e sessão — SICI Frontend"
 system: SICI
 repository: sici-frontend
 status: confirmado
@@ -7,12 +9,7 @@ coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
 tags:
-  - sici
-  - frontend
-  - seguranca
-  - sessao
-  - jwt
-  - perfis
+  - autenticacao
 sources:
   - src/core/services/auth/auth.service.ts
   - src/core/services/auth/auth.guard.ts

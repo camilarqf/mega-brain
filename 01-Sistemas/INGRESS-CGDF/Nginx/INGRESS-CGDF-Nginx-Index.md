@@ -1,14 +1,12 @@
 ---
 type: index
+aliases:
+  - "INGRESS-CGDF — índice do componente Nginx"
 system: INGRESS-CGDF
 component: Nginx
 repository: ingress-controller
 status: confirmado
 updated: 2026-10-21
-tags:
-  - ingress
-  - moc
-  - nginx
 ---
 # INGRESS-CGDF — índice do componente Nginx
 

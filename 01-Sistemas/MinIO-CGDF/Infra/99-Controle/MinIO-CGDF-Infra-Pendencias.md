@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "MinIO CGDF — pendências"
 system: MinIO-CGDF
 component: Infra
 repository: minio-infra
@@ -8,8 +10,7 @@ coverage: completa
 analyzed_commit: f36efc5fa586f71a2f964f0f3a51a8b9383d84d2
 updated: 2026-10-21
 tags:
-  - minio
-  - pendencias
+  - armazenamento-objetos
 ---
 # MinIO CGDF — pendências
 

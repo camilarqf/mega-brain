@@ -1,14 +1,13 @@
 ---
 type: repository
+aliases:
+  - "INGRESS-CGDF — repositórios"
 system: INGRESS-CGDF
 repository: ingress-controller
 status: confirmado
 coverage: completa
 analyzed_commit: a51459e9e167b5cb4b34910af8ffe26e583d36da
 updated: 2026-10-21
-tags:
-  - ingress
-  - repositorios
 ---
 # INGRESS-CGDF — repositórios
 

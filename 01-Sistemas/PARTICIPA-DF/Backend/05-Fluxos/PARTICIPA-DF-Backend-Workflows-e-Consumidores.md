@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Workflows e consumidores de eventos"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -8,9 +10,6 @@ analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
 updated: 2026-10-23
 tags:
-  - participa-df
-  - backend
-  - workflows
   - mensageria
 sources:
   - src/OuvDF.Api/Startup.cs

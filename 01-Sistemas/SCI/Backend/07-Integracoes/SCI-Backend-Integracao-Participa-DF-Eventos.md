@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração SCI ⇄ PARTICIPA-DF por eventos (RabbitMQ)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -10,11 +12,7 @@ updated: 2026-10-23
 consumer: SCI
 provider: RabbitMQ
 tags:
-  - sci
-  - integracao
-  - rabbitmq
-  - participa-df
-  - denuncia
+  - mensageria
 sources:
   - src/SCI.Api/Program.cs
   - src/SCI.IntegrationServices/EventConsumers/DenunciaRegistradaConsumer.cs

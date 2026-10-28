@@ -1,5 +1,7 @@
 ---
 type: api
+aliases:
+  - "Serviço HtmlToPdf — catálogo de endpoints"
 system: Servico-HtmlToPdf
 component: Servico
 repository: cgdf-html-to-pdf
@@ -8,9 +10,7 @@ coverage: completa
 analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
 updated: 2026-10-19
 tags:
-  - html-to-pdf
-  - api
-  - endpoints
+  - geracao-pdf
 sources:
   - app/pdf/routes.py
   - app/health.py

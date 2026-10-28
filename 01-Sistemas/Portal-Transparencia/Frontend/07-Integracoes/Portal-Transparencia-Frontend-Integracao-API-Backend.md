@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração Frontend → API do Backend"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
@@ -9,11 +11,6 @@ analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
 updated: 2026-10-21
 consumer: Portal-Transparencia
 provider: Portal-Transparencia
-tags:
-  - portal-transparencia
-  - frontend
-  - integracao
-  - api
 sources:
   - src/app/token-interceptor.js
   - src/app/index.module.js

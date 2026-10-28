@@ -1,19 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — SICI Frontend"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 created: 2026-10-18
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-09-29
 branch: master
-tags:
-  - sici
-  - frontend
-  - controle
-  - cobertura
 ---
 
 # Registro de análise — SICI Frontend
@@ -62,3 +59,4 @@ Voltar: [[01-Sistemas/SICI/Frontend/SICI-Frontend-Index|Índice do Frontend]] ·
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

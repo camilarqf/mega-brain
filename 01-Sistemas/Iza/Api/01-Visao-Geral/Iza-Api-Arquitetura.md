@@ -1,5 +1,7 @@
 ---
 type: architecture
+aliases:
+  - "Iza Api — arquitetura"
 system: Iza
 component: Api
 repository: cgdf-iza
@@ -7,9 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
-tags:
-  - iza
-  - arquitetura
 sources:
   - src/main.py
   - src/classificador.py

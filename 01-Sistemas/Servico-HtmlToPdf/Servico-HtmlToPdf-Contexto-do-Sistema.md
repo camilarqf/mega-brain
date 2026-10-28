@@ -1,12 +1,13 @@
 ---
 type: system
+aliases:
+  - "Serviço HtmlToPdf — contexto do sistema"
 system: Servico-HtmlToPdf
 status: confirmado
 analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
 updated: 2026-10-19
 tags:
-  - html-to-pdf
-  - contexto
+  - geracao-pdf
 sources:
   - README.md
   - app/pdf/routes.py

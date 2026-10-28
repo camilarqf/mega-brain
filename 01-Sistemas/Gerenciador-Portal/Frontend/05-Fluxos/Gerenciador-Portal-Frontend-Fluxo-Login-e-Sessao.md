@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Fluxo de login e sessão — Gerenciador-Portal Frontend"
 system: Gerenciador-Portal
 component: Frontend
 repository: gerenciador-portal-frontend
@@ -9,11 +11,7 @@ analyzed_commit: d6a737a3a0e5cf1b245aa35c81321638dd0cbecc
 created: 2026-10-27
 updated: 2026-10-27
 tags:
-  - gerenciador-portal
-  - frontend
-  - fluxo
-  - login
-  - sessao
+  - autenticacao
 sources:
   - src/app/components/login/loginCtrl.js
   - src/app/components/login/loginAPI.js

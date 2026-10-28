@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integração SCI → armazenamento S3 (anexos de denúncia)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -11,12 +13,7 @@ updated: 2026-10-23
 consumer: SCI
 provider: MinIO-CGDF
 tags:
-  - sci
-  - integracao
-  - s3
-  - minio
-  - denuncia
-  - anexos
+  - armazenamento-objetos
 sources:
   - SCI.S3.Client
   - src/SCI.Api/Program.cs

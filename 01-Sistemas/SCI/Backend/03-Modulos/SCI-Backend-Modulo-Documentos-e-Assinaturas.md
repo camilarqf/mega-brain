@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "SCI Backend — módulo Documentos e assinaturas (GED)"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
 updated: 2026-10-19
-tags:
-  - sci
-  - backend
-  - modulo
-  - documentos
-  - assinatura
 sources:
   - src/SCI.Domain/Organizacional/Entities/DocumentoAssinado.cs
   - src/SCI.Domain/Organizacional/Entities/Assinatura.cs

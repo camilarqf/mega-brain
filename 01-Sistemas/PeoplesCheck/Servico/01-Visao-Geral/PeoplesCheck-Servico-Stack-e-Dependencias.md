@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "PeoplesCheck Serviço — stack e dependências"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -7,9 +9,6 @@ status: confirmado
 coverage: completa
 analyzed_commit: 21dbf0b20b6a902e6ec879beff09db3c72300514
 updated: 2026-10-19
-tags:
-  - peoplescheck
-  - stack
 sources:
   - pom.xml
   - .mvn/wrapper/maven-wrapper.properties

@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Integrações externas"
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -7,10 +9,8 @@ coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
 tags:
-  - sici
-  - integracoes
-  - pdf
-  - keycloak
+  - autenticacao
+  - geracao-pdf
 sources:
   - application/service/comum/PdfService.java
   - infrastructure/external/adapter/KeycloakAuthAdapter.java

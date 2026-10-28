@@ -1,5 +1,7 @@
 ---
 type: module
+aliases:
+  - "Frontend — módulo Licitações e Contratos"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
 updated: 2026-10-21
-tags:
-  - portal-transparencia
-  - frontend
-  - modulo
-  - licitacoes
-  - contratos
 sources:
   - src/app/index.route.js
   - src/app/components/licitacoes-contratos

@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "SCI Backend — glossário"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -7,10 +9,6 @@ status: inferido
 coverage: parcial
 analyzed_commit: 299891144fc8c08a314738782442772a8a98b913
 updated: 2026-10-23
-tags:
-  - sci
-  - backend
-  - glossario
 sources:
   - src/SCI.Domain
 ---

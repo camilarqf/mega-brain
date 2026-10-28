@@ -1,12 +1,12 @@
 ---
 type: index
+aliases:
+  - "MinIO CGDF — índice do sistema"
 system: MinIO-CGDF
 status: confirmado
 updated: 2026-10-21
 tags:
-  - minio
-  - moc
-  - sistema
+  - armazenamento-objetos
 ---
 # MinIO CGDF — índice do sistema
 

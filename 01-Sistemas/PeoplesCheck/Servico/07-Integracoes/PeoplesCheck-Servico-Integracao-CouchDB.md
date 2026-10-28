@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "PeoplesCheck Serviço → CouchDB"
 system: PeoplesCheck
 component: Servico
 repository: cgdf-peoples-check-api
@@ -10,9 +12,7 @@ updated: 2026-10-19
 consumer: PeoplesCheck
 provider: CouchDB
 tags:
-  - peoplescheck
-  - integracao
-  - couchdb
+  - dados-pessoais
 sources:
   - src/main/java/br/gov/df/peoplescheckapi/infrastructure/couchdb/CouchDbClient.java
   - src/main/java/br/gov/df/peoplescheckapi/infrastructure/couchdb/HttClientFactory.java

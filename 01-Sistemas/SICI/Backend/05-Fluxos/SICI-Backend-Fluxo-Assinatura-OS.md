@@ -1,17 +1,14 @@
 ---
 type: flow
 aliases:
-  - Fluxo-Assinatura-OS
+  - "Fluxo — assinatura de uma OS"
+  - "Fluxo-Assinatura-OS"
 system: SICI
 repository: sici-backend
 status: confirmado
 coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags:
-  - sici
-  - fluxo
-  - assinatura
 sources:
   - application/usecase/assinatura/AssinarOrdemServico.java
   - application/service/assinatura/AssinaturaServiceImpl.java

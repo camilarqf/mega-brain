@@ -1,16 +1,13 @@
 ---
 type: technical-debt
+aliases:
+  - "Débitos técnicos e riscos — SICI Frontend"
 system: SICI
 repository: sici-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
 updated: 2026-10-18
-tags:
-  - sici
-  - frontend
-  - debito-tecnico
-  - riscos
 sources:
   - src/core/services/ordem-servico.service.ts
   - src/app/pages/ordem-servico/ordem-servico-listar/acao-controle-os.component.ts

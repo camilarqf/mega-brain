@@ -1,5 +1,7 @@
 ---
 type: repository
+aliases:
+  - "SCI — repositórios"
 system: SCI
 repository:
   - sci-backend
@@ -7,9 +9,6 @@ repository:
 status: pendente
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
 updated: 2026-10-19
-tags:
-  - sci
-  - repositorios
 ---
 # SCI — repositórios
 

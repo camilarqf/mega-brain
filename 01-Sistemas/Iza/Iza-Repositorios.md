@@ -1,14 +1,13 @@
 ---
 type: repository
+aliases:
+  - "Iza — repositórios"
 system: Iza
 repository: cgdf-iza
 status: confirmado
 coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
-tags:
-  - iza
-  - repositorios
 ---
 # Iza — repositórios
 

@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "Frontend — segurança e privacidade"
 system: Portal-Transparencia
 component: Frontend
 repository: portal-transparencia-frontend
@@ -8,10 +10,7 @@ coverage: parcial
 analyzed_commit: dca3e933ffd7e5bbfd173133e88d14f94304cb52
 updated: 2026-10-21
 tags:
-  - portal-transparencia
-  - frontend
-  - seguranca
-  - privacidade
+  - dados-pessoais
 sources:
   - src/app/token-interceptor.js
   - src/app/index.module.js

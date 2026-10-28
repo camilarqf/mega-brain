@@ -1,19 +1,14 @@
 ---
 type: module
 aliases:
-  - Prorrogacao-e-Cancelamento
+  - "Prorrogação e cancelamento de OS"
+  - "Prorrogacao-e-Cancelamento"
 system: SICI
 repository: sici-backend
 status: confirmado
 coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
-tags:
-  - sici
-  - modulo
-  - ordem-servico
-  - prorrogacao
-  - cancelamento
 sources:
   - application/usecase/ordemServico/CriarProrrogacaoOrdemServico.java
   - application/usecase/ordemServico/AtualizarProrrogacaoOrdemServico.java

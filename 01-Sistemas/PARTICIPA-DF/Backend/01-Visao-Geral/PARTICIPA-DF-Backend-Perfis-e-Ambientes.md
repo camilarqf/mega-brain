@@ -1,5 +1,7 @@
 ---
 type: reference
+aliases:
+  - "Perfis e ambientes"
 system: PARTICIPA-DF
 repository: participa-df-backend
 status: confirmado
@@ -7,12 +9,6 @@ coverage: parcial
 analyzed_commit: 820666cb28ee23b239e5ad033034c3e8413a10ed
 created: 2026-10-18
 updated: 2026-10-23
-tags:
-  - participa-df
-  - backend
-  - ambientes
-  - configuracao
-  - docker
 sources:
   - src/OuvDF.Api/appsettings.json
   - src/OuvDF.Api/appsettings.Development.json

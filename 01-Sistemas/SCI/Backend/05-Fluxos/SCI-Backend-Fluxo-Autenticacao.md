@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "SCI Backend — fluxo de autenticação"
 system: SCI
 component: Backend
 repository: sci-backend
@@ -8,9 +10,6 @@ coverage: completa
 analyzed_commit: 8e3c8648386d0ee6767df7819faea9cdd44bef9c
 updated: 2026-10-19
 tags:
-  - sci
-  - backend
-  - fluxo
   - autenticacao
 sources:
   - src/SCI.Api/Controllers/SecurityController.cs

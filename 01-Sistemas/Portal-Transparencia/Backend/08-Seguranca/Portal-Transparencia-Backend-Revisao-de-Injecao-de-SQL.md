@@ -1,5 +1,7 @@
 ---
 type: security
+aliases:
+  - "Revisão de injeção de SQL (análise estática)"
 system: Portal-Transparencia
 component: Backend
 repository: portal-transparencia-backend
@@ -7,12 +9,6 @@ status: confirmado
 coverage: parcial
 analyzed_commit: 9434e58f35284618d236f25b3ed2f2b307a7e345
 updated: 2026-10-19
-tags:
-  - portal-transparencia
-  - backend
-  - seguranca
-  - sql-injection
-  - revisao
 sources:
   - src/main/resources/sql
   - src/main/java/br/gov/df/transparencia/util/JdbcUtil.java

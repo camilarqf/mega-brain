@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Serviço HtmlToPdf — integrações (lado provedor)"
 system: Servico-HtmlToPdf
 component: Servico
 repository: cgdf-html-to-pdf
@@ -9,8 +11,7 @@ analyzed_commit: 1393a68d633ed2ecc7c2c6a287a2631389d86ade
 updated: 2026-10-19
 provider: Servico-HtmlToPdf
 tags:
-  - html-to-pdf
-  - integracao
+  - geracao-pdf
 sources:
   - app/pdf/routes.py
   - app/pdf/service.py

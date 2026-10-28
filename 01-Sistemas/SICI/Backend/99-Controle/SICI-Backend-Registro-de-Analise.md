@@ -1,5 +1,7 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise"
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -8,10 +10,6 @@ created: 2026-10-16
 updated: 2026-10-28
 commit_data: 2026-10-05
 branch: master
-tags:
-  - sici
-  - controle
-  - cobertura
 ---
 
 # Registro de análise
@@ -112,3 +110,4 @@ Voltar: [[01-Sistemas/SICI/Backend/SICI-Backend-Index|Índice do Backend]] · Re
   - `POAC` → `SICI-Backend-Modulo-POAC`
   - `Prorrogacao-e-Cancelamento` → `SICI-Backend-Modulo-Prorrogacao-e-Cancelamento`
   - `SUBCI-e-Substitutos` → `SICI-Backend-Modulo-SUBCI-e-Substitutos`
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

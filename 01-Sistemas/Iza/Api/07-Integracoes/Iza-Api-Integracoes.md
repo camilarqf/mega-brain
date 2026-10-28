@@ -1,5 +1,7 @@
 ---
 type: integration
+aliases:
+  - "Iza Api — integrações (lado provedor)"
 system: Iza
 component: Api
 repository: cgdf-iza
@@ -8,9 +10,6 @@ coverage: parcial
 analyzed_commit: 988360c5302bb0785f21c4c1bb9f04da02816b7c
 updated: 2026-10-22
 provider: Iza
-tags:
-  - iza
-  - integracao
 sources:
   - src/main.py
   - .jenkins-pipelines/deployment.params.yml

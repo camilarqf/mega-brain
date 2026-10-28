@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "Fluxo — autenticação e autorização"
 system: SICI
 repository: sici-backend
 status: confirmado
@@ -7,11 +9,7 @@ coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
 updated: 2026-10-18
 tags:
-  - sici
-  - fluxo
   - autenticacao
-  - keycloak
-  - jwt
 sources:
   - api/config/SecurityConfig.java
   - api/security/AuthController.java

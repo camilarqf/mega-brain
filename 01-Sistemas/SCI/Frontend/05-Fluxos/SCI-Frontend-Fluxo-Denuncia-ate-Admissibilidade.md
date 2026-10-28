@@ -1,5 +1,7 @@
 ---
 type: flow
+aliases:
+  - "SCI Frontend — fluxo da denúncia até a admissibilidade (visão do cliente)"
 system: SCI
 component: Frontend
 repository: sci-frontend
@@ -7,12 +9,6 @@ status: inferido
 coverage: parcial
 analyzed_commit: 5e20fda1ec781719cb277c36d160db2efd5a6c1b
 updated: 2026-10-19
-tags:
-  - sci
-  - frontend
-  - fluxo
-  - denuncia
-  - admissibilidade
 sources:
   - src/app/pages/denuncias
   - src/app/pages/demanda

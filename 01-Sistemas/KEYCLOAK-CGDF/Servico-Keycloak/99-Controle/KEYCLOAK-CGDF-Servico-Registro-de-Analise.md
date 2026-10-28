@@ -1,17 +1,16 @@
 ---
 type: analysis-log
+aliases:
+  - "Registro de análise — Serviço Keycloak"
 system: KEYCLOAK-CGDF
 component: Servico-Keycloak
 repository: keycloak
 status: pendente
 coverage: parcial
 analyzed_commit: 1755591a3abfeee96a626cedd800187263967154
-updated: 2026-10-27
+updated: 2026-10-28
 commit_data: 2026-09-03
 branch: master
-tags:
-  - keycloak-cgdf
-  - registro-de-analise
 ---
 # Registro de análise — Serviço Keycloak
 
@@ -50,3 +49,4 @@ Decisões do usuário (2026-10-18): ID do sistema `KEYCLOAK-CGDF`, componente `S
 
 ## Histórico de estrutura
 - 2026-10-27: pastas reorganizadas conforme a seção 1 do `BRAIN-RULES.md` (numeração fixa; melhorias do cofre, lote 3).
+- 2026-10-28: frontmatter padronizado: título legível em `aliases` e tags reduzidas ao vocabulário controlado da seção 4 do `BRAIN-RULES.md` (melhorias do cofre, lote 5).

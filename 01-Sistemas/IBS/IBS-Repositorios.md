@@ -39,3 +39,4 @@ Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificaçã
 - **Sistema:** IBS — Identity Broker Service (autenticação por bind LDAP e claims do SIP; serviço chamado pelo Keycloak, confirmado pelo usuário; dono não identificado)
 - **Repositórios:** `identity-broker-service`
 - **Estado:** Analisado (commit `cf0959a`; lotes 0 a 4 concluídos, cobertura parcial em 3 notas)
+- 2026-10-28: publicação no remoto autorizada pelo usuário (coluna Publicação do catálogo).

@@ -42,3 +42,4 @@ Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificaçã
 - **Sistema:** Serviço HTTP de geração de PDF a partir de HTML (Flask + WeasyPrint; endpoint `POST /html-to-pdf/generate`, contrato `HtmlString`); provedor dos backends do PARTICIPA-DF, SCI e SICI (correspondência confirmada pelo usuário em 2026-10-19); ID reaproveitado do antigo serviço externo, por decisão do usuário em 2026-10-19; dono: CGDF (informado pelo usuário)
 - **Repositórios:** `cgdf-html-to-pdf`
 - **Estado:** Analisado (commit `1393a68`; lotes 0 a 3 concluídos, leitura estática, cobertura completa do código da aplicação)
+- 2026-10-28: publicação no remoto autorizada pelo usuário (coluna Publicação do catálogo).

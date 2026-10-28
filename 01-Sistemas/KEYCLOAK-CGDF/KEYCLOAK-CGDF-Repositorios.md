@@ -39,3 +39,4 @@ Texto original das colunas do `Catalogo-de-Sistemas.md`, antes da simplificaçã
 - **Sistema:** Keycloak da CGDF (imagem, extensão Java de autenticação via IBS e tema de login; ID escolhido pelo usuário)
 - **Repositórios:** `keycloak`
 - **Estado:** Analisado (commit `1755591`; lotes 0 a 3 concluídos, cobertura parcial: tema só por inventário)
+- 2026-10-28: publicação no remoto autorizada pelo usuário (coluna Publicação do catálogo).

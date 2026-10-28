@@ -7,7 +7,7 @@ repository: participa-df-frontend
 status: confirmado
 coverage: parcial
 analyzed_commit: d250804ce5208995296da23ccfb2c444f91da8cc
-updated: 2026-10-18
+updated: 2026-10-28
 tags:
   - autenticacao
 sources:
@@ -41,7 +41,7 @@ sequenceDiagram
     L->>API: POST security/auth
     alt sucesso
         API-->>L: Token e UserName
-        L->>L: grava _userData; navega para validacao/gerenciar-validacao (returnUrl)
+        L->>L: grava _userData, navega para validacao/gerenciar-validacao (returnUrl)
     else erro com ExceptionDetails.Id = 1 (PF) ou 5 (PJ)
         L->>API: GET security/count-try?data=<doc>
         alt tentativas > 2

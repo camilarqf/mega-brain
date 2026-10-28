@@ -8,7 +8,7 @@ repository: sici-backend
 status: confirmado
 coverage: completa
 analyzed_commit: 1871e323ebfc26fe75ef8f809af3a2a9e033814a
-updated: 2026-10-18
+updated: 2026-10-28
 sources:
   - application/usecase/assinatura/AssinarOrdemServico.java
   - application/service/assinatura/AssinaturaServiceImpl.java
@@ -49,7 +49,7 @@ sequenceDiagram
     UC->>UC: OS.alterarStatusOs(ASSINADA) — exige ENVIADA
     UC->>DB: UPDATE TB_ORDEM_SERVICO status
     alt ABERTURA
-        UC->>DB: ação → OSI_EMITIDA; efetivar designação
+        UC->>DB: ação → OSI_EMITIDA, efetivar designação
     else DESIGNACAO
         UC->>DB: efetivar designação (IN_ATIVO=1)
     else EXCLUSAO

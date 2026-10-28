@@ -7,7 +7,7 @@ repository: sici-frontend
 status: confirmado
 coverage: completa
 analyzed_commit: 418642ffc9bc8481878633a73aff6fe60b41140a
-updated: 2026-10-18
+updated: 2026-10-28
 sources:
   - src/app/components/layout/assinatura-autenticacao/assinatura-autenticacao.component.ts
   - src/core/services/assinatura.service.ts
@@ -36,7 +36,7 @@ sequenceDiagram
     participant B as sici-backend
     T->>T: grava contexto no localStorage (ctx = UUID)
     T->>P: window.open (500x650) com ?ctx=UUID
-    P->>P: lê contexto; preenche usuário da sessão
+    P->>P: lê contexto, preenche usuário da sessão
     P->>B: POST /auth/login (sem interceptors) usuário e senha digitados
     B-->>P: access_token
     P->>P: confere preferred_username do token com o usuário logado
